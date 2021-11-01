@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<boModel>
+    <id>d5658535-55e0-4d3a-9a10-40183e7fbbfe</id>
+    <createUser>admin</createUser>
+    <createTime>2020-05-16 15:28:14</createTime>
+    <updateUser></updateUser>
+    <updateTime>2020-05-16 15:28:14</updateTime>
+    <signature>tGOmxiTgjT/77UoYpSlq8Vc+hHPRoJWHdZexXc7zEpYuMNdhvSICeJnlc/RzRHGrLxRxZQUg5iTJ/zr/J81SA4GD3pAwhzI3DjpEvj1C3rd/Gp1vAZXGKsCH5SnFYBtI</signature>
+    <managed>false</managed>
+    <title>车辆申请表</title>
+    <name>BO_EU_SH_CLSQL</name>
+    <collection>false</collection>
+    <system>false</system>
+    <deleted>false</deleted>
+    <categoryName>车辆管理</categoryName>
+    <administrator>admin</administrator>
+    <entityType>TABLE</entityType>
+    <viewType></viewType>
+    <viewSql></viewSql>
+    <securityLevel>0</securityLevel>
+    <target>_local</target>
+    <itemProps></itemProps>
+    <boItems/>
+    <boIndexs>
+        <boIndex>
+            <id>74e6fe99-cc88-4c4a-979b-4f2ba6edf39c</id>
+            <name></name>
+            <type>INDEX</type>
+            <boItems>BINDID</boItems>
+        </boIndex>
+    </boIndexs>
+    <boRelations/>
+    <hashFields></hashFields>
+</boModel>

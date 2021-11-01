@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<formModel>
+    <id>2ee0f213-1bdd-4c02-9ff2-1bf8f33d317b</id>
+    <createUser>admin</createUser>
+    <createTime>2020-06-19 16:22:28</createTime>
+    <updateUser></updateUser>
+    <updateTime>2020-07-21 10:53:02</updateTime>
+    <signature>tGOmxiTgjT/77UoYpSlq8Vc+hHPRoJWHdZexXc7zEpYuMNdhvSICeJnlc/RzRHGreJXoP17XCcRQfu6P+uU2OZYaZcazo81g3ga4e1JS6mCURDYulNNuZTS18eO+e5C6</signature>
+    <managed>false</managed>
+    <title>上航_食堂餐饮预定</title>
+    <deleted>false</deleted>
+    <categoryName>预订管理</categoryName>
+    <administrator>admin</administrator>
+    <defaultLanguage></defaultLanguage>
+    <url></url>
+    <urlHeight></urlHeight>
+    <formItems>
+        <formItem>
+            <id>9e70ad0c-2e39-4525-a4bb-602b74651612</id>
+            <title>上航_食堂餐饮预定</title>
+            <templateFile>{"tablet":"预订管理-上航_食堂餐饮预定.htm","pc":"预订管理-上航_食堂餐饮预定.htm","mobile":"预订管理-上航_食堂餐饮预定_m.htm"}</templateFile>
+            <grid>false</grid>
+            <gridSetting></gridSetting>
+            <orderBy></orderBy>
+            <pageLimit>0</pageLimit>
+            <boModelId>fd1b0ee1-d481-4827-b52f-47674b14f359</boModelId>
+            <dictionaryFileName></dictionaryFileName>
+            <hiddenHead>false</hiddenHead>
+            <theme>{"pc":"_bpm.platform","mobile":"com.actionsoft.apps.form.theme.antdui"}</theme>
+            <itemDisplays/>
+            <scheme>{"pc":"scheme_aws.css","mobile":"scheme_aws.css"}</scheme>
+            <calcFormula></calcFormula>
+            <conditionControl></conditionControl>
+            <validate></validate>
+            <icon></icon>
+            <gridControl></gridControl>
+            <summaryControl></summaryControl>
+            <ruleControl>{"displayRule":[{"expressions":[{"type":"field","expression":"BO_EU_SH_FOODORDER.TACKETTITLE","juge":"=","value":"其他","fieldType":"string"}],"rules":[{"display":"show","dom":"field","domId":"BO_EU_SH_FOODORDER.TACKETTITLE2","labelName":"","dwId":null,"dwMap":""}],"fields":["BO_EU_SH_FOODORDER.TACKETTITLE"]}],"requiredRule":[{"expressions":[{"type":"field","expression":"BO_EU_SH_FOODORDER.SFINVOICE","juge":"=","value":"1","fieldType":"string"}],"rules":[{"required":"required","dom":"BO_EU_SH_FOODORDER.TACKETTITLE","domType":"field","formItemModelId":"","tip":""}],"fields":["BO_EU_SH_FOODORDER.SFINVOICE"],"ruleGrids":[]}],"modifyRule":[],"calcRule":[]}</ruleControl>
+            <hiddenFields>ORDERID,ORDERSTATUS,ORDERTIME,ORDERDATE,BILLDEPTID,BILLLIST,CONTACTDEPTID,PACKAGETYPE,COMMENTS,STARS,MESSDISPATCHER,ROOMID</hiddenFields>
+            <hiddenAddBtn>false</hiddenAddBtn>
+            <verticalLayout>false</verticalLayout>
+        </formItem>
+    </formItems>
+</formModel>

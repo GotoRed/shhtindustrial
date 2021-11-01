@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<mobile-profile xmlns="http://www.actionsoft.com.cn/app">  
+  <osType></osType>  
+  <deviceType>universal</deviceType>  
+  <realAppId>com.awspaas.user.apps.shhtaerospaceindustrial</realAppId>  
+  <realVersion>1.0</realVersion>  
+  <resourceType>h5url</resourceType>  
+  <resourceURI>@portalUrl/awsht804system/app/shsy/ydxt.html?sid=@sid&amp;uid=@uid</resourceURI>  
+  <ssoType>sid</ssoType>  
+  <backupable>false</backupable>  
+  <cascadeRemove>true</cascadeRemove>  
+  <autoDistribute>false</autoDistribute>  
+  <trackId></trackId> 
+</mobile-profile>

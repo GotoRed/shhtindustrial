@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<formModel>
+    <id>7d4e343b-3593-465b-901c-c6dfde44a030</id>
+    <createUser>admin</createUser>
+    <createTime>2020-05-18 14:04:41</createTime>
+    <updateUser></updateUser>
+    <updateTime>2020-05-18 14:04:41</updateTime>
+    <signature>tGOmxiTgjT/77UoYpSlq8Vc+hHPRoJWHdZexXc7zEpYuMNdhvSICeJnlc/RzRHGrsFLVic/ORuJeygRjB+5uhojMimnKRoQPpD3A3FRnhtCYJJARI4m0n7Pq326H6oRA</signature>
+    <managed>false</managed>
+    <title>特殊资源档案表单</title>
+    <deleted>false</deleted>
+    <categoryName>特殊资源管理</categoryName>
+    <administrator>admin</administrator>
+    <defaultLanguage></defaultLanguage>
+    <url></url>
+    <urlHeight></urlHeight>
+    <formItems>
+        <formItem>
+            <id>0493e30f-75af-42dd-b94d-e96130b12ccf</id>
+            <title>特殊资源档案表单</title>
+            <templateFile>{"tablet":"特殊资源管理-特殊资源档案表单.htm","pc":"特殊资源管理-特殊资源档案表单.htm","mobile":"特殊资源管理-特殊资源档案表单_m.htm"}</templateFile>
+            <grid>false</grid>
+            <gridSetting></gridSetting>
+            <orderBy></orderBy>
+            <pageLimit>0</pageLimit>
+            <boModelId>d792d232-fb52-4c1f-8cd1-d9eee0f3b396</boModelId>
+            <dictionaryFileName></dictionaryFileName>
+            <hiddenHead>false</hiddenHead>
+            <theme>{"pc":"_bpm.platform","mobile":"_bpm.platform"}</theme>
+            <itemDisplays/>
+            <scheme>{"pc":"","mobile":""}</scheme>
+            <calcFormula></calcFormula>
+            <conditionControl></conditionControl>
+            <validate></validate>
+            <icon></icon>
+            <gridControl></gridControl>
+            <summaryControl></summaryControl>
+            <ruleControl></ruleControl>
+            <hiddenFields></hiddenFields>
+            <hiddenAddBtn>false</hiddenAddBtn>
+            <verticalLayout>false</verticalLayout>
+        </formItem>
+    </formItems>
+</formModel>

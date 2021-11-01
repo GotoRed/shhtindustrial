@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<formModel>
+    <id>6ebcccff-9bd8-4ed4-b675-7812d05fb65e</id>
+    <createUser>admin</createUser>
+    <createTime>2020-06-14 10:21:56</createTime>
+    <updateUser>admin</updateUser>
+    <updateTime>2020-08-18 12:02:52</updateTime>
+    <signature>tGOmxiTgjT/77UoYpSlq8Vc+hHPRoJWHdZexXc7zEpYuMNdhvSICeJnlc/RzRHGrx4Bkhz2i/oOa/dBe58MfWpXB29OZKkSQRs2ZOAr5uBFMw85BnDAdbD1ql6TpFpXm</signature>
+    <managed>false</managed>
+    <title>上航_行车任务单_司机</title>
+    <deleted>false</deleted>
+    <categoryName>预订管理</categoryName>
+    <administrator>admin</administrator>
+    <defaultLanguage></defaultLanguage>
+    <url>{"pc":"","mobile":""}</url>
+    <urlHeight>{"pc":"","mobile":""}</urlHeight>
+    <formItems>
+        <formItem>
+            <id>64766d82-011f-4966-a8d0-f77b8cd8025b</id>
+            <title>上航_行车任务单_司机</title>
+            <templateFile>{"tablet":"预订管理-上航_行车任务单_司机.htm","pc":"预订管理-上航_行车任务单_司机.htm","mobile":"预订管理-上航_行车任务单_司机_m.htm"}</templateFile>
+            <grid>false</grid>
+            <gridSetting></gridSetting>
+            <orderBy></orderBy>
+            <pageLimit>0</pageLimit>
+            <boModelId>abd7745f-5a00-4655-8265-10c18ec99695</boModelId>
+            <dictionaryFileName></dictionaryFileName>
+            <hiddenHead>false</hiddenHead>
+            <theme>{"pc":"_bpm.platform","mobile":"com.actionsoft.apps.form.theme.antdui"}</theme>
+            <itemDisplays/>
+            <scheme>{"pc":"scheme_1.css","mobile":"scheme_aws.css"}</scheme>
+            <calcFormula></calcFormula>
+            <conditionControl></conditionControl>
+            <validate></validate>
+            <icon></icon>
+            <gridControl></gridControl>
+            <summaryControl></summaryControl>
+            <ruleControl>{"displayRule":[{"expressions":[{"type":"field","expression":"BO_EU_SH_VEHICLEORDER_MISSION.APPLYUSERCELLPHONE","juge":"=","value":"空","fieldType":"string"}],"rules":[{"display":"hide","dom":"field","domId":"BO_EU_SH_VEHICLEORDER_MISSION.APPLYUSERCELLPHONE","labelName":"","dwId":null,"dwMap":""}],"fields":["BO_EU_SH_VEHICLEORDER_MISSION.APPLYUSERCELLPHONE"]},{"expressions":[{"type":"field","expression":"BO_EU_SH_VEHICLEORDER_MISSION.APPLYUSERNAME","juge":"=","value":"空","fieldType":"string"}],"rules":[{"display":"hide","dom":"field","domId":"BO_EU_SH_VEHICLEORDER_MISSION.APPLYUSERNAME","labelName":"","dwId":null,"dwMap":""}],"fields":["BO_EU_SH_VEHICLEORDER_MISSION.APPLYUSERNAME"]},{"expressions":[{"type":"field","expression":"BO_EU_SH_VEHICLEORDER_MISSION.ISLEAVESTAY","juge":"=","value":"0","fieldType":"string"}],"rules":[{"display":"hide","dom":"field","domId":"BO_EU_SH_VEHICLEORDER_MISSION.CCGYF","labelName":"","dwId":null,"dwMap":""}],"fields":["BO_EU_SH_VEHICLEORDER_MISSION.ISLEAVESTAY"]}],"requiredRule":[],"modifyRule":[],"calcRule":[]}</ruleControl>
+            <hiddenFields>APPLYUID,APPLYUNITID,APPLYDEPTID,CONTACTPERSONZH,SJZH,RESOURCETASKID,RESOURCETASKFPID,ORDERID,MISSIONSTATUS,BILLDEPTID,WZUNITPSNID,WZUNITPSNPHONE,SETTLEMENTTYPE,SETTLEMENTTYPE,ORDERDATE</hiddenFields>
+            <hiddenAddBtn>false</hiddenAddBtn>
+            <verticalLayout>false</verticalLayout>
+        </formItem>
+    </formItems>
+</formModel>

@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<formModel>
+    <id>19a81542-d5f0-4ae2-95d1-1ac69c09517b</id>
+    <createUser>admin</createUser>
+    <createTime>2020-05-15 10:21:37</createTime>
+    <updateUser></updateUser>
+    <updateTime>2020-05-15 10:21:37</updateTime>
+    <signature>tGOmxiTgjT/77UoYpSlq8Vc+hHPRoJWHdZexXc7zEpYuMNdhvSICeJnlc/RzRHGrbVw+UhU2yHIkNqJIJs68lrKmrpgb8gmdSOwkOsnWK7pHvAwPqIUVovXjW7OUy7XO</signature>
+    <managed>false</managed>
+    <title>物业客户档案</title>
+    <deleted>false</deleted>
+    <categoryName>物业管理</categoryName>
+    <administrator>admin</administrator>
+    <defaultLanguage></defaultLanguage>
+    <url></url>
+    <urlHeight></urlHeight>
+    <formItems>
+        <formItem>
+            <id>02842e3d-daac-4620-9a00-096c76bb6642</id>
+            <title>物业客户档案</title>
+            <templateFile>{"tablet":"物业管理-物业客户档案.htm","pc":"物业管理-物业客户档案.htm","mobile":"物业管理-物业客户档案_m.htm"}</templateFile>
+            <grid>false</grid>
+            <gridSetting></gridSetting>
+            <orderBy></orderBy>
+            <pageLimit>0</pageLimit>
+            <boModelId>a342cea3-6494-49b9-b734-ddf4800830b7</boModelId>
+            <dictionaryFileName></dictionaryFileName>
+            <hiddenHead>false</hiddenHead>
+            <theme>{"pc":"com.actionsoft.apps.form.theme.antdui","mobile":"com.actionsoft.apps.form.theme.antdui"}</theme>
+            <itemDisplays/>
+            <scheme>{"pc":""}</scheme>
+            <calcFormula></calcFormula>
+            <conditionControl></conditionControl>
+            <validate></validate>
+            <icon></icon>
+            <gridControl></gridControl>
+            <summaryControl></summaryControl>
+            <ruleControl></ruleControl>
+            <hiddenFields></hiddenFields>
+            <hiddenAddBtn>false</hiddenAddBtn>
+            <verticalLayout>false</verticalLayout>
+        </formItem>
+    </formItems>
+</formModel>

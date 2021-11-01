@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<AWSDWModel>
+    <id>obj_eb1d93222d7a4087ae11834a58049c96</id>
+    <createUser>admin</createUser>
+    <createTime>2020-05-17 15:14:50</createTime>
+    <updateUser></updateUser>
+    <updateTime>2020-05-17 15:14:50</updateTime>
+    <signature>tGOmxiTgjT/77UoYpSlq8Vc+hHPRoJWHdZexXc7zEpYuMNdhvSICeJnlc/RzRHGrihn/zcw+q5RYRcCj3yKjRVUoJiWsohoS+D7m+FpgdhqMC1DWgKZ/MNXelvEkFqY8</signature>
+    <managed>false</managed>
+    <processGroupId>obj_eb1d93222d7a4087ae11834a58049c96</processGroupId>
+    <processGroupName>保安岗位档案</processGroupName>
+    <categoryName>未分类</categoryName>
+    <dwType>1</dwType>
+    <processAdministrator></processAdministrator>
+    <title id="obj_2bf3cb4cc2f8472b9935aa43c53951e0" label="保安岗位档案" extendcode="" event=""/>
+    <userextendbuttons/>
+    <userextendbehaviors/>
+    <iconFontCode></iconFontCode>
+    <iconFontColor></iconFontColor>
+</AWSDWModel>

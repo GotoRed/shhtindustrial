@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<AWSDWModel>
+    <id>obj_8974ab69b30c4761a24856f4597f709c</id>
+    <createUser>admin</createUser>
+    <createTime>2021-07-16 15:20:02</createTime>
+    <updateUser></updateUser>
+    <updateTime>2021-07-16 15:20:02</updateTime>
+    <signature>tGOmxiTgjT/77UoYpSlq8Vc+hHPRoJWHdZexXc7zEpYuMNdhvSICeJnlc/RzRHGr+bqsRC5/5ZA9JF0JKttyaEEt84XyffSYRMZlh0XFWoBgBkOUPWGIZMkTr4D9qLro</signature>
+    <managed>false</managed>
+    <processGroupId>obj_8974ab69b30c4761a24856f4597f709c</processGroupId>
+    <processGroupName>院办小车班车辆档案</processGroupName>
+    <categoryName>未分类</categoryName>
+    <dwType>1</dwType>
+    <processAdministrator></processAdministrator>
+    <title id="obj_e4619ab86e874352921185533e263fd2" label="院办小车班车辆档案" extendcode="" event=""/>
+    <userextendbuttons/>
+    <userextendbehaviors/>
+    <iconFontCode></iconFontCode>
+    <iconFontColor></iconFontColor>
+</AWSDWModel>

@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<AWSDWModel>
+    <id>obj_ae1d5a69c6714a1e8110abe1acf4ae53</id>
+    <createUser>admin</createUser>
+    <createTime>2020-06-18 11:58:04</createTime>
+    <updateUser></updateUser>
+    <updateTime>2020-06-18 11:58:04</updateTime>
+    <signature>tGOmxiTgjT/77UoYpSlq8Vc+hHPRoJWHdZexXc7zEpYuMNdhvSICeJnlc/RzRHGrdREp94nbI3kvnV/Ce4Hx3ntkedUPspGE9vF4n16Eo185f0oXG7jWeu15/Emm1ooB</signature>
+    <managed>false</managed>
+    <processGroupId>obj_ae1d5a69c6714a1e8110abe1acf4ae53</processGroupId>
+    <processGroupName>消息提醒数据</processGroupName>
+    <categoryName>未分类</categoryName>
+    <dwType>1</dwType>
+    <processAdministrator></processAdministrator>
+    <title id="obj_36e0d91fb64a48aa8ebb1e6bcd2a5f73" label="消息提醒数据" extendcode="" event=""/>
+    <userextendbuttons/>
+    <userextendbehaviors/>
+    <iconFontCode></iconFontCode>
+    <iconFontColor></iconFontColor>
+</AWSDWModel>

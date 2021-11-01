@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<AWSDWModel>
+    <id>obj_b971fdfc6261405f9446e74e84fdc37b</id>
+    <createUser>admin</createUser>
+    <createTime>2020-05-18 15:42:42</createTime>
+    <updateUser></updateUser>
+    <updateTime>2020-05-18 15:42:42</updateTime>
+    <signature>tGOmxiTgjT/77UoYpSlq8Vc+hHPRoJWHdZexXc7zEpYuMNdhvSICeJnlc/RzRHGrm30GfCrqydAcXAO8TFjxljvMgfXJezG3TNGD8mM8HaM5TkqGfF2dAcoQZUUd1SV6</signature>
+    <managed>false</managed>
+    <processGroupId>obj_b971fdfc6261405f9446e74e84fdc37b</processGroupId>
+    <processGroupName>餐饮预订</processGroupName>
+    <categoryName>未分类</categoryName>
+    <dwType>1</dwType>
+    <processAdministrator></processAdministrator>
+    <title id="obj_ae7821a29c5041cda10660fe90d37ad0" label="餐饮预订" extendcode="" event=""/>
+    <userextendbuttons/>
+    <userextendbehaviors/>
+    <iconFontCode></iconFontCode>
+    <iconFontColor></iconFontColor>
+</AWSDWModel>

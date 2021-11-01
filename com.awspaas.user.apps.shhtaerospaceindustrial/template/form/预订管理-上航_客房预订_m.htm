@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html>
+	<head>
+<meta name="renderer" content="webkit">
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+		<title>上航_客房预订</title>
+		<meta http-equiv='Content-Type' content='text/html; charset=UTF-8' />
+		<meta name="viewport" content="initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no, width=device-width">
+		
+		[#AWSImport]
+		[#AWSUIImport]
+		
+		<link rel='stylesheet' id='schemeCss' href='../apps/_bpm.platform/css/colorschemes/scheme_aws.css'  name='schemeCss'/>
+	
+<link type='text/css' rel='stylesheet' id='themeCss' href='../apps/com.actionsoft.apps.form.theme.antdui/css/theme/theme_m.css?v=1589851448798' name='themeCss'/>
+<link type='text/css' rel='stylesheet' id='themeCss' href='../apps/_bpm.platform/css/theme/theme_m.css' name='themeCss'/>
+</head>
+	<body>
+<form id="frmMain" name="frmMain" method="post">
+<div id="aws-form-container" class="mui-scroll-wrapper mobile-main-form" border="0"><!--class="aws-form-ux-container"-->
+<table id="aws-form-maintable" class="awsui-ux aws-form-ux-maintable" style="table-layout: auto;" align="center" border="0" cellpadding="0" cellspacing="0">
+<tbody>
+<tr id="aws-form-titlebg" class="aws-form-ux-titlebg" style="display: none;">
+<td id="aws-form-title" class="aws-form-ux-header">上航_客房预订</td>
+</tr>
+<tr class="aws-form-ux-formcontent" id="aws-form-formcontent">
+<td class="">
+<table id="table_container" class="awsui-ux table-striped" style="padding: 0px;" width="100%" cellspacing="0" cellpadding="0"><colgroup> <col style="width: 31%;" /> <col style="width: 69%;" /> </colgroup>
+<tbody>
+<tr id="c8edc5e3_e3f0_0001_c73d_1ff512904520">
+<td class="awsui-ux-title"><label id="ORDERSTATUSLabel" class="aws-form-ux-label" for="ORDERSTATUS">订单状态</label></td>
+<td class="aws-form-ux-content">[#ORDERSTATUS]</td>
+</tr>
+<tr>
+<td class="awsui-ux-title"><label id="APPLYPHONELabel" for="APPLYPHONE">经办人电话</label></td>
+<td class="aws-form-ux-content">[#APPLYPHONE]</td>
+</tr>
+<tr>
+<td class="awsui-ux-title"><label id="PERSONNUMLabel" for="PERSONNUM">入住人数</label></td>
+<td class="aws-form-ux-content">[#PERSONNUM]</td>
+</tr>
+<tr id="c8edc5f5_d570_0001_c4c9_156016a01ce4">
+<td class="awsui-ux-title"><label id="ROOMTYPELabel" class="aws-form-ux-label" for="ROOMTYPE">客房类型</label></td>
+<td class="aws-form-ux-content">[#ROOMTYPE]</td>
+</tr>
+<tr>
+<td class="awsui-ux-title"><label id="ORDERNUMLabel" for="ORDERNUM">客房数量</label></td>
+<td class="aws-form-ux-content">[#ORDERNUM]</td>
+</tr>
+<tr>
+<td class="awsui-ux-title"><label id="BREAKFASTTYPELabel" for="BREAKFASTTYPE">含早类型</label></td>
+<td class="aws-form-ux-content">[#BREAKFASTTYPE]</td>
+</tr>
+<tr>
+<td class="awsui-ux-title"><label id="ROOMUINTPRICELabel" for="ROOMUINTPRICE">客房单价</label></td>
+<td class="aws-form-ux-content">[#ROOMUINTPRICE]</td>
+</tr>
+<tr>
+<td class="awsui-ux-title"><label id="GUESTIDLabel" for="GUESTID">宾客姓名</label></td>
+<td class="aws-form-ux-content">[#GUESTID]</td>
+</tr>
+<tr>
+<td class="awsui-ux-title"><label id="GUESTPHONELabel" for="GUESTPHONE">宾客电话</label></td>
+<td class="aws-form-ux-content">[#GUESTPHONE]</td>
+</tr>
+<tr>
+<td class="awsui-ux-title"><label id="BDATELabel" for="BDATE">抵店日期</label></td>
+<td class="aws-form-ux-content">[#BDATE]</td>
+</tr>
+<tr>
+<td class="awsui-ux-title"><label id="EDATELabel" for="EDATE">离店日期</label></td>
+<td class="aws-form-ux-content">[#EDATE]</td>
+</tr>
+<tr id="c8edc5fa_d060_0001_ce30_7adfb1be1e79">
+<td class="awsui-ux-title"><label id="REMARKLabel" class="aws-form-ux-label" for="REMARK">客户要求</label></td>
+<td class="aws-form-ux-content">[#REMARK]</td>
+</tr>
+<tr class="tr1">
+<td colspan="2" class="aws-form-ux-gridbg">[#Grid1]</td>
+</tr>
+</tbody>
+</table>
+</td>
+</tr>
+<tr class="aws-form-bottom">
+<td class="aws-form-ux-actionsoft">[#Actionsoft]
+<div id="hiddenArea" border="0" style="display: none;">[#ORDERID][#APPLYUID][#APPLYDEPTID][#ORDERDATE][#ORDERTIME]</div>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+</form>
+<script src="../commons/js/aws.mobile.jsapi.js" type="text/javascript"></script>
+<script>
+function getQueryString(name) {
+ var reg = new RegExp('(^|&)' + name + '=([^&]*)(&|$)', 'i');
+ var r = window.location.search.substr(1).match(reg);
+ if (r != null) {
+  return unescape(r[2]);
+ }
+ return null;
+}
+</script>
+<script id="formOnload">// <![CDATA[
+function formOnload(){
+ debugger;
+ var ksrq = getQueryString('ksrq');
+ var jsrq = getQueryString('jsrq');
+  var kflx = getQueryString('kflx');
+  //抵店日期
+  if(ksrq !=null){
+     //uiVisible("BDATE", true);
+      if ($.browser.isIPhone) {
+			$("#BDATE").val(ksrq.replace(" ", "T"));
+		}else{
+        	ui("BDATE", ksrq);
+        }
+  }
+  //离店日期
+  if(jsrq !=null){
+    // uiVisible("EDATE", true);
+      if ($.browser.isIPhone) {
+			$("#EDATE").val(jsrq.replace(" ", "T"));
+		}else{
+        	ui("EDATE", jsrq);
+        }
+  }
+  //客房类型
+  if(kflx !=null){
+      //$("#ROOMTYPE").val(kflx);
+      ui("ROOMTYPE", "2");
+  }
+  	var u = navigator.userAgent;
+	if(!!u.match(/AppleWebKit.*Mobile.*/) || !!u.match(/Mobile/)){
+      	alert("11111");
+    	ui("ROOMTYPE","7e8d3e73-d610-4920-9c95-784bb5143e39");
+    }
+}
+// ]]></script>
+</body>
+</html>

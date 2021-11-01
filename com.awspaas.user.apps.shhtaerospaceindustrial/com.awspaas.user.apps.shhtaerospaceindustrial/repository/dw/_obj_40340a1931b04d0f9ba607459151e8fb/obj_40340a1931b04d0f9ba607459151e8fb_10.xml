@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<AWSDWModel>
+    <id>obj_40340a1931b04d0f9ba607459151e8fb</id>
+    <createUser>admin</createUser>
+    <createTime>2021-06-28 15:59:25</createTime>
+    <updateUser></updateUser>
+    <updateTime>2021-06-28 15:59:25</updateTime>
+    <signature>tGOmxiTgjT/77UoYpSlq8Vc+hHPRoJWHdZexXc7zEpYuMNdhvSICeJnlc/RzRHGrTb8S5ttUC6mWXHrjI0Rxc41JVA+gt85+3GFIl6JNTs1fUKjTNQAFeGNSizRKzeuG</signature>
+    <managed>false</managed>
+    <processGroupId>obj_40340a1931b04d0f9ba607459151e8fb</processGroupId>
+    <processGroupName>访客申请信息查询</processGroupName>
+    <categoryName>未分类</categoryName>
+    <dwType>1</dwType>
+    <processAdministrator></processAdministrator>
+    <title id="obj_744e5c66b3c845549e1d51f0b7b7c43f" label="访客申请信息查询" extendcode="" event=""/>
+    <userextendbuttons/>
+    <userextendbehaviors/>
+    <iconFontCode></iconFontCode>
+    <iconFontColor></iconFontColor>
+</AWSDWModel>

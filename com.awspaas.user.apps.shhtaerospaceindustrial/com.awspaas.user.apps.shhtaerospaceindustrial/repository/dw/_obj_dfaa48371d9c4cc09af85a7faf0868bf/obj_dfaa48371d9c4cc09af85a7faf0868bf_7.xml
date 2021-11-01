@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<AWSDWModel>
+    <id>obj_dfaa48371d9c4cc09af85a7faf0868bf</id>
+    <createUser>admin</createUser>
+    <createTime>2020-07-14 10:41:59</createTime>
+    <updateUser></updateUser>
+    <updateTime>2020-07-14 10:41:59</updateTime>
+    <signature>tGOmxiTgjT/77UoYpSlq8Vc+hHPRoJWHdZexXc7zEpYuMNdhvSICeJnlc/RzRHGr8NyAZKGoAA7r359rpiZFcYJYHVOiNfcrwaHR7Kz8eaqCj5AjWN2GEXvcm7GAsWi6</signature>
+    <managed>false</managed>
+    <processGroupId>obj_dfaa48371d9c4cc09af85a7faf0868bf</processGroupId>
+    <processGroupName>上航_各单位发票抬头</processGroupName>
+    <categoryName>未分类</categoryName>
+    <dwType>1</dwType>
+    <processAdministrator></processAdministrator>
+    <title id="obj_af874ddb1c4c43f9846e9879d43c83d7" label="上航_各单位发票抬头" extendcode="" event=""/>
+    <userextendbuttons/>
+    <userextendbehaviors/>
+    <iconFontCode></iconFontCode>
+    <iconFontColor></iconFontColor>
+</AWSDWModel>

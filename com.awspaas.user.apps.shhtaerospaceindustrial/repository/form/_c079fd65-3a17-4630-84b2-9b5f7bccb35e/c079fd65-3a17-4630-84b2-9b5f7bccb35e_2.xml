@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<formModel>
+    <id>c079fd65-3a17-4630-84b2-9b5f7bccb35e</id>
+    <createUser>admin</createUser>
+    <createTime>2020-06-22 10:34:44</createTime>
+    <updateUser></updateUser>
+    <updateTime>2020-06-22 10:34:44</updateTime>
+    <signature>tGOmxiTgjT/77UoYpSlq8Vc+hHPRoJWHdZexXc7zEpYuMNdhvSICeJnlc/RzRHGreV10PdigRhsK94y5hK4dQ3xXmHgwp61vJMxxLaU1kJ9KNNWEx+Yz5MKyAO3I0uju</signature>
+    <managed>false</managed>
+    <title>销售对应负责单位</title>
+    <deleted>false</deleted>
+    <categoryName>预订管理</categoryName>
+    <administrator>admin</administrator>
+    <defaultLanguage></defaultLanguage>
+    <url></url>
+    <urlHeight></urlHeight>
+    <formItems>
+        <formItem>
+            <id>4eedb7e8-7f54-49c0-83ed-a9f14cbe077b</id>
+            <title>销售对应负责单位</title>
+            <templateFile>{"tablet":"预订管理-销售对应负责单位.htm","pc":"预订管理-销售对应负责单位.htm","mobile":"预订管理-销售对应负责单位_m.htm"}</templateFile>
+            <grid>false</grid>
+            <gridSetting></gridSetting>
+            <orderBy></orderBy>
+            <pageLimit>0</pageLimit>
+            <boModelId>42a12491-3be6-4fa0-a4c8-d7fc56097ee8</boModelId>
+            <dictionaryFileName></dictionaryFileName>
+            <hiddenHead>false</hiddenHead>
+            <theme>{"pc":"_bpm.platform","mobile":"_bpm.platform"}</theme>
+            <itemDisplays/>
+            <scheme>{}</scheme>
+            <calcFormula></calcFormula>
+            <conditionControl></conditionControl>
+            <validate></validate>
+            <icon></icon>
+            <gridControl></gridControl>
+            <summaryControl></summaryControl>
+            <ruleControl></ruleControl>
+            <hiddenFields></hiddenFields>
+            <hiddenAddBtn>false</hiddenAddBtn>
+            <verticalLayout>false</verticalLayout>
+        </formItem>
+    </formItems>
+</formModel>

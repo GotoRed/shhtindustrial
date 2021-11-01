@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<AWSDWModel>
+    <id>obj_12a9a6a656054bdb94e00b0c35ca3ca4</id>
+    <createUser>admin</createUser>
+    <createTime>2020-06-10 20:52:00</createTime>
+    <updateUser></updateUser>
+    <updateTime>2020-06-10 20:52:00</updateTime>
+    <signature>tGOmxiTgjT/77UoYpSlq8Vc+hHPRoJWHdZexXc7zEpYuMNdhvSICeJnlc/RzRHGrIgoGZQtivTcRTiaw5SaU4IiJOUzEACj1H3C1ijpmC9VEZk5KHYNef0UPakg8PWu6</signature>
+    <managed>false</managed>
+    <processGroupId>obj_12a9a6a656054bdb94e00b0c35ca3ca4</processGroupId>
+    <processGroupName>车辆及驾驶员档案</processGroupName>
+    <categoryName>未分类</categoryName>
+    <dwType>1</dwType>
+    <processAdministrator></processAdministrator>
+    <title id="obj_42e09a9291274ed8878d6737476b1472" label="车辆及驾驶员档案" extendcode="" event=""/>
+    <userextendbuttons/>
+    <userextendbehaviors/>
+    <iconFontCode></iconFontCode>
+    <iconFontColor></iconFontColor>
+</AWSDWModel>

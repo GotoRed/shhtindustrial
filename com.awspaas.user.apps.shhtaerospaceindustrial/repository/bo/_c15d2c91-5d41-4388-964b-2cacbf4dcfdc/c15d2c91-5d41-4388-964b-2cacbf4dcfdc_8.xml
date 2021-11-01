@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<boModel>
+    <id>c15d2c91-5d41-4388-964b-2cacbf4dcfdc</id>
+    <createUser>admin</createUser>
+    <createTime>2020-05-16 14:55:06</createTime>
+    <updateUser></updateUser>
+    <updateTime>2020-05-16 14:55:06</updateTime>
+    <signature>tGOmxiTgjT/77UoYpSlq8Vc+hHPRoJWHdZexXc7zEpYuMNdhvSICeJnlc/RzRHGrpk8Lc+S52AE/TOPRboMjgCJMrEd1ej54JHfpNbtoMKnM7dlealSTeIa95b4qDJ0w</signature>
+    <managed>false</managed>
+    <title>上航_安保_保安排班计划</title>
+    <name>BO_EU_SH_SECPSNWORKPLAN</name>
+    <collection>false</collection>
+    <system>false</system>
+    <deleted>false</deleted>
+    <categoryName>安保管理</categoryName>
+    <administrator>admin</administrator>
+    <entityType>TABLE</entityType>
+    <viewType></viewType>
+    <viewSql></viewSql>
+    <securityLevel>0</securityLevel>
+    <target>_local</target>
+    <itemProps></itemProps>
+    <boItems/>
+    <boIndexs>
+        <boIndex>
+            <id>9a62e250-e2c8-4fc1-8107-416933c89e9f</id>
+            <name></name>
+            <type>INDEX</type>
+            <boItems>BINDID</boItems>
+        </boIndex>
+    </boIndexs>
+    <boRelations/>
+    <hashFields></hashFields>
+</boModel>

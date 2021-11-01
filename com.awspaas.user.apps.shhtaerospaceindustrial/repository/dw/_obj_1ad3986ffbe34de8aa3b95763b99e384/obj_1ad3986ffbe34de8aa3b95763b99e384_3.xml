@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<AWSDWModel>
+    <id>obj_1ad3986ffbe34de8aa3b95763b99e384</id>
+    <createUser>admin</createUser>
+    <createTime>2020-05-19 08:26:59</createTime>
+    <updateUser></updateUser>
+    <updateTime>2020-05-19 08:26:59</updateTime>
+    <signature>tGOmxiTgjT/77UoYpSlq8Vc+hHPRoJWHdZexXc7zEpYuMNdhvSICeJnlc/RzRHGrlnNQWSTkqf4PyOCZuLLKHtNG+4cpEL6nY+S8jU6TPP/5mIk2N6iTD2jc7UQeRotr</signature>
+    <managed>false</managed>
+    <processGroupId>obj_1ad3986ffbe34de8aa3b95763b99e384</processGroupId>
+    <processGroupName>交通事故处理记录维护</processGroupName>
+    <categoryName>未分类</categoryName>
+    <dwType>1</dwType>
+    <processAdministrator></processAdministrator>
+    <title id="obj_b54822ce003c4a01809171739fe6ffb7" label="交通事故处理记录维护" extendcode="" event=""/>
+    <userextendbuttons/>
+    <userextendbehaviors/>
+    <iconFontCode></iconFontCode>
+    <iconFontColor></iconFontColor>
+</AWSDWModel>

@@ -1,0 +1,88 @@
+ {"companys":
+   [
+      {
+        "name": "上海航天技术研究院院部",
+        "awsid": "13b5de8a-96f7-4d6d-bca5-ca3695b6e390",
+        "department": "院部",
+        "companywechatid": "wwd1feef53690aecf0",
+        "companywechatseret": "tBQRUDNSAIEKx_HwkqTLXjSwr_0ifr_o2vdsOc1_aU8"
+      },
+      {
+        "name": "上海航天控制技术研究所(803)",
+        "awsid": "91303294-cad4-41be-8c48-5aaf1f7cdf71",
+        "department": "上海航天控制技术研究所",
+        "companywechatid": "ww17537f2b3fb8eb2e",
+        "companywechatseret": "6PBT9QM0jWIPB9Dw3p6hVn716TtB7IoayXeWXwKCTgw"
+      },
+      {
+        "name": "上海航天控制技术研究所(804)",
+        "awsid": "77a17a20-c61d-48bd-8426-007decedfc19",
+        "department": "上海航天电子通讯设备研究所",
+        "companywechatid": "wwf15c3873e6376f87",
+        "companywechatseret": "C3bFW-l5SSwdIOv-i0UIjBy36TV-ev0GoZjizDVUCGU"
+      },
+      {
+        "name": "上海航天设备制造总厂有限公司(149厂)",
+        "awsid": "8a93a1f3-4a92-4fa2-8389-73a25b7963d9",
+        "department": "上海航天设备制造总厂有限公司",
+        "companywechatid": "ww4d74a4a01c18a7ca",
+        "companywechatseret": "QYLVJrOjxeHm2T5w5bAwS0JDemECGMG2YWZykMvnDC8"
+      },
+      {
+        "name": "上海宇航系统工程研究所(805)",
+        "awsid": "24ef2933-79d6-4294-a8e5-75d5a3c5ebe3",
+        "department": "上海宇航系统工程研究所",
+        "companywechatid": "ww928500a51eaf21b8",
+        "companywechatseret": "1_aDBCyMg9dunTPIQRkUf3pb2lqDLFKKuOJO76pJcAc"
+      },
+      {
+        "name": "上海机电工程研究所(八部)",
+        "awsid": "aa030a4d-e5ef-4a91-a93e-72941296dee5",
+        "department": "上海机电工程研究所",
+        "companywechatid": "wwb1a723a2cf406a0d",
+        "companywechatseret": "nXv-W_eUgjWN22ztqWupYhpiXohwP_glBnzwI6ZyRB8"
+      },
+      {
+        "name": "上海航天精密机械研究所(800所)",
+        "awsid": "6eee0d76-0029-43f0-90f4-1f09a51d8943",
+        "department": "上海航天精密机械研究所",
+        "companywechatid": "ww957ef457e82d3fd7",
+        "companywechatseret": "MqKOK-vaLtQZA69FbKjhp_83Lq_InKQoPDszNR57YvY"
+      },
+      {
+        "name": "上海卫星工程研究所(509)",
+        "awsid": "c8306c56-2732-45e7-a091-dbfb7185f7b6",
+        "department": "上海卫星工程研究所",
+        "companywechatid": "ww507f3850acd7a984",
+        "companywechatseret": "Js_atrG1GQZtlLVaQWcKSKlpeS72rcwug8HPSqiY5j8"
+      },
+      {
+        "name": "上海新力动力设备研究所(806)",
+        "awsid": "491c5b63-e48c-41f3-9c16-124ec2c7720d",
+        "department": "上海新力动力设备研究所",
+        "companywechatid": "ww11be595e5668b166",
+        "companywechatseret": "K2ckgBCoiw5f55TdYzkKq9VOBeZsmQoTrwigxIP_UpI"
+      },
+      {
+        "name": "上海无线电设备研究所(802)",
+        "awsid": "96edd686-4d58-4b4e-8817-b065f669f846",
+        "department": "上海无线电设备研究所",
+        "companywechatid": "wx8319999a5630d152",
+        "companywechatseret": "UeXoQLUH-Azj3rVG3IfPXcFB0SQ3LtNlYvzJwCkEzK0"
+      },
+      {
+        "name": "上海空间电源研究所(811所)",
+        "awsid": "db3fff78-ad01-48d3-8383-9086d9429566",
+        "department": "上海空间电源研究所",
+        "companywechatid": "ww28e11a6d2664f4e8",
+        "companywechatseret": "eZHk2vRFDbMKC32sP4Yu0enUOIlAZtUttFZdOYlDARE"
+      },
+      {
+        "name": "上海卫星装备研究所(812所)",
+        "awsid": "eee69e9f-d798-4f94-b4b0-61b684474d8d",
+        "department": "上海卫星装备研究所",
+        "companywechatid": "ww29c04cbdfb8a4a51",
+        "companywechatseret": "P1k1_M5MwN2yfiPRUJGdszVP3DnadRT8jWz8Bgxekfc"
+      }
+    ]
+ }

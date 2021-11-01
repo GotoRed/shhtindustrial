@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<formModel>
+    <id>d207e891-2257-4efd-90dd-88a6f2caced3</id>
+    <createUser>admin</createUser>
+    <createTime>2020-05-27 19:29:39</createTime>
+    <updateUser></updateUser>
+    <updateTime>2020-05-27 19:29:39</updateTime>
+    <signature>tGOmxiTgjT/77UoYpSlq8Vc+hHPRoJWHdZexXc7zEpYuMNdhvSICeJnlc/RzRHGr16EkOb/aK9OL1EnLifSst1EbIKz3ND4C9y1H5Dk5709H7kWmuJZaAYC6dmKmJadU</signature>
+    <managed>false</managed>
+    <title>资源管理（新）</title>
+    <deleted>false</deleted>
+    <categoryName>基础设置</categoryName>
+    <administrator>admin</administrator>
+    <defaultLanguage></defaultLanguage>
+    <url></url>
+    <urlHeight></urlHeight>
+    <formItems>
+        <formItem>
+            <id>5852c4fe-62c2-4eee-b0d7-c77ac8b01d20</id>
+            <title>资源管理（新）</title>
+            <templateFile>{"tablet":"基础设置-资源管理（新）.htm","pc":"基础设置-资源管理（新）.htm","mobile":"基础设置-资源管理（新）_m.htm"}</templateFile>
+            <grid>false</grid>
+            <gridSetting></gridSetting>
+            <orderBy></orderBy>
+            <pageLimit>0</pageLimit>
+            <boModelId>18b7ce9d-8cf7-4443-9376-ebbb620f0440</boModelId>
+            <dictionaryFileName></dictionaryFileName>
+            <hiddenHead>false</hiddenHead>
+            <theme>{"pc":"_bpm.platform"}</theme>
+            <itemDisplays/>
+            <scheme>{"pc":""}</scheme>
+            <calcFormula></calcFormula>
+            <conditionControl></conditionControl>
+            <validate></validate>
+            <icon></icon>
+            <gridControl></gridControl>
+            <summaryControl></summaryControl>
+            <ruleControl></ruleControl>
+            <hiddenFields></hiddenFields>
+            <hiddenAddBtn>false</hiddenAddBtn>
+            <verticalLayout>false</verticalLayout>
+        </formItem>
+    </formItems>
+</formModel>

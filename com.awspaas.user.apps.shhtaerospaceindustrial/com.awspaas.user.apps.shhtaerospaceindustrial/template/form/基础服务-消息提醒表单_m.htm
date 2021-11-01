@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+	<head>
+<meta name="renderer" content="webkit">
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+
+		<title>消息提醒表单</title>
+		<meta http-equiv='Content-Type' content='text/html; charset=UTF-8' />
+		<meta name="viewport" content="initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no, width=device-width">
+		<!--公共的js和css start-->
+		[#AWSImport]
+		[#AWSUIImport]
+		<!--配色方案-->
+		<link rel='stylesheet' id='schemeCss' href='../apps/_bpm.platform/css/colorschemes/scheme_aws.css'  name='schemeCss'/>
+	<link type='text/css' rel='stylesheet' id='themeCss' href='../apps/_bpm.platform/css/theme/theme_m.css' name='themeCss'/>
+</head>
+	<body>
+		<form id='frmMain' name='frmMain' method="post" >
+			
+			<div id='aws-form-container' class="mui-scroll-wrapper mobile-main-form"><!--class="aws-form-ux-container"-->
+				<table  id='aws-form-maintable' class="awsui-ux aws-form-ux-maintable" style="table-layout: auto;" align="center" border="0" cellpadding="0" cellspacing="0">
+					<!--每个模板必须含有 aws-form-titlebg 和 title样式 否则无法应用配色风格-->
+					<tr id='aws-form-titlebg' class='aws-form-ux-titlebg' style="display: none;">
+						<!--若自定义模板title的 id -->
+						<td id='aws-form-title' class='aws-form-ux-header'> 消息提醒表单 </td>
+					</tr>
+					<tr class="aws-form-ux-formcontent" id='aws-form-formcontent'>
+						<td>
+							<table id='table_container'  class="awsui-ux table-striped" style="padding: 0px;" width='100%' cellspacing='0' cellpadding='0'>
+								<colgroup>
+									<col style="width: 31%;">
+									<col style="width: 69%;">
+								</colgroup>
+								<tr><td class='awsui-ux-title'><label id='XXFLLabel' for='XXFL'>消息分类</label></td><td  class='aws-form-ux-content'>[#XXFL]</td></tr><tr><td class='awsui-ux-title'><label id='XXNRLabel' for='XXNR'>消息内容</label></td><td  class='aws-form-ux-content'>[#XXNR]</td></tr><tr><td class='awsui-ux-title'><label id='FSRQLabel' for='FSRQ'>发送日期</label></td><td  class='aws-form-ux-content'>[#FSRQ]</td></tr><tr><td class='awsui-ux-title'><label id='FSRZHLabel' for='FSRZH'>发送人账号</label></td><td  class='aws-form-ux-content'>[#FSRZH]</td></tr><tr><td class='awsui-ux-title'><label id='FSRXMLabel' for='FSRXM'>发送人姓名</label></td><td  class='aws-form-ux-content'>[#FSRXM]</td></tr><tr><td class='awsui-ux-title'><label id='JSRZHLabel' for='JSRZH'>接收人账号</label></td><td  class='aws-form-ux-content'>[#JSRZH]</td></tr><tr><td class='awsui-ux-title'><label id='JSRXMLabel' for='JSRXM'>接收人姓名</label></td><td  class='aws-form-ux-content'>[#JSRXM]</td></tr><tr><td class='awsui-ux-title'><label id='DQZTLabel' for='DQZT'>读取状态</label></td><td  class='aws-form-ux-content'>[#DQZT]</td></tr><tr><td class='awsui-ux-title'><label id='SFKDJLabel' for='SFKDJ'>是否可点击</label></td><td  class='aws-form-ux-content'>[#SFKDJ]</td></tr><tr><td class='awsui-ux-title'><label id='LJURLLabel' for='LJURL'>链接地址</label></td><td  class='aws-form-ux-content'>[#LJURL]</td></tr><tr><td class='awsui-ux-title'><label id='BZLabel' for='BZ'>备注</label></td><td  class='aws-form-ux-content'>[#BZ]</td></tr>
+							</table>
+						</td>
+					</tr>
+					<tr class="aws-form-bottom">
+						<td class="aws-form-ux-actionsoft" >[#Actionsoft]</td>
+					</tr>
+				</table>
+			</div>
+		</form>
+	</body>
+</html>

@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<AWSDWModel>
+    <id>obj_eff1e14a91794e5792538146fc49572b</id>
+    <createUser>admin</createUser>
+    <createTime>2020-05-18 14:49:28</createTime>
+    <updateUser></updateUser>
+    <updateTime>2020-05-18 14:49:28</updateTime>
+    <signature>tGOmxiTgjT/77UoYpSlq8Vc+hHPRoJWHdZexXc7zEpYuMNdhvSICeJnlc/RzRHGrJqCmZ5w/L+p15kbOy5AEVaUL4PSmauFhCBIxjG4UgUm31SkdOjBSU3u+9cdpvxr2</signature>
+    <managed>false</managed>
+    <processGroupId>obj_eff1e14a91794e5792538146fc49572b</processGroupId>
+    <processGroupName>特殊资源档案维护</processGroupName>
+    <categoryName>未分类</categoryName>
+    <dwType>1</dwType>
+    <processAdministrator></processAdministrator>
+    <title id="obj_5eb3be565a8645be8fd0666bfc5a889a" label="特殊资源档案维护" extendcode="" event=""/>
+    <userextendbuttons/>
+    <userextendbehaviors/>
+    <iconFontCode></iconFontCode>
+    <iconFontColor></iconFontColor>
+</AWSDWModel>

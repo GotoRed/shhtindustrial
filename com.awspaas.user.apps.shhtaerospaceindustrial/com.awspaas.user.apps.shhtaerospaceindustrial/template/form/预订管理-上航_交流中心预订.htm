@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html>
+	<head>
+<meta name="renderer" content="webkit">
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+		<title>上航_交流中心预订</title>
+		<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+		<meta name="renderer" content="webkit">
+		<meta name="apple-mobile-web-app-capable" content="yes">
+		<meta name="apple-mobile-web-app-status-bar-style" content="black">
+		[#AWSImport]
+		[#AWSUIImport]
+		<link rel='stylesheet' id='schemeCss' href='../apps/_bpm.platform/css/colorschemes/scheme_1.css'  name='schemeCss'/>
+	
+<link type='text/css' rel='stylesheet' id='themeCss' href='../apps/com.actionsoft.apps.form.theme.antdui/css/theme/theme.css?v=1589851448797' name='themeCss'/>
+<link type='text/css' rel='stylesheet' id='themeCss' href='../apps/_bpm.platform/css/theme/theme.css' name='themeCss'/>
+</head>
+	<body>
+<form id="frmMain" name="frmMain" method="post">
+<div id="aws-form-container" class="aws-form-ux-container" border="0">
+<table id="aws-form-maintable" class="awsui-ux aws-form-ux-maintable" style="table-layout: auto;" cellspacing="0" cellpadding="0" border="0" align="center">
+<tbody>
+<tr id="aws-form-titlebg" class="aws-form-ux-titlebg">
+<td id="aws-form-title" class="aws-form-ux-header">上航_交流中心预订</td>
+</tr>
+<tr class="aws-form-ux-formcontent" id="aws-form-formcontent">
+<td>
+<table id="table_container" class="awsui-ux table-striped" style="padding: 0px;" width="100%" cellspacing="3" cellpadding="0"><colgroup><col class="awsui-ux-title" /><col style="width: 50.0%;" /><col class="awsui-ux-title" /><col style="width: 50.0%;" /></colgroup>
+<tbody>
+<tr>
+<td class="awsui-ux-title"><label for="APPLYNAME" class="aws-form-ux-label">预定人名称</label></td>
+<td class="aws-form-ux-content">[#APPLYNAME]</td>
+<td class="awsui-ux-title"><label id="APPLYDEPTNAMELabel" class="aws-form-ux-label" for="APPLYDEPTNAME">预订部门名称</label></td>
+<td class="aws-form-ux-content">[#APPLYDEPTNAME]</td>
+</tr>
+<tr>
+<td class="awsui-ux-title"><label for="ORDERTYPE" class="aws-form-ux-label">预订类型</label></td>
+<td class="aws-form-ux-content">[#ORDERTYPE]</td>
+<td class="awsui-ux-title">销售负责单位</td>
+<td class="aws-form-ux-content">[#XSCOMPANY]</td>
+</tr>
+<tr id="c8fd8acc_d370_0001_688b_1b40b1001b8b">
+<td class="awsui-ux-title">预定人手机</td>
+<td class="aws-form-ux-content">[#APPLYUSERCELLPHONE]</td>
+<td class="awsui-ux-title">&nbsp;</td>
+<td class="aws-form-ux-content">&nbsp;</td>
+</tr>
+<tr>
+<td class="awsui-ux-title"><label class="aws-form-ux-label" for="REMARK">客户要求</label></td>
+<td class="aws-form-ux-content" colspan="3">[#REMARK]</td>
+</tr>
+<tr id="c8faf796_da70_0001_af47_47a01e70b5c0">
+<td class="awsui-ux-title"><label class="aws-form-ux-label" for="CANCELREASON">预订失败原因</label></td>
+<td class="aws-form-ux-content" colspan="3">[#CANCELREASON]</td>
+</tr>
+<tr>
+<td colspan="4" class="aws-form-ux-gridbg">
+<div id="zib1" class="aws-form-ux-grid" border="0">[#Grid1]</div>
+</td>
+</tr>
+<tr></tr>
+<tr>
+<td colspan="4" class="aws-form-ux-gridbg">
+<div id="zib2" class="aws-form-ux-grid" border="0">[#Grid2]</div>
+</td>
+</tr>
+<tr></tr>
+<tr></tr>
+<tr>
+<td class="awsui-ux-title"></td>
+<td class="aws-form-ux-content"></td>
+<td class="awsui-ux-title">&nbsp;</td>
+<td class="aws-form-ux-content">&nbsp;</td>
+</tr>
+<tr>
+<td colspan="4" class="aws-form-ux-gridbg">
+<div id="zib3" class="aws-form-ux-grid" border="0">[#Grid3]</div>
+</td>
+</tr>
+</tbody>
+</table>
+</td>
+</tr>
+<tr class="aws-form-bottom">
+<td class="aws-form-ux-actionsoft">[#Actionsoft]
+<div id="hiddenArea" border="0" style="display: none;">[#ORDERID][#APPLYDEPTID][#APPLYUNITID][#APPLYUID][#MOBILETITLE][#MOBILECONTENT][#MOBILECONTENT][#ORDERSTATUS][#APPLYUNIT][#EDATE][#NOTE][#BDATE]</div>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+</form>
+<script>
+function onCheckboxClickEvent(boItemName, $checkbox, val) {
+  //事件处理代码
+  //子表页面获取元素写法
+  //$("#grid_data_open_frame_mobile").contents().find("#字段ID");
+//  	debugger;
+//  	alert(val);
+//  debugger;
+//    if(val == 0){
+//      $("#zib1").show();
+//    }
+//    if(val == 1){
+//      $("#zib2").show();
+//    }
+ //   if(val == 2){
+//      $("#zib3").show();
+//    }
+}
+</script>
+<script id="formOnload">// <![CDATA[
+function formOnload(){}
+// ]]></script>
+</body>
+</html>

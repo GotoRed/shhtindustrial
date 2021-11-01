@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!--AWS 字典描述文件,适用于6.0以上版本 \n-->
+<dictionary>
+  <id>a9189bb1-f56a-45a8-b2b4-604ea1323bde</id>
+  <!--App分类-->
+  <categoryName>安保管理</categoryName>
+  <!--字典显示的标题-->
+  <title>33</title>
+  <!--要显示的SQL记录 \n   1.where条件支持所有@命令  \n    2.这个SQL应该是一个完整的,经过调试的SQL,除@命令外 \n-->
+  <!--每页显示行数-->
+  <page>10</page>
+  <!--是否换行显示-->
+  <wordWrap>false</wordWrap>
+  <!--插入前保存表单-->
+  <saveForm>false</saveForm>
+  <!--插入前非空校验-->
+  <checkNotNull>true</checkNotNull>
+  <!--插入后非空提示-->
+  <aftersaveAlert>true</aftersaveAlert>
+  <!--数据字典多选时是否显示已选中项-->
+  <showChoose>false</showChoose>
+  <!--字典模型是否受管-->
+  <managed>false</managed>
+  <configParam><![CDATA[{}]]></configParam>
+  <!--连接数据源-->
+</dictionary>
+<!--AWS 字典描述UUID-->

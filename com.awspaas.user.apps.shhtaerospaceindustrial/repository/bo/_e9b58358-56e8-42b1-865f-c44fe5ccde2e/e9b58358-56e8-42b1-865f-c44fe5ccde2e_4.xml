@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<boModel>
+    <id>e9b58358-56e8-42b1-865f-c44fe5ccde2e</id>
+    <createUser>admin</createUser>
+    <createTime>2020-05-14 19:55:06</createTime>
+    <updateUser></updateUser>
+    <updateTime>2020-05-14 19:55:06</updateTime>
+    <signature>tGOmxiTgjT/77UoYpSlq8Vc+hHPRoJWHdZexXc7zEpYuMNdhvSICeJnlc/RzRHGrbgGch79a28jadW74YQj8+tqOcZqB3bETSIUo2w2Y3STcybp8QgzvM84hoDtdCubN</signature>
+    <managed>false</managed>
+    <title>上航_绿化区域_植被明细</title>
+    <name>BO_EU_SH_GREENAREADETIAL</name>
+    <collection>false</collection>
+    <system>false</system>
+    <deleted>false</deleted>
+    <categoryName>物业管理</categoryName>
+    <administrator>admin</administrator>
+    <entityType>TABLE</entityType>
+    <viewType></viewType>
+    <viewSql></viewSql>
+    <securityLevel>0</securityLevel>
+    <target>_local</target>
+    <itemProps></itemProps>
+    <boItems/>
+    <boIndexs>
+        <boIndex>
+            <id>741a4424-a433-42d1-a1af-acf87e5d6be0</id>
+            <name></name>
+            <type>INDEX</type>
+            <boItems>BINDID</boItems>
+        </boIndex>
+    </boIndexs>
+    <boRelations/>
+    <hashFields></hashFields>
+</boModel>

@@ -1,0 +1,216 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta name="renderer" content="webkit">
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+	<title>上航_车辆预订-手机表单</title>
+	<!--字段背景风格App模板-->
+	<meta http-equiv='Content-Type' content='text/html; charset=UTF-8' />
+	<meta name="viewport" content="initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no, width=device-width">
+	
+	[#AWSImport]
+	[#AWSUIImport]
+	
+	
+	<link rel='stylesheet' id='schemeCss' href='../apps/_bpm.platform/css/colorschemes/scheme_aws.css?v=1588908694729'  name='schemeCss'/>
+	<link rel="stylesheet" type="text/css" href="../apps/_bpm.portal/css/client.bpm.form.mobile.common.css?v=1588908698315">
+	<link rel="stylesheet" type="text/css" href="../apps/com.actionsoft.apps.form.theme.antdui/css/theme/antdui.css?v=1589851448797">
+<link type='text/css' rel='stylesheet' id='themeCss' href='../apps/com.actionsoft.apps.form.theme.antdui/css/theme/theme_m.css' name='themeCss'/>
+</head>
+<body>
+<form id="frmMain" name="frmMain" method="post">
+<div id="aws-form-container" border="0" style="width: 100%; border: 0px;">
+<table id="aws-form-maintable" style="table-layout: auto; width: 100%; border: 0px;" cellspacing="0" cellpadding="0" border="0">
+<tbody>
+<tr id="aws-form-titlebg" class="aws-form-ux-titlebg" style="display: none;">
+<td id="aws-form-title" class="aws-form-ux-header">上航_车辆预订</td>
+</tr>
+<tr class="aws-form-ux-formcontent" id="aws-form-formcontent">
+<td>
+<table id="table_container" class="awsui-ux table-striped" style="padding: 0px;" width="100%" cellspacing="0" cellpadding="0">
+<tbody>
+<tr>
+<td class="awsui-ux-title" style="padding-left: 0px;"><label id="APPLYUNITLabel" for="APPLYUNIT">预定单位</label></td>
+<td class="aws-form-ux-content">[#APPLYUNIT]</td>
+</tr>
+<tr>
+<td class="awsui-ux-title" style="padding-left: 0px;"><label id="APPLYDEPTNAMELabel" for="APPLYDEPTNAME">预定部门</label></td>
+<td class="aws-form-ux-content">[#APPLYDEPTNAME]</td>
+</tr>
+<tr>
+<td class="awsui-ux-title" style="padding-left: 0px;"><label id="APPLYUSERNAMELabel" for="APPLYUSERNAME">预定人</label></td>
+<td class="aws-form-ux-content">[#APPLYUSERNAME]</td>
+</tr>
+<tr>
+<td class="awsui-ux-title" style="padding-left: 0px;"><label id="APPLYUSERCELLPHONELabel" for="APPLYUSERCELLPHONE">预定人手机</label></td>
+<td class="aws-form-ux-content">[#APPLYUSERCELLPHONE]</td>
+</tr>
+<tr>
+<td class="awsui-ux-title" style="padding-left: 0px;"><label id="BDATELabel" for="BDATE" flag="labelRequired">预订开始日期</label></td>
+<td class="aws-form-ux-content">[#BDATE]</td>
+</tr>
+<tr>
+<td class="awsui-ux-title" style="padding-left: 0px;"><label id="EDATELabel" for="EDATE" flag="labelRequired">预订结束日期</label></td>
+<td class="aws-form-ux-content">[#EDATE]</td>
+</tr>
+<tr>
+<td class="awsui-ux-title" style="padding-left: 0px;"><label id="VEHICLETYPELabel" for="VEHICLETYPE" flag="labelRequired">车辆类型</label></td>
+<td class="aws-form-ux-content">[#VEHICLETYPE]</td>
+</tr>
+<tr>
+<td class="awsui-ux-title" style="padding-left: 0px;"><label id="VEHICLENUMLabel" for="VEHICLENUM" flag="labelRequired">用车数量</label></td>
+<td class="aws-form-ux-content">[#VEHICLENUM]</td>
+</tr>
+<tr>
+<td class="awsui-ux-title" style="padding-left: 0px;"><label id="PERSONNUMLabel" for="PERSONNUM">乘坐人数</label></td>
+<td class="aws-form-ux-content">[#PERSONNUM]</td>
+</tr>
+<tr>
+<td class="awsui-ux-title" style="padding-left: 0px;"><label id="USEREASONLabel" for="USEREASON" flag="labelRequired">用车事由</label></td>
+<td class="aws-form-ux-content">[#USEREASON]</td>
+</tr>
+<tr>
+<td class="awsui-ux-title" style="padding-left: 0px;"><label id="BOARDINGPLACELabel" for="BOARDINGPLACE" flag="labelRequired">上车地点</label></td>
+<td class="aws-form-ux-content">[#BOARDINGPLACE]</td>
+</tr>
+<tr>
+<td class="awsui-ux-title" style="padding-left: 0px;"><label id="TARGETPLACELabel" for="TARGETPLACE" flag="labelRequired">目的地</label></td>
+<td class="aws-form-ux-content">[#TARGETPLACE]</td>
+</tr>
+<tr>
+<td class="awsui-ux-title" style="padding-left: 0px;"><label id="ISOUTSHANGHAILabel" for="ISOUTSHANGHAI" flag="labelRequired">是否出省</label></td>
+<td class="aws-form-ux-content">[#ISOUTSHANGHAI]</td>
+</tr>
+<tr>
+<td class="awsui-ux-title" style="padding-left: 0px;"><label id="ISINTERNALVEHICLELabel" for="ISINTERNALVEHICLE" flag="labelRequired">车辆属性</label></td>
+<td class="aws-form-ux-content">[#ISINTERNALVEHICLE]</td>
+</tr>
+<tr id="c8f774db_1000_0001_c8d1_ff05b600eef0">
+<td class="awsui-ux-title" style="padding-left: 0px;"><label id="ISUSECARLabel" class="aws-form-ux-label" for="ISUSECAR" flag="labelRequired">是否用车人</label></td>
+<td class="aws-form-ux-content">[#ISUSECAR]</td>
+</tr>
+<tr>
+<td class="awsui-ux-title" style="padding-left: 0px;"><label id="CONTACTPERSONLabel" for="CONTACTPERSON" flag="labelRequired">用车联系人</label></td>
+<td class="aws-form-ux-content">[#CONTACTPERSON]</td>
+</tr>
+<tr id="c8f34e32_be40_0001_5dd2_112015feb980">
+<td class="awsui-ux-title" style="padding-left: 0px;">用车单位</td>
+<td class="aws-form-ux-content">[#CONTACTUNIT]</td>
+</tr>
+<tr id="c8f28f9b_1030_0001_4e90_16b013cf1cf0">
+<td class="awsui-ux-title" style="padding-left: 0px;"><label id="CONTACTDEPTLabel" class="aws-form-ux-label" for="CONTACTDEPT">联系人部门</label></td>
+<td class="aws-form-ux-content">[#CONTACTDEPT]</td>
+</tr>
+<tr>
+<td class="awsui-ux-title" style="padding-left: 0px;"><label id="CONTACTPHONELabel" for="CONTACTPHONE" flag="labelRequired">联系人手机</label></td>
+<td class="aws-form-ux-content">[#CONTACTPHONE]</td>
+</tr>
+<tr>
+<td class="awsui-ux-title" style="padding-left: 0px;"><label id="REMARKLabel" for="REMARK">客户要求</label></td>
+<td class="aws-form-ux-content">[#REMARK]</td>
+</tr>
+<tr class="tr1">
+<td colspan="2" class="aws-form-ux-gridbg">[#Grid1]</td>
+</tr>
+</tbody>
+</table>
+</td>
+</tr>
+<tr class="aws-form-bottom">
+<td class="aws-form-ux-bottom aws-form-ux-actionsoft">[#Actionsoft]
+<div id="hiddenArea" border="0" style="display: none;">[#ORDERID][#APPLYUID][#APPLYDEPTID][#ORDERDATE][#NOTE][#ORDERSTATUS][#CONTACTDEPTID][#APPLYUNITID][#CONTACTPERSONZH][#CONTACTUNITID][#CANCELREASON]</div>
+</td>
+</tr>
+</tbody>
+</table>
+<script src="../apps/com.actionsoft.apps.form.theme.antdui/js/commom.form.js?v=1589851448822"></script>
+<script src="../apps/com.actionsoft.apps.form.theme.antdui/js/antdui.js?v=1589851448822"></script>
+<script src="../commons/js/aws.mobile.jsapi.js"></script>
+</div>
+</form>
+<script>
+AWSFormMainAPI.customCloseFormPage(function(){
+    //自己处理当前的窗口如何的代码
+    var url=localStorage.getItem("backUrl");
+    location.href=url;
+    return true;//最后返回true
+});
+</script>
+<script id="formSave">// <![CDATA[
+function formSave(isTransact){
+  	debugger;
+	var useDate = $("#BDATE").val();//预订开始日期
+  	var jssj = $("#EDATE").val();//预定结束日期
+  	var kssjDate = new Date(useDate.slice(0,16));
+    var jssjDate = new Date(jssj.slice(0,16));
+    var userCarType = ui("VEHICLETYPE");//车辆类型
+    if(useDate != ""){
+      useDate = useDate.substring(0,10);
+    }
+    var u = navigator.userAgent;
+    if(u.indexOf('iPhone') > -1){
+      useDate = useDate.replace(/\-/g, '/');
+    }  
+    var d = new Date(useDate);
+    var useTwoDate = formatDate(d);
+    var useTwoDateNew = new Date(useTwoDate);//用车的后两天日期
+    var sysDate = new Date();
+    var date = twoStr(2);
+    var sysDateNew = new Date(date);//系统当前日期
+    //alert(useDate + ","+d+","+useTwoDate+","+useTwoDateNew+","+date+","+sysDateNew);
+  	if(((userCarType == "4" || userCarType == "5") && sysDateNew.getTime() > useTwoDateNew.getTime()) && (jssjDate.getTime() <= kssjDate.getTime())){//车辆类型:4:中巴5:大巴
+      	mui.alert("您好！中巴或者大巴需提前两天预定,并且预定结束时间需要大于预定开始时间！","车辆预定");
+      	return false;
+    }else if((userCarType == "4" || userCarType == "5") && sysDateNew.getTime() > useTwoDateNew.getTime()){//车辆类型:4:中巴5:大巴
+      mui.alert("您好！中巴或者大巴需提前两天预定！","车辆预定");
+      return false;
+    }else if(jssjDate.getTime() <= kssjDate.getTime()){
+      mui.alert("您好！预定结束时间需要大于预定开始时间！","车辆预定");
+      return false;
+    }
+}
+function formatDate(date) {
+    var year = date.getFullYear();
+    var month = date.getMonth() + 1;
+    var day = date.getDate();
+    month = month < 10 ? "0" + month : month;
+    day = day < 10 ? "0" + day : day;
+    returnStr = year + "-" + month + "-" + day;
+    return returnStr;
+}
+function twoStr(n) {
+    var returnStr = "";
+    var date = new Date();      //当前时间
+    var timeStamp = date.getTime() + n * 24 * 60 * 60 * 1000;
+    date = new Date(timeStamp);
+    var year = date.getFullYear();
+    var month = date.getMonth() + 1;
+    var day = date.getDate();
+    month = month < 10 ? "0" + month : month;
+    day = day < 10 ? "0" + day : day;
+    returnStr = year + "-" + month + "-" + day;
+    return returnStr;
+}
+// ]]></script>
+<script id="formOnload">// <![CDATA[
+function formOnload(){
+ 	debugger;
+	var userTaskDefId =  $("#userTaskDefId").val();
+  	$("#BTN_SAVE").parent().hide();//隐藏表单上的保存按钮
+  	if(userTaskDefId == "obj_17e36dee86154dfda0bff2e4f6bf2cf2"){//客户预订申请
+    	$("#AWS-MobileGrid-Zone-cbbf31b3-dbe3-414c-9d09-088e0ccaa559").hide();
+      	$(".form-grid-mobile-separator").hide();
+    }
+  	setTimeout(function(){
+    	$("#BTN_CLOSE_EDITPERMISSIONS").parent().hide();
+    },0);
+}
+function changeRed() {
+    var zyzt = $("#ZYZT").val();
+    if(zyzt=="占用"){
+      zyzt.style.color="red";
+    }
+}
+// ]]></script>
+</body>
+</html>

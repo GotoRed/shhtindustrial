@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<formModel>
+    <id>8b666709-e07a-4ec0-b549-8e0c301bbc1e</id>
+    <createUser>admin</createUser>
+    <createTime>2020-05-13 19:59:46</createTime>
+    <updateUser></updateUser>
+    <updateTime>2020-05-13 19:59:46</updateTime>
+    <signature>tGOmxiTgjT/77UoYpSlq8Vc+hHPRoJWHdZexXc7zEpYuMNdhvSICeJnlc/RzRHGrWR9JoQurj9yBYTnV/1KkZTQk3bohQpeOnc0gOD7uKEq0Slqzt69xFMeHbwojGfAk</signature>
+    <managed>false</managed>
+    <title>保洁区域维护</title>
+    <deleted>false</deleted>
+    <categoryName>物业管理</categoryName>
+    <administrator>admin</administrator>
+    <defaultLanguage></defaultLanguage>
+    <url></url>
+    <urlHeight></urlHeight>
+    <formItems>
+        <formItem>
+            <id>f15fbe9d-08a7-4671-9eb6-212e3fe08c27</id>
+            <title>保洁区域维护</title>
+            <templateFile>{"tablet":"物业管理-保洁区域维护.htm","pc":"物业管理-保洁区域维护.htm","mobile":"物业管理-保洁区域维护_m.htm"}</templateFile>
+            <grid>false</grid>
+            <gridSetting></gridSetting>
+            <orderBy></orderBy>
+            <pageLimit>0</pageLimit>
+            <boModelId>8c0505cd-deb8-4dcf-b9ba-71d11c0b394a</boModelId>
+            <dictionaryFileName></dictionaryFileName>
+            <hiddenHead>false</hiddenHead>
+            <theme>{"pc":"_bpm.platform","mobile":"_bpm.platform"}</theme>
+            <itemDisplays/>
+            <scheme>{"pc":"","mobile":""}</scheme>
+            <calcFormula></calcFormula>
+            <conditionControl></conditionControl>
+            <validate></validate>
+            <icon></icon>
+            <gridControl></gridControl>
+            <summaryControl></summaryControl>
+            <ruleControl></ruleControl>
+            <hiddenFields></hiddenFields>
+            <hiddenAddBtn>false</hiddenAddBtn>
+            <verticalLayout>false</verticalLayout>
+        </formItem>
+    </formItems>
+</formModel>

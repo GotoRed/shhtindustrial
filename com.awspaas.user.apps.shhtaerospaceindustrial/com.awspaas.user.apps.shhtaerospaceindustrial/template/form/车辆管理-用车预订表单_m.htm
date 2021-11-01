@@ -1,0 +1,221 @@
+<!DOCTYPE html>
+<html>
+	<head>
+<meta name="renderer" content="webkit">
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+		<title>车辆申请</title>
+		<meta http-equiv='Content-Type' content='text/html; charset=UTF-8' />
+		<meta name="viewport" content="initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no, width=device-width">
+		
+		[#AWSImport]
+		[#AWSUIImport]
+		
+		<link rel='stylesheet' id='schemeCss' href='../apps/_bpm.platform/css/colorschemes/scheme_aws.css'  name='schemeCss'/>
+	
+      <style>
+        .mui-radio input[type='radio']:checked:before {
+            content: '\e442';
+        }
+        .mui-checkbox, .mui-radio {
+            position: relative;
+            float: left;
+        }
+        .mui-input-row {
+            clear: none;
+            overflow: hidden;
+        }
+        .awsui-address {
+            white-space: normal;
+            width: 100%;
+            border: 1px transparent;
+            border-radius: 2px;
+            padding: 1px 3px 1px!important;
+            min-height: 40px;
+            background-color: #fff;
+            position: relative;
+        }
+        .awsui-iconfont.awsui-address-btn {
+            top: 5px;
+        } 
+        .mui-card {
+            font-size: 14px;
+            position: relative;
+            overflow: hidden;
+            margin: 0px;
+            border-radius: 2px;
+            float: left;
+            background-color: #fff;
+            background-clip: padding-box;
+            box-shadow: none;
+            width: 100%;
+            text-align: left;
+            left: 0px;
+        }
+        .table-striped>tbody>tr:nth-child(even)>td, .table-striped>tbody>tr:nth-child(even)>th {
+            background-color:#fafafa!important
+        }
+        .table-striped>tbody>tr:nth-child(odd)>td, .table-striped>tbody>tr:nth-child(odd)>th {
+            background-color: #fafafa!important;
+        }
+        .form-grid-mobile-common-toolbar {
+            height: 35px;
+            line-height: 35px;
+            padding: 0 12px;
+            text-align: left;
+            background: #e4e3e3;
+        }
+        .form-grid-mobile-separator {
+            height: 0px;
+            background-color: #f8f8f8;
+        }
+      </style>
+<link type='text/css' rel='stylesheet' id='themeCss' href='../apps/_bpm.platform/css/theme/theme_m.css' name='themeCss'/>
+</head>
+	<body>
+<form id="frmMain" name="frmMain" method="post">
+<div border="0" style="display: none;">[#YCRQZ][#JSYQZ][#YCLX][#SCBDW][#SWLXRY][#CPH][#JSY][#LXR][#CX][#YCLB][#TEL][#YCSY][#YCRQ1][#YCRQ2][#CF][#DD1][#CCRS][#YCYY][#RYSX][#QTXQ][#LXRZH][#NO][#TZBZ][#PD][#EXTEND2][#XSGWYC][#NOXSGWYC][#BMLD][#SYBYJ][#SYBLD][#SLDYJ][#SLD]</div>
+<div id="aws-form-container" class="mui-scroll-wrapper mobile-main-form" border="0"><!--class="aws-form-ux-container"-->
+<table id="aws-form-maintable" class="awsui-ux aws-form-ux-maintable" style="table-layout: auto;" align="center" border="0" cellpadding="0" cellspacing="0">
+<tbody>
+<tr id="aws-form-titlebg" class="aws-form-ux-titlebg" style="display: none;">
+<td id="aws-form-title" class="aws-form-ux-header">车辆申请</td>
+</tr>
+<tr class="aws-form-ux-formcontent" id="aws-form-formcontent">
+<td class="">
+<table id="table_container" class="awsui-ux table-striped" style="padding: 0px;" width="100%" cellspacing="0" cellpadding="0"><colgroup> <col style="width: 31%;" /> <col style="width: 69%;" /> </colgroup>
+<tbody>
+<tr>
+<td class="awsui-ux-title"><label id="SQRLabel" for="SQR">申请人</label></td>
+<td class="aws-form-ux-content">[#SQR]</td>
+</tr>
+<tr>
+<td class="awsui-ux-title"><label id="SQRQLabel" for="SQRQ">申请日期</label></td>
+<td class="aws-form-ux-content">[#SQRQ]</td>
+</tr>
+<tr>
+<td class="awsui-ux-title"><label id="SQBMLabel" for="SQBM">申请部门</label></td>
+<td class="aws-form-ux-content">[#SQBM]</td>
+</tr>
+<tr>
+<td class="awsui-ux-title"><label id="SFDCPLabel" for="SFDCP">是否带密品</label></td>
+<td class="aws-form-ux-content">[#SFDCP]</td>
+</tr>
+<tr>
+<td class="awsui-ux-title"><label id="SFCSLabel" for="SFCS">是否出本市</label></td>
+<td class="aws-form-ux-content">[#SFCS]</td>
+</tr>
+<tr id="ddyqz">
+<td class="awsui-ux-title"><label id="DDQZLabel" for="DDQZ">调度签字</label></td>
+<td class="aws-form-ux-content">[#DDQZ]</td>
+</tr>
+<tr id="ddsj">
+<td class="awsui-ux-title"><label id="DDSJLabel" for="DDSJ">调度时间</label></td>
+<td class="aws-form-ux-content">[#DDSJ]</td>
+</tr>
+<tr id="pxxlph">
+<td class="awsui-ux-title"><label id="PCCPHLabel" for="PCCPH">派出车辆牌号</label></td>
+<td class="aws-form-ux-content">[#PCCPH]</td>
+</tr>
+<tr id="pcjsy">
+<td class="awsui-ux-title"><label id="PCJSYLabel" for="PCJSY">派出驾驶员</label></td>
+<td class="aws-form-ux-content">[#PCJSY]</td>
+</tr>
+<tr id="cljc">
+<td class="awsui-ux-title"><label id="CLJCLabel" for="CLJC">车辆检查</label></td>
+<td class="aws-form-ux-content">[#CLJC]</td>
+</tr>
+<tr id="ccslms">
+<td class="awsui-ux-title"><label id="CCMSLabel" for="CCMS">出车时路码数</label></td>
+<td class="aws-form-ux-content">[#CCMS]</td>
+</tr>
+<tr id="fhslms">
+<td class="awsui-ux-title"><label id="FHMSLabel" for="FHMS">返回时路码数</label></td>
+<td class="aws-form-ux-content">[#FHMS]</td>
+</tr>
+<tr id="ccsj">
+<td class="awsui-ux-title"><label id="CCSJLabel" for="CCSJ">出车时间</label></td>
+<td class="aws-form-ux-content">[#CCSJ]</td>
+</tr>
+<tr id="fhsj">
+<td class="awsui-ux-title"><label id="FHSJLabel" for="FHSJ">返回时间</label></td>
+<td class="aws-form-ux-content">[#FHSJ]</td>
+</tr>
+<tr id="lqf">
+<td class="awsui-ux-title"><label id="LQF1Label" for="LQF1">路桥费</label></td>
+<td class="aws-form-ux-content">[#LQF1]</td>
+</tr>
+<tr id="tcf">
+<td class="awsui-ux-title"><label id="TCF1Label" for="TCF1">停车费</label></td>
+<td class="aws-form-ux-content">[#TCF1]</td>
+</tr>
+<tr style="display: none;">
+<td class="awsui-ux-title"><label id="LAYERLabel" class="aws-form-ux-label" for="LAYER">部门级别</label></td>
+<td class="aws-form-ux-content">[#LAYER]</td>
+</tr>
+<tr style="display: none;">
+<td class="awsui-ux-title"><label id="SQRZHLabel" class="aws-form-ux-label" for="SQRZH">申请人账号</label></td>
+<td class="aws-form-ux-content">[#SQRZH]</td>
+</tr>
+<tr style="display: none;">
+<td class="awsui-ux-title"><label id="SQBMIDLabel" class="aws-form-ux-label" for="SQBMID">申请部门ID</label></td>
+<td class="aws-form-ux-content">[#SQBMID]</td>
+</tr>
+<tr style="display: none;">
+<td class="awsui-ux-title" colspan="2"><label id="SPZTLabel" class="aws-form-ux-label" for="SPZT">审批状态</label></td>
+<td class="aws-form-ux-content">[#SPZT]</td>
+</tr>
+<tr>
+<td class="awsui-ux-title" style="text-align: left; height: auto;"><span>用车类型</span></td>
+<td class="aws-form-ux-gridbg">[#Grid2]</td>
+</tr>
+<tr>
+<td class="awsui-ux-title" style="text-align: left; height: auto;"><span>时间地点</span></td>
+<td class="aws-form-ux-gridbg">[#Grid1]</td>
+</tr>
+<tr id="cdsj">
+<td class="awsui-ux-title" style="text-align: left; height: auto;"><span>指派用车</span></td>
+<td class="aws-form-ux-gridbg">[#Grid3]</td>
+</tr>
+<tr id="sjjd">
+<td class="awsui-ux-title" style="text-align: left; height: auto;"><span>司机接单</span></td>
+<td class="aws-form-ux-gridbg">[#Grid4]</td>
+</tr>
+</tbody>
+</table>
+</td>
+</tr>
+<tr class="aws-form-bottom">
+<td class="aws-form-ux-actionsoft">[#Actionsoft]</td>
+</tr>
+</tbody>
+</table>
+</div>
+</form>
+<script id="formOnload">
+function formOnload(){
+  	$("#ddyqz").hide();//调度签字
+    $("#ddsj").hide();//调度时间
+    $("#pxxlph").hide();//派出车辆牌号
+    $("#pcjsy").hide();//派出驾驶员
+    $("#cljc").hide();//车辆检查
+    $("#ccslms").hide();//出车时路码数
+    $("#fhslms").hide();//返回时路码数
+    $("#ccsj").hide();//出车时间
+    $("#fhsj").hide();//返回时间
+    $("#lqf").hide();//路桥费
+    $("#tcf").hide();//停车费 
+  	var userTaskDefId = $("#userTaskDefId").val();
+    if(userTaskDefId == "obj_c8e8e6565680000165a5161a1e36d7d0"){//制单、公务用车审核、科研生产用车审核、所领导审批
+    	$("#cdsj").hide();//车队司机
+      	$("#sjjd").hide();//司机接单
+    }else if(userTaskDefId == "obj_c8e8e65863100001521014901b501030"){//车队调度
+    	$("#cdsj").show();//车队司机
+      	$("#sjjd").hide();//司机接单
+    }else if(userTaskDefId == "obj_c8e8e659105000012472140055004d30"){//司机
+    	$("#cdsj").show();//车队司机
+      	$("#sjjd").show();//司机接单
+    }
+}
+</script>
+</body>
+</html>

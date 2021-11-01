@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<formModel>
+    <id>f57eca6b-17e4-4e37-bc00-4975f9cc1711</id>
+    <createUser>admin</createUser>
+    <createTime>2020-05-29 13:02:23</createTime>
+    <updateUser></updateUser>
+    <updateTime>2020-05-29 13:02:23</updateTime>
+    <signature>tGOmxiTgjT/77UoYpSlq8Vc+hHPRoJWHdZexXc7zEpYuMNdhvSICeJnlc/RzRHGrpA96ukWcXpetjoYZApkhKOJpBvmRXCU5pOInGmBhavGCrQq9D69SMElwo8F/njuE</signature>
+    <managed>false</managed>
+    <title>上航_车辆档案</title>
+    <deleted>false</deleted>
+    <categoryName>预订管理</categoryName>
+    <administrator>admin</administrator>
+    <defaultLanguage></defaultLanguage>
+    <url></url>
+    <urlHeight></urlHeight>
+    <formItems>
+        <formItem>
+            <id>86708b95-cf70-459f-aabe-baede346ccfa</id>
+            <title>上航_车辆档案</title>
+            <templateFile>{"tablet":"预订管理-上航_车辆档案.htm","pc":"预订管理-上航_车辆档案.htm","mobile":"预订管理-上航_车辆档案_m.htm"}</templateFile>
+            <grid>false</grid>
+            <gridSetting></gridSetting>
+            <orderBy></orderBy>
+            <pageLimit>0</pageLimit>
+            <boModelId>d5f79de5-3b69-4778-a626-5f9915c2269f</boModelId>
+            <dictionaryFileName></dictionaryFileName>
+            <hiddenHead>false</hiddenHead>
+            <theme>{"pc":"_bpm.platform"}</theme>
+            <itemDisplays/>
+            <scheme>{}</scheme>
+            <calcFormula></calcFormula>
+            <conditionControl></conditionControl>
+            <validate></validate>
+            <icon></icon>
+            <gridControl></gridControl>
+            <summaryControl></summaryControl>
+            <ruleControl></ruleControl>
+            <hiddenFields></hiddenFields>
+            <hiddenAddBtn>false</hiddenAddBtn>
+            <verticalLayout>false</verticalLayout>
+        </formItem>
+    </formItems>
+</formModel>

@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<formModel>
+    <id>c92a8656-26bb-4445-bacb-51db7bcece4d</id>
+    <createUser>admin</createUser>
+    <createTime>2020-05-19 09:13:52</createTime>
+    <updateUser></updateUser>
+    <updateTime>2020-05-19 09:13:52</updateTime>
+    <signature>tGOmxiTgjT/77UoYpSlq8Vc+hHPRoJWHdZexXc7zEpYuMNdhvSICeJnlc/RzRHGrj+SI6wmQ9QIJUMyvzaC7piQ77pBzF/lIdNJA1jkpB/lz+mEY3++3fi40mc+hgIA6</signature>
+    <managed>false</managed>
+    <title>会议室表单</title>
+    <deleted>false</deleted>
+    <categoryName>会议管理</categoryName>
+    <administrator>admin</administrator>
+    <defaultLanguage></defaultLanguage>
+    <url></url>
+    <urlHeight></urlHeight>
+    <formItems>
+        <formItem>
+            <id>965e6829-8cf4-4da1-b198-a3a640330c9a</id>
+            <title>会议室表单</title>
+            <templateFile>{"tablet":"会议管理-会议室表单.htm","pc":"会议管理-会议室表单.htm","mobile":"会议管理-会议室表单_m.htm"}</templateFile>
+            <grid>false</grid>
+            <gridSetting></gridSetting>
+            <orderBy></orderBy>
+            <pageLimit>0</pageLimit>
+            <boModelId>56c0d5ab-201a-4351-878c-f1716c47a0f9</boModelId>
+            <dictionaryFileName></dictionaryFileName>
+            <hiddenHead>false</hiddenHead>
+            <theme>{"pc":"_bpm.platform","mobile":"_bpm.platform"}</theme>
+            <itemDisplays/>
+            <scheme>{"pc":"","mobile":""}</scheme>
+            <calcFormula></calcFormula>
+            <conditionControl></conditionControl>
+            <validate></validate>
+            <icon></icon>
+            <gridControl></gridControl>
+            <summaryControl></summaryControl>
+            <ruleControl></ruleControl>
+            <hiddenFields></hiddenFields>
+            <hiddenAddBtn>false</hiddenAddBtn>
+            <verticalLayout>false</verticalLayout>
+        </formItem>
+    </formItems>
+</formModel>

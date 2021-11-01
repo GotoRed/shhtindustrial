@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<AWSDWModel>
+    <id>obj_3ed5b4032bbb43708439ea0cf94590bc</id>
+    <createUser>admin</createUser>
+    <createTime>2020-05-15 15:37:24</createTime>
+    <updateUser></updateUser>
+    <updateTime>2020-05-15 15:37:24</updateTime>
+    <signature>tGOmxiTgjT/77UoYpSlq8Vc+hHPRoJWHdZexXc7zEpYuMNdhvSICeJnlc/RzRHGrE5vZ+Y9XSCrkmJoeybspHuN1vywb0p1H39Fz2Kk7SdF0VeUKvjGhaFLVnmvF4s2g</signature>
+    <managed>false</managed>
+    <processGroupId>obj_3ed5b4032bbb43708439ea0cf94590bc</processGroupId>
+    <processGroupName>物业迁出记录</processGroupName>
+    <categoryName>未分类</categoryName>
+    <dwType>1</dwType>
+    <processAdministrator></processAdministrator>
+    <title id="obj_86d20dcca9f5485bb479672da742fa92" label="物业迁出记录" extendcode="" event=""/>
+    <userextendbuttons/>
+    <userextendbehaviors/>
+    <iconFontCode></iconFontCode>
+    <iconFontColor></iconFontColor>
+</AWSDWModel>

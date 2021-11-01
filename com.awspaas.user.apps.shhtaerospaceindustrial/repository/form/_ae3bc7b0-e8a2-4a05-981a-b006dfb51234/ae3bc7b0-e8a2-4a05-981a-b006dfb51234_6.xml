@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<formModel>
+    <id>ae3bc7b0-e8a2-4a05-981a-b006dfb51234</id>
+    <createUser>admin</createUser>
+    <createTime>2020-05-14 20:22:50</createTime>
+    <updateUser></updateUser>
+    <updateTime>2020-05-14 20:22:50</updateTime>
+    <signature>tGOmxiTgjT/77UoYpSlq8Vc+hHPRoJWHdZexXc7zEpYuMNdhvSICeJnlc/RzRHGrOrO2SvhjJNa5MmDfYa3UmiDsRWIL+OjB6qBFl4ClCa0N0Dz3cSoeqitRIKyf3nxN</signature>
+    <managed>false</managed>
+    <title>绿化区域</title>
+    <deleted>false</deleted>
+    <categoryName>物业管理</categoryName>
+    <administrator>admin</administrator>
+    <defaultLanguage></defaultLanguage>
+    <url></url>
+    <urlHeight></urlHeight>
+    <formItems>
+        <formItem>
+            <id>472788bf-ee3d-474e-9a2d-c52f94678f52</id>
+            <title>绿化区域</title>
+            <templateFile>{"tablet":"物业管理-绿化区域.htm","pc":"物业管理-绿化区域.htm","mobile":"物业管理-绿化区域_m.htm"}</templateFile>
+            <grid>false</grid>
+            <gridSetting></gridSetting>
+            <orderBy></orderBy>
+            <pageLimit>0</pageLimit>
+            <boModelId>2a646fb9-6521-4627-91c3-35da8054b5a4</boModelId>
+            <dictionaryFileName></dictionaryFileName>
+            <hiddenHead>false</hiddenHead>
+            <theme>{"pc":"com.actionsoft.apps.form.theme.antdui","mobile":"com.actionsoft.apps.form.theme.antdui"}</theme>
+            <itemDisplays/>
+            <scheme>{}</scheme>
+            <calcFormula></calcFormula>
+            <conditionControl></conditionControl>
+            <validate></validate>
+            <icon></icon>
+            <gridControl></gridControl>
+            <summaryControl></summaryControl>
+            <ruleControl></ruleControl>
+            <hiddenFields></hiddenFields>
+            <hiddenAddBtn>false</hiddenAddBtn>
+            <verticalLayout>false</verticalLayout>
+        </formItem>
+    </formItems>
+</formModel>

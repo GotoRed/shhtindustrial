@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<boModel>
+    <id>0e375017-0def-490b-b40e-3de77b14de5a</id>
+    <createUser>admin</createUser>
+    <createTime>2020-05-18 17:13:57</createTime>
+    <updateUser></updateUser>
+    <updateTime>2020-05-18 17:13:57</updateTime>
+    <signature>tGOmxiTgjT/77UoYpSlq8Vc+hHPRoJWHdZexXc7zEpYuMNdhvSICeJnlc/RzRHGrTz4Rwr87ODu036aUEBAFbSCk0qkGkpmBCIiACvEmect652NrvvkUiZCzK0/POagZ</signature>
+    <managed>false</managed>
+    <title>上航_客服管理维修物料库存信息</title>
+    <name>BO_EU_SH_MAT_STORAGE</name>
+    <collection>false</collection>
+    <system>false</system>
+    <deleted>false</deleted>
+    <categoryName>客服管理</categoryName>
+    <administrator>admin</administrator>
+    <entityType>TABLE</entityType>
+    <viewType></viewType>
+    <viewSql></viewSql>
+    <securityLevel>0</securityLevel>
+    <target>_local</target>
+    <itemProps></itemProps>
+    <boItems/>
+    <boIndexs>
+        <boIndex>
+            <id>19c873a5-8d23-4fd9-a8fc-feb69d105186</id>
+            <name></name>
+            <type>INDEX</type>
+            <boItems>BINDID</boItems>
+        </boIndex>
+    </boIndexs>
+    <boRelations/>
+    <hashFields></hashFields>
+</boModel>

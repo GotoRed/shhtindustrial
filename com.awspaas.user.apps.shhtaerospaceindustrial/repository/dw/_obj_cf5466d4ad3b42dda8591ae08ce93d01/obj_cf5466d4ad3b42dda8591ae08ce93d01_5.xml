@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<AWSDWModel>
+    <id>obj_cf5466d4ad3b42dda8591ae08ce93d01</id>
+    <createUser>admin</createUser>
+    <createTime>2020-05-19 08:23:11</createTime>
+    <updateUser>admin</updateUser>
+    <updateTime>2020-05-19 08:36:19</updateTime>
+    <signature>tGOmxiTgjT/77UoYpSlq8Vc+hHPRoJWHdZexXc7zEpYuMNdhvSICeJnlc/RzRHGrn22rUiSLiF7gLgDWIX4zZ99dJpBxTfRjZit+ZJSqFKnpo67BboNaMrikF5GX1z/f</signature>
+    <managed>false</managed>
+    <processGroupId>obj_cf5466d4ad3b42dda8591ae08ce93d01</processGroupId>
+    <processGroupName>上航维修物料库存</processGroupName>
+    <categoryName>客服管理</categoryName>
+    <dwType>1</dwType>
+    <processAdministrator>admin</processAdministrator>
+    <title id="obj_b1458b90a1dc43d9b2535b8e571a9329" label="上航维修物料库存" extendcode="" event=""/>
+    <dataView id="obj_3d67e00e2f0b48058ab53f983cfac3ec" label="首页" showType="link" orderIndex="0" dwReportType="1" isDefault="false" category="普通视图" implClassName="com.actionsoft.bpms.dw.design.dataview.CommonDataView" security="" event="" url="" userExtendJs="" show="true">
+        <showHighSecurity>false</showHighSecurity>
+        <dataParams>%7B%22dataMode%22%3A%7B%22pc%22%3A%7B%22type%22%3A%22table%22%7D%2C%22mobile%22%3A%7B%22type%22%3A%22list%22%2C%22template%22%3A%22%3Cdiv%20class%3D%5C%22awsui-grid-data%5C%22%3E%5Cn%5Ct%3Cdiv%20class%3D%5C%22awsui-grid-content%5C%22%20rowBehavior%3D%5C%22true%5C%22%3E%5Cn%5Ct%5Ct%3Cdiv%20class%3D%5C%22awsui-grid-column%5C%22%3E%5Cn%5Ct%5Ct%5Ct%3Cdiv%20class%3D%5C%22awsui-grid-left%20awsui-grid-title%20awsui-grid-ellipsis%5C%22%20dataIndx%3D%5C%22TITLECOLUMN%5C%22%3E%5B%23TITLECOLUMN%5D%3C/div%3E%5Cn%5Ct%5Ct%5Ct%3Cdiv%20class%3D%5C%22awsui-grid-right%20awsui-grid-subsidiary1%5C%22%20dataIndx%3D%5C%22DATECOLUMN%5C%22%3E%5B%23DATECOLUMN%5D%3C/div%3E%5Cn%5Ct%5Ct%3C/div%3E%5Cn%5Ct%5Ct%3Cdiv%20class%3D%5C%22awsui-grid-column%5C%22%20dataIndx%3D%5C%22CONTENTCOLUMN%5C%22%3E%5B%23CONTENTCOLUMN%5D%3C/div%3E%5Cn%5Ct%5Ct%3Cdiv%20class%3D%5C%22awsui-grid-column%20awsui-grid-bottom%5C%22%3E%5Cn%5Ct%5Ct%5Ct%3Cdiv%20class%3D%5C%22awsui-grid-subsidiary2%5C%22%20dataIndx%3D%5C%22SUBCOLUMN%5C%22%3E%5B%23SUBCOLUMN%5D%3C/div%3E%5Cn%5Ct%5Ct%3C/div%3E%5Cn%5Ct%3C/div%3E%5Cn%5Ct%3Cdiv%20class%3D%5C%22awsui-grid-toolbar%5C%22%3E%5Cn%5Ct%5Ct%3Cspan%20class%3D%5C%22awsui-iconfont%20more%5C%22%20toolbar%3D%5C%22true%5C%22%3E%26%23xe719%3B%3C/span%3E%5Cn%5Ct%3C/div%3E%5Cn%3C/div%3E%22%7D%7D%7D</dataParams>
+        <layoutECategoryType></layoutECategoryType>
+        <layoutECategoryTypeLast></layoutECategoryTypeLast>
+        <afterLoadEventCall></afterLoadEventCall>
+        <afterLoadEventScript></afterLoadEventScript>
+        <toolbar id="obj_04cba7bfe5f74363884e1fc859ecca67" isshow="true" extendcode="" event="">
+            <button id="obj_3998141f911e4121aa3b184813d50deb" refbuttonid="save" cls="" security="" isshow="true" orderindex="1" mobileShow="false" event="" selectShow="false"/>
+            <button id="obj_596c017aa8724f2eb0308a48e92dce97" refbuttonid="new" cls="" security="" isshow="true" orderindex="2" mobileShow="false" event="" selectShow="false"/>
+            <button id="obj_fbb4b4cb79b442c8867a6e1e3cdb9300" refbuttonid="delete" cls="" security="" isshow="false" orderindex="3" mobileShow="false" event="" selectShow="true"/>
+            <button id="obj_f809743aa165440aaaa33f0e462e3090" refbuttonid="print" cls="" security="" isshow="true" orderindex="4" mobileShow="false" event="" selectShow="false"/>
+            <button id="obj_3d26ac3f332f450cbcc6f163665e826a" refbuttonid="refresh" cls="" security="" isshow="true" orderindex="5" mobileShow="false" event="" selectShow="false"/>
+            <button id="obj_25d87ece932746abbca5ed66b034e8cc" refbuttonid="exportDWData" cls="" security="" isshow="false" orderindex="6" mobileShow="false" event="" selectShow="false"/>
+        </toolbar>
+        <searcher id="obj_6d6f99dc51034a4eb00f70f762b778fa" isshow="true" layoutType="tile" tdGroup="3" textCls="" dwLeftCls="" dwRightCls="" extendcode="" event="" xconditionEvent="" tileOpen="false">
+            <likecondition id="obj_3b517c97ba99493abc683881a68af2cb" field="MATNAME" extend1="" label="材料名称" comparetype="like" uiname="TEXT" relationship="" uidefault="" uicomponent="文本" uiref="" security="" orderindex="1" event=""/>
+        </searcher>
+        <navTree id="obj_e958bd8d5c674b2db734c98fda800c86" isshow="false" type="" rootcls="" leafcls="" ismultiple="false" isexpanded="true" orderindex="" event=""/>
+        <layout id="obj_5530c839c148472ea4722dfc117189e3" label="" classname="com.actionsoft.bpms.dw.exec.layout.LayoutA" event=""/>
+        <datagrid id="obj_178ffba080f24356b637fc44db28bfe6" isshow="true" autoSearch="true" customSet="true" select="false" datasource="sql:select * from BO_EU_SH_MAT_STORAGE where ??? order by matname" countSql="select count(1) from BO_EU_SH_MAT_STORAGE where ???" pagesize="15" event="" rowDefHeight="25" showCheckBox="true" ismultiple="true" isshownumbercol="true" numberCellTotal="false" shownumbercolwidth="40" freezeCols="0" wrap="true" nowrapTitle="false" refbehaviorid="%7B%22behavior%22%3A%22openform%22%2C%22behaviorMobile%22%3A%22%22%2C%22target%22%3A%22side%22%2C%22title%22%3A%22%u7EF4%u4FEE%u7269%u6599%u5E93%u5B58%u7EF4%u62A4%22%2C%22w%22%3A%22%22%2C%22h%22%3A%22%22%2C%22sw%22%3A%22%22%2C%22isMask%22%3A0%2C%22ih%22%3A%22%22%7D" behaviortarget="side" behaviorConfig="%7B%22behavior%22%3A%22openform%22%2C%22behaviorMobile%22%3A%22%22%2C%22target%22%3A%22side%22%2C%22title%22%3A%22%u7EF4%u4FEE%u7269%u6599%u5E93%u5B58%u7EF4%u62A4%22%2C%22w%22%3A%22%22%2C%22h%22%3A%22%22%2C%22sw%22%3A%22%22%2C%22isMask%22%3A0%2C%22ih%22%3A%22%22%7D" extendsql="" identifier="ID" extend1="" multiHeader="%5B%22%3C%23MATNAME%3E%22%2C%22%3C%23MATMODEL%3E%22%2C%22%3C%23MATUNIT%3E%22%2C%22%3C%23MATPRICE%3E%22%2C%7B%22title%22%3A%22%u6570%u91CF%22%2C%22align%22%3A%22center%22%2C%22colModel%22%3A%5B%22%3C%23MATQUANTITY%3E%22%2C%22%3C%23MATUSED%3E%22%5D%7D%2C%22%3C%23ISUSE%3E%22%5D">
+            <dataBaseConn>local</dataBaseConn>
+            <column id="obj_7859cc0d8d494c548ad4d152c1868f3e" sort="" isfilter="false" bgcolor="" fontcolor="" fontsize="12px" width="150px" colALias="" colTableAlias="" colTable="BO_EU_SH_MAT_STORAGE" length="" required="0" align="left" showrule="" upshowrule="" upDataClassName="" extend1="" extend2="" security="" securityLevel="0" event="" field="MATNAME" label="材料名称" orderindex="0" colbehaviortarget="" ishidden="false" export="true" backHide="false" isusedvalue="false" tableheadsort="false" colrefbehaviorid="" columnAction="" datatype="TEXT" handleType="0" boType="" count="false"/>
+            <column id="obj_b134fe7afc594d29805f9bd3c943dded" sort="" isfilter="false" bgcolor="" fontcolor="" fontsize="12px" width="150px" colALias="" colTableAlias="" colTable="BO_EU_SH_MAT_STORAGE" length="" required="0" align="left" showrule="" upshowrule="" upDataClassName="" extend1="" extend2="" security="" securityLevel="0" event="" field="MATMODEL" label="型号/规格" orderindex="1" colbehaviortarget="" ishidden="false" export="true" backHide="false" isusedvalue="false" tableheadsort="false" colrefbehaviorid="" columnAction="" datatype="TEXT" handleType="0" boType="" count="false"/>
+            <column id="obj_c3402f66ff964390abb17c07310601fc" sort="" isfilter="false" bgcolor="" fontcolor="" fontsize="12px" width="150px" colALias="" colTableAlias="" colTable="BO_EU_SH_MAT_STORAGE" length="" required="0" align="left" showrule="" upshowrule="" upDataClassName="" extend1="" extend2="" security="" securityLevel="0" event="" field="MATUNIT" label="材料单位" orderindex="2" colbehaviortarget="" ishidden="false" export="true" backHide="false" isusedvalue="false" tableheadsort="false" colrefbehaviorid="" columnAction="" datatype="TEXT" handleType="0" boType="" count="false"/>
+            <column id="obj_ae8b66fcb660480698bf49bdf445f9e8" sort="" isfilter="false" bgcolor="" fontcolor="" fontsize="12px" width="80px" colALias="" colTableAlias="" colTable="BO_EU_SH_MAT_STORAGE" length="" required="0" align="right" showrule="" upshowrule="" upDataClassName="" extend1="" extend2="" security="" securityLevel="0" event="" field="MATPRICE" label="材料单价" orderindex="3" colbehaviortarget="" ishidden="false" export="true" backHide="false" isusedvalue="false" tableheadsort="false" colrefbehaviorid="" columnAction="" datatype="NUMBER" handleType="0" boType="" count="false"/>
+            <column id="obj_748be6a643154f87a57ec819bad516db" sort="" isfilter="false" bgcolor="" fontcolor="" fontsize="12px" width="80px" colALias="" colTableAlias="" colTable="BO_EU_SH_MAT_STORAGE" length="" required="0" align="right" showrule="" upshowrule="" upDataClassName="" extend1="" extend2="" security="" securityLevel="0" event="" field="MATQUANTITY" label="材料库存数" orderindex="4" colbehaviortarget="" ishidden="false" export="true" backHide="false" isusedvalue="false" tableheadsort="false" colrefbehaviorid="" columnAction="" datatype="NUMBER" handleType="0" boType="" count="false"/>
+            <column id="obj_a6fb70cb5f4f45ad9d18b0ef43510531" sort="" isfilter="false" bgcolor="" fontcolor="" fontsize="12px" width="80px" colALias="" colTableAlias="" colTable="BO_EU_SH_MAT_STORAGE" length="" required="0" align="right" showrule="" upshowrule="" upDataClassName="" extend1="" extend2="" security="" securityLevel="0" event="" field="MATUSED" label="历史已用数量" orderindex="5" colbehaviortarget="" ishidden="false" export="true" backHide="false" isusedvalue="false" tableheadsort="false" colrefbehaviorid="" columnAction="" datatype="NUMBER" handleType="0" boType="" count="false"/>
+            <column id="obj_ec67363a8b3341958049b16f82fef987" sort="" isfilter="false" bgcolor="" fontcolor="" fontsize="12px" width="150px" colALias="" colTableAlias="" colTable="BO_EU_SH_MAT_STORAGE" length="" required="0" align="left" showrule="" upshowrule="" upDataClassName="" extend1="" extend2="" security="" securityLevel="0" event="" field="MATID" label="材料ID" orderindex="6" colbehaviortarget="" ishidden="true" export="true" backHide="false" isusedvalue="false" tableheadsort="false" colrefbehaviorid="" columnAction="" datatype="TEXT" handleType="0" boType="" count="false"/>
+            <column id="obj_fa6e8c34b1bc4710889ce7b6f740ecef" sort="" isfilter="false" bgcolor="" fontcolor="" fontsize="12px" width="150px" colALias="" colTableAlias="" colTable="BO_EU_SH_MAT_STORAGE" length="" required="0" align="left" showrule="" upshowrule="" upDataClassName="" extend1="" extend2="" security="" securityLevel="0" event="" field="ISUSE" label="是否在用" orderindex="7" colbehaviortarget="" ishidden="false" export="true" backHide="false" isusedvalue="false" tableheadsort="false" colrefbehaviorid="" columnAction="" datatype="TEXT" handleType="0" boType="" count="false"/>
+            <dynamicRule></dynamicRule>
+        </datagrid>
+        <reportSetting></reportSetting>
+        <chartSetting></chartSetting>
+    </dataView>
+    <userextendbuttons/>
+    <userextendbehaviors/>
+    <iconFontCode></iconFontCode>
+    <iconFontColor></iconFontColor>
+</AWSDWModel>

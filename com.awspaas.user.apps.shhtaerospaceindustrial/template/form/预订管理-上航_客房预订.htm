@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html>
+	<head>
+<meta name="renderer" content="webkit">
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+		<title>上航_客房预订</title>
+		<!--字段背景风格App模板-->
+		<meta http-equiv='Content-Type' content='text/html; charset=UTF-8' />
+		
+		[#AWSImport]
+		[#AWSUIImport]
+		
+		
+		<link rel='stylesheet' id='schemeCss' href='../apps/_bpm.platform/css/colorschemes/scheme_aws.css'  name='schemeCss'/>
+	
+<link type='text/css' rel='stylesheet' id='themeCss' href='../apps/com.actionsoft.apps.form.theme.fieldbg/css/theme/theme.css' name='themeCss'/>
+</head>
+	<body>
+<form id="frmMain" name="frmMain" method="post">
+<div id="aws-form-container" class="aws-form-ux-container" border="0">
+<table id="aws-form-maintable" class="awsui-ux aws-form-ux-maintable" align="center" border="0" cellpadding="0" cellspacing="0">
+<tbody>
+<tr id="aws-form-titlebg" class="aws-form-ux-titlebg">
+<td id="aws-form-title" class="aws-form-ux-header">上航_客房预订</td>
+</tr>
+<!--每个模板必须含有aws-form-ux-formcontent样式  否则无法应用配色风格-->
+<tr class="aws-form-ux-formcontent" id="aws-form-formcontent">
+<td>
+<table id="table_container" class="awsui-ux" width="100%" cellspacing="0" border="1" cellpadding="0"><colgroup><col class="awsui-ux-title" /><col style="width: 50.0%;" /><col class="awsui-ux-title" /><col style="width: 50.0%;" /></colgroup>
+<tbody>
+<tr>
+<td class="awsui-ux-title"><label class="aws-form-ux-label" for="APPLYPHONE">经办人电话</label></td>
+<td class="aws-form-ux-content">[#APPLYPHONE]</td>
+<td class="awsui-ux-title"><label for="PERSONNUM" class="aws-form-ux-label">入住人数</label></td>
+<td class="aws-form-ux-content">[#PERSONNUM]</td>
+</tr>
+<tr>
+<td class="awsui-ux-title"><label for="ROOMTYPE" class="aws-form-ux-label">客房类型</label></td>
+<td class="aws-form-ux-content">[#ROOMTYPE]</td>
+<td class="awsui-ux-title"><label class="aws-form-ux-label" for="BREAKFASTTYPE">含早类型</label></td>
+<td class="aws-form-ux-content">[#BREAKFASTTYPE]</td>
+</tr>
+<tr>
+<td class="awsui-ux-title"><label class="aws-form-ux-label" for="ORDERNUM">客房数量</label></td>
+<td class="aws-form-ux-content">[#ORDERNUM]</td>
+<td class="awsui-ux-title"><label for="ROOMUINTPRICE" class="aws-form-ux-label">客房单价</label></td>
+<td class="aws-form-ux-content">[#ROOMUINTPRICE]</td>
+</tr>
+<tr>
+<td class="awsui-ux-title"><label for="GUESTID" class="aws-form-ux-label">宾客姓名</label></td>
+<td class="aws-form-ux-content">[#GUESTID]</td>
+<td class="awsui-ux-title"><label for="GUESTPHONE" class="aws-form-ux-label">宾客电话</label></td>
+<td class="aws-form-ux-content">[#GUESTPHONE]</td>
+</tr>
+<tr>
+<td class="awsui-ux-title"><label class="aws-form-ux-label" for="BDATE">抵店日期</label></td>
+<td class="aws-form-ux-content">[#BDATE]</td>
+<td class="awsui-ux-title"><label for="EDATE" class="aws-form-ux-label">离店日期</label></td>
+<td class="aws-form-ux-content">[#EDATE]</td>
+</tr>
+<tr>
+<td class="awsui-ux-title"><label class="aws-form-ux-label" for="REMARK">客户要求</label></td>
+<td colspan="3" class="aws-form-ux-content colspan_3">[#REMARK]</td>
+</tr>
+<tr>
+<td class="awsui-ux-title"><label id="ORDERSTATUSLabel" class="aws-form-ux-label" for="ORDERSTATUS">订单状态</label></td>
+<td class="aws-form-ux-content">[#ORDERSTATUS]</td>
+<td class="awsui-ux-title">&nbsp;</td>
+<td class="aws-form-ux-content">&nbsp;</td>
+</tr>
+<tr>
+<td colspan="4" class="aws-form-ux-gridbg">
+<div class="aws-form-ux-grid" border="0">[#Grid1]</div>
+</td>
+</tr>
+</tbody>
+</table>
+</td>
+</tr>
+<tr id="aws-form-bottom">
+<td class="aws-form-ux-bottom aws-form-ux-actionsoft">[#Actionsoft]
+<div id="hiddenArea" border="0" style="display: none;">[#ORDERID][#APPLYUID][#APPLYDEPTID][#ORDERDATE][#ORDERTIME]</div>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+</form>
+<script id="formOnload">
+function formOnload(){
+ 	ui("ROOMTYPE","7e8d3e73-d610-4920-9c95-784bb5143e39");
+}
+</script>
+</body>
+</html>

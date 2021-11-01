@@ -1,0 +1,700 @@
+<!DOCTYPE html>
+<html>
+	<head>
+<meta name="renderer" content="webkit">
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+		<meta name="renderer" content="webkit">
+		<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+		<!--[if IE]>
+		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+		<![endif]-->
+		<title>[i18n#会议邀请]</title>
+		<meta http-equiv='Content-Type' content='text/html; charset=UTF-8' />
+		<meta name="viewport" content="initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no, width=device-width">
+		[#AWSImport]
+		[#AWSUIImport]
+		<link rel='stylesheet' id='schemeCss' href='../apps/_bpm.platform/css/colorschemes/scheme_aws.css'  name='schemeCss'/>
+		
+	
+	
+<style>
+	table.tab{
+	    margin: 5px auto;
+	    border: 1px solid #f9f9f9;
+	    width: 98% !important;
+        box-shadow: 1px 1px 3px #ccc;
+	}
+	.container_title {
+	    font-size: 21px;
+	    color: #169953;
+	    font-weight: 700;
+	    padding: 8px;
+	    margin: 0px auto;
+	}
+	td.ux-title{
+		text-align:left;
+		padding-right: 5px;
+	}
+	#HYNR{
+		height: 50px !important;
+	}
+	.mui-slider .mui-slider-group .mui-slider-item img {
+		width: 100%;
+		height: 260px;
+		border:0px;
+	}
+	
+</style>
+<link type='text/css' rel='stylesheet' id='themeCss' href='../apps/_bpm.platform/css/theme/theme_m.css' name='themeCss'/>
+</head>
+	<body>
+<form id="frmMain" method="post" name="frmMain">
+<div id="aws-form-container" class="mui-scroll-wrapper mobile-main-form" border="0"><!--class="aws-form-ux-container"-->
+<table id="aws-form-maintable" class="awsui-ux aws-form-ux-maintable" style="table-layout: auto;" align="center" border="0" cellpadding="0" cellspacing="0">
+<tbody>
+<tr id="aws-form-titlebg" class="aws-form-ux-titlebg" style="display: none;">
+<td id="aws-form-title" class="aws-form-ux-header">会议申请</td>
+</tr>
+<tr class="aws-form-ux-formcontent" id="aws-form-formcontent">
+<td>
+<table id="table_container" class="awsui-ux table-striped tab" style="padding: 0px;" width="100%" cellspacing="0" cellpadding="0">
+<tbody>
+<tr>
+<td style="padding: 0px; white-space: normal;" colspan="2">
+<div class="bgBlock" border="0" style="width: 100%; background: #FFFFFF;">
+<div class="bgBlockContent" border="0">
+<div class="container_title" border="0">会议申请</div>
+<div class="shadow_panel" border="0">
+<table id="table_container" class="awsui-ux table-striped" style="padding: 0px;"><colgroup> <col class="awsui-ux-title" /> <col style="width: 100%;" /> </colgroup>
+<tbody>
+<tr>
+<td class="awsui-ux-title ux-title"><label id="SQRLabel" for="SQR">申请人</label></td>
+<td class="aws-form-ux-content">[#SQBM]/[#SQR]/[#SQRQ]</td>
+</tr>
+<tr>
+<td class="awsui-ux-title ux-title"><label id="SFSNHYLabel" for="SFSNHY">是否所内会议</label></td>
+<td class="aws-form-ux-content">[#SFSNHY]</td>
+</tr>
+<tr>
+<td class="awsui-ux-title ux-title"><label id="BDATESTRLabel" for="BDATESTR">开始时间</label></td>
+<td class="aws-form-ux-content">[#BDATESTR]</td>
+</tr>
+<tr>
+<td class="awsui-ux-title ux-title"><label id="EDATESTRLabel" for="EDATESTR">结束时间</label></td>
+<td class="aws-form-ux-content">[#EDATESTR]</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+</div>
+</td>
+</tr>
+</tbody>
+</table>
+<table id="table_container" class="awsui-ux table-striped tab" style="padding: 0px;" width="100%" cellspacing="0" cellpadding="0">
+<tbody>
+<tr>
+<td style="padding: 0px; white-space: normal;" colspan="2">
+<div class="bgBlock" border="0" style="width: 100%; background: #FFFFFF;">
+<div class="bgBlockContent" border="0">
+<div class="container_title" border="0">会议室信息</div>
+<div class="shadow_panel" border="0">
+<table id="table_container" class="awsui-ux table-striped" style="padding: 0px;"><colgroup> <col class="awsui-ux-title" /> <col style="width: 100%;" /> </colgroup>
+<tbody>
+<tr id="hysmc" style="display: none;">
+<td class="awsui-ux-title ux-title"><label id="ROOMNAMELabel" for="ROOMNAME">会议室名称</label></td>
+<td class="aws-form-ux-content">[#ROOMNAME]</td>
+</tr>
+<tr id="hysdd" style="display: none;">
+<td class="awsui-ux-title ux-title"><label id="SWHYDDLabel" for="SWHYDD">会议室地点</label></td>
+<td class="aws-form-ux-content">[#SWHYDD]</td>
+</tr>
+<tr id="sfytyy">
+<td class="awsui-ux-title ux-title"><label id="SFYTYYLabel" for="SFYTYY">是否有投影仪</label></td>
+<td class="aws-form-ux-content">[#SFYTYY]</td>
+</tr>
+<tr>
+<td class="awsui-ux-title ux-title"><label id="SUBJECTLabel" for="SUBJECT">会议主题</label></td>
+<td class="aws-form-ux-content">[#SUBJECT]</td>
+</tr>
+<tr>
+<td class="awsui-ux-title ux-title"><label id="HYNRLabel" for="HYNR">会议内容</label></td>
+<td class="aws-form-ux-content">[#HYNR]</td>
+</tr>
+<tr>
+<td class="awsui-ux-title ux-title"><label id="CJRYLabel" for="CJRY">参加人员</label></td>
+<td class="aws-form-ux-content" for="CJRY">[#CJRY]</td>
+</tr>
+<tr style="height: 80px !important;">
+<td class="awsui-ux-title ux-title"><label id="SWRYLabel" for="SWRY">所外人员</label></td>
+<td class="aws-form-ux-content" for="SWRY">[#SWRY]</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+</div>
+</td>
+</tr>
+<tr id="trmui" style="display: none;">
+<td style="padding: 0px; white-space: normal;" colspan="2">
+<div id="slider" class="mui-slider" border="0">
+<div id="awsslider" class="mui-slider-group mui-slider-loop" border="0"></div>
+<div id="awsindicator" class="mui-slider-indicator" border="0"></div>
+</div>
+</td>
+</tr>
+</tbody>
+</table>
+<table id="table_container" class="awsui-ux table-striped tab" style="padding: 0px;" width="100%" cellspacing="0" cellpadding="0"><colgroup> <col style="width: 31%;" /> <col style="width: 69%;" /> </colgroup>
+<tbody>
+<tr style="display: none;">
+<td class="awsui-ux-title"><label id="ROOMIDLabel" class="aws-form-ux-label" for="ROOMID">会议室编号</label></td>
+<td class="aws-form-ux-content">[#ROOMID]</td>
+</tr>
+<tr style="display: none;">
+<td class="awsui-ux-title"><label id="BDATELabel" class="aws-form-ux-label" for="BDATE">会议开始时间</label></td>
+<td class="aws-form-ux-content">[#BDATE]</td>
+</tr>
+<tr style="display: none;">
+<td class="awsui-ux-title"><label id="EDATELabel" class="aws-form-ux-label" for="EDATE">会议结束时间</label></td>
+<td class="aws-form-ux-content">[#EDATE]</td>
+</tr>
+<tr style="display: none;">
+<td class="awsui-ux-title"><label id="ATTENDANCELabel" class="aws-form-ux-label" for="ATTENDANCE">参会人员</label></td>
+<td class="aws-form-ux-content">[#ATTENDANCE]</td>
+</tr>
+<tr style="display: none;">
+<td class="awsui-ux-title"><label id="EDITUIDLabel" class="aws-form-ux-label" for="EDITUID">修改人员账号</label></td>
+<td class="aws-form-ux-content">[#EDITUID]</td>
+</tr>
+<tr style="display: none;">
+<td class="awsui-ux-title"><label id="SOQXLabel" class="aws-form-ux-label" for="SOQX">审批权限</label></td>
+<td class="aws-form-ux-content">[#SOQX]</td>
+</tr>
+<tr style="display: none;">
+<td class="awsui-ux-title"><label id="KYPMSLabel" class="aws-form-ux-label" for="KYPMS">可用屏幕数</label></td>
+<td class="aws-form-ux-content">[#KYPMS]</td>
+</tr>
+<tr style="display: none;">
+<td class="awsui-ux-title"><label id="HYRNRSLabel" class="aws-form-ux-label" for="HYRNRS">会议容纳人数</label></td>
+<td class="aws-form-ux-content">[#HYRNRS]</td>
+</tr>
+<tr id="zibiao" class="tr1">
+<td class="aws-form-ux-gridbg">[#Grid1]</td>
+</tr>
+</tbody>
+</table>
+</td>
+</tr>
+<tr class="aws-form-ux-formcontent">
+<td>[#historyOpinions]</td>
+</tr>
+<tr class="aws-form-bottom">
+<td class="aws-form-ux-actionsoft">[#Actionsoft]</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div border="0" style="display: none;">[#HYJB][#HYGLYCX][#SLD][#IMPORTANCE][#LH][#FJH][#SQRZH][#SQBMID][#APPLYUID][#APPLYDEPTID][#RECORDER][#TOPICFILES][#TOPICS][#SPECIALREQUIRE][#DELAYSECONDS][#SLDZH][#TPFJ][#PERIODICEND][#FREQUENCYYEAR][#FREQUENCYMONTH][#FREQUENCYWEEK][#FREQUENCY][#ISPERIODIC][#ISAPPROVALROOM][#ROOMBTN][#TJZT][#APPLYSTATUS]</div>
+<script src="../apps/com.actionsoft.apps.meetingmanager/lib/moment/moment.js?v=1568881145000" type="text/javascript"></script>
+<script src="../apps/com.actionsoft.apps.meetingmanager/lib/moment/moment.util.js?v=1568880879000" type="text/javascript"></script>
+<script type="text/javascript" charset="utf-8">
+var  dtpickerMeetStartTime ="";//开始时间组件
+var  dtpickerMeetEndTime ="";//结束时间组件
+    $(function(){
+		hideRoomName();
+        var roomid = $("#ROOMID").val();
+	    if(roomid != '' || roomid != null){
+			$("#trmui").css("display","");
+			photoAdress(roomid);
+	    }
+		var href = window.location.href;
+		var vars = href.split("&");
+		var date = "";
+		var sxw = "";
+		for (var i = 0; i < vars.length; i++) {
+          var pair = vars[i].split("=");
+          if (pair[0] == "date") {//获取日期
+              date = pair[1];
+          }
+          if (pair[0] == "sxw") {//获取上下午状态
+              sxw = pair[1];
+          }
+		}
+		if(date != "" && sxw != ""){
+			var start="";
+			var end="";
+			var day = date.substring(0,4)+"-"+date.substring(4,6)+"-"+date.substring(6,8);
+			if(sxw == 1){//1:上午|2:下午
+				start = day+" "+"08:00";
+				end = day+" "+"12:00";
+			}
+			if(sxw == 2){
+				start = day+" "+"12:30";
+				end = day+" "+"16:30";
+			}
+			if ($.browser.isIPhone) {//如果是iphone 则需要特殊处理
+				var startShowText=start.replace(" ", "T");
+				var endShowText=end.replace(" ", "T");
+				$("#BDATE").val(startShowText);
+				$("#EDATE").val(endShowText);
+			}else{
+            	$("#BDATE").val(start);
+				$("#EDATE").val(end);
+            }
+			$("#BDATESTR").val(start);
+			$("#EDATESTR").val(end);
+			meetingOcupy(day);
+			hideRoomName();
+		}else{
+			meetingTime();
+		}
+	})
+	function meetingOcupy(day){
+		//对会议开始时间和结束时间添加特定时间处理事件
+		//先解除平台绑定的事件，重新添加事件
+		//$("#BDATE").unbind();
+		//$("#EDATE").unbind();
+	    document.getElementById('BDATESTR').onclick = function(){
+			//可自定每一项，比如自定义时、分
+			if(dtpickerMeetStartTime ==""){//为空时，需要初始化组件
+				dtpickerMeetStartTime = new mui.DtPicker({ 
+					"type": "datetime",
+					"labels": ['年', '月', '日', '时', '分'],//设置默认标签区域提示语
+                  	beginDate:new Date(day),//设置开始日期
+                  	endDate:new Date(day),//设置结束日期
+					"customData": {
+                      	"h": [
+							{ value: "01", text: "01"},
+							{ value: "02", text: "02"},
+							{ value: "03", text: "03"},
+							{ value: "04", text: "04"},
+							{ value: "05", text: "05"},
+							{ value: "06", text: "06"},
+							{ value: "07", text: "07"},
+							{ value: "08", text: "08"},
+							{ value: "09", text: "09"},
+							{ value: "10", text: "10"},
+							{ value: "11", text: "11"},
+							{ value: "12", text: "12"},
+                          	{ value: "13", text: "13"},
+							{ value: "14", text: "14"},
+							{ value: "15", text: "15"},
+							{ value: "16", text: "16"},
+							{ value: "17", text: "17"},
+							{ value: "18", text: "18"},
+							{ value: "19", text: "19"},
+							{ value: "20", text: "20"},
+							{ value: "21", text: "21"},
+							{ value: "22", text: "22"},
+							{ value: "23", text: "23"},
+							{ value: "24", text: "24"}
+						],
+						"i": [
+							{ value: "00", text: "00"},
+							{ value: "15", text: "15"},
+							{ value: "30", text: "30"},
+							{ value: "45", text: "45"}
+						]
+					} 
+				});
+				var startTimeTemp = $("#BDATESTR").val();
+				if(startTimeTemp!=""){//如果表单有默认值，需要先回填
+					if ($.browser.isIPhone) {//如果是iphone 则需要特殊处理
+						dtpickerMeetStartTime.setSelectedValue(startTimeTemp.replace("T"," "));
+					}else{
+						dtpickerMeetStartTime.setSelectedValue(startTimeTemp);
+					}
+					
+				}
+			}
+			
+			dtpickerMeetStartTime.show(function(e) { 
+				//=e.text;
+				var showText=e.text;
+				//.replace(/-/g,"/");
+				//dtpickerMeetStartTime.setSelectedValue(e.text);
+				//$("#BDATE")[0].innerText=showText;
+				if ($.browser.isIPhone) {//如果是iphone 则需要特殊处理
+					var  showText=e.text.replace(" ", "T");
+					$("#BDATE").attr('value',showText);
+					$("#BDATESTR").attr('value',e.text);
+					document.getElementById("BDATE").value=showText;
+					document.getElementById("BDATESTR").value=e.text;
+					hideRoomName();
+				}else{
+					document.getElementById("BDATE").value=e.text;
+					$("#BDATE").attr('value',e.text);
+					document.getElementById("BDATESTR").value=e.text;
+					$("#BDATESTR").attr('value',e.text);
+					hideRoomName();
+				}
+			});
+		};
+		document.getElementById('EDATESTR').onclick = function(){
+			//可自定每一项，比如自定义时、分
+			if(dtpickerMeetEndTime ==""){//为空时，需要初始化组件
+				dtpickerMeetEndTime = new mui.DtPicker({ 
+					"type": "datetime",
+					"labels": ['年', '月', '日', '时', '分'],//设置默认标签区域提示语
+                  	beginDate: new Date(day),//设置开始日期 
+                  	endDate: new Date(day),//设置结束日期 
+					"customData": {
+                      	"h": [
+							{ value: "01", text: "01"},
+							{ value: "02", text: "02"},
+							{ value: "03", text: "03"},
+							{ value: "04", text: "04"},
+							{ value: "05", text: "05"},
+							{ value: "06", text: "06"},
+							{ value: "07", text: "07"},
+							{ value: "08", text: "08"},
+							{ value: "09", text: "09"},
+							{ value: "10", text: "10"},
+							{ value: "11", text: "11"},
+							{ value: "12", text: "12"},
+                          	{ value: "13", text: "13"},
+							{ value: "14", text: "14"},
+							{ value: "15", text: "15"},
+							{ value: "16", text: "16"},
+							{ value: "17", text: "17"},
+							{ value: "18", text: "18"},
+							{ value: "19", text: "19"},
+							{ value: "20", text: "20"},
+							{ value: "21", text: "21"},
+							{ value: "22", text: "22"},
+							{ value: "23", text: "23"},
+							{ value: "24", text: "24"}
+						],
+						"i": [
+							{ value: "00", text: "00"},
+							{ value: "15", text: "15"},
+							{ value: "30", text: "30"},
+							{ value: "45", text: "45"}
+						]
+					} 
+				});
+				var endTimeTemp = $("#EDATESTR").val();
+				if(endTimeTemp!=""){//如果表单有默认值，需要先回填
+					if ($.browser.isIPhone) {//如果是iphone 则需要特殊处理
+						dtpickerMeetEndTime.setSelectedValue(endTimeTemp.replace("T"," "));
+					}else{
+						dtpickerMeetEndTime.setSelectedValue(endTimeTemp);
+					}
+					
+				}
+			}
+			dtpickerMeetEndTime.show(function(e) { 
+				//$("#EDATE")[0].innerText=e.text;
+				
+				//replace(/-/g,"/");
+				//$("#EDATE")[0].innerText=showText;
+				if ($.browser.isIPhone) {//如果是iphone 则需要特殊处理
+					var  showText=e.text.replace(" ", "T");
+					document.getElementById("EDATE").value=showText;
+					$("#EDATE").attr('value',showText);
+					document.getElementById("EDATESTR").value=e.text;
+					$("#EDATESTR").attr('value',e.text);
+					hideRoomName();
+				}else{
+					document.getElementById("EDATE").value=e.text;
+					$("#EDATE").attr('value',e.text);
+					document.getElementById("EDATESTR").value=e.text;
+					$("#EDATESTR").attr('value',e.text);
+					hideRoomName();
+				}
+				
+				//$("#").val(e.text);
+			});
+		};
+	}
+	function meetingTime(){
+		//对会议开始时间和结束时间添加特定时间处理事件
+		//先解除平台绑定的事件，重新添加事件
+		//$("#BDATE").off();
+		//$("#EDATE").off();
+	    document.getElementById('BDATESTR').onclick = function(){
+          	//var myDate = new Date();
+      		//var dqsj = myDate.getFullYear()+"-"+myDate.getMonth()+"-"+myDate.getDate()+" "+myDate.getHours();
+          	var currentTime = moment().format('YYYY-MM-DD HH:mm');//获取系统当前时间
+			//可自定每一项，比如自定义时、分
+			if(dtpickerMeetStartTime ==""){//为空时，需要初始化组件
+              	
+				dtpickerMeetStartTime = new mui.DtPicker({ 
+					"type": "datetime",
+					"labels": ['年', '月', '日', '时', '分'],//设置默认标签区域提示语
+                  	beginDate: new Date(currentTime),//设置开始日期 
+					"customData": {
+						"i": [
+							{ value: "00", text: "00"},
+							{ value: "15", text: "15"},
+							{ value: "30", text: "30"},
+							{ value: "45", text: "45"}
+						]
+					} 
+				});
+				var startTimeTemp = $("#BDATESTR").val();
+				if(startTimeTemp!=""){//如果表单有默认值，需要先回填
+					if ($.browser.isIPhone) {//如果是iphone 则需要特殊处理
+						dtpickerMeetStartTime.setSelectedValue(startTimeTemp.replace("T"," "));
+					}else{
+						dtpickerMeetStartTime.setSelectedValue(startTimeTemp);
+					}
+					
+				}
+			}
+			
+			dtpickerMeetStartTime.show(function(e) { 
+				//=e.text;
+				var showText=e.text;
+				//.replace(/-/g,"/");
+				//dtpickerMeetStartTime.setSelectedValue(e.text);
+				//$("#BDATE")[0].innerText=showText;
+				if ($.browser.isIPhone) {//如果是iphone 则需要特殊处理
+					var  showText=e.text.replace(" ", "T");
+					$("#BDATE").attr('value',showText);
+					document.getElementById("BDATE").value=showText;
+					$("#BDATESTR").attr('value',e.text);
+					document.getElementById("BDATESTR").value=e.text;
+					hideRoomName();
+				}else{
+					document.getElementById("BDATE").value=e.text;
+					$("#BDATE").attr('value',e.text);
+					document.getElementById("BDATESTR").value=e.text;
+					$("#BDATESTR").attr('value',e.text);
+					hideRoomName();
+				}
+			});
+		};
+		document.getElementById('EDATESTR').onclick = function(){
+			//可自定每一项，比如自定义时、分
+			if(dtpickerMeetEndTime ==""){//为空时，需要初始化组件
+              	var currentTime = moment().format('YYYY-MM-DD HH:mm');//获取系统当前时间
+				dtpickerMeetEndTime = new mui.DtPicker({ 
+					"type": "datetime",
+					"labels": ['年', '月', '日', '时', '分'],//设置默认标签区域提示语
+                  	beginDate: new Date(currentTime),//设置开始日期 
+					"customData": {
+						"i": [
+							{ value: "00", text: "00"},
+							{ value: "15", text: "15"},
+							{ value: "30", text: "30"},
+							{ value: "45", text: "45"}
+						]
+					} 
+				});
+				var endTimeTemp = $("#EDATESTR").val();
+				if(endTimeTemp!=""){//如果表单有默认值，需要先回填
+					if ($.browser.isIPhone) {//如果是iphone 则需要特殊处理
+						dtpickerMeetEndTime.setSelectedValue(endTimeTemp.replace("T"," "));
+					}else{
+						dtpickerMeetEndTime.setSelectedValue(endTimeTemp);
+					}
+					
+				}
+			}
+			dtpickerMeetEndTime.show(function(e) { 
+				//$("#EDATE")[0].innerText=e.text;
+				
+				//replace(/-/g,"/");
+				//$("#EDATE")[0].innerText=showText;
+				if ($.browser.isIPhone) {//如果是iphone 则需要特殊处理
+					var  showText=e.text.replace(" ", "T");
+					document.getElementById("EDATE").value=showText;
+					$("#EDATE").attr('value',showText);
+					document.getElementById("EDATESTR").value=e.text;
+					$("#EDATESTR").attr('value',e.text);
+					hideRoomName();
+				}else{
+					document.getElementById("EDATE").value=e.text;
+					$("#EDATE").attr('value',e.text);
+					document.getElementById("EDATESTR").value=e.text;
+					$("#EDATESTR").attr('value',e.text);
+					hideRoomName();
+				}
+				
+				//$("#").val(e.text);
+			});
+		};
+	}
+	function photoAdress(roomid){
+		var listHtmlA= "";
+		var listHtmlB = "";
+		awsui.ajax.request({
+			url: "./jd",
+			method: "POST",
+			async: true,
+			dataType : "json",
+			data: {
+				sid: $("#sid").val(),
+				cmd: "com.actionsoft.apps.meetingmanager_photoAdress",
+				roomid: roomid
+			},
+			success: function (result) {
+					if(result.status == 1){
+						//console.log($.simpleAlert(result.message,'error'));
+						//$.simpleAlert("请选择会议时间");
+					}else{//调用成功将获得的图片地址返回
+						var message = result.message;
+							listHtmlA+='<div class="mui-slider-item mui-slider-item-duplicate"><a href="#">';
+							listHtmlA+='<img src="'+message.slice(-1)[0].url+'"> ';
+							listHtmlA+='</a></div>';
+							
+							 for(var  i = 0 ;  i < message.length; i++){
+								   var aaInfo = message[i].url;
+									listHtmlA+='<div class="mui-slider-item"><a href="#">';
+									listHtmlA+='<img src="'+aaInfo+'"> ';
+									listHtmlA+='</a></div>';
+							 }
+							listHtmlA+='<div class="mui-slider-item mui-slider-item-duplicate"><a href="#">';
+							listHtmlA+='<img src="'+message[0].url+'"> ';
+							listHtmlA+='</a></div>';
+						  $("#awsslider").append(listHtmlA);
+							 for(var  i = 0 ;  i < message.length; i++){
+								 if(i == 0){
+									listHtmlB+='<div class="mui-indicator mui-active"></div>';
+								 }else{
+									listHtmlB+='<div class="mui-indicator"></div>';
+								 }
+							 }
+						   $("#awsindicator").append(listHtmlB);
+						   mui.init();
+						   mui("#slider").slider({interval: 3000});
+				}
+			}
+		});
+	}
+function hideRoomName(){
+  	var sfsnhy = ui("SFSNHY");//是否所内会议
+  	if(sfsnhy == "1"){//是
+    	var BDATE = $("#BDATESTR").val();
+		var EDATE = $("#EDATESTR").val();
+		if(BDATE != "" && EDATE != ""){//如果会议室时间不为空，显示会议室名称
+			$("#hysmc").show();
+		}else{
+			$("#hysmc").hide();
+		}
+    }else if(sfsnhy == "0"){//否
+    	$("#hysdd").show();
+      	$("#hysmc").hide();//会议室名称
+      	$("#hyrnrs").hide();//会议容纳人数
+      	$("#sfytyy").hide();//是否有投影仪
+      	$("#kypms").hide();//可用屏幕数
+    }
+}
+</script>
+<script>// <![CDATA[
+AWSFormMainAPI.customCloseFormPage(function(){
+	//自己处理当前的窗口如何的代码
+	window.location.href="./w?sid="+$("#sid").val()+"&cmd=com.actionsoft.apps.meetingmanager_mobile";
+	return true;//最后返回true
+});
+// ]]></script>
+<!--  自定义 -->
+<script src="../apps/com.actionsoft.apps.meetingmanager/js/meetingmgt.mobile.form.page.js?v=1547437736000" type="text/javascript"></script>
+</form>
+<script id="formSave">// <![CDATA[
+/*
+参数isTransact为true，表示办理按钮触发的保存动作
+其他情况是保存按钮触发的保存动作
+*/
+function formSave(isTransact){
+  	if(isTransact){
+      	var sfsnhy = ui("SFSNHY");
+      	if(sfsnhy == "0"){//不是所内会议
+        	$("#SOQX").val("所办公室");
+          	var hydd = $("#SWHYDD").val();
+          	$("#ROOMNAME").val(hydd);
+          	$("#ROOMID").val("00000000");
+        }
+        var commentOption = $("input[name='commentOption']:checked").val();
+      	if(commentOption == "同意"){
+        	var flag = confirm("请问是否确认同意办理？");
+            if(!flag){
+                return false;
+            }
+        }
+    }
+}
+// ]]></script>
+<script id="formOnload">// <![CDATA[
+function formOnload(){
+    hideRoomName();
+    //如果会议邀请人为空，则隐藏子表，否则，显示子表
+    if ($("#ATTENDANCE").val() == "") {
+ 	   $("#zibiao").hide();
+    } else {
+ 	   $("#zibiao").show();
+    }
+    var processInstId = $("#processInstId").val();
+    var taskInstId = $("#taskInstId").val();
+    var openState = $("#openState").val();
+	//删除按钮:
+    var currentTime = moment().format('YYYY-MM-DD HH:mm:ss');//获取系统当前时间
+	if (($("#currentOpUser").val()==$("#APPLYUID").val())&&($("#BDATE").val()>currentTime)){
+        $("#deleteMeetingBtn").show();
+	}
+	var isCreate = $("#isCreate").val();
+	if (isCreate==="true") {
+		//默认开始时间和结束时间，解决选择会议室时根据会议时间过滤被占用的会议室的问题
+		var btime = moment().format('YYYY-MM-DD HH:mm:ss');//获取系统当前时间
+		if (document.cookie.length>0) {
+			var c_start=document.cookie.indexOf("bookTimeBegin=");
+			if (c_start!=-1) {
+				c_start=c_start + "bookTimeBegin".length+1;
+				var c_end=document.cookie.indexOf(";",c_start);
+				if (c_end==-1){
+					c_end=document.cookie.length;
+				}
+				bookTimeBegin=unescape(document.cookie.substring(c_start,c_end))+":00";
+				btime = moment(bookTimeBegin).format('YYYY-MM-DD HH:mm:ss');
+			}
+		}
+		var etime = moment(btime).add(1,'hours').format('YYYY-MM-DD HH:mm:ss');
+		/*$("#BDATE").val(btime);
+		$("#EDATE").val(etime);
+		if ($.browser.isIPhone) {
+			$("#BDATE").val(btime.replace(" ", "T"));
+			$("#EDATE").val(etime.replace(" ", "T"));
+		}*/
+	}
+}
+/**
+  * 点击改变事件
+  *
+  * @param {String} boItemName 字段名
+  * @param {Object} swValue 开关的改编后的值，该值根据不同设置会有变化
+  */
+function onSwitchBtChangeEvent(boItemName, swValue) {
+  	//事件处理代码
+  	//子表页面获取元素写法
+  	//$("#grid_data_open_frame_mobile").contents().find("#字段ID");
+  	if(boItemName == "SFSNHY"){//是否所内会议
+      	debugger;
+    	var sfsnhy = ui("SFSNHY");//是否所内会议
+        if(sfsnhy == "1"){//是
+            var BDATE = $("#BDATESTR").val();
+            var EDATE = $("#EDATESTR").val();
+            if(BDATE != "" && EDATE != ""){//如果会议室时间不为空，显示会议室名称
+                $("#hysmc").show();
+            }else{
+                $("#hysmc").hide();
+            }
+            $("#hyrnrs").show();//会议容纳人数
+            $("#sfytyy").show();//是否有投影仪
+            $("#kypms").show();//可用屏幕数
+          	$("#hysdd").hide();//会议室地点
+        }else if(sfsnhy == "0"){//否
+            $("#hysdd").show();
+            $("#hysmc").hide();//会议室名称
+            $("#hyrnrs").hide();//会议容纳人数
+            $("#sfytyy").hide();//是否有投影仪
+            $("#kypms").hide();//可用屏幕数
+        }
+    }
+}
+// ]]></script>
+</body>
+</html>

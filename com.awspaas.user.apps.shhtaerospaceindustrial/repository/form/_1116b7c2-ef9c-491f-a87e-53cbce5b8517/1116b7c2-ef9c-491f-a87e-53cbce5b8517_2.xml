@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<formModel>
+    <id>1116b7c2-ef9c-491f-a87e-53cbce5b8517</id>
+    <createUser>admin</createUser>
+    <createTime>2020-06-18 11:57:15</createTime>
+    <updateUser></updateUser>
+    <updateTime>2020-06-18 12:21:51</updateTime>
+    <signature>tGOmxiTgjT/77UoYpSlq8Vc+hHPRoJWHdZexXc7zEpYuMNdhvSICeJnlc/RzRHGrAID5FknlIcg9326X8LVftAGUuM6MA9FCki7wCTXK4g2an/JyIcQauNXjdOcnBOW5</signature>
+    <managed>false</managed>
+    <title>消息提醒表单</title>
+    <deleted>false</deleted>
+    <categoryName>基础服务</categoryName>
+    <administrator>admin</administrator>
+    <defaultLanguage></defaultLanguage>
+    <url></url>
+    <urlHeight></urlHeight>
+    <formItems>
+        <formItem>
+            <id>5ea86845-5e8c-48da-b626-a22247ea2e64</id>
+            <title>消息提醒表单</title>
+            <templateFile>{"tablet":"基础服务-消息提醒表单.htm","pc":"基础服务-消息提醒表单.htm","mobile":"基础服务-消息提醒表单_m.htm"}</templateFile>
+            <grid>false</grid>
+            <gridSetting></gridSetting>
+            <orderBy></orderBy>
+            <pageLimit>0</pageLimit>
+            <boModelId>38cca47b-3d6f-4508-8338-1b5a8a483e20</boModelId>
+            <dictionaryFileName></dictionaryFileName>
+            <hiddenHead>false</hiddenHead>
+            <theme>{"pc":"_bpm.platform","mobile":"_bpm.platform"}</theme>
+            <itemDisplays/>
+            <scheme>{"pc":"scheme_aws.css","mobile":""}</scheme>
+            <calcFormula></calcFormula>
+            <conditionControl></conditionControl>
+            <validate></validate>
+            <icon></icon>
+            <gridControl></gridControl>
+            <summaryControl></summaryControl>
+            <ruleControl></ruleControl>
+            <hiddenFields></hiddenFields>
+            <hiddenAddBtn>false</hiddenAddBtn>
+            <verticalLayout>false</verticalLayout>
+        </formItem>
+    </formItems>
+</formModel>

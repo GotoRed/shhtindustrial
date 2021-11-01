@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<boModel>
+    <id>7a26e561-6898-499b-98c2-69de42994778</id>
+    <createUser>admin</createUser>
+    <createTime>2021-07-16 15:15:43</createTime>
+    <updateUser></updateUser>
+    <updateTime>2021-07-16 15:15:43</updateTime>
+    <signature>tGOmxiTgjT/77UoYpSlq8Vc+hHPRoJWHdZexXc7zEpYuMNdhvSICeJnlc/RzRHGrFfjyYcg/qbWpK4KeOoKfnRMTEyAevAAc1sSceXgJwp5BvIP2fu+sii3nfJFAgigV</signature>
+    <managed>false</managed>
+    <title>院办小车班车辆档案</title>
+    <name>BO_EU_SHHT_YBEUSECAR</name>
+    <collection>false</collection>
+    <system>false</system>
+    <deleted>false</deleted>
+    <categoryName>项目办用车</categoryName>
+    <administrator>admin</administrator>
+    <entityType>TABLE</entityType>
+    <viewType></viewType>
+    <viewSql></viewSql>
+    <securityLevel>0</securityLevel>
+    <target>_local</target>
+    <itemProps></itemProps>
+    <boItems/>
+    <boIndexs>
+        <boIndex>
+            <id>3e988b54-7a8e-4b52-aa84-c562c04e9908</id>
+            <name></name>
+            <type>INDEX</type>
+            <boItems>BINDID</boItems>
+        </boIndex>
+    </boIndexs>
+    <boRelations/>
+    <hashFields></hashFields>
+</boModel>

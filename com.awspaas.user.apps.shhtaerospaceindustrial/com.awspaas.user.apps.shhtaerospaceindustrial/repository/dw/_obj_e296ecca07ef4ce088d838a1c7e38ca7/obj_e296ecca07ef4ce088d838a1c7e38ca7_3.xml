@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<AWSDWModel>
+    <id>obj_e296ecca07ef4ce088d838a1c7e38ca7</id>
+    <createUser>admin</createUser>
+    <createTime>2020-05-17 15:25:14</createTime>
+    <updateUser></updateUser>
+    <updateTime>2020-05-17 15:25:14</updateTime>
+    <signature>tGOmxiTgjT/77UoYpSlq8Vc+hHPRoJWHdZexXc7zEpYuMNdhvSICeJnlc/RzRHGrMoNLKHFYcu1vjM5DW+elFwgD2a1O8l4JukK8WvfQe6OLPmL8skOM9GFDQAaaUwGW</signature>
+    <managed>false</managed>
+    <processGroupId>obj_e296ecca07ef4ce088d838a1c7e38ca7</processGroupId>
+    <processGroupName>保安巡更点档案</processGroupName>
+    <categoryName>未分类</categoryName>
+    <dwType>1</dwType>
+    <processAdministrator></processAdministrator>
+    <title id="obj_e7430da4b15242d78bec2f5e65c358ec" label="保安巡更点档案" extendcode="" event=""/>
+    <userextendbuttons/>
+    <userextendbehaviors/>
+    <iconFontCode></iconFontCode>
+    <iconFontColor></iconFontColor>
+</AWSDWModel>

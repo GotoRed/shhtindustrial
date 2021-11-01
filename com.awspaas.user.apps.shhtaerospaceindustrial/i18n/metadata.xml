@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<locale-config> 
+    <lang>
+        <item key="PROCESS_NAME_obj_ca80cfee82034772ae3db3623f7d1463">
+            <cn><![CDATA[客房预订]]></cn>
+            <en><![CDATA[]]></en>
+            <big5><![CDATA[]]></big5>
+        </item>
+    </lang> 
+</locale-config>

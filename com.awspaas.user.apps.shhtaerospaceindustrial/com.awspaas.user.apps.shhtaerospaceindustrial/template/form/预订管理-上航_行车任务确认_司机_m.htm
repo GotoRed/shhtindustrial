@@ -1,0 +1,194 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta name="renderer" content="webkit">
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+	<title>上航_行车任务单-手机表单</title>
+	<!--字段背景风格App模板-->
+	<meta http-equiv='Content-Type' content='text/html; charset=UTF-8' />
+	<meta name="viewport" content="initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no, width=device-width">
+	
+	[#AWSImport]
+	[#AWSUIImport]
+	
+	
+	
+	<link rel='stylesheet' id='schemeCss' href='../apps/_bpm.platform/css/colorschemes/scheme_aws.css?v=1588908694729'  name='schemeCss'/>
+	<link rel="stylesheet" type="text/css" href="../apps/_bpm.portal/css/client.bpm.form.mobile.common.css?v=1588908698315">
+	<link rel="stylesheet" type="text/css" href="../apps/com.actionsoft.apps.form.theme.antdui/css/theme/antdui.css?v=1589851448797">
+<link type='text/css' rel='stylesheet' id='themeCss' href='../apps/com.actionsoft.apps.form.theme.antdui/css/theme/theme_m.css' name='themeCss'/>
+</head>
+<style>
+  #frmMain{
+  	overflow: auto;
+    height: 100vh;
+  }
+</style>
+<body>
+<form id="frmMain" name="frmMain" method="post">
+<div id="aws-form-container" border="0" style="width: 100%; border: 0px;">
+<table id="aws-form-maintable" style="table-layout: auto; width: 100%; border: 0px;" cellspacing="0" cellpadding="0" border="0">
+<tbody>
+<tr id="aws-form-titlebg" class="aws-form-ux-titlebg" style="display: none;">
+<td id="aws-form-title" class="aws-form-ux-header">上航_行车任务单</td>
+</tr>
+<tr class="aws-form-ux-formcontent" id="aws-form-formcontent">
+<td>
+<table id="table_container" class="awsui-ux table-striped" style="padding: 0px;" width="100%" cellspacing="0" cellpadding="0">
+<tbody>
+<tr>
+<td class="awsui-ux-title" style="padding-left: 0px;"><label id="APPLYUNITLabel" for="APPLYUNIT">用车单位</label></td>
+<td class="aws-form-ux-content">[#APPLYUNIT]</td>
+</tr>
+<tr>
+<td class="awsui-ux-title" style="padding-left: 0px;"><label id="APPLYDEPTNAMELabel" for="APPLYDEPTNAME">用车部门</label></td>
+<td class="aws-form-ux-content">[#APPLYDEPTNAME]</td>
+</tr>
+<tr>
+<td class="awsui-ux-title" style="padding-left: 0px;"><label id="CONTACTPERSONLabel" for="CONTACTPERSON">用车联系人</label></td>
+<td class="aws-form-ux-content">[#CONTACTPERSON]</td>
+</tr>
+<tr>
+<td class="awsui-ux-title" style="padding-left: 0px;"><label id="CONTACTPHONELabel" for="CONTACTPHONE">用车联系人手机</label></td>
+<td class="aws-form-ux-content">[#CONTACTPHONE]</td>
+</tr>
+<tr>
+<td class="awsui-ux-title" style="padding-left: 0px;"><label id="APPLYUSERNAMELabel" for="APPLYUSERNAME">预定人</label></td>
+<td class="aws-form-ux-content">[#APPLYUSERNAME]</td>
+</tr>
+<tr>
+<td class="awsui-ux-title" style="padding-left: 0px;"><label id="APPLYUSERCELLPHONELabel" for="APPLYUSERCELLPHONE">预定人手机</label></td>
+<td class="aws-form-ux-content">[#APPLYUSERCELLPHONE]</td>
+</tr>
+<tr>
+<td class="awsui-ux-title" style="padding-left: 0px;"><label id="UDATELabel" for="UDATE" flag="labelRequired">使用日期</label></td>
+<td class="aws-form-ux-content">[#UDATE]</td>
+</tr>
+<tr>
+<td class="awsui-ux-title" style="padding-left: 0px;"><label id="ISINTERNALVEHICLELabel" for="ISINTERNALVEHICLE">车辆属性</label></td>
+<td class="aws-form-ux-content">[#ISINTERNALVEHICLE]</td>
+</tr>
+<tr>
+<td class="awsui-ux-title" style="padding-left: 0px;"><label id="VEHICLETYPELabel" for="VEHICLETYPE" flag="labelRequired">车辆类型</label></td>
+<td class="aws-form-ux-content">[#VEHICLETYPE]</td>
+</tr>
+<tr>
+<td class="awsui-ux-title" style="padding-left: 0px;"><label id="CPHLabel" for="CPH" flag="labelRequired">车牌号</label></td>
+<td class="aws-form-ux-content">[#CPH]</td>
+</tr>
+<tr>
+<td class="awsui-ux-title" style="padding-left: 0px;"><label id="SJXMLabel" for="SJXM" flag="labelRequired">司机姓名</label></td>
+<td class="aws-form-ux-content">[#SJXM]</td>
+</tr>
+<tr>
+<td class="awsui-ux-title" style="padding-left: 0px;"><label id="SJLXFSLabel" for="SJLXFS" flag="labelRequired">司机联系方式</label></td>
+<td class="aws-form-ux-content">[#SJLXFS]</td>
+</tr>
+<tr id="c8fb47d1_57c0_0001_9773_51a0ec001394">
+<td class="awsui-ux-title" style="padding-left: 0px;"><label id="BOARDINGPLACELabel" class="aws-form-ux-label" for="BOARDINGPLACE" flag="labelRequired">上车地点</label></td>
+<td class="aws-form-ux-content">[#BOARDINGPLACE]</td>
+</tr>
+<tr id="c8fb47d1_ece0_0001_6996_1f70227215cd">
+<td class="awsui-ux-title" style="padding-left: 0px;"><label id="TARGETPLACELabel" class="aws-form-ux-label" for="TARGETPLACE" flag="labelRequired">目的地</label></td>
+<td class="aws-form-ux-content">[#TARGETPLACE]</td>
+</tr>
+<tr>
+<td class="awsui-ux-title" style="padding-left: 0px;"><label id="SKLOCATIONLabel" for="SKLOCATION" flag="labelRequired">上客地点</label></td>
+<td class="aws-form-ux-content">[#SKLOCATION]</td>
+</tr>
+<tr>
+<td class="awsui-ux-title" style="padding-left: 0px;"><label id="XKLOCATIONLabel" for="XKLOCATION" flag="labelRequired">下客地点</label></td>
+<td class="aws-form-ux-content">[#XKLOCATION]</td>
+</tr>
+</tbody>
+</table>
+</td>
+</tr>
+<tr class="aws-form-bottom">
+<td class="aws-form-ux-bottom aws-form-ux-actionsoft">[#Actionsoft]
+<div id="hiddenArea" border="0" style="display: none;">[#APPLYUID][#APPLYUNITID][#APPLYDEPTID][#CONTACTPERSONZH][#SJZH][#RESOURCETASKID][#RESOURCETASKFPID][#ORDERID][#MISSIONSTATUS][#BILLDEPTID][#WZUNITPSNID][#WZUNITPSNPHONE][#SETTLEMENTTYPE][#SETTLEMENTTYPE][#ORDERDATE][#CCSLMS][#CFSJ][#ISLEAVESTAY][#CCGYF][#SKLMS][#SKDATETIME][#RETURNPARK][#XKLMS][#XKDATIME][#FHSLMS][#FHSJ][#QTMONEY][#TCF][#OVERTIMENUM][#GLF][#STAYMONEY][#BILLLIST][#DAYPRICE][#OTTIMEPRICE][#OTLEAVERICE][#QRLC][#USECARTIME][#OVERERDISTANCENUM][#DAYOVERKILOMETERSPRICE][#DAYOVERTIMEPRICE][#TOTALMONEY][#LEAVEMONEY][#LEAVELOCATION][#WZUNITPSN][#ISOUTSHANGHAI][#BILLDEPT][#VEHICLELABELNAME]</div>
+</td>
+</tr>
+</tbody>
+</table>
+<script src="../apps/com.actionsoft.apps.form.theme.antdui/js/commom.form.js?v=1589851448822"></script>
+<script src="../apps/com.actionsoft.apps.form.theme.antdui/js/antdui.js?v=1589851448822"></script>
+<script src="../commons/js/aws.mobile.jsapi.js"></script>
+</div>
+</form>
+<script>
+AWSFormMainAPI.customCloseFormPage(function(){
+    //自己处理当前的窗口如何的代码
+    var url=localStorage.getItem("backUrl");
+    location.href=url;
+    return true;//最后返回true
+});  
+</script>
+<script id="formSave">// <![CDATA[
+/*
+参数isTransact为true，表示办理按钮触发的保存动作
+其他情况是保存按钮触发的保存动作
+*/
+function formSave(isTransact){
+	
+}
+// ]]></script>
+<script id="formOnload">// <![CDATA[
+function formOnload(){
+  	debugger;
+	$("#BTN_SAVE").parent().hide();//隐藏表单上的保存按钮
+}
+$(".mui-input-right").removeAttr("readonly");
+$(".mui-input-clear").removeAttr("readonly");
+$("input").each(function(){
+	if($(this).attr("readonly")=="readonly"){
+		$(this).css({"background-color":"#eee"});
+	};
+});
+function jbzcf(){
+    var cx = ui("VEHICLETYPE");//车辆类型
+    var clpp = ui("VEHICLELABELNAME");//车辆品牌
+  	debugger;
+	awsui.ajax.request({
+        url: "./jd",
+        method: "POST",
+        async: false,
+        dataType: "json",
+        data: {
+          sid: $("#sid").val(),
+          cmd: "com.awspaas.user.apps.shhtaerospaceindustrial_getJsjfy",
+          cx: cx,
+          clpp:clpp
+        },
+        success: function (responseObject) {
+          debugger;
+          if (responseObject.status == 0) {
+			var	jsfs = ui("BILLLIST");//结算项目0:接送虹桥机场|1:接送浦东机场|2:日租
+            if(jsfs == "0"){
+            	$("#DAYPRICE").val(responseObject.hq);//基本租车费
+              	$("#OTTIMEPRICE").val("");//超小时费(元/小时)
+              	$("#OTLEAVERICE").val("");//超公里费(元/公里)
+            	$("#OVERERDISTANCENUM").val(0);//超里程数
+              	$("#DAYOVERKILOMETERSPRICE").val(0);//超公里费
+             	$("#OVERTIMENUM").val("");//超时时间
+              	$("#DAYOVERTIMEPRICE").val(0);//超时费
+            }else if(jsfs == "1"){
+            	$("#DAYPRICE").val(responseObject.pd);
+              	$("#OTTIMEPRICE").val("");//超小时费(元/小时)
+              	$("#OTLEAVERICE").val("");//超公里费(元/公里)
+              	$("#OVERERDISTANCENUM").val(0);//超里程数
+              	$("#DAYOVERKILOMETERSPRICE").val(0);//超公里费
+             	$("#OVERTIMENUM").val("");//超时时间
+              	$("#DAYOVERTIMEPRICE").val(0);//超时费
+            }else if(jsfs == "2"){
+             	$("#DAYPRICE").val(responseObject.jbzcf);
+            	$("#OTTIMEPRICE").val(responseObject.csf);//超小时费(元/小时)
+              	$("#OTLEAVERICE").val(responseObject.cglf);//超公里费(元/公里)
+            }
+          }
+        }
+    });
+}
+// ]]></script>
+</body>
+</html>

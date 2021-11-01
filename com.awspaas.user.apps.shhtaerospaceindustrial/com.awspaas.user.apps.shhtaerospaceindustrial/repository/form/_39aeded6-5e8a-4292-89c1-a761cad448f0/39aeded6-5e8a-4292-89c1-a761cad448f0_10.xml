@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<formModel>
+    <id>39aeded6-5e8a-4292-89c1-a761cad448f0</id>
+    <createUser>admin</createUser>
+    <createTime>2020-06-01 09:50:33</createTime>
+    <updateUser></updateUser>
+    <updateTime>2020-06-01 09:50:44</updateTime>
+    <signature>tGOmxiTgjT/77UoYpSlq8Vc+hHPRoJWHdZexXc7zEpYuMNdhvSICeJnlc/RzRHGrNzYSZTenXXlXvQA/rWfRYooHAuGzdWrlbzRxPv0IFPbIGCgNUK072u89dV6MH9u/</signature>
+    <managed>false</managed>
+    <title>上航_客房会议室_收费项目</title>
+    <deleted>false</deleted>
+    <categoryName>预订管理</categoryName>
+    <administrator>admin</administrator>
+    <defaultLanguage></defaultLanguage>
+    <url></url>
+    <urlHeight></urlHeight>
+    <formItems>
+        <formItem>
+            <id>3fa22507-7c14-49d6-9640-f13e61901ca5</id>
+            <title>上航_客房会议室_收费项目</title>
+            <templateFile>{"tablet":"预订管理-上航_客房会议室_收费项目.htm","pc":"预订管理-上航_客房会议室_收费项目.htm","mobile":"预订管理-上航_客房会议室_收费项目_m.htm"}</templateFile>
+            <grid>false</grid>
+            <gridSetting></gridSetting>
+            <orderBy></orderBy>
+            <pageLimit>0</pageLimit>
+            <boModelId>0242f355-0189-4e84-b305-057b40e20e9b</boModelId>
+            <dictionaryFileName></dictionaryFileName>
+            <hiddenHead>false</hiddenHead>
+            <theme>{"pc":"_bpm.platform","mobile":"_bpm.platform"}</theme>
+            <itemDisplays/>
+            <scheme>{"pc":"scheme_aws.css","mobile":""}</scheme>
+            <calcFormula></calcFormula>
+            <conditionControl></conditionControl>
+            <validate></validate>
+            <icon></icon>
+            <gridControl></gridControl>
+            <summaryControl></summaryControl>
+            <ruleControl></ruleControl>
+            <hiddenFields></hiddenFields>
+            <hiddenAddBtn>false</hiddenAddBtn>
+            <verticalLayout>false</verticalLayout>
+        </formItem>
+    </formItems>
+</formModel>

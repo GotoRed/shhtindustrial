@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<boModel>
+    <id>e45fbdd2-5ef3-4dcf-b94a-b90dba6f5272</id>
+    <createUser>admin</createUser>
+    <createTime>2020-06-01 10:38:21</createTime>
+    <updateUser></updateUser>
+    <updateTime>2020-06-01 10:38:21</updateTime>
+    <signature>tGOmxiTgjT/77UoYpSlq8Vc+hHPRoJWHdZexXc7zEpYuMNdhvSICeJnlc/RzRHGryHuND3ZOxNr8nfJZwCBwyzffz9L8RPeq8YqPeJF9H1ZuacTK+e7tXPpLyzutLLyG</signature>
+    <managed>false</managed>
+    <title>上航_会议室订单（结算子表）</title>
+    <name>BO_EU_SH_MEETINGORDER_JS</name>
+    <collection>false</collection>
+    <system>false</system>
+    <deleted>false</deleted>
+    <categoryName>预订管理</categoryName>
+    <administrator>admin</administrator>
+    <entityType>TABLE</entityType>
+    <viewType></viewType>
+    <viewSql></viewSql>
+    <securityLevel>0</securityLevel>
+    <target>_local</target>
+    <itemProps></itemProps>
+    <boItems/>
+    <boIndexs>
+        <boIndex>
+            <id>c790c0e2-036b-4fca-b3a9-923cc420b7ab</id>
+            <name></name>
+            <type>INDEX</type>
+            <boItems>BINDID</boItems>
+        </boIndex>
+    </boIndexs>
+    <boRelations/>
+    <hashFields></hashFields>
+</boModel>

@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<formModel>
+    <id>7621c483-5764-4585-89bd-ae9d21a2c6ab</id>
+    <createUser>admin</createUser>
+    <createTime>2021-07-16 15:19:18</createTime>
+    <updateUser></updateUser>
+    <updateTime>2021-07-16 15:19:18</updateTime>
+    <signature>tGOmxiTgjT/77UoYpSlq8Vc+hHPRoJWHdZexXc7zEpYuMNdhvSICeJnlc/RzRHGr/n17gbw65C+7B35osR+yc4ijiMSCqdfiPYXO+41S47I4vsBkbWLu2k1r24LAGsIj</signature>
+    <managed>false</managed>
+    <title>院办小车班车辆档案</title>
+    <deleted>false</deleted>
+    <categoryName>项目办用车</categoryName>
+    <administrator>admin</administrator>
+    <defaultLanguage></defaultLanguage>
+    <url></url>
+    <urlHeight></urlHeight>
+    <formItems>
+        <formItem>
+            <id>c352f72b-68bd-4031-b372-63a356d9b0d5</id>
+            <title>院办小车班车辆档案</title>
+            <templateFile>{"tablet":"项目办用车-院办小车班车辆档案.htm","pc":"项目办用车-院办小车班车辆档案.htm","mobile":"项目办用车-院办小车班车辆档案_m.htm"}</templateFile>
+            <grid>false</grid>
+            <gridSetting></gridSetting>
+            <orderBy></orderBy>
+            <pageLimit>0</pageLimit>
+            <boModelId>7a26e561-6898-499b-98c2-69de42994778</boModelId>
+            <dictionaryFileName></dictionaryFileName>
+            <hiddenHead>false</hiddenHead>
+            <theme>{"pc":"com.actionsoft.apps.form.theme.antdui","mobile":"com.actionsoft.apps.form.theme.antdui"}</theme>
+            <itemDisplays/>
+            <scheme>{"pc":"","mobile":""}</scheme>
+            <calcFormula></calcFormula>
+            <conditionControl></conditionControl>
+            <validate></validate>
+            <icon></icon>
+            <gridControl></gridControl>
+            <summaryControl></summaryControl>
+            <ruleControl></ruleControl>
+            <hiddenFields></hiddenFields>
+            <hiddenAddBtn>false</hiddenAddBtn>
+            <verticalLayout>false</verticalLayout>
+        </formItem>
+    </formItems>
+</formModel>

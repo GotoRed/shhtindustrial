@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<formModel>
+    <id>20b3cc1c-6b71-4151-a28e-7b06c9f147a2</id>
+    <createUser>admin</createUser>
+    <createTime>2020-05-16 14:42:28</createTime>
+    <updateUser></updateUser>
+    <updateTime>2020-05-16 14:59:50</updateTime>
+    <signature>tGOmxiTgjT/77UoYpSlq8Vc+hHPRoJWHdZexXc7zEpYuMNdhvSICeJnlc/RzRHGrYm45JjT7A+Au9UJp4jG/HTOgP7TAbXDhrVhlEHWi4CD2NqzLwTwkTohkP7C60p4Z</signature>
+    <managed>false</managed>
+    <title>上航_保安班次档案</title>
+    <deleted>false</deleted>
+    <categoryName>安保管理</categoryName>
+    <administrator>admin</administrator>
+    <defaultLanguage></defaultLanguage>
+    <url></url>
+    <urlHeight></urlHeight>
+    <formItems>
+        <formItem>
+            <id>15877ae2-e461-45e6-a9d0-aced385542ba</id>
+            <title>上航_保安班次档案</title>
+            <templateFile>{"tablet":"安保管理-上航_保安班次档案.htm","pc":"安保管理-上航_保安班次档案.htm","mobile":"安保管理-上航_保安班次档案_m.htm"}</templateFile>
+            <grid>false</grid>
+            <gridSetting></gridSetting>
+            <orderBy></orderBy>
+            <pageLimit>0</pageLimit>
+            <boModelId>524a8ffe-13b1-4545-b85c-c85383613f1e</boModelId>
+            <dictionaryFileName></dictionaryFileName>
+            <hiddenHead>false</hiddenHead>
+            <theme>{"pc":"_bpm.platform","mobile":"_bpm.platform"}</theme>
+            <itemDisplays/>
+            <scheme>{"pc":"scheme_aws.css","mobile":""}</scheme>
+            <calcFormula></calcFormula>
+            <conditionControl></conditionControl>
+            <validate></validate>
+            <icon></icon>
+            <gridControl></gridControl>
+            <summaryControl></summaryControl>
+            <ruleControl></ruleControl>
+            <hiddenFields></hiddenFields>
+            <hiddenAddBtn>false</hiddenAddBtn>
+            <verticalLayout>false</verticalLayout>
+        </formItem>
+    </formItems>
+</formModel>

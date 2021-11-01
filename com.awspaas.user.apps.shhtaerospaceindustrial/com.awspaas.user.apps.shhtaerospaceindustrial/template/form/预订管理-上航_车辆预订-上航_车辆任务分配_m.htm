@@ -1,0 +1,255 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta name="renderer" content="webkit">
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+	<title>上航_车辆任务分配-手机子表单</title>
+	<!--字段背景风格App模板-->
+	<meta http-equiv='Content-Type' content='text/html; charset=UTF-8' />
+	<meta name="viewport" content="initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no, width=device-width">
+	
+	[#AWSImport]
+	<link type='text/css' rel='stylesheet' href='../apps/_bpm.platform/css/colorschemes/scheme_aws.css?v=1588908694729'  name='schemeCss'/>
+	<link type='text/css' rel='stylesheet' href='../apps/_bpm.platform/css/theme/theme_m.css?v=1521618657000' name='themeCss'/>
+	<link type='text/css' rel='stylesheet' href='../apps/com.actionsoft.apps.form.theme.antdui/css/theme/theme_m.css?v=1589851448798?v=1589851448798?v=1589851448798?v=1589851448798?v=1589851448798?v=1589851448798?v=1589851448798?v=1589851448798?v=1589851448798?v=1589851448798?v=1589851448798?v=1589851448798?v=1589851448798?v=1589851448798?v=1589851448798?v=1589851448798?v=1589851448798?v=1589851448798?v=1589851448798?v=1589851448798?v=1589851448798' name='themeCss'/>
+	<link rel="stylesheet" type="text/css" href="../apps/com.actionsoft.apps.form.theme.antdui/css/theme/antdui.css?v=1589851448797">
+	[#AWSImport]
+	[#AWSUIImport]
+	<style>
+		.mui-bar-tab {
+			height: 74px;
+		}
+      .mobile-button {
+        min-width: auto;
+      }
+      #btn2 {
+       color: #fff;
+       background-color: #ef5c70!important;
+       border: 1px solid #ef5c70!important;
+      }
+	</style>
+<link type='text/css' rel='stylesheet' id='themeCss' href='../apps/com.actionsoft.apps.form.theme.antdui/css/theme/theme_m.css' name='themeCss'/>
+</head>
+<body style="overflow: hidden;">
+<form id="frmMain" name="frmMain" method="post" action="./w">
+<div class="awsui-toolbar" border="0">[#ToolBar]</div>
+<div id="aws-form-container" class="aws-form-ux-container" border="0" style="min-width: 100%;">
+<div id="FormGridRowPage" border="0" style="overflow: auto; width: 100%; margin-bottom: 70px;">
+<table id="aws-form-maintable" class="awsui-ux aws-form-ux-maintable" style="min-width: 100%;" cellspacing="0" cellpadding="0" border="0" align="center">
+<tbody>
+<tr id="aws-form-titlebg" class="aws-form-ux-titlebg" style="display: none;">
+<td id="aws-form-title" class="aws-form-ux-header">上航_车辆任务分配</td>
+</tr>
+<tr class="aws-form-ux-formcontent" id="aws-form-formcontent" style="min-width: 100%;">
+<td>
+<table id="table_container" class="awsui-ux table-striped" width="100%" cellspacing="0" cellpadding="0">
+<tbody>
+<tr>
+<td class="awsui-ux-title" style="padding-left: 0px;"><label id="USECARTYPELabel" for="USECARTYPE" flag="labelRequired">车辆属性</label></td>
+<td class="aws-form-ux-content">[#USECARTYPE]</td>
+</tr>
+<tr>
+<td class="awsui-ux-title" style="padding-left: 0px;"><label id="VEHICLETYPELabel" for="VEHICLETYPE">车辆类型</label></td>
+<td class="aws-form-ux-content">[#VEHICLETYPE]</td>
+</tr>
+<tr>
+<td class="awsui-ux-title" style="padding-left: 0px;"><label id="CPHLabel" for="CPH">车牌号</label></td>
+<td class="aws-form-ux-content">[#CPH]</td>
+</tr>
+<tr id="c8fb4cd9_e140_0001_d485_5520100044e0">
+<td class="awsui-ux-title" style="padding-left: 0px;"><label id="VEHICLELABELNAMELabel" class="aws-form-ux-label" for="VEHICLELABELNAME">车辆品牌规格</label></td>
+<td class="aws-form-ux-content">[#VEHICLELABELNAME]</td>
+</tr>
+<tr>
+<td class="awsui-ux-title" style="padding-left: 0px;"><label id="UDATELabel" for="UDATE">使用日期</label></td>
+<td class="aws-form-ux-content">[#UDATE]</td>
+</tr>
+<tr id="c8fb4ce2_e1b0_0001_dbf6_cda01d50151e" style="display: none;">
+<td class="awsui-ux-title" style="padding-left: 0px;"><label id="MISSIONSTATUSLabel" class="aws-form-ux-label" for="MISSIONSTATUS">任务单状态</label></td>
+<td class="aws-form-ux-content">[#MISSIONSTATUS]</td>
+</tr>
+<tr id="c8fb4ce3_4ad0_0001_751c_80f05a291e63">
+<td class="awsui-ux-title" style="padding-left: 0px;"><label id="ZTLabel" class="aws-form-ux-label" for="ZT">状态</label></td>
+<td class="aws-form-ux-content">[#ZT]</td>
+</tr>
+<tr>
+<td class="awsui-ux-title" style="padding-left: 0px;"><label id="WZUNITPSNLabel" for="WZUNITPSN">外租公司调度</label></td>
+<td class="aws-form-ux-content">[#WZUNITPSN]</td>
+</tr>
+<tr id="c8f2552e_5e70_0001_50a4_aa601d154d60">
+<td class="awsui-ux-title" style="padding-left: 0px;">外租公司调度联系方式</td>
+<td class="aws-form-ux-content">[#WZUNITPSNLXFS]</td>
+</tr>
+<tr>
+<td class="awsui-ux-title" style="padding-left: 0px;"><label id="SJXMLabel" for="SJXM">司机姓名</label></td>
+<td class="aws-form-ux-content">[#SJXM]</td>
+</tr>
+<tr>
+<td class="awsui-ux-title" style="padding-left: 0px;"><label id="SJLXFSLabel" for="SJLXFS">司机联系方式</label></td>
+<td class="aws-form-ux-content">[#SJLXFS]</td>
+</tr>
+<tr style="display: none;">
+<td class="awsui-ux-title" style="padding-left: 0px;"><label id="MISSIONBINDIDLabel" for="MISSIONBINDID">行车任务单ID</label></td>
+<td class="aws-form-ux-content">[#MISSIONBINDID]</td>
+</tr>
+<tr style="display: none;">
+<td class="awsui-ux-title" style="padding-left: 0px;"><label id="MISSISONLINKDLabel" for="MISSISONLINKD">行车任务单链接</label></td>
+<td class="aws-form-ux-content">[#MISSISONLINKD]</td>
+</tr>
+<tr>
+<td colspan="2">
+<div id="show-detail" border="0" style="width: 80%; background-color: #4596fa; border: none; border-radius: 4px; color: #fff; margin: 10px 10%; height: 36px; line-height: 36px; text-align: center;">查看详情</div>
+</td>
+</tr>
+<!-- 
+<tr>
+<td class="awsui-ux-title">
+<div class="mui-tab-item" border="0"><button style="background-color: #4596fa !important; color: white !important;" class="mobile-button mui-btn-task-border" type="button" id="btn1">派单</button></div>
+</td>
+<td class="aws-form-ux-content">
+<div class="mui-tab-item" border="0"><button style="background-color: #4596fa !important; color: white !important;" class="mobile-button mui-btn-task-border" type="button" id="btn2">取消</button></div>
+</td>
+</tr>
+--></tbody>
+</table>
+</td>
+</tr>
+<tr class="aws-form-bottom">
+<td class="aws-form-ux-bottom aws-form-ux-actionsoft">[#Actionsoft]
+<div id="hiddenArea" border="0" style="display: none;">[#WZUNITPSNZH][#SJZH]</div>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+<script src="../apps/com.actionsoft.apps.form.theme.antdui/js/commom.form.js?v=1589851448822"></script>
+<script src="../apps/com.actionsoft.apps.form.theme.antdui/js/antdui.js?v=1589851448822"></script>
+<script src="../commons/js/aws.mobile.jsapi.js"></script>
+</div>
+[#operateButtons]</form>
+<div id="boItemNameSearch_div" class="mui-search-div" border="0" style="display: none;"></div>
+<script>
+window.alert = function (name) {
+  const iframe = document.createElement('IFRAME');
+  iframe.style.display = 'none';
+  iframe.setAttribute('src', 'data:text/plain,');
+  document.documentElement.appendChild(iframe);
+  window.frames[0].window.alert(name);
+  iframe.parentNode.removeChild(iframe);
+}
+$('.mui-btn-task-zuofei').parent().hide();
+var btn1 = '<div class="mui-tab-item"><button type="button" event="sendOrder();return false;" id="btn1" class="mobile-button mui-btn-task-border">派单</button></div>';
+var btn2 = '<div class="mui-tab-item"><button type="button" event="cancelOrder();return false;" id="btn2" class="mobile-button mui-btn-task-border">取消</button></div>';
+$("#subFormSaveButtons").append(btn1).append(btn2);
+function sendOrder() {
+    //$("#btn1").on("click",function(){
+    //AWSCommonGrid.saveRowData();
+    var ids = $("#rowBoId").val() + ":" + ui("USECARTYPE") + ":" + $("#UDATE").val() + ":" + ui("VEHICLETYPE") + ":"
+    + $("#CPH").val() + ":" + $("#SJXM").val() + ":" + $("#SJZH").val() + ":" + $("#SJLXFS").val() + ":"
+    + $("#WZUNITPSN").val() + ":" + $("#WZUNITPSNZH").val() + ":" + $("#WZUNITPSNLXFS").val() + ":"
+    + $("#VEHICLELABELNAME").val();//获取子表记录数据信息集合
+    var id = "'" + $("#rowBoId").val() + "'";//获取子表记录id集合
+    var processInstId = $("#processInstId").val();
+    var sid = $("#sid").val();
+    var sendOrderCallBack = function () {
+      //alert("sonsave");
+      awsui.ajax.request({
+        url: "./jd",
+        method: "POST",
+        async: false,
+        dataType: "json",
+        data: {
+          sid: sid,
+          cmd: "com.awspaas.user.apps.shhtaerospaceindustrial_pdApply",
+          processInstId: processInstId,
+          ids: ids,
+          id: id
+        },
+        success: function (responseObject) {
+          $("#ZT").val("1");
+          if (responseObject.status == 1) {
+            alert(responseObject.message);
+          } else {//启动成功
+            alert("启动成功！");
+            //setTimeout(function(){
+            //    $(".mui-btn-task-blue").trigger("click");
+            //},0);
+            //location.reload();
+          }
+        }
+      });
+    }
+    AWSCommonGrid.saveRowData(sendOrderCallBack, false);
+}	
+function cancelOrder() {
+    //$("#btn1").on("click",function(){
+    //AWSCommonGrid.saveRowData();
+    var ids = $("#rowBoId").val() + ":" + ui("USECARTYPE") + ":" + $("#UDATE").val() + ":" + ui("VEHICLETYPE") + ":"
+    + $("#CPH").val() + ":" + $("#SJXM").val() + ":" + $("#SJZH").val() + ":" + $("#SJLXFS").val() + ":"
+    + $("#WZUNITPSN").val() + ":" + $("#WZUNITPSNZH").val() + ":" + $("#WZUNITPSNLXFS").val() + ":"
+    + $("#VEHICLELABELNAME").val();//获取子表记录数据信息集合
+    var id = "'" + $("#rowBoId").val() + "'";//获取子表记录id集合
+    var processInstId = $("#processInstId").val();
+    var sid = $("#sid").val();
+    var cancelOrderCallback = function () {
+      //alert("sonsave");
+      awsui.ajax.request({
+        url: "./jd",
+        method: "POST",
+        async: false,
+        dataType: "json",
+        data: {
+          sid: sid,
+          cmd: "com.awspaas.user.apps.shhtaerospaceindustrial_qxApply",
+          processInstId: processInstId,
+          ids: ids,
+          id: id
+        },
+        success: function (responseObject) {
+          debugger;
+          if (responseObject.status == 1) {
+            alert(responseObject.message);
+            //$.simpleAlert(responseObject.message);
+          } else {//启动成功
+            //location.reload();
+            alert("取消成功！");
+            //setTimeout(function(){
+            //    $(".mui-btn-task-blue").trigger("click");
+            //},0);
+          }
+        }
+      });
+    }
+    AWSCommonGrid.saveRowData(cancelOrderCallback, false);
+}
+$("#show-detail").on("click",function(){
+    debugger;
+    var id = $("#rowBoId").val();
+  	var sid = $("#sid").val();
+    awsui.ajax.request({
+      url: "./jd",
+      method: "POST",
+      async: false,
+      dataType: "json",
+      data: {
+        sid: sid,
+        cmd: "com.awspaas.user.apps.shhtaerospaceindustrial_openForm",
+        id: id
+      },
+      success: function (responseObject) {
+        debugger;
+        if (responseObject.status == 1) {
+          alert(responseObject.message);
+        } else {//启动成功
+          window.location.href = responseObject.urlMobile;
+          //setTimeout(function(){
+          //    $(".mui-btn-task-blue").trigger("click");
+          //},0);
+          //location.reload();
+        }
+      }
+    });
+});
+</script>
+</body>
+</html>

@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<AWSDWModel>
+    <id>obj_d8fddf25a1cb4500bd300844483ebfcd</id>
+    <createUser>admin</createUser>
+    <createTime>2020-05-17 15:27:48</createTime>
+    <updateUser></updateUser>
+    <updateTime>2020-05-17 15:27:48</updateTime>
+    <signature>tGOmxiTgjT/77UoYpSlq8Vc+hHPRoJWHdZexXc7zEpYuMNdhvSICeJnlc/RzRHGrNVP3h7IgcqscohnI1Cp/2lvLPPvD5/CEmjILjDnAo4Q5IreC0VqC0G1blROPWAm8</signature>
+    <managed>false</managed>
+    <processGroupId>obj_d8fddf25a1cb4500bd300844483ebfcd</processGroupId>
+    <processGroupName>安保巡逻路线维护</processGroupName>
+    <categoryName>未分类</categoryName>
+    <dwType>1</dwType>
+    <processAdministrator></processAdministrator>
+    <title id="obj_15b822854aea4bda93bd5f12a72c5ce8" label="安保巡逻路线维护" extendcode="" event=""/>
+    <userextendbuttons/>
+    <userextendbehaviors/>
+    <iconFontCode></iconFontCode>
+    <iconFontColor></iconFontColor>
+</AWSDWModel>

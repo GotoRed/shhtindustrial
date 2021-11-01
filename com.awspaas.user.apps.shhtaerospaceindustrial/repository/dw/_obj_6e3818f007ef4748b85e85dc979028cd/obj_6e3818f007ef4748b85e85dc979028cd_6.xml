@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<AWSDWModel>
+    <id>obj_6e3818f007ef4748b85e85dc979028cd</id>
+    <createUser>admin</createUser>
+    <createTime>2020-05-14 20:28:55</createTime>
+    <updateUser></updateUser>
+    <updateTime>2020-05-14 20:28:55</updateTime>
+    <signature>tGOmxiTgjT/77UoYpSlq8Vc+hHPRoJWHdZexXc7zEpYuMNdhvSICeJnlc/RzRHGr3/WQNUANs+vxQhL2TtdRtXFTLszCRGqxKzxBU59KXgoxDHK50UJiD+0ssIkCxx4g</signature>
+    <managed>false</managed>
+    <processGroupId>obj_6e3818f007ef4748b85e85dc979028cd</processGroupId>
+    <processGroupName>植被档案维护</processGroupName>
+    <categoryName>未分类</categoryName>
+    <dwType>1</dwType>
+    <processAdministrator></processAdministrator>
+    <title id="obj_57d4169ac07a40318030c670334f019f" label="植被档案维护" extendcode="" event=""/>
+    <userextendbuttons/>
+    <userextendbehaviors/>
+    <iconFontCode></iconFontCode>
+    <iconFontColor></iconFontColor>
+</AWSDWModel>

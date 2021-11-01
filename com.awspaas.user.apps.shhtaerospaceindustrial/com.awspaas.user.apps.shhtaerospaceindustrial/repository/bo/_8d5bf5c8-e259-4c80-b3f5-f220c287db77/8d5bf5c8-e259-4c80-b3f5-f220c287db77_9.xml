@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<boModel>
+    <id>8d5bf5c8-e259-4c80-b3f5-f220c287db77</id>
+    <createUser>admin</createUser>
+    <createTime>2021-06-28 09:17:09</createTime>
+    <updateUser></updateUser>
+    <updateTime>2021-06-28 09:17:09</updateTime>
+    <signature>tGOmxiTgjT/77UoYpSlq8Vc+hHPRoJWHdZexXc7zEpYuMNdhvSICeJnlc/RzRHGrsQ7dB5ySDHmIlD5d5IMRjpA10xhfKNntOtqwzFD1h739Ex+NqTYMD9edH8D0cH29</signature>
+    <managed>false</managed>
+    <title>访客人员明细</title>
+    <name>BO_EU_VISITOR_MANAGE_MX</name>
+    <collection>false</collection>
+    <system>false</system>
+    <deleted>false</deleted>
+    <categoryName>访客管理</categoryName>
+    <administrator>admin</administrator>
+    <entityType>TABLE</entityType>
+    <viewType></viewType>
+    <viewSql></viewSql>
+    <securityLevel>0</securityLevel>
+    <target>_local</target>
+    <itemProps></itemProps>
+    <boItems/>
+    <boIndexs>
+        <boIndex>
+            <id>41482d71-29d2-4cdf-b74d-9a02343da7cc</id>
+            <name></name>
+            <type>INDEX</type>
+            <boItems>BINDID</boItems>
+        </boIndex>
+    </boIndexs>
+    <boRelations/>
+    <hashFields></hashFields>
+</boModel>

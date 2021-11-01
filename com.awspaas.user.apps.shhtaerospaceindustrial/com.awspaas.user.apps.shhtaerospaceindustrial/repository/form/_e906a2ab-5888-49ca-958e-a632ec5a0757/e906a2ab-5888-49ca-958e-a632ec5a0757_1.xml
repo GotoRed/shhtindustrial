@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<formModel>
+    <id>e906a2ab-5888-49ca-958e-a632ec5a0757</id>
+    <createUser>admin</createUser>
+    <createTime>2020-05-16 14:43:24</createTime>
+    <updateUser></updateUser>
+    <updateTime>2020-05-16 14:43:24</updateTime>
+    <signature>tGOmxiTgjT/77UoYpSlq8Vc+hHPRoJWHdZexXc7zEpYuMNdhvSICeJnlc/RzRHGr4/B0N8tSKoUBdWFLOkGBFvliHklhM5h5tJ+Pn7wDObeejVfW/LhBZrm8ZJQjfnsA</signature>
+    <managed>false</managed>
+    <title>上航_安保巡更点档案</title>
+    <deleted>false</deleted>
+    <categoryName>安保管理</categoryName>
+    <administrator>admin</administrator>
+    <defaultLanguage></defaultLanguage>
+    <url></url>
+    <urlHeight></urlHeight>
+    <formItems>
+        <formItem>
+            <id>01dade22-0d63-4415-8d7c-e08771f92880</id>
+            <title>上航_安保巡更点档案</title>
+            <templateFile>{"tablet":"安保管理-上航_安保巡更点档案.htm","pc":"安保管理-上航_安保巡更点档案.htm","mobile":"安保管理-上航_安保巡更点档案_m.htm"}</templateFile>
+            <grid>false</grid>
+            <gridSetting></gridSetting>
+            <orderBy></orderBy>
+            <pageLimit>0</pageLimit>
+            <boModelId>489428dc-7289-407b-885a-b97d59550cd2</boModelId>
+            <dictionaryFileName></dictionaryFileName>
+            <hiddenHead>false</hiddenHead>
+            <theme>{"pc":"_bpm.platform","mobile":"_bpm.platform"}</theme>
+            <itemDisplays/>
+            <scheme>{"pc":""}</scheme>
+            <calcFormula></calcFormula>
+            <conditionControl></conditionControl>
+            <validate></validate>
+            <icon></icon>
+            <gridControl></gridControl>
+            <summaryControl></summaryControl>
+            <ruleControl></ruleControl>
+            <hiddenFields></hiddenFields>
+            <hiddenAddBtn>false</hiddenAddBtn>
+            <verticalLayout>false</verticalLayout>
+        </formItem>
+    </formItems>
+</formModel>

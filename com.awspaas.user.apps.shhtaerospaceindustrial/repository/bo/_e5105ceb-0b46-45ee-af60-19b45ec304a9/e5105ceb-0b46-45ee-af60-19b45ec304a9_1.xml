@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<boModel>
+    <id>e5105ceb-0b46-45ee-af60-19b45ec304a9</id>
+    <createUser>admin</createUser>
+    <createTime>2020-05-18 10:19:49</createTime>
+    <updateUser></updateUser>
+    <updateTime>2020-05-18 10:19:49</updateTime>
+    <signature>tGOmxiTgjT/77UoYpSlq8Vc+hHPRoJWHdZexXc7zEpYuMNdhvSICeJnlc/RzRHGrj5K9T8gN4Vygg4tVk/YEzoZOb6SRQWdA363Lz8hVhnFu8h/04TyQQENsncSfTH4C</signature>
+    <managed>false</managed>
+    <title>指派司机表</title>
+    <name>BO_EU_SH_ZPSJ</name>
+    <collection>false</collection>
+    <system>false</system>
+    <deleted>false</deleted>
+    <categoryName>车辆管理</categoryName>
+    <administrator>admin</administrator>
+    <entityType>TABLE</entityType>
+    <viewType></viewType>
+    <viewSql></viewSql>
+    <securityLevel>0</securityLevel>
+    <target>_local</target>
+    <itemProps></itemProps>
+    <boItems/>
+    <boIndexs>
+        <boIndex>
+            <id>63e145cb-3737-41aa-9120-f9fd18a0efef</id>
+            <name></name>
+            <type>INDEX</type>
+            <boItems>BINDID</boItems>
+        </boIndex>
+    </boIndexs>
+    <boRelations/>
+    <hashFields></hashFields>
+</boModel>

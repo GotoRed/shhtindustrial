@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta name="renderer" content="webkit">
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+	<title>项目办用车申请(含行车任务记录)-手机表单</title>
+	<!--字段背景风格App模板-->
+	<meta http-equiv='Content-Type' content='text/html; charset=UTF-8' />
+	<meta name="viewport" content="initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no, width=device-width">
+	
+	[#AWSImport]
+	[#AWSUIImport]
+	<script src="../apps/_bpm.portal/commom.form.js"></script>
+	
+	
+	<link rel='stylesheet' id='schemeCss' href='../apps/_bpm.platform/css/colorschemes/scheme_aws.css'  name='schemeCss'/>
+	<link rel="stylesheet" type="text/css" href="../apps/_bpm.portal/css/client.bpm.form.mobile.common.css?v=1588908698315">
+	<link rel="stylesheet" type="text/css" href="../apps/com.actionsoft.apps.form.theme.antdui/css/theme/antdui.css?v=1589851448797">
+<link type='text/css' rel='stylesheet' id='themeCss' href='../apps/com.actionsoft.apps.form.theme.antdui/css/theme/theme_m.css' name='themeCss'/>
+</head>
+<body>
+<form id="frmMain" name="frmMain" method="post">
+<div id="aws-form-container" border="0" style="width: 100%; border: 0px;">
+<table id="aws-form-maintable" style="table-layout: auto; width: 100%; border: 0px;" border="0" cellpadding="0" cellspacing="0">
+<tbody>
+<tr id="aws-form-titlebg" class="aws-form-ux-titlebg" style="display: none;">
+<td id="aws-form-title" class="aws-form-ux-header">项目办用车申请(含行车任务记录)</td>
+</tr>
+<tr class="aws-form-ux-formcontent" id="aws-form-formcontent">
+<td>
+<table id="table_container" class="awsui-ux table-striped" style="padding: 0px;" width="100%" cellspacing="0" cellpadding="0">
+<tbody>
+<tr>
+<td class="awsui-ux-title" style="padding-left: 0px;"><label id="APPLYUNITLabel" for="APPLYUNIT">单位</label></td>
+<td class="aws-form-ux-content">[#APPLYUNIT]</td>
+</tr>
+<tr>
+<td class="awsui-ux-title" style="padding-left: 0px;"><label id="APPLYDEPTNAMELabel" for="APPLYDEPTNAME">项目办</label></td>
+<td class="aws-form-ux-content">[#APPLYDEPTNAME]</td>
+</tr>
+<tr>
+<td class="awsui-ux-title" style="padding-left: 0px;"><label id="APPLYUSERNAMELabel" for="APPLYUSERNAME">申请人</label></td>
+<td class="aws-form-ux-content">[#APPLYUSERNAME]</td>
+</tr>
+<tr>
+<td class="awsui-ux-title" style="padding-left: 0px;"><label id="USEREASONLabel" for="USEREASON">用车事由</label></td>
+<td class="aws-form-ux-content">[#USEREASON]</td>
+</tr>
+<tr>
+<td class="awsui-ux-title" style="padding-left: 0px;"><label id="USEREASONQTLabel" for="USEREASONQT">用车事由其他</label></td>
+<td class="aws-form-ux-content">[#USEREASONQT]</td>
+</tr>
+<tr>
+<td class="awsui-ux-title" style="padding-left: 0px;"><label id="BDATELabel" for="BDATE">启用时间</label></td>
+<td class="aws-form-ux-content">[#BDATE]</td>
+</tr>
+<tr>
+<td class="awsui-ux-title" style="padding-left: 0px;"><label id="EDATELabel" for="EDATE">结束时间</label></td>
+<td class="aws-form-ux-content">[#EDATE]</td>
+</tr>
+<tr>
+<td class="awsui-ux-title" style="padding-left: 0px;"><label id="ISOUTSHANGHAILabel" for="ISOUTSHANGHAI">是否出省</label></td>
+<td class="aws-form-ux-content">[#ISOUTSHANGHAI]</td>
+</tr>
+<tr>
+<td class="awsui-ux-title" style="padding-left: 0px;"><label id="BOARDINGPLACELabel" for="BOARDINGPLACE">上车地点</label></td>
+<td class="aws-form-ux-content">[#BOARDINGPLACE]</td>
+</tr>
+<tr>
+<td class="awsui-ux-title" style="padding-left: 0px;"><label id="TARGETPLACELabel" for="TARGETPLACE">目的地</label></td>
+<td class="aws-form-ux-content">[#TARGETPLACE]</td>
+</tr>
+<tr>
+<td class="awsui-ux-title" style="padding-left: 0px;"><label id="REMARKLabel" for="REMARK">其他要求</label></td>
+<td class="aws-form-ux-content">[#REMARK]</td>
+</tr>
+<tr>
+<td class="awsui-ux-title" style="padding-left: 0px;"><label id="CONTACTPERSONLabel" for="CONTACTPERSON">用车联系人</label></td>
+<td class="aws-form-ux-content">[#CONTACTPERSON]</td>
+</tr>
+<tr>
+<td class="awsui-ux-title" style="padding-left: 0px;"><label id="CONTACTPHONELabel" for="CONTACTPHONE">联系人手机</label></td>
+<td class="aws-form-ux-content">[#CONTACTPHONE]</td>
+</tr>
+<tr>
+<td class="awsui-ux-title" style="padding-left: 0px;"><label id="VEHICLETYPELabel" for="VEHICLETYPE">车辆类型</label></td>
+<td class="aws-form-ux-content">[#VEHICLETYPE]</td>
+</tr>
+<tr>
+<td class="awsui-ux-title" style="padding-left: 0px;"><label id="CPHLabel" for="CPH">车牌号</label></td>
+<td class="aws-form-ux-content">[#CPH]</td>
+</tr>
+<tr>
+<td class="awsui-ux-title" style="padding-left: 0px;"><label id="SJXMLabel" for="SJXM">司机姓名</label></td>
+<td class="aws-form-ux-content">[#SJXM]</td>
+</tr>
+<tr>
+<td class="awsui-ux-title" style="padding-left: 0px;"><label id="SJZHLabel" for="SJZH">司机账号</label></td>
+<td class="aws-form-ux-content">[#SJZH]</td>
+</tr>
+<tr>
+<td class="awsui-ux-title" style="padding-left: 0px;"><label id="CCSLMSLabel" for="CCSLMS">出车时路码</label></td>
+<td class="aws-form-ux-content">[#CCSLMS]</td>
+</tr>
+<tr>
+<td class="awsui-ux-title" style="padding-left: 0px;"><label id="CFSJLabel" for="CFSJ">出车时间</label></td>
+<td class="aws-form-ux-content">[#CFSJ]</td>
+</tr>
+<tr>
+<td class="awsui-ux-title" style="padding-left: 0px;"><label id="ISLEAVESTAYLabel" for="ISLEAVESTAY">是否出差过夜</label></td>
+<td class="aws-form-ux-content">[#ISLEAVESTAY]</td>
+</tr>
+<tr>
+<td class="awsui-ux-title" style="padding-left: 0px;"><label id="FHSLMSLabel" for="FHSLMS">返回路码</label></td>
+<td class="aws-form-ux-content">[#FHSLMS]</td>
+</tr>
+<tr>
+<td class="awsui-ux-title" style="padding-left: 0px;"><label id="FHSJLabel" for="FHSJ">返回时间</label></td>
+<td class="aws-form-ux-content">[#FHSJ]</td>
+</tr>
+<tr>
+<td class="awsui-ux-title" style="padding-left: 0px;"><label id="RUNLINELabel" for="RUNLINE">用车路线</label></td>
+<td class="aws-form-ux-content">[#RUNLINE]</td>
+</tr>
+<tr>
+<td class="awsui-ux-title" style="padding-left: 0px;"><label id="TCFLabel" for="TCF">停车费</label></td>
+<td class="aws-form-ux-content">[#TCF]</td>
+</tr>
+<tr>
+<td class="awsui-ux-title" style="padding-left: 0px;"><label id="GLFLabel" for="GLF">路桥费</label></td>
+<td class="aws-form-ux-content">[#GLF]</td>
+</tr>
+<tr>
+<td class="awsui-ux-title" style="padding-left: 0px;"><label id="STAYMONEYLabel" for="STAYMONEY">住宿费</label></td>
+<td class="aws-form-ux-content">[#STAYMONEY]</td>
+</tr>
+<tr>
+<td class="awsui-ux-title" style="padding-left: 0px;"><label id="QTMONEYLabel" for="QTMONEY">其他费用</label></td>
+<td class="aws-form-ux-content">[#QTMONEY]</td>
+</tr>
+<tr>
+<td class="awsui-ux-title" style="padding-left: 0px;"><label id="NOTELabel" for="NOTE">备注</label></td>
+<td class="aws-form-ux-content">[#NOTE]</td>
+</tr>
+</tbody>
+</table>
+</td>
+</tr>
+<tr class="aws-form-bottom">
+<td class="aws-form-ux-bottom aws-form-ux-actionsoft">[#Actionsoft]
+<div id="hiddenArea" border="0" style="display: none;">[#ORDERSTATUS]</div>
+</td>
+</tr>
+</tbody>
+</table>
+<script src="../apps/com.actionsoft.apps.form.theme.antdui/js/commom.form.js?v=1589851448822"></script>
+<script src="../apps/com.actionsoft.apps.form.theme.antdui/js/antdui.js?v=1589851448822"></script>
+</div>
+</form>
+</body>
+</html>

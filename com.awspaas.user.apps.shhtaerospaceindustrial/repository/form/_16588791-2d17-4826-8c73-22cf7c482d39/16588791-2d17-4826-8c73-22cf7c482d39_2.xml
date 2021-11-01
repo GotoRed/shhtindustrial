@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<formModel>
+    <id>16588791-2d17-4826-8c73-22cf7c482d39</id>
+    <createUser>admin</createUser>
+    <createTime>2020-05-18 14:05:46</createTime>
+    <updateUser></updateUser>
+    <updateTime>2020-05-18 14:05:46</updateTime>
+    <signature>tGOmxiTgjT/77UoYpSlq8Vc+hHPRoJWHdZexXc7zEpYuMNdhvSICeJnlc/RzRHGrXOCi4DjcayekVWhttGD+C+iaCnB1R8Mws6xZPvp0pR6sH8SlN1cuaAF64oEXudk6</signature>
+    <managed>false</managed>
+    <title>租户档案表单</title>
+    <deleted>false</deleted>
+    <categoryName>特殊资源管理</categoryName>
+    <administrator>admin</administrator>
+    <defaultLanguage></defaultLanguage>
+    <url></url>
+    <urlHeight></urlHeight>
+    <formItems>
+        <formItem>
+            <id>668209d8-2a8e-426b-8239-89c33b8607d8</id>
+            <title>租户档案表单</title>
+            <templateFile>{"tablet":"特殊资源管理-租户档案表单.htm","pc":"特殊资源管理-租户档案表单.htm","mobile":"特殊资源管理-租户档案表单_m.htm"}</templateFile>
+            <grid>false</grid>
+            <gridSetting></gridSetting>
+            <orderBy></orderBy>
+            <pageLimit>0</pageLimit>
+            <boModelId>cd4f6e2a-8f02-41cf-b723-a14f8ac1555c</boModelId>
+            <dictionaryFileName></dictionaryFileName>
+            <hiddenHead>false</hiddenHead>
+            <theme>{"pc":"_bpm.platform","mobile":"_bpm.platform"}</theme>
+            <itemDisplays/>
+            <scheme>{}</scheme>
+            <calcFormula></calcFormula>
+            <conditionControl></conditionControl>
+            <validate></validate>
+            <icon></icon>
+            <gridControl></gridControl>
+            <summaryControl></summaryControl>
+            <ruleControl></ruleControl>
+            <hiddenFields></hiddenFields>
+            <hiddenAddBtn>false</hiddenAddBtn>
+            <verticalLayout>false</verticalLayout>
+        </formItem>
+    </formItems>
+</formModel>

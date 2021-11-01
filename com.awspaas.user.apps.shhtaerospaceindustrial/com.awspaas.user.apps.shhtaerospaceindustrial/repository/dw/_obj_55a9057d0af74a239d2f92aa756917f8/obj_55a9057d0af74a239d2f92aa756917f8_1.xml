@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<AWSDWModel>
+    <id>obj_55a9057d0af74a239d2f92aa756917f8</id>
+    <createUser>admin</createUser>
+    <createTime>2020-05-17 15:20:05</createTime>
+    <updateUser>admin</updateUser>
+    <updateTime>2020-05-17 15:20:06</updateTime>
+    <signature>tGOmxiTgjT/77UoYpSlq8Vc+hHPRoJWHdZexXc7zEpYuMNdhvSICeJnlc/RzRHGrWQYkqZEwj95UN9c9pA0rZCzTyiUSVsrofGT+lYI1jyV4AzlI4LMEsTKLixFnR/km</signature>
+    <managed>false</managed>
+    <processGroupId>obj_55a9057d0af74a239d2f92aa756917f8</processGroupId>
+    <processGroupName>安防事件档案</processGroupName>
+    <categoryName>安保管理</categoryName>
+    <dwType>1</dwType>
+    <processAdministrator>admin</processAdministrator>
+    <title id="obj_463db570c9044490b52c29b8f291a0e4" label="安防事件档案" extendcode="" event=""/>
+    <dataView id="obj_4fc171a754694b558a1e6f86386dc0a2" label="首页" showType="link" orderIndex="0" dwReportType="1" isDefault="false" category="普通视图" implClassName="com.actionsoft.bpms.dw.design.dataview.CommonDataView" security="" event="" url="" userExtendJs="" show="true">
+        <showHighSecurity>false</showHighSecurity>
+        <dataParams></dataParams>
+        <layoutECategoryType></layoutECategoryType>
+        <layoutECategoryTypeLast></layoutECategoryTypeLast>
+        <afterLoadEventCall></afterLoadEventCall>
+        <afterLoadEventScript></afterLoadEventScript>
+        <toolbar id="obj_13b87685414944eeadfeac4240e104c6" isshow="true" extendcode="" event="">
+            <button id="obj_9f9eecb07692478db9d9aeceaa80ce7b" refbuttonid="save" cls="" security="" isshow="true" orderindex="1" mobileShow="false" event="" selectShow="false"/>
+            <button id="obj_466674c9fb2640a39f7bac3be9184eb8" refbuttonid="new" cls="" security="" isshow="true" orderindex="2" mobileShow="false" event="" selectShow="false"/>
+            <button id="obj_e4dc000361644966ab85b60f328ec39d" refbuttonid="delete" cls="" security="" isshow="false" orderindex="3" mobileShow="false" event="" selectShow="true"/>
+            <button id="obj_4c211c861f054957b274c48fb6b894a6" refbuttonid="print" cls="" security="" isshow="true" orderindex="4" mobileShow="false" event="" selectShow="false"/>
+            <button id="obj_e9903cdad05448a2a4ceeeea22331123" refbuttonid="refresh" cls="" security="" isshow="true" orderindex="5" mobileShow="false" event="" selectShow="false"/>
+            <button id="obj_584c67f4ded44189ba7bb17aaca5a1a7" refbuttonid="exportDWData" cls="" security="" isshow="false" orderindex="6" mobileShow="false" event="" selectShow="false"/>
+        </toolbar>
+        <searcher id="obj_321857bf7e4b43a888048c958194fcb9" isshow="true" layoutType="tile" tdGroup="3" textCls="" dwLeftCls="" dwRightCls="" extendcode="" event="" xconditionEvent="" tileOpen="false"/>
+        <navTree id="obj_693982678658457d9486cc0d03230a7e" isshow="false" type="" rootcls="" leafcls="" ismultiple="false" isexpanded="true" orderindex="" event=""/>
+        <layout id="obj_5e895d12f1884e9f9ba57cca6bbd1a16" label="" classname="com.actionsoft.bpms.dw.exec.layout.LayoutA" event=""/>
+        <datagrid id="obj_56f57ceaf5e74dbba850ef39cdc2e721" isshow="true" autoSearch="true" customSet="true" select="false" datasource="bo:BO_EU_SH_SAFEEVENT" countSql="" pagesize="15" event="" rowDefHeight="25" showCheckBox="true" ismultiple="true" isshownumbercol="true" numberCellTotal="false" shownumbercolwidth="40px" freezeCols="0" wrap="false" nowrapTitle="false" refbehaviorid="|_title{}title_||||" behaviortarget="" behaviorConfig="" extendsql="" identifier="_ID" extend1="" multiHeader="">
+            <dataBaseConn></dataBaseConn>
+            <column id="obj_0fe166367b1c4b8db3ee5b09f2461b75" sort="" isfilter="false" bgcolor="" fontcolor="" fontsize="12px" width="100px" colALias="" colTableAlias="" colTable="BO_EU_SH_SAFEEVENT" length="128" required="0" align="left" showrule="" upshowrule="" upDataClassName="" extend1="" extend2="" security="" securityLevel="0" event="" field="SAFEEVENTYPE" label="安防事件类型" orderindex="0" colbehaviortarget="" ishidden="false" export="true" backHide="false" isusedvalue="false" tableheadsort="true" colrefbehaviorid="" columnAction="" datatype="TEXT" handleType="0" boType="" count="false"/>
+            <column id="obj_a2b383045e0744878598e1356f5ff50a" sort="" isfilter="false" bgcolor="" fontcolor="" fontsize="12px" width="100px" colALias="" colTableAlias="" colTable="BO_EU_SH_SAFEEVENT" length="128" required="0" align="left" showrule="" upshowrule="" upDataClassName="" extend1="" extend2="" security="" securityLevel="0" event="" field="SAFEEVENNAME" label="安防事件名称" orderindex="1" colbehaviortarget="" ishidden="false" export="true" backHide="false" isusedvalue="false" tableheadsort="true" colrefbehaviorid="" columnAction="" datatype="TEXT" handleType="0" boType="" count="false"/>
+            <column id="obj_b12e7ecb9edf49218f4a3f1d97e14373" sort="" isfilter="false" bgcolor="" fontcolor="" fontsize="12px" width="100px" colALias="" colTableAlias="" colTable="BO_EU_SH_SAFEEVENT" length="128" required="0" align="left" showrule="" upshowrule="" upDataClassName="" extend1="" extend2="" security="" securityLevel="0" event="" field="SAFEEVENDETIAL" label="事件描述" orderindex="2" colbehaviortarget="" ishidden="false" export="true" backHide="false" isusedvalue="false" tableheadsort="true" colrefbehaviorid="" columnAction="" datatype="TEXT" handleType="0" boType="" count="false"/>
+            <column id="obj_93532a20d5cf4ab9815bacaa0a668be4" sort="" isfilter="false" bgcolor="" fontcolor="" fontsize="12px" width="100px" colALias="" colTableAlias="" colTable="BO_EU_SH_SAFEEVENT" length="128" required="0" align="left" showrule="" upshowrule="" upDataClassName="" extend1="" extend2="" security="" securityLevel="0" event="" field="SAFEEVENTCHARGE" label="事件责任人" orderindex="3" colbehaviortarget="" ishidden="false" export="true" backHide="false" isusedvalue="false" tableheadsort="true" colrefbehaviorid="" columnAction="" datatype="TEXT" handleType="0" boType="" count="false"/>
+            <column id="obj_abffd65fda574aa782607a23bf9effed" sort="" isfilter="false" bgcolor="" fontcolor="" fontsize="12px" width="100px" colALias="" colTableAlias="" colTable="BO_EU_SH_SAFEEVENT" length="128" required="0" align="left" showrule="" upshowrule="" upDataClassName="" extend1="" extend2="" security="" securityLevel="0" event="" field="SAFEEVENTCHARGEID" label="事件责任人uid" orderindex="4" colbehaviortarget="" ishidden="false" export="true" backHide="false" isusedvalue="false" tableheadsort="true" colrefbehaviorid="" columnAction="" datatype="TEXT" handleType="0" boType="" count="false"/>
+            <column id="obj_678b745201c14a9e9eda72b4562fadc8" sort="" isfilter="false" bgcolor="" fontcolor="" fontsize="12px" width="120px" colALias="" colTableAlias="" colTable="BO_EU_SH_SAFEEVENT" length="36" required="0" align="left" showrule="" upshowrule="" upDataClassName="" extend1="" extend2="" security="" securityLevel="0" event="" field="_ID" label="业务表ID" orderindex="5" colbehaviortarget="" ishidden="true" export="false" backHide="true" isusedvalue="true" tableheadsort="false" colrefbehaviorid="" columnAction="" datatype="TEXT" handleType="1" boType="" count="false"/>
+            <column id="obj_5be5d6b2f62f4cfa9a85281a0040d453" sort="" isfilter="false" bgcolor="" fontcolor="" fontsize="12px" width="120px" colALias="" colTableAlias="" colTable="BO_EU_SH_SAFEEVENT" length="36" required="0" align="left" showrule="" upshowrule="" upDataClassName="" extend1="" extend2="" security="" securityLevel="0" event="" field="_ORGID" label="单位ID" orderindex="6" colbehaviortarget="" ishidden="true" export="false" backHide="true" isusedvalue="true" tableheadsort="false" colrefbehaviorid="" columnAction="" datatype="TEXT" handleType="1" boType="" count="false"/>
+            <column id="obj_2f5aec353d9a4a18a2b605984f2117a7" sort="" isfilter="false" bgcolor="" fontcolor="" fontsize="12px" width="120px" colALias="" colTableAlias="" colTable="BO_EU_SH_SAFEEVENT" length="36" required="0" align="left" showrule="" upshowrule="" upDataClassName="" extend1="" extend2="" security="" securityLevel="0" event="" field="_BINDID" label="流程实例ID" orderindex="7" colbehaviortarget="" ishidden="true" export="false" backHide="true" isusedvalue="true" tableheadsort="false" colrefbehaviorid="" columnAction="" datatype="TEXT" handleType="1" boType="" count="false"/>
+            <column id="obj_69c5c06702884cdd9559bcf296c51447" sort="" isfilter="false" bgcolor="" fontcolor="" fontsize="12px" width="135px" colALias="" colTableAlias="" colTable="BO_EU_SH_SAFEEVENT" length="0" required="0" align="center" showrule="" upshowrule="" upDataClassName="" extend1="" extend2="" security="" securityLevel="0" event="" field="_CREATEDATE" label="创建日期" orderindex="8" colbehaviortarget="" ishidden="true" export="false" backHide="true" isusedvalue="true" tableheadsort="false" colrefbehaviorid="" columnAction="" datatype="DATE" handleType="1" boType="" count="false"/>
+            <column id="obj_0af004d547b04d4fa9ce3ece11863e01" sort="" isfilter="false" bgcolor="" fontcolor="" fontsize="12px" width="120px" colALias="" colTableAlias="" colTable="BO_EU_SH_SAFEEVENT" length="36" required="0" align="left" showrule="" upshowrule="" upDataClassName="" extend1="" extend2="" security="" securityLevel="0" event="" field="_CREATEUSER" label="创建人" orderindex="9" colbehaviortarget="" ishidden="true" export="false" backHide="true" isusedvalue="true" tableheadsort="false" colrefbehaviorid="" columnAction="" datatype="TEXT" handleType="1" boType="" count="false"/>
+            <column id="obj_edf8b31dce3a46b2b56947747f4a779a" sort="" isfilter="false" bgcolor="" fontcolor="" fontsize="12px" width="135px" colALias="" colTableAlias="" colTable="BO_EU_SH_SAFEEVENT" length="0" required="0" align="center" showrule="" upshowrule="" upDataClassName="" extend1="" extend2="" security="" securityLevel="0" event="" field="_UPDATEDATE" label="更新日期" orderindex="10" colbehaviortarget="" ishidden="true" export="false" backHide="true" isusedvalue="true" tableheadsort="false" colrefbehaviorid="" columnAction="" datatype="DATE" handleType="1" boType="" count="false"/>
+            <column id="obj_1480870879d94d90ba252ee54271fd23" sort="" isfilter="false" bgcolor="" fontcolor="" fontsize="12px" width="120px" colALias="" colTableAlias="" colTable="BO_EU_SH_SAFEEVENT" length="36" required="0" align="left" showrule="" upshowrule="" upDataClassName="" extend1="" extend2="" security="" securityLevel="0" event="" field="_UPDATEUSER" label="更新人" orderindex="11" colbehaviortarget="" ishidden="true" export="false" backHide="true" isusedvalue="true" tableheadsort="false" colrefbehaviorid="" columnAction="" datatype="TEXT" handleType="1" boType="" count="false"/>
+            <column id="obj_1859f3f2fed34cbca7292a139dde3533" sort="" isfilter="false" bgcolor="" fontcolor="" fontsize="12px" width="120px" colALias="" colTableAlias="" colTable="BO_EU_SH_SAFEEVENT" length="1" required="0" align="right" showrule="" upshowrule="" upDataClassName="" extend1="" extend2="" security="" securityLevel="0" event="" field="_ISEND" label="流程是否结束" orderindex="12" colbehaviortarget="" ishidden="true" export="false" backHide="true" isusedvalue="true" tableheadsort="false" colrefbehaviorid="" columnAction="" datatype="NUMBER" handleType="1" boType="" count="false"/>
+            <dynamicRule></dynamicRule>
+        </datagrid>
+        <reportSetting></reportSetting>
+        <chartSetting></chartSetting>
+    </dataView>
+    <userextendbuttons/>
+    <userextendbehaviors/>
+    <iconFontCode></iconFontCode>
+    <iconFontColor></iconFontColor>
+</AWSDWModel>

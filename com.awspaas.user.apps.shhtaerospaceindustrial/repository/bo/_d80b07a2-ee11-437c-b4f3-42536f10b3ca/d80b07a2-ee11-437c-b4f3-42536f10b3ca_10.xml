@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<boModel>
+    <id>d80b07a2-ee11-437c-b4f3-42536f10b3ca</id>
+    <createUser>admin</createUser>
+    <createTime>2020-05-15 10:26:05</createTime>
+    <updateUser></updateUser>
+    <updateTime>2020-05-15 10:26:05</updateTime>
+    <signature>tGOmxiTgjT/77UoYpSlq8Vc+hHPRoJWHdZexXc7zEpYuMNdhvSICeJnlc/RzRHGrGXSwvVJJy38lPABt0YmAmhwC/cOssDep+KWKFJ8uynWisV5aZv5IDOpwS02KhtrD</signature>
+    <managed>false</managed>
+    <title>上航_物业迁入记录_子表</title>
+    <name>BO_EU_BUILDMOVEIN_DETIAL</name>
+    <collection>false</collection>
+    <system>false</system>
+    <deleted>false</deleted>
+    <categoryName>物业管理</categoryName>
+    <administrator>admin</administrator>
+    <entityType>TABLE</entityType>
+    <viewType></viewType>
+    <viewSql></viewSql>
+    <securityLevel>0</securityLevel>
+    <target>_local</target>
+    <itemProps></itemProps>
+    <boItems/>
+    <boIndexs>
+        <boIndex>
+            <id>ff0e4cee-8b67-436c-a57c-5a502b1589b9</id>
+            <name></name>
+            <type>INDEX</type>
+            <boItems>BINDID</boItems>
+        </boIndex>
+    </boIndexs>
+    <boRelations/>
+    <hashFields></hashFields>
+</boModel>

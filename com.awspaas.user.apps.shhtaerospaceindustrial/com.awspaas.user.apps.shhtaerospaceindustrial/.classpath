@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<classpath>
+	<classpathentry kind="src" path="src"/>
+	<classpathentry kind="con" path="org.eclipse.jdt.launching.JRE_CONTAINER/org.eclipse.jdt.internal.debug.ui.launcher.StandardVMType/JavaSE-1.8"/>
+	<classpathentry kind="con" path="org.eclipse.jdt.USER_LIBRARY/aws63-lib"/>
+	<classpathentry kind="con" path="org.eclipse.jdt.USER_LIBRARY/6.3"/>
+	<classpathentry kind="con" path="org.eclipse.jdt.USER_LIBRARY/aws6.3jars"/>
+	<classpathentry kind="lib" path="E:/平台文件/aliyun-java-sdk-core-4.1.0.jar"/>
+	<classpathentry kind="output" path="bin"/>
+</classpath>

@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<AWSDWModel>
+    <id>obj_322ddaf84dc3496da56452bb666c7b1b</id>
+    <createUser>admin</createUser>
+    <createTime>2020-05-15 10:54:44</createTime>
+    <updateUser>admin</updateUser>
+    <updateTime>2020-05-15 10:54:47</updateTime>
+    <signature>tGOmxiTgjT/77UoYpSlq8Vc+hHPRoJWHdZexXc7zEpYuMNdhvSICeJnlc/RzRHGrrlZiIJCKixgOJx7c83r5dmEuiGYx5T8dpc/OSX0Ht1WoE9No5qw/0mj+RmcXVW8U</signature>
+    <managed>false</managed>
+    <processGroupId>obj_322ddaf84dc3496da56452bb666c7b1b</processGroupId>
+    <processGroupName>物业客户档案</processGroupName>
+    <categoryName>物业管理</categoryName>
+    <dwType>1</dwType>
+    <processAdministrator>admin</processAdministrator>
+    <title id="obj_8c4bab1011dd4debb33598ae6db8eeb8" label="物业客户档案" extendcode="" event=""/>
+    <dataView id="obj_e619b4fbffc44d29a326a5e2dc65b817" label="首页" showType="link" orderIndex="0" dwReportType="1" isDefault="false" category="普通视图" implClassName="com.actionsoft.bpms.dw.design.dataview.CommonDataView" security="" event="" url="" userExtendJs="" show="true">
+        <showHighSecurity>false</showHighSecurity>
+        <dataParams></dataParams>
+        <layoutECategoryType></layoutECategoryType>
+        <layoutECategoryTypeLast></layoutECategoryTypeLast>
+        <afterLoadEventCall></afterLoadEventCall>
+        <afterLoadEventScript></afterLoadEventScript>
+        <toolbar id="obj_93f0b259da034fdbac0ba27c4af11d10" isshow="true" extendcode="" event="">
+            <button id="obj_2f2b35d5153a4f3bb0cba16a04a330fc" refbuttonid="save" cls="" security="" isshow="true" orderindex="1" mobileShow="false" event="" selectShow="false"/>
+            <button id="obj_40eaaabf814f4dc98dbb703a4461af9c" refbuttonid="new" cls="" security="" isshow="true" orderindex="2" mobileShow="false" event="" selectShow="false"/>
+            <button id="obj_546b5ee792b44122969e25aafde1c6bb" refbuttonid="delete" cls="" security="" isshow="false" orderindex="3" mobileShow="false" event="" selectShow="true"/>
+            <button id="obj_b2e34c905db8412bb1f7baa245cf4d56" refbuttonid="print" cls="" security="" isshow="true" orderindex="4" mobileShow="false" event="" selectShow="false"/>
+            <button id="obj_b43ab4f288a146fc84c6605387e2619c" refbuttonid="refresh" cls="" security="" isshow="true" orderindex="5" mobileShow="false" event="" selectShow="false"/>
+            <button id="obj_e3ae614f18dc47389422ca8d8bb03a24" refbuttonid="exportDWData" cls="" security="" isshow="false" orderindex="6" mobileShow="false" event="" selectShow="false"/>
+        </toolbar>
+        <searcher id="obj_0a82c2471b6a4347a83ce5a2aaf5519f" isshow="true" layoutType="tile" tdGroup="3" textCls="" dwLeftCls="" dwRightCls="" extendcode="" event="" xconditionEvent="" tileOpen="false"/>
+        <navTree id="obj_73d7c17b83054a86af9b09bb42355b29" isshow="false" type="" rootcls="" leafcls="" ismultiple="false" isexpanded="true" orderindex="" event=""/>
+        <layout id="obj_4ead5a209b004c2290476354b3a64c36" label="" classname="com.actionsoft.bpms.dw.exec.layout.LayoutA" event=""/>
+        <datagrid id="obj_9b2ddaa3866644bbb6eac9d0cd1bb1c2" isshow="true" autoSearch="true" customSet="true" select="false" datasource="bo:BO_EU_SH_BUIDLCUSTDOC" countSql="" pagesize="15" event="" rowDefHeight="25" showCheckBox="true" ismultiple="true" isshownumbercol="true" numberCellTotal="false" shownumbercolwidth="40px" freezeCols="0" wrap="false" nowrapTitle="false" refbehaviorid="|_title{}title_||||" behaviortarget="" behaviorConfig="" extendsql="" identifier="_ID" extend1="" multiHeader="">
+            <dataBaseConn></dataBaseConn>
+            <column id="obj_cd4dc2a8e7694a698fa39836d15fa1c7" sort="" isfilter="false" bgcolor="" fontcolor="" fontsize="12px" width="100px" colALias="" colTableAlias="" colTable="BO_EU_SH_BUIDLCUSTDOC" length="128" required="0" align="left" showrule="" upshowrule="" upDataClassName="" extend1="" extend2="" security="" securityLevel="0" event="" field="CUSTOMERNAME" label="客户姓名" orderindex="0" colbehaviortarget="" ishidden="false" export="true" backHide="false" isusedvalue="false" tableheadsort="true" colrefbehaviorid="" columnAction="" datatype="TEXT" handleType="0" boType="" count="false"/>
+            <column id="obj_ad95da6517c54173bf8da9918f6c569e" sort="" isfilter="false" bgcolor="" fontcolor="" fontsize="12px" width="100px" colALias="" colTableAlias="" colTable="BO_EU_SH_BUIDLCUSTDOC" length="128" required="0" align="left" showrule="" upshowrule="" upDataClassName="" extend1="" extend2="" security="" securityLevel="0" event="" field="CUSTOMERTYPE" label="客户类型" orderindex="1" colbehaviortarget="" ishidden="false" export="true" backHide="false" isusedvalue="false" tableheadsort="true" colrefbehaviorid="" columnAction="" datatype="TEXT" handleType="0" boType="" count="false"/>
+            <column id="obj_adc07a33e46e47f588b79b85c341dcba" sort="" isfilter="false" bgcolor="" fontcolor="" fontsize="12px" width="100px" colALias="" colTableAlias="" colTable="BO_EU_SH_BUIDLCUSTDOC" length="128" required="0" align="left" showrule="" upshowrule="" upDataClassName="" extend1="" extend2="" security="" securityLevel="0" event="" field="CUSTOMERIDCARDNO" label="身份证号码" orderindex="2" colbehaviortarget="" ishidden="false" export="true" backHide="false" isusedvalue="false" tableheadsort="true" colrefbehaviorid="" columnAction="" datatype="TEXT" handleType="0" boType="" count="false"/>
+            <column id="obj_d4ceb577011e480d9e47d55852b50fe4" sort="" isfilter="false" bgcolor="" fontcolor="" fontsize="12px" width="100px" colALias="" colTableAlias="" colTable="BO_EU_SH_BUIDLCUSTDOC" length="128" required="0" align="left" showrule="" upshowrule="" upDataClassName="" extend1="" extend2="" security="" securityLevel="0" event="" field="CELLPHONE" label="联系电话" orderindex="3" colbehaviortarget="" ishidden="false" export="true" backHide="false" isusedvalue="false" tableheadsort="true" colrefbehaviorid="" columnAction="" datatype="TEXT" handleType="0" boType="" count="false"/>
+            <column id="obj_5868ce1b336947e0bb3a13eae9ad2318" sort="" isfilter="false" bgcolor="" fontcolor="" fontsize="12px" width="100px" colALias="" colTableAlias="" colTable="BO_EU_SH_BUIDLCUSTDOC" length="128" required="0" align="left" showrule="" upshowrule="" upDataClassName="" extend1="" extend2="" security="" securityLevel="0" event="" field="CUSTOMERSTATUS" label="客户状态" orderindex="4" colbehaviortarget="" ishidden="false" export="true" backHide="false" isusedvalue="false" tableheadsort="true" colrefbehaviorid="" columnAction="" datatype="TEXT" handleType="0" boType="" count="false"/>
+            <column id="obj_13e9b7fede6f42bb867707cd4c99863f" sort="" isfilter="false" bgcolor="" fontcolor="" fontsize="12px" width="120px" colALias="" colTableAlias="" colTable="BO_EU_SH_BUIDLCUSTDOC" length="36" required="0" align="left" showrule="" upshowrule="" upDataClassName="" extend1="" extend2="" security="" securityLevel="0" event="" field="_ID" label="业务表ID" orderindex="5" colbehaviortarget="" ishidden="true" export="false" backHide="true" isusedvalue="true" tableheadsort="false" colrefbehaviorid="" columnAction="" datatype="TEXT" handleType="1" boType="" count="false"/>
+            <column id="obj_61905c268bed4f7b8121529d9d3e928a" sort="" isfilter="false" bgcolor="" fontcolor="" fontsize="12px" width="120px" colALias="" colTableAlias="" colTable="BO_EU_SH_BUIDLCUSTDOC" length="36" required="0" align="left" showrule="" upshowrule="" upDataClassName="" extend1="" extend2="" security="" securityLevel="0" event="" field="_ORGID" label="单位ID" orderindex="6" colbehaviortarget="" ishidden="true" export="false" backHide="true" isusedvalue="true" tableheadsort="false" colrefbehaviorid="" columnAction="" datatype="TEXT" handleType="1" boType="" count="false"/>
+            <column id="obj_67e1360ed50e4b35a8b20ace4dd328f4" sort="" isfilter="false" bgcolor="" fontcolor="" fontsize="12px" width="120px" colALias="" colTableAlias="" colTable="BO_EU_SH_BUIDLCUSTDOC" length="36" required="0" align="left" showrule="" upshowrule="" upDataClassName="" extend1="" extend2="" security="" securityLevel="0" event="" field="_BINDID" label="流程实例ID" orderindex="7" colbehaviortarget="" ishidden="true" export="false" backHide="true" isusedvalue="true" tableheadsort="false" colrefbehaviorid="" columnAction="" datatype="TEXT" handleType="1" boType="" count="false"/>
+            <column id="obj_e96a2822fe4248fe8c73806205179ff8" sort="" isfilter="false" bgcolor="" fontcolor="" fontsize="12px" width="135px" colALias="" colTableAlias="" colTable="BO_EU_SH_BUIDLCUSTDOC" length="0" required="0" align="center" showrule="" upshowrule="" upDataClassName="" extend1="" extend2="" security="" securityLevel="0" event="" field="_CREATEDATE" label="创建日期" orderindex="8" colbehaviortarget="" ishidden="true" export="false" backHide="true" isusedvalue="true" tableheadsort="false" colrefbehaviorid="" columnAction="" datatype="DATE" handleType="1" boType="" count="false"/>
+            <column id="obj_c2d4efcff5ca450399820880e9c81fe3" sort="" isfilter="false" bgcolor="" fontcolor="" fontsize="12px" width="120px" colALias="" colTableAlias="" colTable="BO_EU_SH_BUIDLCUSTDOC" length="36" required="0" align="left" showrule="" upshowrule="" upDataClassName="" extend1="" extend2="" security="" securityLevel="0" event="" field="_CREATEUSER" label="创建人" orderindex="9" colbehaviortarget="" ishidden="true" export="false" backHide="true" isusedvalue="true" tableheadsort="false" colrefbehaviorid="" columnAction="" datatype="TEXT" handleType="1" boType="" count="false"/>
+            <column id="obj_6c0922412c5a4ed881d432efb1ce68a1" sort="" isfilter="false" bgcolor="" fontcolor="" fontsize="12px" width="135px" colALias="" colTableAlias="" colTable="BO_EU_SH_BUIDLCUSTDOC" length="0" required="0" align="center" showrule="" upshowrule="" upDataClassName="" extend1="" extend2="" security="" securityLevel="0" event="" field="_UPDATEDATE" label="更新日期" orderindex="10" colbehaviortarget="" ishidden="true" export="false" backHide="true" isusedvalue="true" tableheadsort="false" colrefbehaviorid="" columnAction="" datatype="DATE" handleType="1" boType="" count="false"/>
+            <column id="obj_8558ef32e5e3482798319bda6e817db0" sort="" isfilter="false" bgcolor="" fontcolor="" fontsize="12px" width="120px" colALias="" colTableAlias="" colTable="BO_EU_SH_BUIDLCUSTDOC" length="36" required="0" align="left" showrule="" upshowrule="" upDataClassName="" extend1="" extend2="" security="" securityLevel="0" event="" field="_UPDATEUSER" label="更新人" orderindex="11" colbehaviortarget="" ishidden="true" export="false" backHide="true" isusedvalue="true" tableheadsort="false" colrefbehaviorid="" columnAction="" datatype="TEXT" handleType="1" boType="" count="false"/>
+            <column id="obj_8997a450051445f69986df264817ebe7" sort="" isfilter="false" bgcolor="" fontcolor="" fontsize="12px" width="120px" colALias="" colTableAlias="" colTable="BO_EU_SH_BUIDLCUSTDOC" length="1" required="0" align="right" showrule="" upshowrule="" upDataClassName="" extend1="" extend2="" security="" securityLevel="0" event="" field="_ISEND" label="流程是否结束" orderindex="12" colbehaviortarget="" ishidden="true" export="false" backHide="true" isusedvalue="true" tableheadsort="false" colrefbehaviorid="" columnAction="" datatype="NUMBER" handleType="1" boType="" count="false"/>
+            <dynamicRule></dynamicRule>
+        </datagrid>
+        <reportSetting></reportSetting>
+        <chartSetting></chartSetting>
+    </dataView>
+    <userextendbuttons/>
+    <userextendbehaviors/>
+    <iconFontCode></iconFontCode>
+    <iconFontColor></iconFontColor>
+</AWSDWModel>

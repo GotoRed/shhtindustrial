@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<classpath>
+	<classpathentry kind="src" path="src"/>
+	<classpathentry kind="con" path="org.eclipse.jdt.launching.JRE_CONTAINER/org.eclipse.jdt.internal.debug.ui.launcher.StandardVMType/jdk1.8">
+		<attributes>
+			<attribute name="module" value="true"/>
+		</attributes>
+	</classpathentry>
+	<classpathentry kind="lib" path="C:/Actionsoft/webjar/aliyun-java-sdk-core-4.5.1.jar"/>
+	<classpathentry kind="con" path="org.eclipse.jdt.USER_LIBRARY/AWS_USER"/>
+	<classpathentry kind="lib" path="C:/Actionsoft/webjar/commons-codec-1.10.jar"/>
+	<classpathentry kind="lib" path="C:/Actionsoft/webjar/commons-logging-1.2.jar"/>
+	<classpathentry kind="lib" path="C:/Actionsoft/webjar/gson-2.8.8.jar"/>
+	<classpathentry kind="lib" path="C:/Actionsoft/webjar/httpasyncclient-4.1.4.jar"/>
+	<classpathentry kind="lib" path="C:/Actionsoft/webjar/httpasyncclient-cache-4.1.4.jar"/>
+	<classpathentry kind="lib" path="C:/Actionsoft/webjar/httpclient-4.5.6.jar"/>
+	<classpathentry kind="lib" path="C:/Actionsoft/webjar/httpclient-cache-4.5.6.jar"/>
+	<classpathentry kind="lib" path="C:/Actionsoft/webjar/httpcore-4.4.10.jar"/>
+	<classpathentry kind="lib" path="C:/Actionsoft/webjar/httpcore-nio-4.4.10.jar"/>
+	<classpathentry kind="lib" path="C:/Actionsoft/webjar/json-lib-2.4-jdk15.jar"/>
+	<classpathentry kind="output" path="bin"/>
+</classpath>

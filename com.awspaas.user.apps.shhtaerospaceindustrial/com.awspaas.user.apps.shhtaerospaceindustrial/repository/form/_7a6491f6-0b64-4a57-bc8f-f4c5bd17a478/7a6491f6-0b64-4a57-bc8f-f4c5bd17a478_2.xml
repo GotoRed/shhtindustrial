@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<formModel>
+    <id>7a6491f6-0b64-4a57-bc8f-f4c5bd17a478</id>
+    <createUser>admin</createUser>
+    <createTime>2021-06-28 09:25:44</createTime>
+    <updateUser></updateUser>
+    <updateTime>2021-07-12 20:02:32</updateTime>
+    <signature>tGOmxiTgjT/77UoYpSlq8Vc+hHPRoJWHdZexXc7zEpYuMNdhvSICeJnlc/RzRHGrAfNOKdOhkTozQL3/0rsfkOGY4d0zNdcQLT/QY58LqoFb32triaWjWMTEltG0GFCi</signature>
+    <managed>false</managed>
+    <title>访客来访申请</title>
+    <deleted>false</deleted>
+    <categoryName>访客管理</categoryName>
+    <administrator>admin</administrator>
+    <defaultLanguage></defaultLanguage>
+    <url></url>
+    <urlHeight></urlHeight>
+    <formItems>
+        <formItem>
+            <id>017fea6e-91c3-4e32-96bf-2d9964cbb5b6</id>
+            <title>访客申请表头</title>
+            <templateFile>{"tablet":"访客管理-访客来访申请.htm","pc":"访客管理-访客来访申请.htm","mobile":"访客管理-访客来访申请_m.htm"}</templateFile>
+            <grid>false</grid>
+            <gridSetting></gridSetting>
+            <orderBy></orderBy>
+            <pageLimit>0</pageLimit>
+            <boModelId>0f743455-f217-4c50-b25a-0aa3015ac7b9</boModelId>
+            <dictionaryFileName></dictionaryFileName>
+            <hiddenHead>false</hiddenHead>
+            <theme>{"pc":"com.actionsoft.apps.form.theme.antdui","mobile":"com.actionsoft.apps.form.theme.antdui"}</theme>
+            <itemDisplays/>
+            <scheme>{"pc":"scheme_aws.css","mobile":"scheme_aws.css"}</scheme>
+            <calcFormula></calcFormula>
+            <conditionControl></conditionControl>
+            <validate></validate>
+            <icon></icon>
+            <gridControl></gridControl>
+            <summaryControl></summaryControl>
+            <ruleControl></ruleControl>
+            <hiddenFields>,TARGETMANUID</hiddenFields>
+            <hiddenAddBtn>false</hiddenAddBtn>
+            <verticalLayout>false</verticalLayout>
+        </formItem>
+        <formItem>
+            <id>d63edb75-e269-49d6-b119-11dd95ee2755</id>
+            <title>访客人员明细</title>
+            <templateFile>{"tablet":"","pc":"访客管理-访客来访申请-访客人员明细.htm","mobile":"访客管理-访客来访申请-访客人员明细_m.htm"}</templateFile>
+            <grid>true</grid>
+            <gridSetting>{"width":"","height":"","dlgWidth":"90%","dlgHeight":"90%","gridStyle":"thin","gridOpenMode":"dialog","gridSideWidth":"80%","gridSideMode":"false","displayTitle":"false","renderType":"common","renderClass":"","headerHtml":"","mobileRenderClass":""}</gridSetting>
+            <orderBy></orderBy>
+            <pageLimit>0</pageLimit>
+            <boModelId>8d5bf5c8-e259-4c80-b3f5-f220c287db77</boModelId>
+            <dictionaryFileName>[]</dictionaryFileName>
+            <hiddenHead>false</hiddenHead>
+            <theme>{"pc":"com.actionsoft.apps.form.theme.antdui","mobile":"com.actionsoft.apps.form.theme.antdui"}</theme>
+            <itemDisplays/>
+            <scheme>{"pc":"scheme_aws.css","mobile":"scheme_aws.css"}</scheme>
+            <calcFormula></calcFormula>
+            <conditionControl>{}</conditionControl>
+            <validate>{"VISITORCELL":{"rule":"11","vErr":0,"tip":"字段 {title} 输入的值长度不能少于{11}位","type":"length_min"}}</validate>
+            <icon></icon>
+            <gridControl>{"isCollapse":false,"title":"","unit":"","event":"","stat":"","field":"","isMultiColumn":true,"mobileGridRowDisplay":"[VISITORNAME][VISITORCELL][CERTTYPE][CERTNO]","mobileRenderClass":""}</gridControl>
+            <summaryControl></summaryControl>
+            <ruleControl>{"displayRule":[],"requiredRule":[],"modifyRule":[],"calcRule":[]}</ruleControl>
+            <hiddenFields></hiddenFields>
+            <hiddenAddBtn>false</hiddenAddBtn>
+            <verticalLayout>false</verticalLayout>
+        </formItem>
+    </formItems>
+</formModel>

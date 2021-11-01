@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta name="renderer" content="webkit">
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+	<title>会议室预定</title>
+	<!--字段背景风格App模板-->
+	<meta http-equiv='Content-Type' content='text/html; charset=UTF-8' />
+	
+	[#AWSImport]
+	[#AWSUIImport]
+	
+	
+	<link rel='stylesheet' id='schemeCss' href='../apps/_bpm.platform/css/colorschemes/scheme_1.css?v=1588908694733' name='schemeCss'/>
+	<link rel="stylesheet" type="text/css" href="../apps/com.actionsoft.apps.form.theme.antdui/css/theme/antdui.css?v=1589851448797">
+<link type='text/css' rel='stylesheet' id='themeCss' href='../apps/com.actionsoft.apps.form.theme.antdui/css/theme/theme.css?v=1589851448797' name='themeCss'/>
+</head>
+<body style="overflow: hidden;">
+<form id="frmMain" name="frmMain" method="post" action="./w">
+<div class="awsui-toolbar" border="0">[#ToolBar]</div>
+<div id="aws-form-container" class="aws-form-ux-container" border="0">
+<div id="FormGridRowPage" border="0" style="overflow: auto;">
+<table id="aws-form-maintable" class="awsui-ux aws-form-ux-maintable" align="center" border="1" cellpadding="0" cellspacing="0">
+<tbody>
+<tr id="aws-form-titlebg" class="aws-form-ux-titlebg">
+<td id="aws-form-title" class="aws-form-ux-header">会议室预定</td>
+</tr>
+<tr class="aws-form-ux-formcontent" id="aws-form-formcontent">
+<td>
+<table id="table_container" class="awsui-ux table-striped" width="100%" cellspacing="0" border="1" cellpadding="0"><colgroup><col class="awsui-ux-title" /><col style="width: 50.0%;" /><col class="awsui-ux-title" /><col style="width: 50.0%;" /></colgroup>
+<tbody>
+<tr>
+<td class="awsui-ux-title"><label class="aws-form-ux-label" for="CONTACTDEPTID">单位部门ID</label></td>
+<td class="aws-form-ux-content">[#CONTACTDEPTID]</td>
+<td class="awsui-ux-title"><label class="aws-form-ux-label" for="CONTACTPERSON">联系人</label></td>
+<td class="aws-form-ux-content">[#CONTACTPERSON]</td>
+</tr>
+<tr>
+<td class="awsui-ux-title"><label class="aws-form-ux-label" for="CONTACTPHONE">联系电话</label></td>
+<td class="aws-form-ux-content">[#CONTACTPHONE]</td>
+<td class="awsui-ux-title"><label class="aws-form-ux-label" for="MEETINGROOM" flag="labelRequired">会议室</label></td>
+<td class="aws-form-ux-content">[#MEETINGROOM]</td>
+</tr>
+<tr>
+<td class="awsui-ux-title"><label class="aws-form-ux-label" for="BDATE" flag="labelRequired">会议开始日期</label></td>
+<td class="aws-form-ux-content">[#BDATE]</td>
+<td class="awsui-ux-title"><label class="aws-form-ux-label" for="EDATE" flag="labelRequired">会议结束日期</label></td>
+<td class="aws-form-ux-content">[#EDATE]</td>
+</tr>
+<tr>
+<td class="awsui-ux-title"><label class="aws-form-ux-label" for="JOINMEETPSNNUM" flag="labelRequired">参会人数</label></td>
+<td class="aws-form-ux-content">[#JOINMEETPSNNUM]</td>
+<td class="awsui-ux-title"><label class="aws-form-ux-label" for="REMARK">其他需求</label></td>
+<td class="aws-form-ux-content">[#REMARK]</td>
+</tr>
+<tr>
+<td class="awsui-ux-title"><label class="aws-form-ux-label" for="PRICE">收费标准</label></td>
+<td class="aws-form-ux-content">[#PRICE]</td>
+<td class="awsui-ux-title"><label class="aws-form-ux-label" for="SETTLEMENTTYPE">结算方式</label></td>
+<td class="aws-form-ux-content">[#SETTLEMENTTYPE]</td>
+</tr>
+<tr>
+<td class="awsui-ux-title"><label class="aws-form-ux-label" for="TABLETYPE">桌形</label></td>
+<td class="aws-form-ux-content">[#TABLETYPE]</td>
+<td class="awsui-ux-title"><label class="aws-form-ux-label" for="CHAIRTANLENUM">主席台人数</label></td>
+<td class="aws-form-ux-content">[#CHAIRTANLENUM]</td>
+</tr>
+<tr>
+<td class="awsui-ux-title"><label class="aws-form-ux-label" for="NAMECARD">席卡</label></td>
+<td class="aws-form-ux-content">[#NAMECARD]</td>
+<td class="awsui-ux-title"><label class="aws-form-ux-label" for="TITLEPAGE">横幅</label></td>
+<td class="aws-form-ux-content">[#TITLEPAGE]</td>
+</tr>
+<tr>
+<td class="awsui-ux-title"><label class="aws-form-ux-label" for="MIKENUM">话筒数量</label></td>
+<td class="aws-form-ux-content">[#MIKENUM]</td>
+<td class="awsui-ux-title"><label class="aws-form-ux-label" for="TEAREST">茶歇</label></td>
+<td class="aws-form-ux-content">[#TEAREST]</td>
+</tr>
+<tr>
+<td class="awsui-ux-title"><label class="aws-form-ux-label" for="FLOWER">鲜花</label></td>
+<td class="aws-form-ux-content">[#FLOWER]</td>
+<td class="awsui-ux-title"><label class="aws-form-ux-label" for="PAPERANDPEN">纸笔</label></td>
+<td class="aws-form-ux-content">[#PAPERANDPEN]</td>
+</tr>
+<tr>
+<td class="awsui-ux-title"><label class="aws-form-ux-label" for="JIANGTABLE">讲台</label></td>
+<td class="aws-form-ux-content">[#JIANGTABLE]</td>
+<td class="awsui-ux-title"></td>
+<td class="aws-form-ux-content"></td>
+</tr>
+</tbody>
+</table>
+</td>
+</tr>
+<tr class="aws-form-bottom">
+<td class="aws-form-ux-bottom aws-form-ux-actionsoft">[#Actionsoft]</td>
+</tr>
+</tbody>
+</table>
+<script src="../apps/com.actionsoft.apps.form.theme.antdui/js/commom.form.js?v=1589851448822"></script>
+<script src="../apps/com.actionsoft.apps.form.theme.antdui/js/antdui.js?v=1589851448822"></script>
+</div>
+</div>
+</form>
+</body>
+</html>

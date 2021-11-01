@@ -1,0 +1,279 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta name="renderer" content="webkit">
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+	<title>上航_餐饮预订-手机表单</title>
+	<!--字段背景风格App模板-->
+	<meta http-equiv='Content-Type' content='text/html; charset=UTF-8' />
+	<meta name="viewport" content="initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no, width=device-width">
+	
+	[#AWSImport]
+	[#AWSUIImport]
+	<script src="../apps/_bpm.portal/commom.form.js"></script>
+	
+	
+	<link rel='stylesheet' id='schemeCss' href='../apps/_bpm.platform/css/colorschemes/scheme_aws.css'  name='schemeCss'/>
+	<link rel="stylesheet" type="text/css" href="../apps/_bpm.portal/css/client.bpm.form.mobile.common.css?v=1588908698315">
+	<link rel="stylesheet" type="text/css" href="../apps/com.actionsoft.apps.form.theme.antdui/css/theme/antdui.css?v=1589851448797">
+<link type='text/css' rel='stylesheet' id='themeCss' href='../apps/com.actionsoft.apps.form.theme.antdui/css/theme/theme_m.css' name='themeCss'/>
+</head>
+<body>
+<form id="frmMain" name="frmMain" method="post">
+<div id="aws-form-container" border="0" style="width: 100%; border: 0px;">
+<table id="aws-form-maintable" style="table-layout: auto; width: 100%; border: 0px;" cellspacing="0" cellpadding="0" border="0">
+<tbody>
+<tr id="aws-form-titlebg" class="aws-form-ux-titlebg" style="display: none;">
+<td id="aws-form-title" class="aws-form-ux-header">上航_餐饮预订</td>
+</tr>
+<tr class="aws-form-ux-formcontent" id="aws-form-formcontent">
+<td class="">
+<table id="table_container" class="awsui-ux table-striped" style="padding: 0px;" width="100%" cellspacing="0" cellpadding="0">
+<tbody>
+<tr>
+<td class="awsui-ux-title" style="padding-left: 0px;"><span style="white-space: nowrap;">预订单位</span></td>
+<td class="aws-form-ux-content">[#APPLYDEPTID]</td>
+</tr>
+<tr>
+<td class="awsui-ux-title" style="padding-left: 0px;"><label id="CONTACTPERSONLabel" for="CONTACTPERSON" flag="labelRequired">联系人</label></td>
+<td class="aws-form-ux-content">[#CONTACTPERSON]</td>
+</tr>
+<tr>
+<td class="awsui-ux-title" style="padding-left: 0px;"><label id="CONTACTPHONELabel" for="CONTACTPHONE" flag="labelRequired">联系电话</label></td>
+<td class="aws-form-ux-content">[#CONTACTPHONE]</td>
+</tr>
+<tr>
+<td class="awsui-ux-title" style="padding-left: 0px;"><label id="SFYCRLabel" for="SFYCR">是否用餐人</label></td>
+<td class="aws-form-ux-content">[#SFYCR]</td>
+</tr>
+<tr id="ycrdw" style="display: none;">
+<td class="awsui-ux-title" style="padding-left: 0px;"><label id="YCUNITLabel" for="YCUNIT">用餐人单位</label></td>
+<td class="aws-form-ux-content">[#YCUNIT]</td>
+</tr>
+<tr id="ycrxm" style="display: none;">
+<td class="awsui-ux-title" style="padding-left: 0px;"><label id="YCNAMELabel" for="YCNAME">用餐人姓名</label></td>
+<td class="aws-form-ux-content">[#YCNAME]</td>
+</tr>
+<tr id="ycrdh" style="display: none;">
+<td class="awsui-ux-title" style="padding-left: 0px;"><label id="YCTELELabel" for="YCTELE">用餐人电话</label></td>
+<td class="aws-form-ux-content">[#YCTELE]</td>
+</tr>
+<tr>
+<td class="awsui-ux-title" style="padding-left: 0px;"><label id="ORDERDATELabel" for="ORDERDATE" flag="labelRequired">用餐时间</label></td>
+<td class="aws-form-ux-content">[#YCDATE]</td>
+</tr>
+<tr>
+<td class="awsui-ux-title" style="padding-left: 0px;"><label id="ORDERSELLabel" for="ORDERSEL" flag="labelRequired">用餐时段</label></td>
+<td class="aws-form-ux-content">[#ORDERSEL]</td>
+</tr>
+<tr>
+<td class="awsui-ux-title" style="padding-left: 0px;"><label id="AREALabel" for="AREA" flag="labelRequired">食堂区域</label></td>
+<td class="aws-form-ux-content">[#AREA]</td>
+</tr>
+<tr>
+<td class="awsui-ux-title" style="padding-left: 0px;"><label id="PERSONNUMLabel" for="PERSONNUM" flag="labelRequired">用餐人数</label></td>
+<td class="aws-form-ux-content">[#PERSONNUM]</td>
+</tr>
+<tr>
+<td class="awsui-ux-title" style="padding-left: 0px;"><label id="PACKAGESTANDARDLabel" for="PACKAGESTANDARD" flag="labelRequired">用餐标准</label></td>
+<td class="aws-form-ux-content">[#PACKAGESTANDARD]</td>
+</tr>
+<tr id="bfbh" style="display: none;">
+<td class="awsui-ux-title" style="padding-left: 0px;"><label id="ROOMNUMLabel" for="ROOMNUM">包房号</label></td>
+<td class="aws-form-ux-content">[#ROOMNUM]</td>
+</tr>
+<tr id="ddcx" style="display: none;">
+<td class="awsui-ux-title" style="padding-left: 0px;"><label id="YYORDERLabel" for="YYORDER">已有订单查看</label></td>
+<td class="aws-form-ux-content">[#YYORDER]</td>
+</tr>
+<tr>
+<td class="awsui-ux-title" style="padding-left: 0px;"><label id="ROOMNUMBERLabel" for="ROOMNUMBER" flag="labelRequired">包间数量</label></td>
+<td class="aws-form-ux-content">[#ROOMNUMBER]</td>
+</tr>
+<tr id="jzfs" style="display: none;">
+<td class="awsui-ux-title" style="padding-left: 0px;"><label id="REMARKLabel" for="REMARK">结账方式</label></td>
+<td class="aws-form-ux-content">[#PAYTYPE]</td>
+</tr>
+<tr id="xfje" style="display: none;">
+<td class="awsui-ux-title" style="padding-left: 0px;"><label id="REMARKLabel" for="REMARK">消费金额</label></td>
+<td class="aws-form-ux-content">[#TOTALMONEY]</td>
+</tr>
+<tr id="sfinvoice">
+<td class="awsui-ux-title" style="padding-left: 0px;"><label id="SFINVOICELabel" for="SFINVOICE">是否开票</label></td>
+<td class="aws-form-ux-content">[#SFINVOICE]</td>
+</tr>
+<tr id="fptt" style="display: none;">
+<td class="awsui-ux-title" style="padding-left: 0px;"><label id="TACKETTITLELabel" for="TACKETTITLE">发票抬头</label></td>
+<td class="aws-form-ux-content">[#TACKETTITLE]</td>
+</tr>
+<tr id="fptt" style="display: none;">
+<td class="awsui-ux-title" style="padding-left: 0px;"><label id="TACKETTITLE2Label" for="TACKETTITLE2">其他单位抬头</label></td>
+<td class="aws-form-ux-content">[#TACKETTITLE2]</td>
+</tr>
+<tr id="cf" style="display: none;">
+<td class="awsui-ux-title" style="padding-left: 0px;"><label id="REMARKLabel" for="REMARK">餐费</label></td>
+<td class="aws-form-ux-content">[#DINNERMONEY]</td>
+</tr>
+<tr id="yp" style="display: none;">
+<td class="awsui-ux-title" style="padding-left: 0px;"><label id="REMARKLabel" for="REMARK">饮品</label></td>
+<td class="aws-form-ux-content">[#DRINKMONEY]</td>
+</tr>
+<tr id="qt" style="display: none;">
+<td class="awsui-ux-title" style="padding-left: 0px;"><label id="REMARKLabel" for="REMARK">其他</label></td>
+<td class="aws-form-ux-content">[#QTMONEY]</td>
+</tr>
+<tr id="qdr" style="display: none;">
+<td class="awsui-ux-title" style="padding-left: 0px;"><label id="QDMANLabel" class="aws-form-ux-label" for="QDMAN">签单人</label></td>
+<td class="aws-form-ux-content">[#QDMAN]</td>
+</tr>
+<tr id="yjfk" style="display: none;">
+<td class="awsui-ux-title" style="padding-left: 0px;"><label id="REMARKLabel" for="REMARK">意见反馈</label></td>
+<td class="aws-form-ux-content">[#GUESTRETURN]</td>
+</tr>
+<tr style="display: none;">
+<td class="awsui-ux-title"><label id="APPLYUIDLabel" class="aws-form-ux-label" for="APPLYUID">预定人</label></td>
+<td class="aws-form-ux-content">[#APPLYUID]</td>
+</tr>
+<tr style="display: none;">
+<td class="awsui-ux-title"><label id="APPLYIDLabel" class="aws-form-ux-label" for="APPLYID">预订人ID</label></td>
+<td class="aws-form-ux-content">[#APPLYID]</td>
+</tr>
+<tr>
+<td class="awsui-ux-title" style="padding-left: 0px;"><label id="REMARKLabel" for="REMARK">客户要求</label></td>
+<td class="aws-form-ux-content">[#REMARK]</td>
+</tr>
+<tr>
+<td class="awsui-ux-title"><label id="CANCELREASONLabel" class="aws-form-ux-label" for="CANCELREASON">取消原因</label></td>
+<td class="aws-form-ux-content">[#CANCELREASON]</td>
+</tr>
+<tr id="c8f38dfa_e930_0001_e5c7_f39f6236fd00" style="display: none;">
+<td class="awsui-ux-title">已有订单查询</td>
+<td class="aws-form-ux-content">[#YYORDER]</td>
+</tr>
+</tbody>
+</table>
+</td>
+</tr>
+<tr class="aws-form-bottom">
+<td class="aws-form-ux-bottom aws-form-ux-actionsoft">[#Actionsoft]
+<div id="hiddenArea" border="0" style="display: none;">[#ORDERID][#ORDERSTATUS][#ORDERTIME][#ORDERDATE][#BILLDEPTID][#BILLLIST][#CONTACTDEPTID][#PACKAGETYPE][#COMMENTS][#STARS][#MESSDISPATCHER][#ROOMID]</div>
+</td>
+</tr>
+</tbody>
+</table>
+<script src="../commons/js/aws.mobile.jsapi.js"></script>
+<script src="../apps/com.actionsoft.apps.form.theme.antdui/js/commom.form.js?v=1589851448822"></script>
+<script src="../apps/com.actionsoft.apps.form.theme.antdui/js/antdui.js?v=1589851448822"></script>
+</div>
+</form>
+<script id="formSave">
+/*
+参数isTransact为true，表示办理按钮触发的保存动作
+其他情况是保存按钮触发的保存动作
+*/
+function formSave(isTransact){
+  var userTaskDefId = $("#userTaskDefId").val();//审批结点id
+  var commentOption = $("input[name='commentOption']:checked").val();//获得审批按钮名称
+  var sfycr = $("#SFYCR").val();//是否用餐人  
+  var ycunit = $("#YCUNIT").val();//用餐人单位
+  var ycname = $("#YCNAME").val();//用餐人姓名
+  var yctele = $("#YCTELE").val();//用餐人电话
+  var roomnum = $("#ROOMNUM").val();//包房号
+  var paytype = $("#PAYTYPE").val();//结账方式
+  var totalmoney = $("#TOTALMONEY").val();//消费金额
+  //var sfinvoice = $("#SFINVOICE").val();//是否开票
+  //if (isTransact) {
+    if(userTaskDefId =="obj_abe346e51e4d439aa0ba7ed46ea625d1" && sfycr == "0"){ //客户预订
+      if(ycunit =="" ||ycname =="" ||yctele ==""){
+         $.simpleAlert("未填写“用餐人单位”、“用餐人姓名”和“用餐人电话”，请填写后在提交!", "info", 3000);
+         return false;
+      }
+    }else if( userTaskDefId == "obj_32c1dc4b6cfe449abbc657f136d73b83" && commentOption== "预订确认" ){//食堂调度
+       if(roomnum =="" ){
+         $.simpleAlert("未填写“包房号”，请填写后在提交!", "info", 3000);
+         return false;
+      }
+    }else if( userTaskDefId == "obj_556c79089472474ba1e0817f54dff571" ){//用餐结算确认
+       if(paytype =="" ||totalmoney =="" ){
+         $.simpleAlert("未填写“结账方式”和“消费金额”，请填写后在提交!", "info", 3000);
+         return false;
+      }
+    }
+  //}
+}
+AWSFormMainAPI.customCloseFormPage(function(){
+    //自己处理当前的窗口如何的代码
+    var url=localStorage.getItem("backUrl");
+    location.href=url;
+    return true;//最后返回true
+});
+</script>
+<script id="formOnload">// <![CDATA[
+function formOnload(){
+  debugger;
+   var userTaskDefId = $("#userTaskDefId").val();
+    $("#BTN_SAVE").parent().hide();//隐藏表单上的保存按钮
+   var sfycr = $("#SFYCR").val();
+   if( userTaskDefId == "obj_32c1dc4b6cfe449abbc657f136d73b83" ){//食堂调度接收
+        $("#bfbh").show();//包房编号
+        $("#ddcx").show();//订单查询      
+    	//$("#pjxj").show();//评价星级
+      	//$("#pjnr").show();//评价内容
+         if(sfycr == "1"){//是
+            $("#ycrdw").hide();//用餐人单位
+            $("#ycrxm").hide();//用餐人姓名
+            $("#ycrdh").hide();//用餐人电话
+        }else if(sfycr == "0"){//否
+            $("#ycrdw").show();//用餐人单位
+            $("#ycrxm").show();//用餐人姓名
+            $("#ycrdh").show();//用餐人电话
+        }
+    }else if(userTaskDefId == "obj_556c79089472474ba1e0817f54dff571" ){//用餐结算确认 
+        $("#bfbh").show();//包房编号
+        $("#xfje").show();//消费金额
+        $("#jzfs").show();//结账方式
+    }
+  	setTimeout(function(   
+    ){
+    	$("#BTN_CLOSE_EDITPERMISSIONS").parent().hide();//隐藏表单上的编辑权释放按钮
+    },0);
+}
+/**
+  * 点击改变事件
+  *
+  * @param {String} boItemName 字段名
+  * @param {Object} swValue 开关的改编后的值，该值根据不同设置会有变化
+  */
+function onSwitchBtChangeEvent(boItemName, swValue) {
+  	//事件处理代码
+  	//子表页面获取元素写法
+  	//$("#grid_data_open_frame_mobile").contents().find("#字段ID");
+  	if(boItemName == "SFYCR"){//是否用餐人
+      	debugger;
+    	var sfycr = ui("SFYCR");//是否用餐人
+        if(sfycr == "1"){//是
+            $("#ycrdw").hide();//用餐人单位
+            $("#ycrxm").hide();//用餐人姓名
+            $("#ycrdh").hide();//用餐人电话
+        }else if(sfycr == "0"){//否
+            $("#ycrdw").show();//用餐人单位
+            $("#ycrxm").show();//用餐人姓名
+            $("#ycrdh").show();//用餐人电话
+        }
+    }
+  	if(boItemName == "SFINVOICE"){//是否开票
+      	//debugger;
+    	var ifinvoice = ui("SFINVOICE");
+        if(ifinvoice == "1"){//是
+            $("#fptt").show();
+        }else if(ifinvoice == "0"){//否
+            $("#fptt").hide();
+        }
+    }
+  function save(){
+	$('#BTN_SAVE').trigger("click");
+}
+}
+// ]]></script>
+</body>
+</html>

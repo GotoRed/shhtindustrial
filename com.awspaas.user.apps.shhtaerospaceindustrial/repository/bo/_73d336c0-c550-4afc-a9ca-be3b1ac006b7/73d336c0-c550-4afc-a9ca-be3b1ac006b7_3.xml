@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<boModel>
+    <id>73d336c0-c550-4afc-a9ca-be3b1ac006b7</id>
+    <createUser>admin</createUser>
+    <createTime>2020-05-14 20:11:15</createTime>
+    <updateUser></updateUser>
+    <updateTime>2020-05-14 20:11:15</updateTime>
+    <signature>tGOmxiTgjT/77UoYpSlq8Vc+hHPRoJWHdZexXc7zEpYuMNdhvSICeJnlc/RzRHGr0ED7494aTDZg3skUP3xb8bbxICYQN60y+HWifpQIHHG1O/kZdAI9h2LkfdNbNYEv</signature>
+    <managed>false</managed>
+    <title>上航_绿化计划主表</title>
+    <name>BO_EU_SH_GREENPLAN_HEAD</name>
+    <collection>false</collection>
+    <system>false</system>
+    <deleted>false</deleted>
+    <categoryName>物业管理</categoryName>
+    <administrator>admin</administrator>
+    <entityType>TABLE</entityType>
+    <viewType></viewType>
+    <viewSql></viewSql>
+    <securityLevel>0</securityLevel>
+    <target>_local</target>
+    <itemProps></itemProps>
+    <boItems/>
+    <boIndexs>
+        <boIndex>
+            <id>d27c7ac4-4d6b-45f0-bc08-a2d989e1259e</id>
+            <name></name>
+            <type>INDEX</type>
+            <boItems>BINDID</boItems>
+        </boIndex>
+    </boIndexs>
+    <boRelations/>
+    <hashFields></hashFields>
+</boModel>

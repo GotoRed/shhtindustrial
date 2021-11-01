@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<formModel>
+    <id>0d424ae6-8810-42c9-944e-fcfff516c6c0</id>
+    <createUser>admin</createUser>
+    <createTime>2020-05-18 14:58:28</createTime>
+    <updateUser></updateUser>
+    <updateTime>2020-05-18 14:58:28</updateTime>
+    <signature>tGOmxiTgjT/77UoYpSlq8Vc+hHPRoJWHdZexXc7zEpYuMNdhvSICeJnlc/RzRHGryblPgeuJx85hw5+2M+65L3NhxDMcDyCogpWBpYAlpSQUjNJE+rr4PbMzKUAh75Of</signature>
+    <managed>false</managed>
+    <title>车辆违章记录表单</title>
+    <deleted>false</deleted>
+    <categoryName>车辆管理</categoryName>
+    <administrator>admin</administrator>
+    <defaultLanguage></defaultLanguage>
+    <url></url>
+    <urlHeight></urlHeight>
+    <formItems>
+        <formItem>
+            <id>de0731be-1a40-481d-8870-9538836601d6</id>
+            <title>车辆违章记录表单</title>
+            <templateFile>{"tablet":"车辆管理-车辆违章记录表单.htm","pc":"车辆管理-车辆违章记录表单.htm","mobile":"车辆管理-车辆违章记录表单_m.htm"}</templateFile>
+            <grid>false</grid>
+            <gridSetting></gridSetting>
+            <orderBy></orderBy>
+            <pageLimit>0</pageLimit>
+            <boModelId>3b917ac1-1cfa-40ae-a732-4a4a2e88be2d</boModelId>
+            <dictionaryFileName></dictionaryFileName>
+            <hiddenHead>false</hiddenHead>
+            <theme>{"pc":"_bpm.platform","mobile":"_bpm.platform"}</theme>
+            <itemDisplays/>
+            <scheme>{}</scheme>
+            <calcFormula></calcFormula>
+            <conditionControl></conditionControl>
+            <validate></validate>
+            <icon></icon>
+            <gridControl></gridControl>
+            <summaryControl></summaryControl>
+            <ruleControl></ruleControl>
+            <hiddenFields></hiddenFields>
+            <hiddenAddBtn>false</hiddenAddBtn>
+            <verticalLayout>false</verticalLayout>
+        </formItem>
+    </formItems>
+</formModel>

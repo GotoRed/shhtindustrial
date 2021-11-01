@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<AWSDWModel>
+    <id>obj_5b2ace15fe694efab0b1765f115a423b</id>
+    <createUser>admin</createUser>
+    <createTime>2020-06-01 13:51:19</createTime>
+    <updateUser></updateUser>
+    <updateTime>2020-06-01 13:51:19</updateTime>
+    <signature>tGOmxiTgjT/77UoYpSlq8Vc+hHPRoJWHdZexXc7zEpYuMNdhvSICeJnlc/RzRHGr8S5V6EEnDF9SGzmyOk0VtYCzkEVrYwpXsj+5AhfpObPRnox3yHZfWfPSzYBZpNYX</signature>
+    <managed>false</managed>
+    <processGroupId>obj_5b2ace15fe694efab0b1765f115a423b</processGroupId>
+    <processGroupName>车辆预订</processGroupName>
+    <categoryName>未分类</categoryName>
+    <dwType>1</dwType>
+    <processAdministrator></processAdministrator>
+    <title id="obj_ed61fa0492154fae9f8c426fd1ad3904" label="车辆预订" extendcode="" event=""/>
+    <userextendbuttons/>
+    <userextendbehaviors/>
+    <iconFontCode></iconFontCode>
+    <iconFontColor></iconFontColor>
+</AWSDWModel>

@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<formModel>
+    <id>54b56186-fb68-41c3-ada4-738088d64b36</id>
+    <createUser>admin</createUser>
+    <createTime>2020-06-08 21:16:31</createTime>
+    <updateUser></updateUser>
+    <updateTime>2020-06-08 21:16:43</updateTime>
+    <signature>tGOmxiTgjT/77UoYpSlq8Vc+hHPRoJWHdZexXc7zEpYuMNdhvSICeJnlc/RzRHGre6uPJeJRWmCWVpWkbO6psrq45VDmkmex/ID7KzhFJyWYu8rI7gUOwh7Wptvc4PoS</signature>
+    <managed>false</managed>
+    <title>上航_管理人员分组</title>
+    <deleted>false</deleted>
+    <categoryName>基础设置</categoryName>
+    <administrator>admin</administrator>
+    <defaultLanguage></defaultLanguage>
+    <url></url>
+    <urlHeight></urlHeight>
+    <formItems>
+        <formItem>
+            <id>9b03236c-69c3-49c3-9473-0af9fad175fc</id>
+            <title>上航_管理人员分组</title>
+            <templateFile>{"tablet":"基础设置-上航_管理人员分组.htm","pc":"基础设置-上航_管理人员分组.htm","mobile":"基础设置-上航_管理人员分组_m.htm"}</templateFile>
+            <grid>false</grid>
+            <gridSetting></gridSetting>
+            <orderBy></orderBy>
+            <pageLimit>0</pageLimit>
+            <boModelId>e620cc5d-930f-4d7e-b992-d345d0dedc63</boModelId>
+            <dictionaryFileName></dictionaryFileName>
+            <hiddenHead>false</hiddenHead>
+            <theme>{"pc":"_bpm.platform"}</theme>
+            <itemDisplays/>
+            <scheme>{"pc":"scheme_aws.css"}</scheme>
+            <calcFormula></calcFormula>
+            <conditionControl></conditionControl>
+            <validate></validate>
+            <icon></icon>
+            <gridControl></gridControl>
+            <summaryControl></summaryControl>
+            <ruleControl></ruleControl>
+            <hiddenFields></hiddenFields>
+            <hiddenAddBtn>false</hiddenAddBtn>
+            <verticalLayout>false</verticalLayout>
+        </formItem>
+    </formItems>
+</formModel>

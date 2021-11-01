@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<boModel>
+    <id>cb9d6e8f-7c2c-4994-9880-a24e35896de6</id>
+    <createUser>admin</createUser>
+    <createTime>2020-05-18 09:13:09</createTime>
+    <updateUser></updateUser>
+    <updateTime>2020-05-18 09:13:09</updateTime>
+    <signature>tGOmxiTgjT/77UoYpSlq8Vc+hHPRoJWHdZexXc7zEpYuMNdhvSICeJnlc/RzRHGrx9IagzVf9ACMKt468CA+cTUwnhDoIDSGjx5gF3VlefYdRIAaERT89NoaK3dgoMPD</signature>
+    <managed>false</managed>
+    <title>事故人员情况表</title>
+    <name>BO_EU_SH_PEOPLESTATIO</name>
+    <collection>false</collection>
+    <system>false</system>
+    <deleted>false</deleted>
+    <categoryName>车辆管理</categoryName>
+    <administrator>admin</administrator>
+    <entityType>TABLE</entityType>
+    <viewType></viewType>
+    <viewSql></viewSql>
+    <securityLevel>0</securityLevel>
+    <target>_local</target>
+    <itemProps></itemProps>
+    <boItems/>
+    <boIndexs>
+        <boIndex>
+            <id>edbaa8e8-8023-4ba9-8680-62af80a08ab8</id>
+            <name></name>
+            <type>INDEX</type>
+            <boItems>BINDID</boItems>
+        </boIndex>
+    </boIndexs>
+    <boRelations/>
+    <hashFields></hashFields>
+</boModel>

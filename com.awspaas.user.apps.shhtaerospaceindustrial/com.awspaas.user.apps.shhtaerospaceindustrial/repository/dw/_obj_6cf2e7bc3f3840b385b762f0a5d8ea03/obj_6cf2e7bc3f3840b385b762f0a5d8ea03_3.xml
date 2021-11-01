@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<AWSDWModel>
+    <id>obj_6cf2e7bc3f3840b385b762f0a5d8ea03</id>
+    <createUser>admin</createUser>
+    <createTime>2020-05-19 08:22:40</createTime>
+    <updateUser></updateUser>
+    <updateTime>2020-05-19 08:22:40</updateTime>
+    <signature>tGOmxiTgjT/77UoYpSlq8Vc+hHPRoJWHdZexXc7zEpYuMNdhvSICeJnlc/RzRHGrvIxUat7hAhAFXUaM9V2xRdqFHN78G28AkjCxw6UZ23h5baPNMUyhy3kgWvYFtTzq</signature>
+    <managed>false</managed>
+    <processGroupId>obj_6cf2e7bc3f3840b385b762f0a5d8ea03</processGroupId>
+    <processGroupName>车辆违章记录维护</processGroupName>
+    <categoryName>未分类</categoryName>
+    <dwType>1</dwType>
+    <processAdministrator></processAdministrator>
+    <title id="obj_74952741b3ad4c2a930687dc76e9f462" label="车辆违章记录维护" extendcode="" event=""/>
+    <userextendbuttons/>
+    <userextendbehaviors/>
+    <iconFontCode></iconFontCode>
+    <iconFontColor></iconFontColor>
+</AWSDWModel>

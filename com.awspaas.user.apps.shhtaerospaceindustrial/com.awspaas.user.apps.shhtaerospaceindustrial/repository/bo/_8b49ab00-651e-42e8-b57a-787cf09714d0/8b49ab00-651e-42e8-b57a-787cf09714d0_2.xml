@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<boModel>
+    <id>8b49ab00-651e-42e8-b57a-787cf09714d0</id>
+    <createUser>admin</createUser>
+    <createTime>2020-06-01 13:25:22</createTime>
+    <updateUser></updateUser>
+    <updateTime>2020-06-01 13:25:22</updateTime>
+    <signature>tGOmxiTgjT/77UoYpSlq8Vc+hHPRoJWHdZexXc7zEpYuMNdhvSICeJnlc/RzRHGr6po6bam7vCM0dgLwCGe4C+PVp9bX7G4f13FENg9QKmfP9A9pNTd5uv6C50RgA0Z7</signature>
+    <managed>false</managed>
+    <title>上航_客房预订（结算子表）</title>
+    <name>BO_EU_SH_ROOMORDER_JS</name>
+    <collection>false</collection>
+    <system>false</system>
+    <deleted>false</deleted>
+    <categoryName>预订管理</categoryName>
+    <administrator>admin</administrator>
+    <entityType>TABLE</entityType>
+    <viewType></viewType>
+    <viewSql></viewSql>
+    <securityLevel>0</securityLevel>
+    <target>_local</target>
+    <itemProps></itemProps>
+    <boItems/>
+    <boIndexs>
+        <boIndex>
+            <id>70d1b6ae-8aa4-402d-bc3e-60b37c80fa5d</id>
+            <name></name>
+            <type>INDEX</type>
+            <boItems>BINDID</boItems>
+        </boIndex>
+    </boIndexs>
+    <boRelations/>
+    <hashFields></hashFields>
+</boModel>

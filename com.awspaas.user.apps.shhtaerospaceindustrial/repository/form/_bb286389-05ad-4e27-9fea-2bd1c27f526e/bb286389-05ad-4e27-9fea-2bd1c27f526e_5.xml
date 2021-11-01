@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<formModel>
+    <id>bb286389-05ad-4e27-9fea-2bd1c27f526e</id>
+    <createUser>admin</createUser>
+    <createTime>2020-05-22 15:59:50</createTime>
+    <updateUser></updateUser>
+    <updateTime>2020-05-31 20:38:46</updateTime>
+    <signature>tGOmxiTgjT/77UoYpSlq8Vc+hHPRoJWHdZexXc7zEpYuMNdhvSICeJnlc/RzRHGrXLjXTc9cYP8S7MorX4CkVe9NJesm6SZgYFu/P7qMtKlWbPZUBpJjt9ZzoIfidwTv</signature>
+    <managed>false</managed>
+    <title>上航_客房档案</title>
+    <deleted>false</deleted>
+    <categoryName>预订管理</categoryName>
+    <administrator>admin</administrator>
+    <defaultLanguage></defaultLanguage>
+    <url></url>
+    <urlHeight></urlHeight>
+    <formItems>
+        <formItem>
+            <id>a4fc9c99-e3cf-41d0-91c5-7fee93096c97</id>
+            <title>上航_客房档案</title>
+            <templateFile>{"tablet":"预订管理-上航_客房档案.htm","pc":"预订管理-上航_客房档案.htm","mobile":"预订管理-上航_客房档案_m.htm"}</templateFile>
+            <grid>false</grid>
+            <gridSetting></gridSetting>
+            <orderBy></orderBy>
+            <pageLimit>0</pageLimit>
+            <boModelId>b452f94b-04cc-4382-bf3d-281705ba90a5</boModelId>
+            <dictionaryFileName></dictionaryFileName>
+            <hiddenHead>false</hiddenHead>
+            <theme>{"pc":"_bpm.platform","mobile":"_bpm.platform"}</theme>
+            <itemDisplays/>
+            <scheme>{"pc":"scheme_aws.css","mobile":""}</scheme>
+            <calcFormula></calcFormula>
+            <conditionControl></conditionControl>
+            <validate></validate>
+            <icon></icon>
+            <gridControl></gridControl>
+            <summaryControl></summaryControl>
+            <ruleControl></ruleControl>
+            <hiddenFields></hiddenFields>
+            <hiddenAddBtn>false</hiddenAddBtn>
+            <verticalLayout>false</verticalLayout>
+        </formItem>
+    </formItems>
+</formModel>

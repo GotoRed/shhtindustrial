@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta name="renderer" content="webkit">
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+	<title>访客来访申请-手机表单</title>
+	<!--字段背景风格App模板-->
+	<meta http-equiv='Content-Type' content='text/html; charset=UTF-8' />
+	<meta name="viewport" content="initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no, width=device-width">
+	
+	[#AWSImport]
+	[#AWSUIImport]
+	<script src="../apps/_bpm.portal/commom.form.js"></script>
+	
+	
+	<link rel='stylesheet' id='schemeCss' href='../apps/_bpm.platform/css/colorschemes/scheme_aws.css'  name='schemeCss'/>
+	<link rel="stylesheet" type="text/css" href="../apps/_bpm.portal/css/client.bpm.form.mobile.common.css?v=1588908698315">
+	<link rel="stylesheet" type="text/css" href="../apps/com.actionsoft.apps.form.theme.antdui/css/theme/antdui.css?v=1589851448797">
+<link type='text/css' rel='stylesheet' id='themeCss' href='../apps/com.actionsoft.apps.form.theme.antdui/css/theme/theme_m.css' name='themeCss'/>
+</head>
+<body>
+<form id="frmMain" name="frmMain" method="post">
+<div id="aws-form-container" border="0" style="width: 100%; border: 0px;">
+<table id="aws-form-maintable" style="table-layout: auto; width: 100%; border: 0px;" border="0" cellpadding="0" cellspacing="0">
+<tbody>
+<tr id="aws-form-titlebg" class="aws-form-ux-titlebg" style="display: none;">
+<td id="aws-form-title" class="aws-form-ux-header">访客来访申请</td>
+</tr>
+<tr class="aws-form-ux-formcontent" id="aws-form-formcontent">
+<td>
+<table id="table_container" class="awsui-ux table-striped" style="padding: 0px;" width="100%" cellspacing="0" cellpadding="0">
+<tbody>
+<tr>
+<td class="awsui-ux-title" style="padding-left: 0px;"><label id="TARGETUNITLabel" for="TARGETUNIT" flag="labelRequired">被访单位</label></td>
+<td class="aws-form-ux-content">[#TARGETUNIT]</td>
+</tr>
+<tr>
+<td class="awsui-ux-title" style="padding-left: 0px;"><label id="TARGETDEPTLabel" for="TARGETDEPT" flag="labelRequired">被访部门</label></td>
+<td class="aws-form-ux-content">[#TARGETDEPT]</td>
+</tr>
+<tr>
+<td class="awsui-ux-title" style="padding-left: 0px;"><label id="TARGETMANLabel" for="TARGETMAN" flag="labelRequired">接待人员</label></td>
+<td class="aws-form-ux-content">[#TARGETMAN]</td>
+</tr>
+<tr>
+<td class="awsui-ux-title" style="padding-left: 0px;"><label id="TARGETMANPHONELabel" for="TARGETMANPHONE" flag="labelRequired">接待员电话</label></td>
+<td class="aws-form-ux-content">[#TARGETMANPHONE]</td>
+</tr>
+<tr>
+<td class="awsui-ux-title" style="padding-left: 0px;"><label id="VISITORUNITLabel" for="VISITORUNIT" flag="labelRequired">访客单位</label></td>
+<td class="aws-form-ux-content">[#VISITORUNIT]</td>
+</tr>
+<tr>
+<td class="awsui-ux-title" style="padding-left: 0px;"><label id="VISITORNUMLabel" for="VISITORNUM" flag="labelRequired">访客人数</label></td>
+<td class="aws-form-ux-content">[#VISITORNUM]</td>
+</tr>
+<tr>
+<td class="awsui-ux-title" style="padding-left: 0px;"><label id="REASONLabel" for="REASON" flag="labelRequired">来访事由</label></td>
+<td class="aws-form-ux-content">[#REASON]</td>
+</tr>
+<tr>
+<td class="awsui-ux-title" style="padding-left: 0px;"><label id="VISITORCARSLabel" for="VISITORCARS">访客车牌号</label></td>
+<td class="aws-form-ux-content">[#VISITORCARS]</td>
+</tr>
+<tr>
+<td class="awsui-ux-title" style="padding-left: 0px;"><label id="INPARTTIMELabel" for="INPARTTIME" flag="labelRequired">预计来访时间</label></td>
+<td class="aws-form-ux-content">[#INPARTTIME]</td>
+</tr>
+<tr>
+<td class="awsui-ux-title" style="padding-left: 0px;"><label id="OUTPARTTIMELabel" for="OUTPARTTIME">预计离开时间</label></td>
+<td class="aws-form-ux-content">[#OUTPARTTIME]</td>
+</tr>
+<tr>
+<td class="awsui-ux-title" style="padding-left: 0px;"><label id="MEMOLabel" for="MEMO">备注</label></td>
+<td class="aws-form-ux-content">[#MEMO]</td>
+</tr>
+<tr class="tr1">
+<td colspan="2" class="aws-form-ux-gridbg">[#Grid1]</td>
+</tr>
+</tbody>
+</table>
+</td>
+</tr>
+<tr class="aws-form-bottom">
+<td class="aws-form-ux-bottom aws-form-ux-actionsoft">[#Actionsoft]
+<div id="hiddenArea" border="0" style="display: none;">[#TARGETMANUID]</div>
+</td>
+</tr>
+</tbody>
+</table>
+<script src="../apps/com.actionsoft.apps.form.theme.antdui/js/commom.form.js?v=1589851448822"></script>
+<script src="../apps/com.actionsoft.apps.form.theme.antdui/js/antdui.js?v=1589851448822"></script>
+</div>
+</form>
+</body>
+</html>

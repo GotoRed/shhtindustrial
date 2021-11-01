@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<formModel>
+    <id>dc5c5e25-274e-4ee3-8c7f-198ad509cfe5</id>
+    <createUser>admin</createUser>
+    <createTime>2020-05-15 10:16:54</createTime>
+    <updateUser></updateUser>
+    <updateTime>2020-05-18 12:08:43</updateTime>
+    <signature>tGOmxiTgjT/77UoYpSlq8Vc+hHPRoJWHdZexXc7zEpYuMNdhvSICeJnlc/RzRHGrnggQw15CA6eK8YJfMnX9mLD1qCqI+UVQzbd5WhvxlFQmA7RQNeVp00+ACw/QDJPy</signature>
+    <managed>false</managed>
+    <title>物业停车位档案</title>
+    <deleted>false</deleted>
+    <categoryName>物业管理</categoryName>
+    <administrator>admin</administrator>
+    <defaultLanguage></defaultLanguage>
+    <url></url>
+    <urlHeight></urlHeight>
+    <formItems>
+        <formItem>
+            <id>a532dd36-c10a-4763-a9c0-796f166322f3</id>
+            <title>物业停车位档案</title>
+            <templateFile>{"tablet":"物业管理-物业停车位档案.htm","pc":"物业管理-物业停车位档案.htm","mobile":"物业管理-物业停车位档案_m.htm"}</templateFile>
+            <grid>false</grid>
+            <gridSetting></gridSetting>
+            <orderBy></orderBy>
+            <pageLimit>0</pageLimit>
+            <boModelId>f2f814c1-8102-466e-b588-c4f5a9a3caa9</boModelId>
+            <dictionaryFileName></dictionaryFileName>
+            <hiddenHead>false</hiddenHead>
+            <theme>{"pc":"_bpm.platform","mobile":"_bpm.platform"}</theme>
+            <itemDisplays/>
+            <scheme>{"pc":"scheme_aws.css","mobile":""}</scheme>
+            <calcFormula></calcFormula>
+            <conditionControl></conditionControl>
+            <validate></validate>
+            <icon></icon>
+            <gridControl></gridControl>
+            <summaryControl></summaryControl>
+            <ruleControl></ruleControl>
+            <hiddenFields>BUILDNAMEID,CHARGEMANID</hiddenFields>
+            <hiddenAddBtn>false</hiddenAddBtn>
+            <verticalLayout>false</verticalLayout>
+        </formItem>
+    </formItems>
+</formModel>

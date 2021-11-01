@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<AWSDWModel>
+    <id>obj_7f0d8e14dd7a4c188fc0d4242c337c34</id>
+    <createUser>admin</createUser>
+    <createTime>2020-05-29 15:40:14</createTime>
+    <updateUser></updateUser>
+    <updateTime>2020-05-29 15:40:14</updateTime>
+    <signature>tGOmxiTgjT/77UoYpSlq8Vc+hHPRoJWHdZexXc7zEpYuMNdhvSICeJnlc/RzRHGrYy05+pFTI2REsDMgy07e/QEpQDgbOCEEpnNFY6mgocNjSlWqwXLQLzMePs1GHOQ7</signature>
+    <managed>false</managed>
+    <processGroupId>obj_7f0d8e14dd7a4c188fc0d4242c337c34</processGroupId>
+    <processGroupName>会议室档案</processGroupName>
+    <categoryName>未分类</categoryName>
+    <dwType>1</dwType>
+    <processAdministrator></processAdministrator>
+    <title id="obj_247a24d4f5534dd8a2e17ed599022948" label="会议室档案" extendcode="" event=""/>
+    <userextendbuttons/>
+    <userextendbehaviors/>
+    <iconFontCode></iconFontCode>
+    <iconFontColor></iconFontColor>
+</AWSDWModel>
