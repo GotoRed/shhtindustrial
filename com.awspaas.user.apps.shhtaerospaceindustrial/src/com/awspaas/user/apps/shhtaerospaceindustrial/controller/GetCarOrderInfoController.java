@@ -21,6 +21,95 @@ import com.awspaas.user.apps.shhtaerospaceindustrial.util.CoreUtil;
 
 @Controller
 public class GetCarOrderInfoController {
+	
+	/**
+	 * 调度查询订单与任务单
+	 * @param uc
+	 * @param roleType
+	 * @param bDate
+	 * @param eDate
+	 * @param page
+	 * @param pageCount
+	 * @param taskType 0：查看未派单订单 1：查看为接单任务单
+	 * @return
+	 */
+	@Mapping("jch5.dispatchInfo")
+	public String dispatchInfo(UserContext uc,int roleType,String bDate,String eDate,int page,int pageCount,int taskType) {
+		JSONObject returnData = new JSONObject();
+		String userId = uc.getUID();
+		String sid = uc.getSessionId();
+		String portalUrl = SDK.getPortalAPI().getPortalUrl();
+		try {
+			JSONArray jsonOrderUnassignedList= new JSONArray();
+			JSONArray jsonMissionUntakedList = new JSONArray();
+			
+			String orderUnassignedQuery="select a.* from BO_EU_SH_VEHICLEORDER a  left join BO_EU_SH_VEHICLEORDER_ASSIGMIS  b on a.bindid=b.bindid where b.MISSIONSTATUS='0'";
+			List<Map<String, Object>>orderUnassignedList = DBSql.query(orderUnassignedQuery, new ColumnMapRowMapper(), new Object[] {});
+			
+			for(int i =0; i<orderUnassignedList.size();i++) {
+				boolean isAssigned = true;
+				Map<String, Object> order = orderUnassignedList.get(i);
+				String orderid_bindid = CoreUtil.objToStr(order.get("BINDID"));
+				String applyusername = CoreUtil.objToStr(order.get("APPLYUSERNAME"));
+				String ordertime = CoreUtil.objToStr(order.get("CREATEDATE"));
+				String bdate = CoreUtil.objToStr(order.get("BDATE"));
+				String edate = CoreUtil.objToStr(order.get("EDATE"));
+				String boardingplace=CoreUtil.objToStr(order.get("BOARDINGPLACE"));
+				String targetplace=CoreUtil.objToStr(order.get("TARGETPLACE"));
+				String missionUnfinishedQuery="select * from BO_EU_SH_VEHICLEORDER_ASSIGMIS where bindid = '"+ orderid_bindid +"'";
+				String orderTaskId = CoreUtil.objToStr(order.get("ID"));
+				String orderFormUrl = portalUrl + "/r/w?sid="+sid+"&cmd=CLIENT_BPM_FORM_MAIN_PAGE_OPEN&processInstId="+orderid_bindid+"&openState=1&taskInstId="+orderTaskId+"&displayToolbar=true";
+				
+				List<Map<String, Object>>missonUnfinishedList = DBSql.query(missionUnfinishedQuery, new ColumnMapRowMapper(), new Object[] {});
+				for(int j=0; j<missonUnfinishedList.size();j++) {
+					JSONObject missonJson = new JSONObject();
+					Map<String, Object> mission = orderUnassignedList.get(i);
+					String  missionstatus=CoreUtil.objToStr(order.get("MISSIONSTATUS"));
+					if(("0").equals(missionstatus)) {//订单里包含未派单任务单
+						isAssigned = false;
+					} else if("1".equals(missionstatus)) {//未接单任务单
+						String drivername = CoreUtil.objToStr(mission.get("SJXM"));
+						String driverphone = "";
+						String carno = "";
+						String usetime  = CoreUtil.objToStr(mission.get("UDATE"));
+						String missionTaskId = CoreUtil.objToStr(mission.get("ID"));
+						String missionFormUrl = portalUrl + "/r/w?sid="+sid+"&cmd=CLIENT_BPM_FORM_MAIN_PAGE_OPEN&processInstId="+orderid_bindid+"&openState=1&taskInstId="+missionTaskId+"&displayToolbar=true";
+						if(drivername.equals("")) {
+							drivername=CoreUtil.objToStr(mission.get("DIRVERNAMEOUT"));
+							driverphone=CoreUtil.objToStr(mission.get("DIRVERPHONEOUT"));
+							carno=CoreUtil.objToStr(mission.get("CARNOOUT"));
+						}else {
+							driverphone=CoreUtil.objToStr(mission.get("SJLXFS"));
+							carno=CoreUtil.objToStr(mission.get("CPH"));
+						}
+						missonJson.put("orderid", orderid_bindid);
+						missonJson.put("drivername", drivername);
+						missonJson.put("driverphone", driverphone);
+						missonJson.put("carno", carno);
+						missonJson.put("usetime", usetime);
+						missonJson.put("url", missionFormUrl);
+						jsonMissionUntakedList.add(missonJson);
+					}
+				}
+				if(isAssigned==false) {
+					JSONObject orderjson = new JSONObject();
+					orderjson.put("orderid", orderid_bindid);
+					orderjson.put("applyusername", applyusername);
+					orderjson.put("ordertime", ordertime);
+					orderjson.put("bdate", bdate);
+					orderjson.put("edate", edate);
+					orderjson.put("boardingplace", boardingplace);
+					orderjson.put("targetplace", targetplace);
+					orderjson.put("url", orderFormUrl);
+				}
+				
+			}
+			
+			
+		} catch(Exception e) {}
+		return null;
+		
+	}
 	/**
 	 * @Description 入参：角色类型（0：普通用户|1：驾驶员|2：车队|3：外租公司|4：车辆调度|5：车队结算员|6:：客服）、开始日期、结束日期、页数、每页数量、任务类型（0：待办|1：全部）
 	 *	 出参：状态（0：成功|1：失败）、信息提示（失败时携带）、车辆订单列表【{车型、预定时间、用车开始时间、用车结束时间、用车数量、状态（未提交、已提交、已结算、已取消、已接单）、链接地址、流程实例序号}】
@@ -33,6 +122,7 @@ public class GetCarOrderInfoController {
 	@Mapping("jch5.kq_getCarOrderInfo")
 	public String getLoginUserInfo(UserContext uc,int roleType,String bDate,String eDate,int page,int pageCount,int taskType) {
     	JSONObject returnData = new JSONObject();
+    	
 		try {
 			String userId = uc.getUID();
 			String sid = uc.getSessionId();

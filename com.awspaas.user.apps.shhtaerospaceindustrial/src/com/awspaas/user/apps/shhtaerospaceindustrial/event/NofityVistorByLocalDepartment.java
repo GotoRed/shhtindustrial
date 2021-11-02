@@ -129,6 +129,7 @@ public class NofityVistorByLocalDepartment  extends ExecuteListener implements E
 							
 						}
 					}
+					/*
 					if(SDK.getTaskAPI().isChoiceActionMenu(ctx.getTaskInstance(), "退回")) {
 						String message = "{'date':'"+date+"','unitname':'"+e_unit+"','psnname':'"+e_name+"','mobilephone':'"+e_phone+"'}";
 						for (Map<String, Object> map : visitorinfo) {
@@ -138,6 +139,7 @@ public class NofityVistorByLocalDepartment  extends ExecuteListener implements E
 							sms.sendSms(v_phone, "SMS_227260006",message);
 						}
 					}
+					*/
 			
 						return;
 		  }

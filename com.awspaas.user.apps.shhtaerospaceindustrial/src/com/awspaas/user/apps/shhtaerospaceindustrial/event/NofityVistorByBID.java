@@ -106,6 +106,7 @@ public class NofityVistorByBID extends ExecuteListener implements ExecuteListene
 					}
 				}
 			}
+			/*
 			if(SDK.getTaskAPI().isChoiceActionMenu(ctx.getTaskInstance(), "退回填报")) {
 				String message = "{'date':'"+date+"','unitname':'"+e_unit+"','psnname':'"+e_name+"','mobilephone':'"+e_phone+"'}";
 				for (Map<String, Object> map : visitorinfo) {
@@ -115,6 +116,7 @@ public class NofityVistorByBID extends ExecuteListener implements ExecuteListene
 					sms.sendSms(v_phone, "SMS_227260006",message);
 				}
 			}
+			*/
 
 
 			return;
