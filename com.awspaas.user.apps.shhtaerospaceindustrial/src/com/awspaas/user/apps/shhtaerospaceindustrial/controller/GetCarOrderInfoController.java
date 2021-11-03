@@ -43,55 +43,36 @@ public class GetCarOrderInfoController {
 			JSONArray jsonOrderUnassignedList= new JSONArray();
 			JSONArray jsonMissionUntakedList = new JSONArray();
 			
-			String orderUnassignedQuery="select a.* from BO_EU_SH_VEHICLEORDER a  left join BO_EU_SH_VEHICLEORDER_ASSIGMIS  b on a.bindid=b.bindid where b.MISSIONSTATUS='0'";
+			String orderUnassignedQuery="select distinct a.BINDID,a.APPLYUSERNAME,a.CREATEDATE,a.BDATE,A.EDATE,A.BOARDINGPLACE,A.TARGETPLACE ，c.ID from BO_EU_SH_VEHICLEORDER a ， BO_EU_SH_VEHICLEORDER_ASSIGMIS  b，WFC_TASK c where a.bindid=b.bindid AND (b.MISSIONSTATUS='0' or b.MISSIONSTATUS='1') AND a.bindid=c.PROCESSINSTID";
 			List<Map<String, Object>>orderUnassignedList = DBSql.query(orderUnassignedQuery, new ColumnMapRowMapper(), new Object[] {});
-			
+			//System.out.println(orderUnassignedList.size());
 			for(int i =0; i<orderUnassignedList.size();i++) {
-				boolean isAssigned = true;
+				
+				
 				Map<String, Object> order = orderUnassignedList.get(i);
 				String orderid_bindid = CoreUtil.objToStr(order.get("BINDID"));
+				//System.out.println(orderid_bindid);
 				String applyusername = CoreUtil.objToStr(order.get("APPLYUSERNAME"));
+				//System.out.println(applyusername);
 				String ordertime = CoreUtil.objToStr(order.get("CREATEDATE"));
+			//	System.out.println(ordertime);
 				String bdate = CoreUtil.objToStr(order.get("BDATE"));
+			//	System.out.println(bdate);
 				String edate = CoreUtil.objToStr(order.get("EDATE"));
+				//System.out.println(edate);
 				String boardingplace=CoreUtil.objToStr(order.get("BOARDINGPLACE"));
+			//	System.out.println(boardingplace);
 				String targetplace=CoreUtil.objToStr(order.get("TARGETPLACE"));
-				String missionUnfinishedQuery="select * from BO_EU_SH_VEHICLEORDER_ASSIGMIS where bindid = '"+ orderid_bindid +"'";
+				
 				String orderTaskId = CoreUtil.objToStr(order.get("ID"));
 				String orderFormUrl = portalUrl + "/r/w?sid="+sid+"&cmd=CLIENT_BPM_FORM_MAIN_PAGE_OPEN&processInstId="+orderid_bindid+"&openState=1&taskInstId="+orderTaskId+"&displayToolbar=true";
-				
-				List<Map<String, Object>>missonUnfinishedList = DBSql.query(missionUnfinishedQuery, new ColumnMapRowMapper(), new Object[] {});
-				for(int j=0; j<missonUnfinishedList.size();j++) {
-					JSONObject missonJson = new JSONObject();
-					Map<String, Object> mission = orderUnassignedList.get(i);
-					String  missionstatus=CoreUtil.objToStr(order.get("MISSIONSTATUS"));
-					if(("0").equals(missionstatus)) {//订单里包含未派单任务单
-						isAssigned = false;
-					} else if("1".equals(missionstatus)) {//未接单任务单
-						String drivername = CoreUtil.objToStr(mission.get("SJXM"));
-						String driverphone = "";
-						String carno = "";
-						String usetime  = CoreUtil.objToStr(mission.get("UDATE"));
-						String missionTaskId = CoreUtil.objToStr(mission.get("ID"));
-						String missionFormUrl = portalUrl + "/r/w?sid="+sid+"&cmd=CLIENT_BPM_FORM_MAIN_PAGE_OPEN&processInstId="+orderid_bindid+"&openState=1&taskInstId="+missionTaskId+"&displayToolbar=true";
-						if(drivername.equals("")) {
-							drivername=CoreUtil.objToStr(mission.get("DIRVERNAMEOUT"));
-							driverphone=CoreUtil.objToStr(mission.get("DIRVERPHONEOUT"));
-							carno=CoreUtil.objToStr(mission.get("CARNOOUT"));
-						}else {
-							driverphone=CoreUtil.objToStr(mission.get("SJLXFS"));
-							carno=CoreUtil.objToStr(mission.get("CPH"));
-						}
-						missonJson.put("orderid", orderid_bindid);
-						missonJson.put("drivername", drivername);
-						missonJson.put("driverphone", driverphone);
-						missonJson.put("carno", carno);
-						missonJson.put("usetime", usetime);
-						missonJson.put("url", missionFormUrl);
-						jsonMissionUntakedList.add(missonJson);
-					}
-				}
-				if(isAssigned==false) {
+				System.out.println("订单id"+orderid_bindid);
+				System.out.println("订单表单链接：");
+				System.out.println(orderFormUrl);
+				String missionUnassignedQuery="select a.bindid from BO_EU_SH_VEHICLEORDER a ， BO_EU_SH_VEHICLEORDER_ASSIGMIS b where a.bindid=b.bindid AND b.MISSIONSTATUS='0' AND  a.bindid='"+orderid_bindid+"'";
+				List<Map<String, Object>> missionUnassignedList = DBSql.query(missionUnassignedQuery, new ColumnMapRowMapper(), new Object[] {});
+				System.out.println("未派单任务单数量:"+missionUnassignedList.size());
+				if(missionUnassignedList.size()>0) {
 					JSONObject orderjson = new JSONObject();
 					orderjson.put("orderid", orderid_bindid);
 					orderjson.put("applyusername", applyusername);
@@ -101,13 +82,57 @@ public class GetCarOrderInfoController {
 					orderjson.put("boardingplace", boardingplace);
 					orderjson.put("targetplace", targetplace);
 					orderjson.put("url", orderFormUrl);
+					orderjson.put("undo", missionUnassignedList.size());
 				}
+				String missionUnfinishedQuery="select b.bindid, b.sjxm,b.sjlxfs,b.cph,b.missionstatus ,b.updatedate ,c.id  from BO_EU_SH_VEHICLEORDER a, BO_EU_SH_VEHICLEORDER_MISSION b ,WFC_TASK c where a.id=b.resourcetaskid and b.bindid=c.processinstid and a.bindid = '"+ orderid_bindid +"'";
+				List<Map<String, Object>>missonUnfinishedList = DBSql.query(missionUnfinishedQuery, new ColumnMapRowMapper(), new Object[] {});
+				System.out.println("未接单任务量："+missonUnfinishedList.size());
+				for(int j=0; j<missonUnfinishedList.size();j++) {
+					JSONObject missonJson = new JSONObject();
+					Map<String, Object> mission = missonUnfinishedList.get(j);
+					String  missionstatus=CoreUtil.objToStr(mission.get("MISSIONSTATUS"));
+					//System.out.println(missionstatus);
+					if("1".equals(missionstatus)) {//未接单任务单
+						String processid= CoreUtil.objToStr(mission.get("BINDID"));
+						String drivername = CoreUtil.objToStr(mission.get("SJXM"));
+						String driverphone = CoreUtil.objToStr(mission.get("SJLXFS"));
+						String carno = CoreUtil.objToStr(mission.get("CPH"));
+						String usetime  = CoreUtil.objToStr(mission.get("UPDATEDATE"));
+						String missionTaskId = CoreUtil.objToStr(mission.get("ID"));
+						System.out.println("未接单行车任务单表单链接:");
+						String missionFormUrl = portalUrl + "/r/w?sid="+sid+"&cmd=CLIENT_BPM_FORM_MAIN_PAGE_OPEN&processInstId="+processid+"&openState=1&taskInstId="+missionTaskId+"&displayToolbar=true";
+						System.out.println(missionFormUrl);
+						/*if(drivername.equals("")) {
+							drivername=CoreUtil.objToStr(mission.get("DIRVERNAMEOUT"));
+							driverphone=CoreUtil.objToStr(mission.get("DIRVERPHONEOUT"));
+							carno=CoreUtil.objToStr(mission.get("CARNOOUT"));
+						}else {
+							driverphone=CoreUtil.objToStr(mission.get("SJLXFS"));
+							carno=CoreUtil.objToStr(mission.get("CPH"));
+						}*/
+						missonJson.put("orderid", orderid_bindid);
+						missonJson.put("drivername", drivername);
+						missonJson.put("driverphone", driverphone);
+						missonJson.put("carno", carno);
+						missonJson.put("usetime", usetime);
+						missonJson.put("url", missionFormUrl);
+						jsonMissionUntakedList.add(missonJson);
+					}
+				}
+
 				
 			}
+			System.out.println("End for loop");
+			returnData.put("status", "0");
+			returnData.put("jsonXcqr", jsonOrderUnassignedList);
+			returnData.put("jsonClyd", jsonOrderUnassignedList);
 			
-			
-		} catch(Exception e) {}
-		return null;
+		} catch(Exception e) {
+			e.printStackTrace();
+			returnData.put("status", "1");
+			returnData.put("message", e.getMessage());
+		}
+		return returnData.toString();
 		
 	}
 	/**
