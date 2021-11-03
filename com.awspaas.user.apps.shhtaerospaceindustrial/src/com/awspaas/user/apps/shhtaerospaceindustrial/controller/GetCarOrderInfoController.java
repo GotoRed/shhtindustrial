@@ -122,10 +122,10 @@ public class GetCarOrderInfoController {
 
 				
 			}
-			System.out.println("End for loop");
+			//System.out.println("End for loop");
 			returnData.put("status", "0");
-			returnData.put("jsonXcqr", jsonOrderUnassignedList);
-			returnData.put("jsonClyd", jsonOrderUnassignedList);
+			returnData.put("unassignedOrder", jsonOrderUnassignedList);
+			returnData.put("untakedMission", jsonMissionUntakedList);
 			
 		} catch(Exception e) {
 			e.printStackTrace();
@@ -135,6 +135,8 @@ public class GetCarOrderInfoController {
 		return returnData.toString();
 		
 	}
+	
+	
 	/**
 	 * @Description 入参：角色类型（0：普通用户|1：驾驶员|2：车队|3：外租公司|4：车辆调度|5：车队结算员|6:：客服）、开始日期、结束日期、页数、每页数量、任务类型（0：待办|1：全部）
 	 *	 出参：状态（0：成功|1：失败）、信息提示（失败时携带）、车辆订单列表【{车型、预定时间、用车开始时间、用车结束时间、用车数量、状态（未提交、已提交、已结算、已取消、已接单）、链接地址、流程实例序号}】
