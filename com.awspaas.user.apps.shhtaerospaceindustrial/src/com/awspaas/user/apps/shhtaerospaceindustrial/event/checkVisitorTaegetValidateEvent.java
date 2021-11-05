@@ -49,10 +49,23 @@ public class checkVisitorTaegetValidateEvent implements InterruptListenerInterfa
 		if(userinfolist == null || userinfolist.isEmpty()) {
 			throw new BPMNError("人员明细为空，请添加人员信息后提交");
 		}
+		System.out.println("##################ENTER VALIDATE EVENT");
+		for (Map<String, Object> map : userinfolist) {
+			String VISITORNAME = CoreUtil.objToStr(map.get("VISITORNAME"));
+			String VISITORCELL = CoreUtil.objToStr(map.get("VISITORCELL"));
+			
+			String CERTNO = CoreUtil.objToStr(map.get("CERTNO"));
+			String ABOUTFILE = CoreUtil.objToStr(map.get("ABOUTFILE"));
+			System.out.println(VISITORNAME+VISITORCELL+CERTNO+ABOUTFILE);
+			if(ABOUTFILE==""||VISITORNAME==""||VISITORCELL==""||CERTNO=="") {
+				throw new BPMNError("请检查来访人员信息表并完善！");
+			}
+			}
 		Date date = new Date();
 		SimpleDateFormat sdf = new SimpleDateFormat("yyyy-MM-dd");
 		String formatDate = sdf.format(date);
 		long formatDateL = sdf.parse(formatDate).getTime();
+		
 		for (Map<String, Object> map : visitmain) {
 			String TARGETMAN = CoreUtil.objToStr(map.get("TARGETMAN"));//被访客姓名
 			String TARGETDEPT = CoreUtil.objToStr(map.get("TARGETDEPT"));//被访部门
