@@ -137,9 +137,9 @@ public class NotifyVistor  extends ExecuteListener implements ExecuteListenerInt
 									
 									String v_name = CoreUtil.objToStr(map.get("VISITORNAME"));
 									String message = "{'VISITORNAME':'"+v_name+"','date':'"+date+"','unitname':'"+e_unit+"','deptname':'"+e_department+"','psnname':'"+e_name+"','mobilephone':'"+e_phone+"'}";
-									
+									System.out.println(message);
 									String v_phone = CoreUtil.objToStr(map.get("VISITORCELL"));
-									sms.sendSms(v_phone, "SMS_226505539",message);
+									sms.sendSms(v_phone, "SMS_227253695",message);
 								}
 							}else {
 								
@@ -151,6 +151,7 @@ public class NotifyVistor  extends ExecuteListener implements ExecuteListenerInt
 									
 									String v_name = CoreUtil.objToStr(map.get("VISITORNAME"));
 									String message = "{'VISITORNAME':'"+v_name+"','date':'"+date+"','unitname':'"+e_unit+"','deptname':'"+e_department+"','psnname':'"+e_name+"','mobilephone':'"+e_phone+carinfo_str+"'}";
+									System.out.println(message);
 									String v_phone = CoreUtil.objToStr(map.get("VISITORCELL"));
 									sms.sendSms(v_phone, sms_code,message);
 								}

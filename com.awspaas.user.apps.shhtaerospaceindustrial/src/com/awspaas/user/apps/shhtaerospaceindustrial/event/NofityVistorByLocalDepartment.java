@@ -112,7 +112,8 @@ public class NofityVistorByLocalDepartment  extends ExecuteListener implements E
 									String v_name = CoreUtil.objToStr(map.get("VISITORNAME"));
 									String message = "{'VISITORNAME':'"+v_name+"','date':'"+date+"','unitname':'"+e_unit+"','deptname':'"+e_department+"','psnname':'"+e_name+"','mobilephone':'"+e_phone+"'}";
 									String v_phone = CoreUtil.objToStr(map.get("VISITORCELL"));
-									sms.sendSms(v_phone, "SMS_226505539",message);
+									System.out.println(message);
+									sms.sendSms(v_phone, "SMS_227253695",message);
 								}
 							}else {
 								
