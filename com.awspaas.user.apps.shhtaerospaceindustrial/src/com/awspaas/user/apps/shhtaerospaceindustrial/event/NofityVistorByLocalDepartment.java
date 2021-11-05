@@ -22,7 +22,7 @@ public class NofityVistorByLocalDepartment  extends ExecuteListener implements E
 			  String car_sms_str[]= {"carnos","carno2","carno3"};
 			  String doorno_sms_str[]= {"doorno","doorno2","doorno3"};
 			  String permitdates_sms_str[]= {"permitdates","permitdate2","permitdate3"};
-			  String sms_template[]= {"SMS_226811067","SMS_226826602","SMS_226786696"};
+			  String sms_template[]= {"SMS_227258595","SMS_227263575","SMS_227248755"};
 			  int  door=3;
 			  boolean isOneday=true;
 			  boolean isDepartment=false;
@@ -106,22 +106,25 @@ public class NofityVistorByLocalDepartment  extends ExecuteListener implements E
 					if(flag_localdepart_ok) {
 						if(haveCar==false||door==3||isDepartment) {
 							if(haveCar==false) {
-								String message = "{'date':'"+date+"','unitname':'"+e_unit+"','deptname':'"+e_department+"','psnname':'"+e_name+"','mobilephone':'"+e_phone+"'}";
+								
 								for (Map<String, Object> map : visitorinfo) {
 									
 									String v_name = CoreUtil.objToStr(map.get("VISITORNAME"));
+									String message = "{'VISITORNAME':'"+v_name+"','date':'"+date+"','unitname':'"+e_unit+"','deptname':'"+e_department+"','psnname':'"+e_name+"','mobilephone':'"+e_phone+"'}";
 									String v_phone = CoreUtil.objToStr(map.get("VISITORCELL"));
 									sms.sendSms(v_phone, "SMS_226505539",message);
 								}
 							}else {
 								
-								String message = "{'date':'"+date+"','unitname':'"+e_unit+"','deptname':'"+e_department+"','psnname':'"+e_name+"','mobilephone':'"+e_phone+carinfo_str+"'}";
-								System.out.println("发送短信内容：");
-								System.out.println(message);
+								
+								
 								System.out.println(sms_code);
 								for (Map<String, Object> map : visitorinfo) {
 									
 									String v_name = CoreUtil.objToStr(map.get("VISITORNAME"));
+									String message = "{'VISITORNAME':'"+v_name+"','date':'"+date+"','unitname':'"+e_unit+"','deptname':'"+e_department+"','psnname':'"+e_name+"','mobilephone':'"+e_phone+carinfo_str+"'}";
+									System.out.println("发送短信内容：");
+									System.out.println(message);
 									String v_phone = CoreUtil.objToStr(map.get("VISITORCELL"));
 									sms.sendSms(v_phone, sms_code,message);
 								}

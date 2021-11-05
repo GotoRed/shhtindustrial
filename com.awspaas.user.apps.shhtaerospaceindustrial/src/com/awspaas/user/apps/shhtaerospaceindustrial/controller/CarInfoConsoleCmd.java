@@ -144,7 +144,7 @@ public class CarInfoConsoleCmd {
 	 * @param taskType
 	 * @return
 	 */
-	@Mapping("jch5.missionInfo")
+	/*@Mapping("jch5.missionInfo")
 	public String missionInfo(UserContext uc,int roleType,String bDate,String eDate,int page,int pageCount,int taskType) {
 		JSONObject returnData = new JSONObject();
 		String userId = uc.getUID();
@@ -155,5 +155,5 @@ public class CarInfoConsoleCmd {
 			
 		} catch(Exception e) {}
 		return returnData.toString();
-	}
+	}*/
 }
