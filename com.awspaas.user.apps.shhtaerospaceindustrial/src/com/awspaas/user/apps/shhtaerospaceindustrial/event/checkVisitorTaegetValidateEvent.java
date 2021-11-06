@@ -1,6 +1,7 @@
 package com.awspaas.user.apps.shhtaerospaceindustrial.event;
 
 import java.text.SimpleDateFormat;
+import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
 import java.util.Map;
@@ -49,18 +50,24 @@ public class checkVisitorTaegetValidateEvent implements InterruptListenerInterfa
 		if(userinfolist == null || userinfolist.isEmpty()) {
 			throw new BPMNError("人员明细为空，请添加人员信息后提交");
 		}
-		System.out.println("##################ENTER VALIDATE EVENT");
+		List<String> certlist=new ArrayList<String>();
 		for (Map<String, Object> map : userinfolist) {
 			String VISITORNAME = CoreUtil.objToStr(map.get("VISITORNAME"));
 			String VISITORCELL = CoreUtil.objToStr(map.get("VISITORCELL"));
 			
 			String CERTNO = CoreUtil.objToStr(map.get("CERTNO"));
+			certlist.add(CERTNO);
 			String ABOUTFILE = CoreUtil.objToStr(map.get("ABOUTFILE"));
-			System.out.println(VISITORNAME+VISITORCELL+CERTNO+ABOUTFILE);
-			if(ABOUTFILE==""||VISITORNAME==""||VISITORCELL==""||CERTNO=="") {
-				throw new BPMNError("请检查来访人员信息表并完善！");
+			
+			if(ABOUTFILE=="") {
+				
+				throw new BPMNError("请确认访客："+VISITORNAME+"的证件照是否上传！");
 			}
 			}
+		long certnocount = certlist.stream().distinct().count();
+		if(certnocount!=certlist.size()) {
+			throw new BPMNError("来访人员信息中有重复身份证号！");
+		}
 		Date date = new Date();
 		SimpleDateFormat sdf = new SimpleDateFormat("yyyy-MM-dd");
 		String formatDate = sdf.format(date);
@@ -89,6 +96,22 @@ public class checkVisitorTaegetValidateEvent implements InterruptListenerInterfa
 				throw new BPMNError("预计来访时间不能小于当前时间！");
 			}
 			
+		}
+		
+		List<Map<String, Object>> carinfolist = DBSql.query("SELECT * FROM BO_EU_VISITOR_MANAGE_CARMX WHERE BINDID = ? ", new ColumnMapRowMapper(), new Object[] {processInstId});
+		List<String> carnolist = new ArrayList<String>();
+		
+		if(carinfolist.size()>0) {
+			for(Map<String, Object> map : carinfolist) {
+				String CARNO = CoreUtil.objToStr(map.get("CARNO"));
+				if(CARNO!="") {
+					carnolist.add(CARNO);
+				}
+			}
+			long carnocount = carnolist.stream().distinct().count();
+			if(carnocount!=carnolist.size()) {
+				throw new BPMNError("来访车辆信息里有重复车牌号！");
+			}
 		}
 
 		return true;
