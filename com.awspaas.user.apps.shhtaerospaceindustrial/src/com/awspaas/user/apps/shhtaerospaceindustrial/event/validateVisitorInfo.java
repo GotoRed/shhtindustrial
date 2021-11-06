@@ -17,17 +17,17 @@ public class validateVisitorInfo implements InterruptListenerInterface{
 		if(userinfolist == null || userinfolist.isEmpty()) {
 			throw new BPMNError("人员明细为空，请添加人员信息后提交");
 		}
-		System.out.println("##################ENTER VALIDATE EVENT");
+		
 		for (Map<String, Object> map : userinfolist) {
 			String VISITORNAME = CoreUtil.objToStr(map.get("VISITORNAME"));
 			String VISITORCELL = CoreUtil.objToStr(map.get("VISITORCELL"));
 			
 			String CERTNO = CoreUtil.objToStr(map.get("CERTNO"));
 			String ABOUTFILE = CoreUtil.objToStr(map.get("ABOUTFILE"));
-			System.out.println(ABOUTFILE);
-			if(ABOUTFILE==""||VISITORNAME==""||VISITORCELL==""||CERTNO=="") {
-				System.out.println("dfdsfdsfdsfdf");
-				throw new BPMNError("请检查来访人员信息表并完善！");
+			
+			if(ABOUTFILE=="") {
+				
+				throw new BPMNError("请确认访客："+VISITORNAME+"的证件照是否上传！");
 			}
 			}
 			
