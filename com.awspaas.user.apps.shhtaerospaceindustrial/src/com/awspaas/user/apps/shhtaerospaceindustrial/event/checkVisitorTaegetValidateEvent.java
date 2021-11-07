@@ -5,6 +5,7 @@ import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
 import java.util.Map;
+import java.util.stream.Collectors;
 
 import com.actionsoft.bpms.bpmn.engine.core.delegate.ProcessExecutionContext;
 import com.actionsoft.bpms.bpmn.engine.listener.InterruptListenerInterface;
@@ -38,6 +39,7 @@ public class checkVisitorTaegetValidateEvent implements InterruptListenerInterfa
 		
 		return "1.0";
 	}
+	
 
 	@Override
 	public boolean execute(ProcessExecutionContext processExecutionContext) throws Exception {
@@ -65,9 +67,28 @@ public class checkVisitorTaegetValidateEvent implements InterruptListenerInterfa
 			}
 			}
 		long certnocount = certlist.stream().distinct().count();
+		List dumplist = certlist.stream() 
+
+				.collect(Collectors.toMap(e -> e, e -> 1, Integer::sum)) 
+
+				.entrySet()
+
+				.stream()
+
+				.filter(e -> e.getValue() > 1) 
+
+				.map(Map.Entry::getKey) 
+
+				.collect(Collectors.toList());
+		if(dumplist.size()>0) {
+			System.out.println("重复身份证号！");
+			System.out.println(dumplist);
+		}
 		if(certnocount!=certlist.size()) {
 			throw new BPMNError("来访人员信息中有重复身份证号！");
 		}
+		
+
 		Date date = new Date();
 		SimpleDateFormat sdf = new SimpleDateFormat("yyyy-MM-dd");
 		String formatDate = sdf.format(date);
