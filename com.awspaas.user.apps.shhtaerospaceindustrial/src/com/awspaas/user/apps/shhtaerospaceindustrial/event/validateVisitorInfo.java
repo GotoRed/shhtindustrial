@@ -4,6 +4,7 @@ import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
 import java.util.Map;
+import java.util.stream.Collectors;
 
 import com.actionsoft.bpms.bpmn.engine.core.delegate.ProcessExecutionContext;
 import com.actionsoft.bpms.bpmn.engine.listener.InterruptListenerInterface;
@@ -34,9 +35,31 @@ public class validateVisitorInfo implements InterruptListenerInterface{
 			}
 			}
 		long certnocount = certlist.stream().distinct().count();
-		if(certnocount!=certlist.size()) {
-			throw new BPMNError("来访人员信息中有重复身份证号！");
+		List dumplist = certlist.stream() 
+
+				.collect(Collectors.toMap(e -> e, e -> 1, Integer::sum)) 
+
+				.entrySet()
+
+				.stream()
+
+				.filter(e -> e.getValue() > 1) 
+
+				.map(Map.Entry::getKey) 
+
+				.collect(Collectors.toList());
+		if(dumplist.size()>0) {
+			String certstr= "";
+			for(Object val:dumplist) {
+				certstr=(String)val+";";
+			}
+			System.out.println(certstr);
+			throw new BPMNError("来访人员中重复身份证号："+certstr); 
 		}
+		
+		/*if(certnocount!=certlist.size()) {
+			throw new BPMNError("来访人员信息中有重复身份证号！");
+		}*/
 		
 		List<Map<String, Object>> carinfolist = DBSql.query("SELECT * FROM BO_EU_VISITOR_MANAGE_CARMX WHERE BINDID = ? ", new ColumnMapRowMapper(), new Object[] {processInstId});
 		List<String> carnolist = new ArrayList<String>();

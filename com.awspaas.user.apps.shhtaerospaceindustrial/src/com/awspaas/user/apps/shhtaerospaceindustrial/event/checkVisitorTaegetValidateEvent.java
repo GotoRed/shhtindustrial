@@ -81,11 +81,12 @@ public class checkVisitorTaegetValidateEvent implements InterruptListenerInterfa
 
 				.collect(Collectors.toList());
 		if(dumplist.size()>0) {
-			System.out.println("重复身份证号！");
-			System.out.println(dumplist);
-		}
-		if(certnocount!=certlist.size()) {
-			throw new BPMNError("来访人员信息中有重复身份证号！");
+			String certstr= "";
+			for(Object val:dumplist) {
+				certstr=(String)val+";";
+			}
+			System.out.println(certstr);
+			throw new BPMNError("来访人员中重复身份证号："+certstr); 
 		}
 		
 
