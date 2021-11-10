@@ -12,6 +12,7 @@ import org.quartz.JobExecutionContext;
 import org.quartz.JobExecutionException;
 
 import com.actionsoft.bpms.schedule.IJob;
+import com.actionsoft.bpms.server.fs.DCContext;
 import com.actionsoft.sdk.local.SDK;
 import com.actionsoft.sdk.local.api.*;
 import com.awspaass.user.apps.syncwechataddress.LogPrinter;
@@ -22,7 +23,8 @@ import java.util.logging.Level;
 import java.util.logging.LogRecord;
 import java.util.logging.Logger;
 import com.actionsoft.bpms.org.model.impl.CompanyModelImpl;
-
+import com.actionsoft.bpms.commons.mvc.view.ResponseObject;
+import com.actionsoft.bpms.commons.wechat.bean.WechatMessage;
 import com.actionsoft.bpms.org.model.CompanyModel;
 import com.actionsoft.bpms.org.model.DepartmentModel;
 import com.actionsoft.bpms.org.model.RoleModel;
@@ -31,51 +33,49 @@ import com.actionsoft.bpms.org.model.UserMapModel;
 public class testApi  implements IJob {
 	public void execute(JobExecutionContext jobExecutionContext)
 	        throws JobExecutionException {
+		System.out.println("Enter TestAPi!");
 	        // 读管理员配置的扩展参数串，支持简单的@公式
+	/*	
 		LogPrinter p = new LogPrinter();
 		Logger log= p.getMylog();
-		String corpid="ww0605aae701a55d9e";
-		String corpsecret="ZwrE6zsNaSfu_OdShAm1OzvJz0CvK-AZnVho9lPOMQU";
-		List<CompanyModel> Companys = SDK.getORGAPI().getCompanys();
-		
-		for(int i=0;i<Companys.size();i++) {
-			
-		    System.out.println(Companys.get(i).getId());
-			System.out.println(Companys.get(i).getName());
-		
-	    }
-		int i=1,j=1;
-		while(j!=0) {
-			List<DepartmentModel>departments=SDK.getORGAPI().getDepartmentsByCompanyId(i, "c8306c56-2732-45e7-a091-dbfb7185f7b6");
-			j=departments.size();
-			System.out.println(departments.size());
-			i++;
-		}
-		System.out.println(i-2);
-		
+		String corpid="wwae8baae9cb425bc7";
+		//String corpsecret="tBQRUDNSAIEKx_HwkqTLXjSwr_0ifr_o2vdsOc1_aU8";
+		//String aslp = "aslp://com.actionsoft.apps.wechat/downloadMeida";
+		String aslp = "aslp://com.actionsoft.apps.wechat/sendMessage";
+		// 参数定义列表
+		Map<String, Object> params = new HashMap<String, Object>();
+		WechatMessage msg = WechatMessage.TEXT().agentId("1000003").content("Hi, AWS PaaS!").toParty("1").build();
+		// 要发送的消息,参数必须
+		params.put("message", msg.toJson());
+		// 企业的CorpId,参数必须
+		params.put("corpId", "wwae8baae9cb425bc7");
+		// 执行API
+		ResponseObject ro = SDK.getAppAPI().callASLP(SDK.getAppAPI().getAppContext("com.awspaas.user.apps.shhtaerospaceindustrial"
+				+ ""), aslp, params);
+	*/
+		  String sourceAppId = "com.awspaas.user.apps.shhtaerospaceindustrial";
+		// 服务地址
+		String aslp = "aslp://com.actionsoft.apps.wechat/sendMessage";
+		// 参数定义列表  
+		Map params = new HashMap<String, Object>();
+		WechatMessage msg = WechatMessage.TEXT().content("Hello").build();
+		//企业号应用agentId,必填 
+		params.put("agentId", "1000003");
+		//企业号Id,必填 
+		params.put("corpId", "wwae8baae9cb425bc7");
+		//要发送的消息格式，由WechatMessage对象构建。例如WechatMessage.TEXT.xxx,必填 
+		params.put("message", msg.toJson());
+		AppAPI appAPI =  SDK.getAppAPI(); 
+		//发送微信消息 
+		appAPI.asynCallASLP(appAPI.getAppContext(sourceAppId), aslp, params);
+		/*if (ro.isOk()) {
+		    // todo
+			System.out.println("send message sucess!");
+		} else {
+		    // todo
+			System.out.println("send message failed!");
+		}*/
 
-		//SDK.getORGAPI().createDepartment("c8306c56-2732-45e7-a091-dbfb7185f7b6", "TestAPi", null, null, "a1626e09-578c-4f1b-a802-5ba189c5ede3", null, null);
-/*		List<DepartmentModel> departments=SDK.getORGAPI().getDepartmentsByCompanyId(2, "8911e732-b42a-4556-853f-ad32761bcbee");
-		for(int i=0;i<departments.size();i++) {
-			
-		    System.out.println(departments.get(i).getId());
-			System.out.println(departments.get(i).getName());
-			List<UserMapModel> employees = SDK.getORGAPI().getUserMapsByDept(departments.get(i).getId());
-			for(int j=0;j<employees.size();j++) {
-				//System.out.println(employees.get(j));
-				System.out.println("UID:"+employees.get(j).getUID());
-				//SDK.getORGAPI().updateUser(corpsecret, corpsecret, corpsecret, corpsecret, corpsecret, corpsecret, corpsecret, corpsecret, corpid, corpsecret);
-			}
-	    }
+	}
 
-		SDK.getORGAPI().disabledUser("testfordisable");
-		SDK.getORGAPI().activateUser("testfordisable");
-*/		
-	}
-	public void printdep(List<DepartmentModel> deps) {
-		for(int i = 0;i<deps.size();i++) {
-			System.out.print(deps.get(i).getName());
-			System.out.println(" ");
-		}
-	}
 }
