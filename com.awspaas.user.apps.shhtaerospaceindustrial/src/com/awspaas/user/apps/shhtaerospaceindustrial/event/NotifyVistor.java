@@ -93,7 +93,7 @@ public class NotifyVistor  extends ExecuteListener implements ExecuteListenerInt
 							carinfo_str+="','"+car_sms_str[i]+"':'"+carno+"','"+doorno_sms_str[i]+"':'"+doorno+"','"+permitdates_sms_str[i]+"':'"+time_in;
 
 						}
-						if(i>1) {
+						if(i>=1) {
 							sms_code=sms_template[i-1];
 						}
 						
@@ -122,17 +122,14 @@ public class NotifyVistor  extends ExecuteListener implements ExecuteListenerInt
 					
 					
 					SmsUtil sms = new SmsUtil();
-					
+					System.out.println("用户节点批准：-----------");
 					System.out.println(isOneday?"单日":"短期");
 					System.out.println(door==1?"一号门":"三号门");
 					System.out.println(haveCar?"有车":"无车");
 					if(flag_em_submit||flag_em_comfirm) {
 						if((isOneday==true)&&(haveCar==false)||(isOneday==true&&door==3)){
 							if(haveCar==false) {
-								System.out.println("单日无车：");
-								//String message = "{'date':'"+date+"','unitname':'"+e_unit+"','deptname':'"+e_department+"','psnname':'"+e_name+"','mobilephone':'"+e_phone+"'}";
-								System.out.println("短信内容:");
-								//System.out.println(message);
+								
 								for (Map<String, Object> map : visitorinfo) {
 									
 									String v_name = CoreUtil.objToStr(map.get("VISITORNAME"));
@@ -143,7 +140,7 @@ public class NotifyVistor  extends ExecuteListener implements ExecuteListenerInt
 								}
 							}else {
 								
-								//String message = "{'date':'"+date+"','unitname':'"+e_unit+"','deptname':'"+e_department+"','psnname':'"+e_name+"','mobilephone':'"+e_phone+carinfo_str+"'}";
+								
 								
 								
 								

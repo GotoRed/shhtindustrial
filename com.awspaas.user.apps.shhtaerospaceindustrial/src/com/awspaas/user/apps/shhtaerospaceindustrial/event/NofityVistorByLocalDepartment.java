@@ -71,7 +71,10 @@ public class NofityVistorByLocalDepartment  extends ExecuteListener implements E
 							carinfo_str+="','"+car_sms_str[i]+"':'"+carno+"','"+doorno_sms_str[i]+"':'"+doorno+"','"+permitdates_sms_str[i]+"':'"+time_in;
 
 						}
-						sms_code=sms_template[i-1];
+						if(i>=1) {
+							sms_code=sms_template[i-1];
+						}
+						
 					}
 					else {
 						haveCar=false;
@@ -99,6 +102,7 @@ public class NofityVistorByLocalDepartment  extends ExecuteListener implements E
 					
 					
 					SmsUtil sms = new SmsUtil();
+					System.out.println("部门节点批准：-----------");
 					System.out.println(isOneday?"单日":"短期");
 					System.out.println(door==1?"一号门":"三号门");
 					System.out.println(haveCar?"有车":"无车");

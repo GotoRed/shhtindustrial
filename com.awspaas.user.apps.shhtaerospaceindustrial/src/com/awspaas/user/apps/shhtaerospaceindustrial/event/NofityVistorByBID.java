@@ -67,7 +67,10 @@ public class NofityVistorByBID extends ExecuteListener implements ExecuteListene
 					carinfo_str+="','"+car_sms_str[i]+"':'"+carno+"','"+doorno_sms_str[i]+"':'"+doorno+"','"+permitdates_sms_str[i]+"':'"+time_in;
 
 				}
-				sms_code=sms_template[i-1];
+				if(i>=1) {
+					sms_code=sms_template[i-1];
+				}
+				
 			}else {
 				haveCar=false;
 			}
@@ -86,6 +89,7 @@ public class NofityVistorByBID extends ExecuteListener implements ExecuteListene
 			
 			SmsUtil sms = new SmsUtil();
 			if(flag_company_ok) {
+				System.out.println("院行保部节点批准：-----------");
 				if(haveCar==false) {
 					
 					for (Map<String, Object> map : visitorinfo) {
