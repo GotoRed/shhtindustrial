@@ -30,7 +30,7 @@ public class makeAnnouncement extends ExecuteListener implements ExecuteListener
 		String access_token="";
 		String access_token_url = "https://qyapi.weixin.qq.com/cgi-bin/gettoken?corpid="+corpid+"&corpsecret="+corpsecret;
 		String result = HttpClientUtil.doGet(access_token_url);
-
+		System.out.println(result);
 		JsonObject jsonObject = new JsonParser().parse(result).getAsJsonObject();
 		
 
@@ -99,6 +99,8 @@ public class makeAnnouncement extends ExecuteListener implements ExecuteListener
 			String secretid[] = AGENTSECRETIDS.split("\\|");
 			
 			for(int i = 0; i< cporid.length; i++) {
+				System.out.println("公司ID:"+cporid[i]);
+				System.out.println("应用secret: "+secretid[i]);
 				String acessToken = getAccessToken(cporid[i],secretid[i]);
 				String content = "【"+TITLE+"】 ："+CONTENT;
 				if(XGFILE!="") {

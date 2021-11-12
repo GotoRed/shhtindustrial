@@ -564,11 +564,14 @@ public class GetCarOrderInfoController {
 				return result.toString();
 			}
 			//内租、外租流程第一节点的定义IDobj_c8f1f74f91b00001a4a53941155bca40、obj_055dc6822a5547c489578e750084c3ba
-			String queryUrl = "SELECT ID,TARGET FROM WFC_TASK WHERE PROCESSINSTID = '"+processInstId+"' AND (ACTIVITYDEFID = "
+			/*String queryUrl = "SELECT ID,TARGET FROM WFC_TASK WHERE PROCESSINSTID = '"+processInstId+"' AND (ACTIVITYDEFID = "
 							+ "'obj_c8f1f74f91b00001a4a53941155bca40' OR ACTIVITYDEFID = 'obj_055dc6822a5547c489578e750084c3ba') "
 							+ "UNION SELECT ID,TARGET FROM WFH_TASK WHERE PROCESSINSTID = '"+processInstId+"' "
 							+ "AND (ACTIVITYDEFID = 'obj_c8f1f74f91b00001a4a53941155bca40' OR ACTIVITYDEFID = "
-							+ "'obj_055dc6822a5547c489578e750084c3ba')";
+							+ "'obj_055dc6822a5547c489578e750084c3ba')";*/
+			String queryUrl = "SELECT ID,TARGET FROM WFC_TASK WHERE PROCESSINSTID = '"+processInstId+"' AND (1=1) "
+					+ "UNION SELECT ID,TARGET FROM WFH_TASK WHERE PROCESSINSTID = '"+processInstId+"' "
+					+ "AND (1=1)";
 			List<Map<String, Object>> urlList = DBSql.query(queryUrl, new ColumnMapRowMapper(), new Object[]{});
 			if(urlList == null || urlList.isEmpty()) {
 				result.put("status", "1");

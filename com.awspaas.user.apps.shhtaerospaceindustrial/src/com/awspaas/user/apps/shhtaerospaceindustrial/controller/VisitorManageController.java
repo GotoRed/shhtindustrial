@@ -37,7 +37,7 @@ public class VisitorManageController {
 			String sid = ssoUtil.registerClientSessionNoPassword("guest", "cn", "", "mobile");
 			String portalUrl = SDK.getPortalAPI().getPortalUrl();
 			map.put("sid", sid);
-			map.put("url", portalUrl+"/r/w?sid="+sid+"&userId="+userId+"&cmd=com.actionsoft.apps.workbench_mobile_process_start&groupId=obj_17a020d1d52941da856e3d0f520766ca&processDefId=obj_275bed151e5840d08e10e518644de33a");
+			map.put("url", portalUrl+"/r/w?sid="+sid+"&userId="+userId+"&userStatus=self&cmd=com.actionsoft.apps.workbench_mobile_process_start&groupId=obj_17a020d1d52941da856e3d0f520766ca&processDefId=obj_275bed151e5840d08e10e518644de33a");
 		} catch (Exception e) {
 			e.printStackTrace();
 		}
