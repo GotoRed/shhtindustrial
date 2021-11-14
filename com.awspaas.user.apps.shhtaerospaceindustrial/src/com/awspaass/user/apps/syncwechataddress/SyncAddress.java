@@ -204,11 +204,16 @@ public class SyncAddress implements IJob  {
 		}
 		return depid;
 	}
+	/*public void UpdateDepAwsNew(List<Map<String,String>> dep_wechat,List<Department>dep_aws,String companyid_aws,String companyid_wechat) {
+		String depQuerySql = "select * from BO_INFO_WECHAT_AWS t where t.conmpanyidwechat =  " + companyid_wechat;
+	}*/
 	public void UpdateDepartments(List<Map<String,String>> dep_wechat,List<Department>dep_aws,String companyid_aws,String companyid_wechat) {
-		System.out.println("微信部门数目："+dep_wechat.size()/3+" ，aws部门数目"+dep_aws.size());
+		
+		/*System.out.println("微信部门数目："+dep_wechat.size()/3+" ，aws部门数目"+dep_aws.size());
 		if(dep_wechat.size()/3<=dep_aws.size()) {
 			return;
-		}
+		}*/
+		
 		for(int i = 0; i < dep_wechat.size(); i++) {
 			 String id_wechat = dep_wechat.get(i).get("id");
 			 i++;
@@ -216,6 +221,45 @@ public class SyncAddress implements IJob  {
 			 i++;
 			 String parentid_wechat = dep_wechat.get(i).get("parentid");
 			 int j=0;
+			 String depQuerySql = "select * from BO_INFO_WECHAT_AWS t where t.conmpanyidwechat =  '" + companyid_wechat + "'and t.idwechat = '"+id_wechat + "'";
+			 List<Map<String,Object>> depQueryList = DBSql.query(depQuerySql, new ColumnMapRowMapper(), new Object[] {});
+			 
+			 if(depQueryList == null ) {
+					System.out.println("depQuerySql Error!");
+					return;
+				}
+			 
+			 if(depQueryList.size()==0) {
+					String newDepId;
+					String dep_p_id_aws=getDepIdAwsByidwechat(parentid_wechat,companyid_aws);
+					if(("0").equals(parentid_wechat)) {
+						newDepId=SDK.getORGAPI().createDepartment(companyid_aws, name_wechat, null, null, "0", null, null);
+					}else {
+						newDepId=SDK.getORGAPI().createDepartment(companyid_aws, name_wechat, null, null, dep_p_id_aws, null, null);
+					}		
+					 System.out.println("Insert"+ name_wechat);
+					 String sql = "INSERT INTO BO_INFO_WECHAT_AWS  (DEPIDAWS,IDWECHAT,PARENTIDWECHAT,NAME,COMPANYIDAWS,CONMPANYIDWECHAT,PARENTIDAWS)VALUES(:DEPIDAWS,:IDWECHAT,:PARENTIDWECHAT,:NAME,:COMPANYIDAWS,:CONMPANYIDWECHAT,:PARENTIDAWS)";
+					 Map<String, Object> paraMap = new HashMap<>();
+					 paraMap.put("DEPIDAWS", newDepId);
+					 paraMap.put("IDWECHAT", id_wechat);
+					 paraMap.put("PARENTIDWECHAT", parentid_wechat);
+					 paraMap.put("NAME", name_wechat);
+					 paraMap.put("COMPANYIDAWS", companyid_aws);
+					 paraMap.put("CONMPANYIDWECHAT", companyid_wechat);
+					 paraMap.put("PARENTIDAWS", dep_p_id_aws);
+					 DBSql.update(sql, paraMap);
+			 } else {
+				 Map<String,Object> dep=depQueryList.get(0);				
+				 String dep_name_aws = CoreUtil.objToStr(dep.get("NAME"));
+				 String depidAws = CoreUtil.objToStr(dep.get("DEPIDAWS"));
+				 if(dep_name_aws.equals(name_wechat)) {
+					 continue;
+				 }else {
+					 DBSql.update("update BO_INFO_WECHAT_AWS t set t.name='"+ name_wechat+"' where t.conmpanyidwechat= '"+companyid_aws + "and t.idwechat='" + id_wechat+ "'");
+					 SDK.getORGAPI().updateDepartment(depidAws,name_wechat,ORGAPI.NO_UPDATE,ORGAPI.NO_UPDATE,ORGAPI.NO_UPDATE,ORGAPI.NO_UPDATE);				 
+				 }
+			 }
+			 /*
 			 for(j =0; j<dep_aws.size();j++) {
 				 if(name_wechat.equals(dep_aws.get(j).getName()))
 					 break;
@@ -223,26 +267,9 @@ public class SyncAddress implements IJob  {
 			 if(j>=dep_aws.size()) {
 				 //System.out.println("Need to crete "+name_wechat);
 				 
-				String newDepId;
-				String dep_p_id_aws=getDepIdAwsByidwechat(parentid_wechat,companyid_aws);
-				if(("0").equals(parentid_wechat)) {
-					newDepId=SDK.getORGAPI().createDepartment(companyid_aws, name_wechat, null, null, "0", null, null);
-				}else {
-					newDepId=SDK.getORGAPI().createDepartment(companyid_aws, name_wechat, null, null, dep_p_id_aws, null, null);
-				}		
-				 System.out.println("Insert"+ name_wechat);
-				 String sql = "INSERT INTO BO_INFO_WECHAT_AWS  (DEPIDAWS,IDWECHAT,PARENTIDWECHAT,NAME,COMPANYIDAWS,CONMPANYIDWECHAT,PARENTIDAWS)VALUES(:DEPIDAWS,:IDWECHAT,:PARENTIDWECHAT,:NAME,:COMPANYIDAWS,:CONMPANYIDWECHAT,:PARENTIDAWS)";
-				 Map<String, Object> paraMap = new HashMap<>();
-				 paraMap.put("DEPIDAWS", newDepId);
-				 paraMap.put("IDWECHAT", id_wechat);
-				 paraMap.put("PARENTIDWECHAT", parentid_wechat);
-				 paraMap.put("NAME", name_wechat);
-				 paraMap.put("COMPANYIDAWS", companyid_aws);
-				 paraMap.put("CONMPANYIDWECHAT", companyid_wechat);
-				 paraMap.put("PARENTIDAWS", dep_p_id_aws);
-				 DBSql.update(sql, paraMap);
+
 				 
-			 }
+			 }*/
 		}
 	}
 	
