@@ -77,7 +77,7 @@ public class GetCarOrderInfoController {
 				
 			}
 			if((roleType == 1 || roleType == 2 || roleType == 3 || roleType == 4 || roleType == 5) && taskType == 0) {//其他角色待办需要看车辆预定
-				queryClydTaskInfo = "SELECT * FROM (SELECT TT.*, ROWNUM AS rowno FROM (SELECT * FROM (SELECT B.VEHICLETYPE,B.ORDERDATE,B.BDATE,B.EDATE,B.VEHICLENUM,B.ORDERSTATUS,B.BINDID,A.ID,A.BEGINTIME,'1' RWZT"
+				queryClydTaskInfo = "SELECT * FROM (SELECT TT.*, ROWNUM AS rowno FROM (SELECT * FROM (SELECT B.APPLYUSERNAME,B.ORDERID,B.VEHICLETYPE,B.ORDERDATE,B.BDATE,B.EDATE,B.VEHICLENUM,B.ORDERSTATUS,B.BINDID,A.ID,A.BEGINTIME,'1' RWZT"
 						+ " FROM BO_EU_SH_VEHICLEORDER B LEFT JOIN WFC_TASK A ON A.PROCESSINSTID = B.BINDID WHERE A.TARGET = '"+userId+"' "+clyd+" "
 						+ "AND A.DISPATCHID IS NOT NULL AND A.TASKTITLE NOT LIKE '%空标题%') C ORDER BY C.BDATE DESC) TT WHERE ROWNUM <= "+end+") table_alias WHERE table_alias.rowno >= "+start+"";
 				System.out.println("######ROLETYPE 其他角色待办需要看车辆预定queryClydTaskInfo ");
@@ -85,9 +85,9 @@ public class GetCarOrderInfoController {
 				clydTaskInfoList = DBSql.query(queryClydTaskInfo, new ColumnMapRowMapper(), new Object[] {});
 			}
 			if(taskType == 1) {//普通用户、客服已办看全部，其他角色已办看全部
-				queryClydTaskInfo = "SELECT * FROM (SELECT TT.*, ROWNUM AS rowno FROM (SELECT * FROM (SELECT B.VEHICLETYPE,B.ORDERDATE,B.BDATE,B.EDATE,B.VEHICLENUM,B.ORDERSTATUS,B.BINDID,A.ID,A.BEGINTIME,'1' RWZT"
+				queryClydTaskInfo = "SELECT * FROM (SELECT TT.*, ROWNUM AS rowno FROM (SELECT * FROM (SELECT B.APPLYUSERNAME, B.ORDERID,B.VEHICLETYPE,B.ORDERDATE,B.BDATE,B.EDATE,B.VEHICLENUM,B.ORDERSTATUS,B.BINDID,A.ID,A.BEGINTIME,'1' RWZT"
 						+ " FROM BO_EU_SH_VEHICLEORDER B LEFT JOIN WFC_TASK A ON A.PROCESSINSTID = B.BINDID WHERE A.TARGET = '"+userId+"' "+clyd+" "
-						+ "AND A.DISPATCHID IS NOT NULL AND A.TASKTITLE NOT LIKE '%空标题%' UNION SELECT B.VEHICLETYPE,B.ORDERDATE,"
+						+ "AND A.DISPATCHID IS NOT NULL AND A.TASKTITLE NOT LIKE '%空标题%' UNION SELECT B.APPLYUSERNAME, B.ORDERID,B.VEHICLETYPE,B.ORDERDATE,"
 						+ "B.BDATE,B.EDATE,B.VEHICLENUM,B.ORDERSTATUS,B.BINDID,A.ID,A.BEGINTIME,'2' RWZT FROM BO_EU_SH_VEHICLEORDER B "
 						+ "LEFT JOIN WFH_TASK A ON A.PROCESSINSTID = B.BINDID WHERE A.TARGET = '"+userId+"' "+clyd+" AND A.DISPATCHID IS NOT NULL "
 						+ "AND A.TASKTITLE NOT LIKE '%空标题%') C ORDER BY C.BDATE DESC) TT WHERE ROWNUM <= "+end+") table_alias WHERE table_alias.rowno >= "+start+"";
@@ -102,12 +102,13 @@ public class GetCarOrderInfoController {
 						+ "END) SJXX,B.CFSJ,B.FHSJ,B.TOTALMONEY,B.VEHICLETYPE,(CASE WHEN B.MISSIONSTATUS=0 THEN '未派单' WHEN B.MISSIONSTATUS=1 THEN '已派单' WHEN B.MISSIONSTATUS=2 THEN '已接单' WHEN B.MISSIONSTATUS" + 
 						"=3 THEN '待结算' WHEN B.MISSIONSTATUS=4 THEN '待确认' WHEN B.MISSIONSTATUS=5 THEN '已确认' WHEN B.MISSIONSTATUS=6 THEN '已取消' ELSE '' END) MISSIONSTATUS,A.PROCESSINSTID,"
 						+ "A.ID,'2' RWZT,B.ORDERDATE,B.UDATE FROM BO_EU_SH_VEHICLEORDER_MISSION B LEFT JOIN WFH_TASK A ON A.PROCESSINSTID = B.BINDID WHERE A.TARGET = '"+userId+"'"
-						+ " "+xcqr+" AND A.DISPATCHID IS NOT NULL AND A.TASKTITLE NOT LIKE '%空标题%' ORDER BY UDATE) TT WHERE ROWNUM <="
+						+ " "+xcqr+" AND A.DISPATCHID IS NOT NULL AND B.MISSIONSTATUS>2 AND A.TASKTITLE NOT LIKE '%空标题%' ORDER BY UDATE) TT WHERE ROWNUM <="
 						+ " "+end+") table_alias WHERE table_alias.rowno >= "+start+"";
 				System.out.println("####TaskType==1########queryClydTaskInfo");
 				System.out.println(queryClydTaskInfo);
 				System.out.println("####TaskType==1########queryXcqrTaskInfo");
-				System.out.println(queryClydTaskInfo);
+				System.out.println(queryXcqrTaskInfo);
+			
 			}
 
 			String portalUrl = SDK.getPortalAPI().getPortalUrl();//http://localhost:8088/portal
@@ -171,14 +172,17 @@ public class GetCarOrderInfoController {
 					String ydsj = CoreUtil.objToStr(clydMap.get("ORDERDATE"));//预定时间
 					String ydkssj = CoreUtil.objToStr(clydMap.get("BDATE"));//预定开始时间
 					String ydjssj = CoreUtil.objToStr(clydMap.get("EDATE"));//预定结束时间
+					String orderid = CoreUtil.objToStr(clydMap.get("ORDERID"));
+					String applyuser =  CoreUtil.objToStr(clydMap.get("APPLYUSERNAME"));
+					
 					if(!ydsj.equals("")) {
 						ydsj = ydsj.substring(0, 10);
 					}
 					if(!ydkssj.equals("")) {
-						ydkssj = ydkssj.substring(0, 16);
+						ydkssj = ydkssj.substring(0, 11);
 					}
 					if(!ydjssj.equals("")) {
-						ydjssj = ydjssj.substring(0, 16);
+						ydjssj = ydjssj.substring(0, 11);
 					}
 					String ycsl = CoreUtil.objToStr(clydMap.get("VEHICLENUM"));//用车数量
 					String zt = CoreUtil.objToStr(clydMap.get("ORDERSTATUS"));//状态
@@ -192,6 +196,8 @@ public class GetCarOrderInfoController {
 					jsonClydObj.put("ydkssj", ydkssj);
 					jsonClydObj.put("ydjssj", ydjssj);
 					jsonClydObj.put("ycsl", ycsl);
+					jsonClydObj.put("orderid", orderid);
+					jsonClydObj.put("applyuser", applyuser);
 					zt = SDK.getDictAPI().getValue("com.awspaas.user.apps.shhtaerospaceindustrial", "shorderstatus",zt, "CNNAME");
 					jsonClydObj.put("zt", zt);
 					jsonClydObj.put("processInstId", processInstId);
@@ -910,5 +916,108 @@ public class GetCarOrderInfoController {
 		reMessage.put("userId", userId);
 		return reMessage.toString();
 
+	}
+	/**
+	 * @Description //用车取消派单
+	 * @param ids
+	 * @param processInstId
+	 * @param id
+	 * @param uc
+	 * @return
+	 */
+	@Mapping("com.awspaas.user.apps.shhtaerospaceindustrial_cancelMission")
+	public String cancelMission(String ids,String processInstId,String id,UserContext uc) {
+		//System.out.println("Enter cancelMission!");
+    	JSONObject returnData = new JSONObject();
+    	try {
+    		String userid = uc.getUID();
+    		String isyjqxsql = "select count(1) sl from BO_EU_SH_VEHICLEORDER_ASSIGMIS where id in "
+    				+ "("+id+") and zt ='2'";
+    		int isyjqx = DBSql.getInt(isyjqxsql, "sl");
+    		if (isyjqx>0) {//已经取消的订单不允许再次取消
+    			returnData.put("status", "1");
+    			returnData.put("message", "已经取消的订单不允许再次取消");
+			}else{
+				String isqxsql = "select count(1) sl from BO_EU_SH_VEHICLEORDER_ASSIGMIS where id in "
+	    				+ "("+id+") and missionstatus>2 and zt='1' and to_char(UDATE,'yyyy-mm-dd') <= (select to_char(sysdate,'yyyy-mm-dd') from dual)";
+	    		int isqx = DBSql.getInt(isqxsql, "sl");
+	    		//System.out.println(isqxsql);
+	    		if (isqx>0) {//不给取消派单
+	    			returnData.put("status", "1");
+	    			returnData.put("message", "所勾选的当中有不允许取消的派单");
+				}else {//允许取消派单
+//					//未派单
+//					String ispdsql = "select count(1) sl from BO_EU_SH_VEHICLEORDER_ASSIGMIS where id in "
+//		    				+ "("+id+") and zt = '0' ";
+					//结束子流程
+					String idsql = "select a.bindid,a.SJZH,a.APPLYUSERNAME,a.APPLYUID,a.APPLYUSERCELLPHONE,a.UDATE,a.CPH,a.VEHICLETYPE,a.CONTACTPERSON,a.CONTACTPHONE from BO_EU_SH_VEHICLEORDER_MISSION A right JOIN "
+							+ "(select id from BO_EU_SH_VEHICLEORDER_ASSIGMIS  where zt = '1' and to_char(UDATE,'yyyy-mm-dd') > "
+							+ "(select to_char(sysdate,'yyyy-mm-dd') from dual) and id in ("+id+")) B ON A.RESOURCETASKFPID = B.ID";
+					List<Map<String, Object>> idList = DBSql.query(idsql, new ColumnMapRowMapper(), new Object[] {});
+					String xgztsql = "update BO_EU_SH_VEHICLEORDER_ASSIGMIS set ZT='2' where id in ("+id+")";
+					DBSql.update(xgztsql);//修改上航_车辆任务分配状态
+					String ztsql = "update BO_EU_SH_VEHICLEORDER_ASSIGMIS set MISSIONSTATUS='6' where id in ("+id+")";
+					DBSql.update(ztsql);//修改上航_车辆任务分配任务单状态
+					if (idList!=null&&!idList.isEmpty()) {
+						for (Map<String, Object> idmap : idList) {
+							String proid = CoreUtil.objToStr(idmap.get("bindid"));
+							String sjzh = CoreUtil.objToStr(idmap.get("SJZH"));
+							String applyUserName = CoreUtil.objToStr(idmap.get("APPLYUSERNAME"));
+							String applyUid = CoreUtil.objToStr(idmap.get("APPLYUID"));
+							String applyUserCellPhone = CoreUtil.objToStr(idmap.get("APPLYUSERCELLPHONE"));
+							String udate = CoreUtil.objToStr(idmap.get("UDATE"));
+							if(!udate.equals("")) {
+								udate = udate.substring(0, 10);
+							}
+							String cph = CoreUtil.objToStr(idmap.get("CPH"));
+							String vehicletype = CoreUtil.objToStr(idmap.get("VEHICLETYPE"));
+							String contactPerson = CoreUtil.objToStr(idmap.get("CONTACTPERSON"));//用车联系人
+							String contactPhone = CoreUtil.objToStr(idmap.get("CONTACTPHONE"));//用车联系人手机
+							String msg = "您于【"+udate+"】日，车牌号为"+cph+"的"+vehicletype+"出行已经取消";
+							String content = applyUserName+"您好！由于您"+udate+"日的用车需求不能及时满足，您的预定暂不成功，给您带来不便深表歉意。";
+							MsgNoticeController.sendNoticeMsg(uc, msg, userid, sjzh, "1", "");
+							MsgNoticeController.sendNoticeMsg(uc, content, userid, applyUid, "1", "");
+							SmsUtil sms = new SmsUtil();
+							if(!applyUserCellPhone.equals("")) {
+								String phone = applyUserCellPhone;
+								String templateId = SDK.getAppAPI().getProperty(MnmsConstant.APP_ID,MnmsConstant.PARAM_VEHICLE_DISPATCH_FAIL_TEMPLATE_ID);
+								String param = "{'APPLYUSERNAME':'"+applyUserName+"'}";
+								try {
+									returnData = sms.sendSms(phone,templateId,param);
+									System.out.println("车辆预定取消短信通知预订人成功==========="+returnData);
+								} catch (Exception e) {
+									e.printStackTrace();
+								}
+							}
+							if(!contactPhone.equals("")) {
+								String phone = contactPhone;
+								String templateId = SDK.getAppAPI().getProperty(MnmsConstant.APP_ID,MnmsConstant.PARAM_VEHICLE_DISPATCH_FAIL_TEMPLATE_ID);
+								String param = "{'APPLYUSERNAME':'"+contactPerson+"'}";
+								try {
+									returnData = sms.sendSms(phone,templateId,param);
+									System.out.println("车辆预定取消短信通知用车人成功==========="+returnData);
+								} catch (Exception e) {
+									e.printStackTrace();
+								}
+							}
+							try {
+								SDK.getProcessAPI().terminateById(proid, userid);
+							} catch (Exception e) {
+								e.printStackTrace();
+							}
+							
+						}
+						returnData.put("status", "0");
+		    			returnData.put("message", "取消成功");
+					}
+					returnData.put("status", "0");
+	    			returnData.put("message", "取消成功");
+				}
+			}
+    		
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
+		return returnData.toString();
 	}
 }

@@ -27,7 +27,7 @@ public class scoreInstitute  extends ValueListener{
 				String  userName = CoreUtil.objToStr(unit.get("APPLYUSERNAME"));
 				String uniName = CoreUtil.objToStr(unit.get("APPLYUNIT"));
 				String peopleNum = CoreUtil.objToStr(unit.get("NEEDCENUM"));
-				ProcessInstance createProcessInstance = SDK.getProcessAPI().createProcessInstance(depProcessDefid,
+				//ProcessInstance createProcessInstance = SDK.getProcessAPI().createProcessInstance(depProcessDefid,
 			}
  
 		}
