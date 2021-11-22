@@ -28,11 +28,12 @@ public class CreateClrwfp extends ExecuteListener implements ExecuteListenerInte
 			
 			String bindId = pec.getProcessInstance().getId();
 			
-			String queryClyuData = "SELECT BDATE,EDATE,VEHICLETYPE,CREATEUSER FROM BO_EU_SH_VEHICLEORDER WHERE BINDID = '"+bindId+"'";
+			String queryClyuData = "SELECT VEHICLENUM BDATE,EDATE,VEHICLETYPE,CREATEUSER FROM BO_EU_SH_VEHICLEORDER WHERE BINDID = '"+bindId+"'";
 			String bdate = CoreUtil.objToStr(DBSql.getString(queryClyuData, "BDATE"));//预订开始日期
 			String edate = CoreUtil.objToStr(DBSql.getString(queryClyuData, "EDATE"));//预订结束日期
 			String vehicleType = CoreUtil.objToStr(DBSql.getString(queryClyuData, "VEHICLETYPE"));//车辆类型
 			String createUser = CoreUtil.objToStr(DBSql.getString(queryClyuData, "CREATEUSER"));//流程创建人
+			int carNeedNum =  CoreUtil.objToInt(DBSql.getString(queryClyuData, "VEHICLENUM"));//用车数量
 			if(!bdate.equals("")) {
 				bdate = bdate.substring(0, 10);
 			}
@@ -42,17 +43,20 @@ public class CreateClrwfp extends ExecuteListener implements ExecuteListenerInte
 			if(!bdate.equals("") && !edate.equals("")) {
 				List<String> days = CommUtil.getDays(bdate, edate);
 				for (int i = 0; i < days.size(); i++) {//获取两个日期中间的所有日期
-					String date = days.get(i);
-					String querySfcz = "SELECT COUNT(1) SL FROM BO_EU_SH_VEHICLEORDER_ASSIGMIS WHERE BINDID = '"+bindId+"' AND UDATE ="
-										+ " TO_DATE('"+date+"','yyyy-MM-dd')";
-					int sl = CoreUtil.objToInt(DBSql.getInt(querySfcz, "SL"));//根据流程实例ID和使用日期是否已经存在
-					if(sl == 0) {
-						BO boRecordData = new BO();
-						boRecordData.set("BINDID", bindId);//子表BINDID
-						boRecordData.set("VEHICLETYPE", vehicleType);//车辆类型
-						boRecordData.set("UDATE", date);//使用日期
-						SDK.getBOAPI().create(CoreUtil.ASSIGMIS, boRecordData, bindId, createUser);
+					for(int j = 0 ;j < carNeedNum; j++){
+						String date = days.get(i);
+						String querySfcz = "SELECT COUNT(1) SL FROM BO_EU_SH_VEHICLEORDER_ASSIGMIS WHERE BINDID = '"+bindId+"' AND UDATE ="
+											+ " TO_DATE('"+date+"','yyyy-MM-dd')";
+						int sl = CoreUtil.objToInt(DBSql.getInt(querySfcz, "SL"));//根据流程实例ID和使用日期是否已经存在
+						if(sl < carNeedNum) {
+							BO boRecordData = new BO();
+							boRecordData.set("BINDID", bindId);//子表BINDID
+							boRecordData.set("VEHICLETYPE", vehicleType);//车辆类型
+							boRecordData.set("UDATE", date);//使用日期
+							SDK.getBOAPI().create(CoreUtil.ASSIGMIS, boRecordData, bindId, createUser);
+						}
 					}
+
 				}
 			}
 		} catch (Exception e) {
