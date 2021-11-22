@@ -928,6 +928,7 @@ public class GetCarOrderInfoController {
 	@Mapping("com.awspaas.user.apps.shhtaerospaceindustrial_cancelMission")
 	public String cancelMission(String ids,String processInstId,String id,UserContext uc) {
 		//System.out.println("Enter cancelMission!");
+		System.out.println(id);
     	JSONObject returnData = new JSONObject();
     	try {
     		String userid = uc.getUID();
@@ -936,29 +937,41 @@ public class GetCarOrderInfoController {
     		int isyjqx = DBSql.getInt(isyjqxsql, "sl");
     		if (isyjqx>0) {//已经取消的订单不允许再次取消
     			returnData.put("status", "1");
-    			returnData.put("message", "已经取消的订单不允许再次取消");
+    			returnData.put("message", "该订单已经取消");
 			}else{
+				/*String isqxsql = "select count(1) sl from BO_EU_SH_VEHICLEORDER_ASSIGMIS where id in "
+	    				+ "("+id+") and missionstatus>2 and zt='1' and to_char(UDATE,'yyyy-mm-dd') <= (select to_char(sysdate,'yyyy-mm-dd') from dual)";*/
+				
 				String isqxsql = "select count(1) sl from BO_EU_SH_VEHICLEORDER_ASSIGMIS where id in "
-	    				+ "("+id+") and missionstatus>2 and zt='1' and to_char(UDATE,'yyyy-mm-dd') <= (select to_char(sysdate,'yyyy-mm-dd') from dual)";
+	    				+ "("+id+") and missionstatus>2 and zt='1' ";
 	    		int isqx = DBSql.getInt(isqxsql, "sl");
 	    		//System.out.println(isqxsql);
 	    		if (isqx>0) {//不给取消派单
 	    			returnData.put("status", "1");
-	    			returnData.put("message", "所勾选的当中有不允许取消的派单");
+	    			returnData.put("message", "已进入结算，不允许取消！");
 				}else {//允许取消派单
 //					//未派单
 //					String ispdsql = "select count(1) sl from BO_EU_SH_VEHICLEORDER_ASSIGMIS where id in "
 //		    				+ "("+id+") and zt = '0' ";
 					//结束子流程
-					String idsql = "select a.bindid,a.SJZH,a.APPLYUSERNAME,a.APPLYUID,a.APPLYUSERCELLPHONE,a.UDATE,a.CPH,a.VEHICLETYPE,a.CONTACTPERSON,a.CONTACTPHONE from BO_EU_SH_VEHICLEORDER_MISSION A right JOIN "
+					/*String idsql = "select a.SJLXFS,a.bindid,a.SJZH,a.APPLYUSERNAME,a.APPLYUID,a.APPLYUSERCELLPHONE,a.UDATE,a.CPH,a.VEHICLETYPE,a.CONTACTPERSON,a.CONTACTPHONE from BO_EU_SH_VEHICLEORDER_MISSION A right JOIN "
 							+ "(select id from BO_EU_SH_VEHICLEORDER_ASSIGMIS  where zt = '1' and to_char(UDATE,'yyyy-mm-dd') > "
-							+ "(select to_char(sysdate,'yyyy-mm-dd') from dual) and id in ("+id+")) B ON A.RESOURCETASKFPID = B.ID";
+							+ "(select to_char(sysdate,'yyyy-mm-dd') from dual) and id in ("+id+")) B ON A.RESOURCETASKFPID = B.ID";*/
+					String idsql = "select a.SJXM, a.SJLXFS,a.bindid,a.SJZH,a.APPLYUSERNAME,a.APPLYUID,a.APPLYUSERCELLPHONE,a.UDATE,a.CPH,a.VEHICLETYPE,a.CONTACTPERSON,a.CONTACTPHONE from BO_EU_SH_VEHICLEORDER_MISSION A right JOIN "
+							+ "(select id from BO_EU_SH_VEHICLEORDER_ASSIGMIS  where zt = '1' and id in ("+id+")) B ON A.RESOURCETASKFPID = B.ID";
+					
+					System.out.println(idsql);
+					
 					List<Map<String, Object>> idList = DBSql.query(idsql, new ColumnMapRowMapper(), new Object[] {});
 					String xgztsql = "update BO_EU_SH_VEHICLEORDER_ASSIGMIS set ZT='2' where id in ("+id+")";
+					System.out.println(xgztsql);
 					DBSql.update(xgztsql);//修改上航_车辆任务分配状态
 					String ztsql = "update BO_EU_SH_VEHICLEORDER_ASSIGMIS set MISSIONSTATUS='6' where id in ("+id+")";
+					System.out.println(ztsql);
 					DBSql.update(ztsql);//修改上航_车辆任务分配任务单状态
-					if (idList!=null&&!idList.isEmpty()) {
+					System.out.println("准备取消的派单任务列表数目:"+idList.size());
+					if (idList!=null&&!idList.isEmpty())
+					{
 						for (Map<String, Object> idmap : idList) {
 							String proid = CoreUtil.objToStr(idmap.get("bindid"));
 							String sjzh = CoreUtil.objToStr(idmap.get("SJZH"));
@@ -966,6 +979,8 @@ public class GetCarOrderInfoController {
 							String applyUid = CoreUtil.objToStr(idmap.get("APPLYUID"));
 							String applyUserCellPhone = CoreUtil.objToStr(idmap.get("APPLYUSERCELLPHONE"));
 							String udate = CoreUtil.objToStr(idmap.get("UDATE"));
+							String driverphone =  CoreUtil.objToStr(idmap.get("SJLXFS"));
+							String drivername= CoreUtil.objToStr(idmap.get("SJXM"));
 							if(!udate.equals("")) {
 								udate = udate.substring(0, 10);
 							}
@@ -975,15 +990,22 @@ public class GetCarOrderInfoController {
 							String contactPhone = CoreUtil.objToStr(idmap.get("CONTACTPHONE"));//用车联系人手机
 							String msg = "您于【"+udate+"】日，车牌号为"+cph+"的"+vehicletype+"出行已经取消";
 							String content = applyUserName+"您好！由于您"+udate+"日的用车需求不能及时满足，您的预定暂不成功，给您带来不便深表歉意。";
-							MsgNoticeController.sendNoticeMsg(uc, msg, userid, sjzh, "1", "");
-							MsgNoticeController.sendNoticeMsg(uc, content, userid, applyUid, "1", "");
+							//MsgNoticeController.sendNoticeMsg(uc, msg, userid, sjzh, "1", "");
+							//MsgNoticeController.sendNoticeMsg(uc, content, userid, applyUid, "1", "");
 							SmsUtil sms = new SmsUtil();
+							System.out.println("预定人电话："+applyUserCellPhone);
+							
 							if(!applyUserCellPhone.equals("")) {
+								
 								String phone = applyUserCellPhone;
 								String templateId = SDK.getAppAPI().getProperty(MnmsConstant.APP_ID,MnmsConstant.PARAM_VEHICLE_DISPATCH_FAIL_TEMPLATE_ID);
-								String param = "{'APPLYUSERNAME':'"+applyUserName+"'}";
+								//String param = "{'APPLYUSERNAME':'"+applyUserName+"'}";
+								String message_user = "{'applyUserName':'"+applyUserName+"','udate':'"+udate+"','cph':'"+cph+"'}";
+								String message_driver = "{'applyUserName':'"+drivername+"','udate':'"+udate+"','cph':'"+cph+"'}";
 								try {
-									returnData = sms.sendSms(phone,templateId,param);
+									
+									returnData = sms.sendSms(phone,"SMS_228016523",message_user);
+									sms.sendSms(driverphone, "SMS_228116397", message_driver);
 									System.out.println("车辆预定取消短信通知预订人成功==========="+returnData);
 								} catch (Exception e) {
 									e.printStackTrace();
@@ -992,15 +1014,17 @@ public class GetCarOrderInfoController {
 							if(!contactPhone.equals("")) {
 								String phone = contactPhone;
 								String templateId = SDK.getAppAPI().getProperty(MnmsConstant.APP_ID,MnmsConstant.PARAM_VEHICLE_DISPATCH_FAIL_TEMPLATE_ID);
-								String param = "{'APPLYUSERNAME':'"+contactPerson+"'}";
+								//String param = "{'APPLYUSERNAME':'"+contactPerson+"'}";
+								String message_user = "{'applyUserName':'"+contactPerson+"','udate':'"+udate+"','cph':'"+cph+"'}";
 								try {
-									returnData = sms.sendSms(phone,templateId,param);
+									returnData = sms.sendSms(phone,"SMS_228016523",message_user);
 									System.out.println("车辆预定取消短信通知用车人成功==========="+returnData);
 								} catch (Exception e) {
 									e.printStackTrace();
 								}
 							}
 							try {
+								System.out.println("准备终止流程！流程号:"+proid+"用户ID:"+userid);
 								SDK.getProcessAPI().terminateById(proid, userid);
 							} catch (Exception e) {
 								e.printStackTrace();
