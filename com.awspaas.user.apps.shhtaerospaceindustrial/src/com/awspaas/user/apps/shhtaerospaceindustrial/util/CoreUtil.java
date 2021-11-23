@@ -38,6 +38,7 @@ public class CoreUtil {
 	public static String YXDKJLB = "BO_EU_YXDKJLB";//有效打卡记录表
 	public static String ASSIGMIS = "BO_EU_SH_VEHICLEORDER_ASSIGMIS";//上航_车辆任务分配
 	public static String MISSION = "BO_EU_SH_VEHICLEORDER_MISSION";//上航_车辆_行车任务单
+	public static String BO_EU_YBOFFICEUSECAR_DS = "BO_EU_YBOFFICEUSECAR_DS";//保障用车任务分配单
 	/** 审批状态 **/
 	public static String SPZT_WSP = "0";//未审批
 	public static String SPZT_TG = "1";//通过
