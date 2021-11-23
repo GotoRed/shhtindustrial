@@ -7,6 +7,8 @@ package com.awspaas.user.apps.shhtaerospaceindustrial.event;
 
 import java.util.List;
 
+import org.apache.logging.log4j.core.util.SystemNanoClock;
+
 import com.actionsoft.bpms.bo.engine.BO;
 import com.actionsoft.bpms.bpmn.engine.core.delegate.ProcessExecutionContext;
 import com.actionsoft.bpms.bpmn.engine.listener.ExecuteListener;
@@ -28,12 +30,14 @@ public class CreateClrwfp extends ExecuteListener implements ExecuteListenerInte
 			
 			String bindId = pec.getProcessInstance().getId();
 			
-			String queryClyuData = "SELECT VEHICLENUM BDATE,EDATE,VEHICLETYPE,CREATEUSER FROM BO_EU_SH_VEHICLEORDER WHERE BINDID = '"+bindId+"'";
+			String queryClyuData = "SELECT VEHICLENUM, BDATE,EDATE,VEHICLETYPE,CREATEUSER FROM BO_EU_SH_VEHICLEORDER WHERE BINDID = '"+bindId+"'";
 			String bdate = CoreUtil.objToStr(DBSql.getString(queryClyuData, "BDATE"));//预订开始日期
 			String edate = CoreUtil.objToStr(DBSql.getString(queryClyuData, "EDATE"));//预订结束日期
 			String vehicleType = CoreUtil.objToStr(DBSql.getString(queryClyuData, "VEHICLETYPE"));//车辆类型
 			String createUser = CoreUtil.objToStr(DBSql.getString(queryClyuData, "CREATEUSER"));//流程创建人
 			int carNeedNum =  CoreUtil.objToInt(DBSql.getString(queryClyuData, "VEHICLENUM"));//用车数量
+			System.out.println("用车数量"+carNeedNum);
+			
 			if(!bdate.equals("")) {
 				bdate = bdate.substring(0, 10);
 			}
@@ -48,6 +52,7 @@ public class CreateClrwfp extends ExecuteListener implements ExecuteListenerInte
 						String querySfcz = "SELECT COUNT(1) SL FROM BO_EU_SH_VEHICLEORDER_ASSIGMIS WHERE BINDID = '"+bindId+"' AND UDATE ="
 											+ " TO_DATE('"+date+"','yyyy-MM-dd')";
 						int sl = CoreUtil.objToInt(DBSql.getInt(querySfcz, "SL"));//根据流程实例ID和使用日期是否已经存在
+						System.out.println("单日已经创建订单数目！"+sl);
 						if(sl < carNeedNum) {
 							BO boRecordData = new BO();
 							boRecordData.set("BINDID", bindId);//子表BINDID
