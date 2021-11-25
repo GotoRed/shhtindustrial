@@ -961,14 +961,8 @@ public class GetCarOrderInfoController {
 							+ "(select id from BO_EU_SH_VEHICLEORDER_ASSIGMIS  where zt = '1' and id in ("+id+")) B ON A.RESOURCETASKFPID = B.ID";
 					
 					System.out.println(idsql);
-					
 					List<Map<String, Object>> idList = DBSql.query(idsql, new ColumnMapRowMapper(), new Object[] {});
-					String xgztsql = "update BO_EU_SH_VEHICLEORDER_ASSIGMIS set ZT='2' where id in ("+id+")";
-					System.out.println(xgztsql);
-					DBSql.update(xgztsql);//修改上航_车辆任务分配状态
-					String ztsql = "update BO_EU_SH_VEHICLEORDER_ASSIGMIS set MISSIONSTATUS='6' where id in ("+id+")";
-					System.out.println(ztsql);
-					DBSql.update(ztsql);//修改上航_车辆任务分配任务单状态
+					
 					System.out.println("准备取消的派单任务列表数目:"+idList.size());
 					if (idList!=null&&!idList.isEmpty())
 					{
@@ -992,6 +986,17 @@ public class GetCarOrderInfoController {
 							String content = applyUserName+"您好！由于您"+udate+"日的用车需求不能及时满足，您的预定暂不成功，给您带来不便深表歉意。";
 							//MsgNoticeController.sendNoticeMsg(uc, msg, userid, sjzh, "1", "");
 							//MsgNoticeController.sendNoticeMsg(uc, content, userid, applyUid, "1", "");
+							try {
+								System.out.println("准备终止流程！流程号:"+proid+"用户ID:"+userid);
+								SDK.getProcessAPI().terminateById(proid, userid);
+							} catch (Exception e) {
+								e.printStackTrace();
+							}
+							
+							String xgztsql = "update BO_EU_SH_VEHICLEORDER_ASSIGMIS set ZT='2',MISSIONSTATUS='6' where id in ("+id+")";
+							System.out.println(xgztsql);
+							DBSql.update(xgztsql);//修改上航_车辆任务分配状态
+							
 							SmsUtil sms = new SmsUtil();
 							System.out.println("预定人电话："+applyUserCellPhone);
 							
@@ -1023,12 +1028,7 @@ public class GetCarOrderInfoController {
 									e.printStackTrace();
 								}
 							}
-							try {
-								System.out.println("准备终止流程！流程号:"+proid+"用户ID:"+userid);
-								SDK.getProcessAPI().terminateById(proid, userid);
-							} catch (Exception e) {
-								e.printStackTrace();
-							}
+							
 							
 						}
 						returnData.put("status", "0");
