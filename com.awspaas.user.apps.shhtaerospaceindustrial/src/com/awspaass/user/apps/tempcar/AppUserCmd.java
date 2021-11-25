@@ -54,7 +54,7 @@ public class AppUserCmd {
 				String queryXcqrTaskInfo = "";
 
 				queryXcqrTaskInfo = "SELECT * FROM (SELECT TT.*, ROWNUM AS rowno FROM (SELECT (CASE WHEN B.SJLXFS IS NOT NULL THEN CONCAT("
-						+ "CONCAT(CONCAT(B.SJXM,'('),B.SJLXFS),')') ELSE CONCAT(B.SJXM,B.SJLXFS) END) SJXX,B.CFSJ,B.FHSJ,B.TOTALMONEY,B.VEHICLETYPE,"
+						+ "CONCAT(CONCAT(B.SJXM,'('),B.SJLXFS),')') ELSE CONCAT(B.SJXM,B.SJLXFS) END) SJXX,B.UDATE,B.CFSJ,B.FHSJ,B.TOTALMONEY,B.VEHICLETYPE,"
 						+ "(CASE WHEN B.MISSIONSTATUS=0 THEN '未派单' WHEN B.MISSIONSTATUS=1 THEN '已派单' WHEN B.MISSIONSTATUS=2 THEN '已接单' WHEN B.MISSIONSTATUS"
 						+ "=3 THEN '待结算' WHEN B.MISSIONSTATUS=4 THEN '待确认' WHEN B.MISSIONSTATUS=5 THEN '已确认' WHEN B.MISSIONSTATUS=6 THEN '已取消' ELSE '' END) MISSIONSTATUS,A.PROCESSINSTID,A.ID,'1' RWZT,B.ORDERDATE FROM BO_EU_SH_VEHICLEORDER_MISSION B LEFT JOIN WFC_TASK A ON "
 						+ "A.PROCESSINSTID = B.BINDID WHERE B.APPLYUID = '" + userId + "' " + xcqr
@@ -78,6 +78,7 @@ public class AppUserCmd {
 						for (int i = 0; i < xcqrTaskInfoList.size(); i++) {
 							JSONObject jsonXcqrObj = new JSONObject();
 							Map<String, Object> xcqrMap = xcqrTaskInfoList.get(i);
+							String udate = CoreUtil.objToStr(xcqrMap.get("UDATE"));
 							String sjxx = CoreUtil.objToStr(xcqrMap.get("SJXX"));// 司机姓名（联系方式）
 							String cfsj = CoreUtil.objToStr(xcqrMap.get("CFSJ"));// 出车时间
 							String fhsj = CoreUtil.objToStr(xcqrMap.get("FHSJ"));// 返回时间
@@ -115,6 +116,7 @@ public class AppUserCmd {
 							jsonXcqrObj.put("rwzt", rwzt);
 							jsonXcqrObj.put("processInstId", processInstId);
 							jsonXcqrObj.put("url", url);
+							jsonXcqrObj.put("udate", udate);
 							jsonXcqr.add(jsonXcqrObj);
 						}
 					}
