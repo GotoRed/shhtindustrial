@@ -255,7 +255,7 @@ public class SyncAddress implements IJob  {
 				 if(dep_name_aws.equals(name_wechat)) {
 					 continue;
 				 }else {
-					 DBSql.update("update BO_INFO_WECHAT_AWS t set t.name='"+ name_wechat+"' where t.conmpanyidwechat= '"+companyid_aws + "and t.idwechat='" + id_wechat+ "'");
+					 DBSql.update("update BO_INFO_WECHAT_AWS t set t.name='"+ name_wechat+"' where t.conmpanyidwechat= '"+companyid_aws + "' and t.idwechat='" + id_wechat+ "'");
 					 SDK.getORGAPI().updateDepartment(depidAws,name_wechat,ORGAPI.NO_UPDATE,ORGAPI.NO_UPDATE,ORGAPI.NO_UPDATE,ORGAPI.NO_UPDATE);				 
 				 }
 			 }
