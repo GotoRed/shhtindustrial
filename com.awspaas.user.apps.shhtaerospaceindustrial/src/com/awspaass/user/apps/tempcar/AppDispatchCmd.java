@@ -159,9 +159,10 @@ public class AppDispatchCmd {
 		  String CONTACTPERSON = CoreUtil.objToStr(DBSql.getString(queryInfoSql, "CONTACTPERSON"));
 		  String CONTACTPHONE = CoreUtil.objToStr(DBSql.getString(queryInfoSql, "CONTACTPHONE"));
 		  String UDATE = CoreUtil.objToStr(DBSql.getString(queryInfoSql, "UDATE"));
-		  String CPH = CoreUtil.objToStr(DBSql.getString(queryInfoSql, "UDATE"));
+		  String CPH = CoreUtil.objToStr(DBSql.getString(queryInfoSql, "CPH"));
 		  String message_user = "{'applyUserName':'"+APPLYUSERNAME+"','udate':'"+UDATE+"','cph':'"+CPH+"'}";
 		  String message_driver ="{'applyUserName':'"+SJXM+"','udate':'"+UDATE+"','cph':'"+CPH+"'}";
+		  
 		  SmsUtil sms = new SmsUtil();
 		  try {
 				System.out.println("准备终止流程！流程号:"+BINDID+"用户ID:"+userid);
