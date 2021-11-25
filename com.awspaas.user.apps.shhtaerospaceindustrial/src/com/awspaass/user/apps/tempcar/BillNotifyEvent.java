@@ -16,7 +16,7 @@ import com.awspaas.user.apps.shhtaerospaceindustrial.util.CoreUtil;
 import com.awspaas.user.apps.shhtaerospaceindustrial.sms.SmsUtil;
 
 
-public class billNotifyEvent extends ExecuteListener implements ExecuteListenerInterface {
+public class BillNotifyEvent extends ExecuteListener implements ExecuteListenerInterface {
 	public String getDescription() {
         return "通知用户结算确认！";
     }

@@ -15,7 +15,7 @@ import com.awspaas.user.apps.shhtaerospaceindustrial.sms.SmsUtil;
 import com.awspaas.user.apps.shhtaerospaceindustrial.util.CoreUtil;
 
 @Controller
-public class appUserCmd {
+public class AppUserCmd {
 	/***
 	 * Descript:用户查询行车任务单cmd,操作页签调用
 	 * 
@@ -341,7 +341,7 @@ public class appUserCmd {
 	
 	  @Mapping("com.awspaas.user.apps.shhtaerospaceindustrial_userCancelMission") 
 	  public String userCancelMission(String ids,String processInstId,String id,UserContext uc) {
-		  
+		  JSONObject returnData = new JSONObject();
 		  String userid = uc.getUID();
 		  
 		  String queryInfoSql = "select a.UDATE, a.CPH,a.SJXM, a.SJLXFS,a.bindid,a.SJZH,a.APPLYUSERNAME,a.APPLYUID,a.APPLYUSERCELLPHONE,a.UDATE,a.CPH,a.VEHICLETYPE,a.CONTACTPERSON,a.CONTACTPHONE from BO_EU_SH_VEHICLEORDER_MISSION a WHERE BINDID = "
@@ -384,9 +384,11 @@ public class appUserCmd {
 		  }
 
 		 
-		  return null;
+		  returnData.put("status", "0");
+		returnData.put("message", "取消成功！");
+		return returnData.toString();
 	  }
 	  
-	//  @Mapping("com.awspaas.user.apps.shhtaerospaceindustrial_userCancelMission")
+
 	  
 }

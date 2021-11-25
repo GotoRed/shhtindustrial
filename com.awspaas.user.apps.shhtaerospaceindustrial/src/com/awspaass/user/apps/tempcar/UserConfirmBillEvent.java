@@ -11,7 +11,7 @@ import com.actionsoft.bpms.util.DBSql;
 import com.actionsoft.sdk.local.SDK;
 import com.awspaas.user.apps.shhtaerospaceindustrial.util.CoreUtil;
 
-public class userConfirmBillEvent extends ExecuteListener implements ExecuteListenerInterface {
+public class UserConfirmBillEvent extends ExecuteListener implements ExecuteListenerInterface {
 	public String getDescription() {
         return "用户确认更新订单表状态，更新账单发送短信日志";
     }

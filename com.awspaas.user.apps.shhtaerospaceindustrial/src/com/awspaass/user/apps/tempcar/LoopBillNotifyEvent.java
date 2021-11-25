@@ -8,7 +8,7 @@ import com.actionsoft.bpms.util.DBSql;
 import com.awspaas.user.apps.shhtaerospaceindustrial.sms.SmsUtil;
 import com.awspaas.user.apps.shhtaerospaceindustrial.util.CoreUtil;
 
-public class loopBillNotifyEvEnt implements IJob{
+public class LoopBillNotifyEvent implements IJob{
 	public void execute(JobExecutionContext jobExecutionContext)
 	        throws JobExecutionException {
 		String missionSMSLogListSql = "select a.SMSCOUNT, b.BINDID,b.APPLYUSERNAME,b.APPLYUSERCELLPHONE,b.UDATE,b.SJXM,b.CPH from MISSIONSMSLOG a ,BO_EU_SH_VEHICLEORDER_MISSION b where a.MISSIONID=b.BINDID and b.MISSIONSTATUS=4 and a.SMSCOUNT<3";
