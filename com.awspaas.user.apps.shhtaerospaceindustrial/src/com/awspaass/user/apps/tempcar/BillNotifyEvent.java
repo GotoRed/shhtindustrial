@@ -22,7 +22,7 @@ public class BillNotifyEvent extends ExecuteListener implements ExecuteListenerI
     }
 	public void execute(ProcessExecutionContext pec) throws Exception {
 		try {
-			if(SDK.getTaskAPI().isChoiceActionMenu(pec.getTaskInstance(), "确认")) {
+			//if(SDK.getTaskAPI().isChoiceActionMenu(pec.getTaskInstance(), "确认")) {
 				String bindId = pec.getProcessInstance().getId();//流程实例ID
 				String queryResourceTaskFpId = "SELECT RESOURCETASKFPID FROM BO_EU_SH_VEHICLEORDER_MISSION WHERE BINDID = '"+bindId+"'";
 				List<Map<String, Object>> resourceTaskFpIdList = DBSql.query(queryResourceTaskFpId, new ColumnMapRowMapper(), new Object[] {});
@@ -60,7 +60,7 @@ public class BillNotifyEvent extends ExecuteListener implements ExecuteListenerI
 				 DBSql.update(insertMissionSMSLog, paraMap);
 				
 				
-			}
+		//	}
 		}catch(Exception e) {
 			e.printStackTrace();
 		}

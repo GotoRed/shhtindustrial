@@ -346,7 +346,7 @@ public class AppUserCmd {
 		  JSONObject returnData = new JSONObject();
 		  String userid = uc.getUID();
 		  
-		  String queryInfoSql = "select a.RESOURCETASKID,a.UDATE, a.CPH,a.SJXM, a.SJLXFS,a.bindid,a.SJZH,a.APPLYUSERNAME,a.APPLYUID,a.APPLYUSERCELLPHONE,a.UDATE,a.CPH,a.VEHICLETYPE,a.CONTACTPERSON,a.CONTACTPHONE from BO_EU_SH_VEHICLEORDER_MISSION a WHERE BINDID = "
+		  String queryInfoSql = "select a.RESOURCETASKFPID,a.UDATE, a.CPH,a.SJXM, a.SJLXFS,a.bindid,a.SJZH,a.APPLYUSERNAME,a.APPLYUID,a.APPLYUSERCELLPHONE,a.UDATE,a.CPH,a.VEHICLETYPE,a.CONTACTPERSON,a.CONTACTPHONE from BO_EU_SH_VEHICLEORDER_MISSION a WHERE BINDID = "
 		  		+ "'"+processInstId+"'";
 		  String BINDID = CoreUtil.objToStr(DBSql.getString(queryInfoSql, "BINDID"));
 		  String APPLYUSERNAME = CoreUtil.objToStr(DBSql.getString(queryInfoSql, "APPLYUSERNAME"));//预定人姓名
@@ -357,13 +357,16 @@ public class AppUserCmd {
 		  String CONTACTPHONE = CoreUtil.objToStr(DBSql.getString(queryInfoSql, "CONTACTPHONE"));
 		  String UDATE = CoreUtil.objToStr(DBSql.getString(queryInfoSql, "UDATE"));
 		  String CPH = CoreUtil.objToStr(DBSql.getString(queryInfoSql, "CPH"));
-		  String RESOURCETASKID = CoreUtil.objToStr(DBSql.getString(queryInfoSql, "RESOURCETASKID"));
+		  String RESOURCETASKFPID = CoreUtil.objToStr(DBSql.getString(queryInfoSql, "RESOURCETASKFPID"));
 		  String message_user = "{'applyUserName':'"+APPLYUSERNAME+"','udate':'"+UDATE+"','cph':'"+CPH+"'}";
 		  String message_driver ="{'applyUserName':'"+SJXM+"','udate':'"+UDATE+"','cph':'"+CPH+"'}";
 		  SmsUtil sms = new SmsUtil();
-		  String updateAssignSql = "update BO_EU_SH_VEHICLEORDER_ASSIGMIS set ZT='2',MISSIONSTATUS='6' where id ='"+RESOURCETASKID+"'";
-			
+		  
+		  String updateAssignSql = "update BO_EU_SH_VEHICLEORDER_ASSIGMIS set ZT='2',MISSIONSTATUS='6' where id ='"+RESOURCETASKFPID+"'";
+		  String updateMissionSql = "update BO_EU_SH_VEHICLEORDER_MISSION set MISSIONSTATUS='6' where bindid='"+BINDID+"'";
+		  System.out.println(updateAssignSql);
 		  DBSql.update(updateAssignSql);//修改上航_车辆任务分配状态
+		  DBSql.update(updateMissionSql);
 		  try {
 				System.out.println("准备终止流程！流程号:"+BINDID+"用户ID:"+userid);
 				SDK.getProcessAPI().terminateById(BINDID, userid);
