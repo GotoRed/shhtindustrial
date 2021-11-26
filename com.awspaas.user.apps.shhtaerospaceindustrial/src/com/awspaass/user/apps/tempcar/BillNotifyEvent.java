@@ -18,7 +18,7 @@ import com.awspaas.user.apps.shhtaerospaceindustrial.sms.SmsUtil;
 
 public class BillNotifyEvent extends ExecuteListener implements ExecuteListenerInterface {
 	public String getDescription() {
-        return "通知用户结算确认！";
+        return "调度审核结算单,更新表单状态，通知用户结算确认！";
     }
 	public void execute(ProcessExecutionContext pec) throws Exception {
 		try {

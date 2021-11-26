@@ -91,10 +91,11 @@ public class AppDispatchCmd {
 							} catch (Exception e) {
 								e.printStackTrace();
 							}
-							
+							String updateMissionSql = "update BO_EU_SH_VEHICLEORDER_MISSION set MISSIONSTATUS='6' where bindid='"+proid+"'";
 							String xgztsql = "update BO_EU_SH_VEHICLEORDER_ASSIGMIS set ZT='2',MISSIONSTATUS='6' where id in ("+id+")";
 							System.out.println(xgztsql);
 							DBSql.update(xgztsql);//修改上航_车辆任务分配状态
+							 DBSql.update(updateMissionSql);
 							
 							SmsUtil sms = new SmsUtil();
 							System.out.println("预定人电话："+applyUserCellPhone);

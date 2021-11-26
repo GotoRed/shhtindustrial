@@ -305,5 +305,24 @@ public class MnmsConstant {
 	 * OCR 行类型 专家信息
 	 */
 	public final static String OCR_ROW_TYPE_EXPERT = "OCR_ROW_TYPE_EXPERT";
+	
+	/**
+	 * 车辆预订取消通知乘客V1
+	 */
+	public final static String SHSY_CACELMISSION_NOTIFYTOUSER = "SMS_228016523";
+	
+	/**
+	 * 车辆预订取消通知-司机V1
+	 */
+	public final static String SHSY_CACELMISSION_NOTIFYTODRIVER = "SMS_228116397";
+	
+	/**
+	 * 临时用车任务变更通知用户
+	 */
+	public final static String SHSY_MODIFYMISSION_NOTIFYTOUSER = "SMS_228850142";
+	
+	/**
+	 *  
+	 */
 
 }
