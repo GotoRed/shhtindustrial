@@ -4,6 +4,7 @@ import java.util.Date;
 import java.util.List;
 import java.util.Map;
 import java.math.*;
+import java.text.SimpleDateFormat;
 
 import com.actionsoft.bpms.bpmn.engine.core.delegate.ProcessExecutionContext;
 import com.actionsoft.bpms.bpmn.engine.listener.ExecuteListener;
@@ -50,15 +51,18 @@ public class DriverSubmitMissionEvent extends ExecuteListener implements Execute
 					double parkingFee = (double) CoreUtil.objToInt(MissonInfo.get("TCF"));
 					double otherFee = (double) CoreUtil.objToInt(MissonInfo.get("QTMONEY"));				
 					
-					int getOnDistance = CoreUtil.objToInt(MissonInfo.get("RESOURCETASKFPID"));//上客路码
-					int dropOffDistance = CoreUtil.objToInt(MissonInfo.get("RESOURCETASKFPID"));//下客路码
-					int returnDistance = CoreUtil.objToInt(MissonInfo.get("RESOURCETASKFPID"));//返场路码
+					int getOnDistance = CoreUtil.objToInt(MissonInfo.get("SKLMS"));//上客路码
+					int dropOffDistance = CoreUtil.objToInt(MissonInfo.get("XKLMS"));//下客路码
+					int returnDistance = CoreUtil.objToInt(MissonInfo.get("FHSLMS"));//返场路码
 					
-					String carType = CoreUtil.objToStr(MissonInfo.get("RESOURCETASKFPID"));//车辆类型
-					String carLogo = CoreUtil.objToStr(MissonInfo.get("RESOURCETASKFPID"));//车辆品牌
+					String carType = CoreUtil.objToStr(MissonInfo.get("vehicletype"));//车辆类型
+					String carLogo = CoreUtil.objToStr(MissonInfo.get("vehiclelabelname"));//车辆品牌
 					
 					String billType =  CoreUtil.objToStr(MissonInfo.get("BILLLIST"));
-					long useCarTimeUtc =( new Date(retrunTime).getTime()- new Date(getOnTime).getTime());
+					System.out.println(retrunTime);
+					System.out.println(getOnTime);
+					SimpleDateFormat format = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss"); 
+					long useCarTimeUtc =( format.parse(retrunTime).getTime()- format.parse(getOnTime).getTime());
 					int useCarTimeInt = (int)useCarTimeUtc/1000/3600;
 					double userCarTimeFloat =(double)useCarTimeUtc/1000/3600;
 					double useCarTime = (useCarTimeInt+0.5*Math.ceil(userCarTimeFloat-useCarTimeInt)+0.5*Math.ceil(userCarTimeFloat-useCarTimeInt-0.5));
@@ -100,7 +104,13 @@ public class DriverSubmitMissionEvent extends ExecuteListener implements Execute
 					}
 					String missionUpdateSql="UPDATE BO_EU_SH_VEHICLEORDER_MISSION SET QRLC= "+useCarDistance+",DAYPRICE= "+(int)dayFee+",DAYOVERKILOMETERSPRICE= "+totalOverKmFee+",DAYOVERTIMEPRICE= "+totaloverTimeFee+",USECARTIME="+useCarTime+",TOTALMONEY="+totalFee+
 							",OVERTIMENUM="+totalOverTime+",OVERERDISTANCENUM="+totalOverKm+",OTTIMEPRICE="+(int)overTimePrice+",OTLEAVERICE="+(int)overKmPrice+",CCGYF="+(int)outFee;
-					
+					System.out.println("QRLC"+useCarDistance);
+					System.out.println("OVERTIMENUM"+totalOverTime);
+					System.out.println("OVERERDISTANCENUM"+totalOverKm);
+					System.out.println("totalOverKmFee"+totalOverKmFee);
+					System.out.println("totaloverTimeFee"+totaloverTimeFee);
+					System.out.println("totalFee"+totalFee);
+					System.out.println("useCarTime"+useCarTime);
 
 					DBSql.update(missionUpdateSql);
 					
