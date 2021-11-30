@@ -1,5 +1,6 @@
 package com.awspaass.user.apps.tempcar;
 
+import java.util.Date;
 import java.util.List;
 import java.util.Map;
 
@@ -339,8 +340,62 @@ public class AppUserCmd {
 		}
 		return returnData.toString();
 	}
+/*
+	@Mapping("com.awspaas.user.apps.shhtaerospaceindustrial_userGetMission")
+	 public String userGetMission(String ids,String processInstId,String id,UserContext uc) {
+		JSONObject returnData = new JSONObject();
+		String bindId = processInstId;//流程实例ID
+		String queryMissionSql = "SELECT a.*, b.HONGQIAO,b.PUDONG,b.DAYPRICE,b.DAYOVERKILOMETERSPRICE,b.DAYOVERTIMEPRICE FROM BO_EU_SH_VEHICLEORDER_MISSION a ,BO_EU_SH_VEHICLETYPE b WHERE a.vehicletype=b.vehicletype AND a.vehiclelabelname=b.vehiclelabelname AND a.BINDID = '"+bindId+"'";
+		List<Map<String, Object>> missionList = DBSql.query(queryMissionSql, new ColumnMapRowMapper(), new Object[] {});
+		if(missionList != null && !missionList.isEmpty()) {
+			for (int i = 0; i < missionList.size(); i++) {
+				Map<String, Object> MissonInfo = missionList.get(i);
+				
+				double totalFee=0;
+				double totaloverTimeFee=0;
+				double totalOverKmFee=0;
+				double totalOverKm=0;
+				double totalOverTime=0;
+				double outFee=0;
+				int dayFee = 0;
+				double basicFee=(double)CoreUtil.objToInt(MissonInfo.get("DAYPRICE"));
+				double hongQiaoFee=(double)CoreUtil.objToInt(MissonInfo.get("HONGQIAO"));
+				double puDongFee=(double)CoreUtil.objToInt(MissonInfo.get("PUDONG"));
+				double overTimePrice = (double)CoreUtil.objToInt(MissonInfo.get("DAYOVERTIMEPRICE"));//超小时费(元/小时)
+				double overKmPrice = (double)CoreUtil.objToInt(MissonInfo.get("DAYOVERKILOMETERSPRICE"));//超公里费(元/公里)
+				
+				
+				String resourceTaskFpId = CoreUtil.objToStr(MissonInfo.get("RESOURCETASKFPID"));//来源任务分配单ID
+				String startTime = CoreUtil.objToStr(MissonInfo.get("CFSJ"));//出车时间
+				String getOnTime = CoreUtil.objToStr(MissonInfo.get("SKDATETIME"));//上客时间
+				String dropOffTime = CoreUtil.objToStr(MissonInfo.get("XKDATIME"));//下客时间
+				String retrunTime = CoreUtil.objToStr(MissonInfo.get("FHSJ"));//回场时间
+				String isOutShanghai = CoreUtil.objToStr(MissonInfo.get("ISOUTSHANGHAI"));
+				
 
-	
+				double roadBridgeFee = (double) CoreUtil.objToInt(MissonInfo.get("GLF"));
+				double hotelCost = (double) CoreUtil.objToInt(MissonInfo.get("STAYMONEY"));
+				double parkingFee = (double) CoreUtil.objToInt(MissonInfo.get("TCF"));
+				double otherFee = (double) CoreUtil.objToInt(MissonInfo.get("QTMONEY"));				
+				
+				int getOnDistance = CoreUtil.objToInt(MissonInfo.get("RESOURCETASKFPID"));//上客路码
+				int dropOffDistance = CoreUtil.objToInt(MissonInfo.get("RESOURCETASKFPID"));//下客路码
+				int returnDistance = CoreUtil.objToInt(MissonInfo.get("RESOURCETASKFPID"));//返场路码
+				
+				String carType = CoreUtil.objToStr(MissonInfo.get("RESOURCETASKFPID"));//车辆类型
+				String carLogo = CoreUtil.objToStr(MissonInfo.get("RESOURCETASKFPID"));//车辆品牌
+				
+				String billType =  CoreUtil.objToStr(MissonInfo.get("BILLLIST"));
+				long useCarTimeUtc =( new Date(retrunTime).getTime()- new Date(getOnTime).getTime());
+				int useCarTimeInt = (int)useCarTimeUtc/1000/3600;
+				double userCarTimeFloat =(double)useCarTimeUtc/1000/3600;
+				double useCarTime = (useCarTimeInt+0.5*Math.ceil(userCarTimeFloat-useCarTimeInt)+0.5*Math.ceil(userCarTimeFloat-useCarTimeInt-0.5));
+				int useCarDistance = returnDistance-getOnDistance;
+			}
+		}
+		return returnData.toString();
+	}
+	*/
 	  @Mapping("com.awspaas.user.apps.shhtaerospaceindustrial_userCancelMission") 
 	  public String userCancelMission(String ids,String processInstId,String id,UserContext uc) {
 		  JSONObject returnData = new JSONObject();

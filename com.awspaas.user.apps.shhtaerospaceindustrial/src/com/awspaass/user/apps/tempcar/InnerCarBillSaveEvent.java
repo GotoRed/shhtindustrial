@@ -1,34 +1,31 @@
 package com.awspaass.user.apps.tempcar;
 
-
-
 import java.text.SimpleDateFormat;
-import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
 import com.actionsoft.bpms.bpmn.engine.core.delegate.ProcessExecutionContext;
 import com.actionsoft.bpms.bpmn.engine.listener.ExecuteListener;
-import com.actionsoft.bpms.bpmn.engine.listener.ExecuteListenerInterface;
 import com.actionsoft.bpms.commons.database.ColumnMapRowMapper;
 import com.actionsoft.bpms.util.DBSql;
-import com.actionsoft.sdk.local.SDK;
 import com.awspaas.user.apps.shhtaerospaceindustrial.util.CoreUtil;
-import com.awspaas.user.apps.shhtaerospaceindustrial.sms.SmsUtil;
 
+public class InnerCarBillSaveEvent extends ExecuteListener{
+	 public String getDescription() {
+	        return "结算员审核修改行程任务单，保存";
+	    }
 
-public class BillNotifyEvent extends ExecuteListener implements ExecuteListenerInterface {
-	public String getDescription() {
-        return "调度审核结算单,更新表单状态，通知用户结算确认！";
-    }
-	public void execute(ProcessExecutionContext pec) throws Exception {
-		try {
-			
-				String bindId = pec.getProcessInstance().getId();//流程实例ID
-				
-				/**
-				 * 计算外租车辆费用
-				 */
+	    public String getProvider() {
+	        return "Actionsoft";
+	    }
+
+	    public String getVersion() {
+	        return "1.0";
+	    }
+
+	    public void execute(ProcessExecutionContext param) throws Exception {
+			try {
+				String bindId = param.getProcessInstance().getId();//流程实例ID
 				String queryMissionSql = "SELECT a.*, b.HONGQIAO,b.PUDONG,b.DAYPRICE,b.DAYOVERKILOMETERSPRICE,b.DAYOVERTIMEPRICE FROM BO_EU_SH_VEHICLEORDER_MISSION a ,BO_EU_SH_VEHICLETYPE b WHERE a.vehicletype=b.vehicletype AND a.vehiclelabelname=b.vehiclelabelname AND a.BINDID = '"+bindId+"'";
 				List<Map<String, Object>> missionList = DBSql.query(queryMissionSql, new ColumnMapRowMapper(), new Object[] {});
 				if(missionList != null && !missionList.isEmpty()) {
@@ -115,6 +112,7 @@ public class BillNotifyEvent extends ExecuteListener implements ExecuteListenerI
 						}
 						String missionUpdateSql="UPDATE BO_EU_SH_VEHICLEORDER_MISSION SET QRLC= "+useCarDistance+",DAYPRICE= "+(int)dayFee+",DAYOVERKILOMETERSPRICE= "+totalOverKmFee+",DAYOVERTIMEPRICE= "+totaloverTimeFee+",USECARTIME="+useCarTime+",TOTALMONEY="+totalFee+
 								",OVERTIMENUM="+totalOverTime+",OVERERDISTANCENUM="+totalOverKm+",OTTIMEPRICE="+(int)overTimePrice+",OTLEAVERICE="+(int)overKmPrice+",CCGYF="+(int)outFee;
+						
 						System.out.println("QRLC"+useCarDistance);
 						System.out.println("OVERTIMENUM"+totalOverTime);
 						System.out.println("OVERERDISTANCENUM"+totalOverKm);
@@ -122,56 +120,17 @@ public class BillNotifyEvent extends ExecuteListener implements ExecuteListenerI
 						System.out.println("totaloverTimeFee"+totaloverTimeFee);
 						System.out.println("totalFee"+totalFee);
 						System.out.println("useCarTime"+useCarTime);
-
+						
 						DBSql.update(missionUpdateSql);
 						
-
+						//DBSql.update("UPDATE BO_EU_SH_VEHICLEORDER_ASSIGMIS SET MISSIONSTATUS = '4' WHERE ID = '"+resourceTaskFpId+"'");					
 					}
 					
 				}
 				
 				
-				/**
-				 * 任务结束更新状态，并发送短信通知用户
-				 */
-				String queryResourceTaskFpId = "SELECT RESOURCETASKFPID FROM BO_EU_SH_VEHICLEORDER_MISSION WHERE BINDID = '"+bindId+"'";
-				List<Map<String, Object>> resourceTaskFpIdList = DBSql.query(queryResourceTaskFpId, new ColumnMapRowMapper(), new Object[] {});
-				if(resourceTaskFpIdList != null && !resourceTaskFpIdList.isEmpty()) {
-					for (int i = 0; i < resourceTaskFpIdList.size(); i++) {
-						Map<String, Object> resourceTaskFpIdMap = resourceTaskFpIdList.get(i);
-						String resourceTaskFpId = CoreUtil.objToStr(resourceTaskFpIdMap.get("RESOURCETASKFPID"));//来源任务分配单ID
-						if(SDK.getTaskAPI().isChoiceActionMenu(pec.getTaskInstance(), "提交")) {
-							DBSql.update("UPDATE BO_EU_SH_VEHICLEORDER_ASSIGMIS SET MISSIONSTATUS = '3' WHERE ID = '"+resourceTaskFpId+"'");
-						}else if(SDK.getTaskAPI().isChoiceActionMenu(pec.getTaskInstance(), "确认行车单")) {
-							DBSql.update("UPDATE BO_EU_SH_VEHICLEORDER_ASSIGMIS SET MISSIONSTATUS = '4' WHERE ID = '"+resourceTaskFpId+"'");
-						}
-					}
-				}
-				
-				
-				String missionInfoQuery = "SELECT * FROM BO_EU_SH_VEHICLEORDER_MISSION WHERE MISSIONSTATUS='4' AND BINDID = '"+bindId+"'";
-				
-				String APPLYUSERNAME = CoreUtil.objToStr(DBSql.getString(missionInfoQuery, "APPLYUSERNAME"));//预定人姓名
-				String APPLYUSERCELLPHONE = CoreUtil.objToStr(DBSql.getString(missionInfoQuery, "APPLYUSERCELLPHONE"));
-				String UDATE = CoreUtil.objToStr(DBSql.getString(missionInfoQuery, "UDATE"));
-				String SJXM = CoreUtil.objToStr(DBSql.getString(missionInfoQuery, "SJXM"));
-				String CPH	= CoreUtil.objToStr(DBSql.getString(missionInfoQuery, "CPH"));
-				
-				SmsUtil sms = new SmsUtil();
-				String message = "{'APPLYUSERNAME':'"+APPLYUSERNAME+"','UDATE':'"+UDATE+"','SJXM':'"+SJXM+"','CPH':'"+CPH+"'}";
-				sms.sendSms(APPLYUSERCELLPHONE, "SMS_228138821", message);
-				
-				
-				String insertMissionSMSLog = "INSERT INTO MISSIONSMSLOG  (MISSIONID,SMSCOUNT)VALUES(:MISSIONID,:SMSCOUNT)";
-				 Map<String, Object> paraMap = new HashMap<>();
-				 paraMap.put("MISSIONID", bindId);
-				 paraMap.put("SMSCOUNT", 1);
-				 
-				 DBSql.update(insertMissionSMSLog, paraMap);
-				
-		}catch(Exception e) {
-			e.printStackTrace();
-		}
-	}
-
+			} catch (Exception e) {
+				e.printStackTrace();
+			}
+	    }
 }

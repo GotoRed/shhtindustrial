@@ -136,16 +136,22 @@ public class SyncAddress implements IJob  {
 	}
 	
 
-	public String getDepByName(String depName, List<Department> departments) {
-		if(departments.size()==0)
-			return null;
-		for(int i=0;i<departments.size();i++) {
-			if(depName.equals(departments.get(i).getName())) {
-				return departments.get(i).getDepidaws();
+	public String getDepByName(String depName, String c_awsid) {
+		String depIdAws=null;
+		try {
+			String sql = "select * from BO_INFO_WECHAT_AWS where COMPANYIDAWS ='" + c_awsid +"' AND NAME='"+depName+"'";
+			List<Map<String,Object>> departlist = DBSql.query(sql, new ColumnMapRowMapper(), new Object[] {});
+			if(departlist.isEmpty() || departlist == null ) {
+				System.out.println("NO COMPANY");
+				return null;
 			}
+			Map<String,Object> dep=departlist.get(0);
+			depIdAws = CoreUtil.objToStr(dep.get("DEPIDAWS"));
+		}catch (Exception e ) {
+			e.printStackTrace();
 			
-	    }
-		return null;
+		}
+		return depIdAws;
 	}
 	public List<Department> getAllDeps(String companyId) {
 		List<Department> depAll=new ArrayList<Department>();
@@ -221,6 +227,9 @@ public class SyncAddress implements IJob  {
 			 i++;
 			 String parentid_wechat = dep_wechat.get(i).get("parentid");
 			 int j=0;
+			 //System.out.println("微信部门ID:"+id_wechat);
+			// System.out.println("微信部门名称："+name_wechat);
+			 //System.out.println("parentid_wechat"+parentid_wechat);
 			 String depQuerySql = "select * from BO_INFO_WECHAT_AWS t where t.conmpanyidwechat =  '" + companyid_wechat + "'and t.idwechat = '"+id_wechat + "'";
 			 List<Map<String,Object>> depQueryList = DBSql.query(depQuerySql, new ColumnMapRowMapper(), new Object[] {});
 			 
@@ -252,10 +261,12 @@ public class SyncAddress implements IJob  {
 				 Map<String,Object> dep=depQueryList.get(0);				
 				 String dep_name_aws = CoreUtil.objToStr(dep.get("NAME"));
 				 String depidAws = CoreUtil.objToStr(dep.get("DEPIDAWS"));
+				 
 				 if(dep_name_aws.equals(name_wechat)) {
 					 continue;
 				 }else {
-					 DBSql.update("update BO_INFO_WECHAT_AWS t set t.name='"+ name_wechat+"' where t.conmpanyidwechat= '"+companyid_aws + "' and t.idwechat='" + id_wechat+ "'");
+					 //System.out.println("update BO_INFO_WECHAT_AWS t set t.name='"+ name_wechat+"' where t.companyidaws= '"+companyid_aws + "' and t.idwechat='" + id_wechat+ "'");
+					 DBSql.update("update BO_INFO_WECHAT_AWS t set t.name='"+ name_wechat+"' where t.companyidaws= '"+companyid_aws + "' and t.idwechat='" + id_wechat+ "'");
 					 SDK.getORGAPI().updateDepartment(depidAws,name_wechat,ORGAPI.NO_UPDATE,ORGAPI.NO_UPDATE,ORGAPI.NO_UPDATE,ORGAPI.NO_UPDATE);				 
 				 }
 			 }
@@ -418,10 +429,11 @@ public class SyncAddress implements IJob  {
 				 if(isEmployeeCreated(employees, e_wechat)==false) {
 					 System.out.println("####"+(String)company.get("name"));
 					 System.out.println(e_wechat.getName()+e_wechat.getDepartment()+" 开始创建");
-					 String depId = getDepByName(e_wechat.getDepartment(),deps_aws);
+					 String depId = getDepByName(e_wechat.getDepartment(),c_awsid);
 					 String account=e_wechat.getUserId()+RandomStringUtils.randomAlphanumeric(5);
 					 if(account.length()>36)
 						 account=account.substring(0,35);
+					 //System.out.println(depId);
 					 int c_re = SDK.getORGAPI().createUser(depId, account, e_wechat.getName(), "a2466571-b615-42bb-86b4-b9c9c15d6730", null, null, false, null, e_wechat.getMobile(), null, null, null, null, null, null, null, null, null, null, e_wechat.getUserId(), null);
 					
 				 }

@@ -18,29 +18,29 @@ public class UserConfirmBillEvent extends ExecuteListener implements ExecuteList
 	
 	public void execute(ProcessExecutionContext pec) throws Exception {
 		try {
-			//if(SDK.getTaskAPI().isChoiceActionMenu(pec.getTaskInstance(), "确认结算单")) {
-				String bindId = pec.getProcessInstance().getId();//流程实例ID
-				String queryResourceTaskFpId = "SELECT ID,RESOURCETASKFPID FROM BO_EU_SH_VEHICLEORDER_MISSION WHERE BINDID = '"+bindId+"'";
-				List<Map<String, Object>> resourceTaskFpIdList = DBSql.query(queryResourceTaskFpId, new ColumnMapRowMapper(), new Object[] {});
-				if(resourceTaskFpIdList != null && !resourceTaskFpIdList.isEmpty()) {
-					for (int i = 0; i < resourceTaskFpIdList.size(); i++) {
-						Map<String, Object> resourceTaskFpIdMap = resourceTaskFpIdList.get(i);
-						String resourceTaskFpId = CoreUtil.objToStr(resourceTaskFpIdMap.get("RESOURCETASKFPID"));//来源任务分配单ID
-						String id = CoreUtil.objToStr(resourceTaskFpIdMap.get("ID"));//行车任务表记录Id
-						DBSql.update("UPDATE BO_EU_SH_VEHICLEORDER_ASSIGMIS SET MISSIONBINDID = '"+id+"' WHERE ID = '"+resourceTaskFpId+"'");
-						if(SDK.getTaskAPI().isChoiceActionMenu(pec.getTaskInstance(), "确认结算单")) {
-							DBSql.update("UPDATE BO_EU_SH_VEHICLEORDER_ASSIGMIS SET MISSIONSTATUS = '5' WHERE ID = '"+resourceTaskFpId+"'");
-							String delSMSLogSql = "delete from MISSIONSMSLOG where MISSIONID = ' "+ bindId+"'";
-							DBSql.update(delSMSLogSql);
-						}else if(SDK.getTaskAPI().isChoiceActionMenu(pec.getTaskInstance(), "退回修改")) {
-							DBSql.update("UPDATE BO_EU_SH_VEHICLEORDER_ASSIGMIS SET MISSIONSTATUS = '3' WHERE ID = '"+resourceTaskFpId+"'");
-						}
+			String bindId = pec.getProcessInstance().getId();//流程实例ID
+			String queryResourceTaskFpId = "SELECT ID,RESOURCETASKFPID FROM BO_EU_SH_VEHICLEORDER_MISSION WHERE BINDID = '"+bindId+"'";
+			List<Map<String, Object>> resourceTaskFpIdList = DBSql.query(queryResourceTaskFpId, new ColumnMapRowMapper(), new Object[] {});
+			if(resourceTaskFpIdList != null && !resourceTaskFpIdList.isEmpty()) {
+				for(int i = 0; i < resourceTaskFpIdList.size(); i++) {
+					Map<String, Object> resourceTaskFpIdMap = resourceTaskFpIdList.get(i);
+					String resourceTaskFpId = CoreUtil.objToStr(resourceTaskFpIdMap.get("RESOURCETASKFPID"));//来源任务分配单ID
+					String id = CoreUtil.objToStr(resourceTaskFpIdMap.get("ID"));//行车任务表记录Id
+					DBSql.update("UPDATE BO_EU_SH_VEHICLEORDER_ASSIGMIS SET MISSIONBINDID = '"+id+"' WHERE ID = '"+resourceTaskFpId+"'");
+					if(SDK.getTaskAPI().isChoiceActionMenu(pec.getTaskInstance(), "确认结算")) {
+						DBSql.update("UPDATE BO_EU_SH_VEHICLEORDER_ASSIGMIS SET MISSIONSTATUS = '5' WHERE ID = '"+resourceTaskFpId+"'");
+						DBSql.update("UPDATE BO_EU_SH_VEHICLEORDER_MISSION SET MISSIONSTATUS = '5' WHERE BINDID = '"+ bindId +"'");
+
+					}else if(SDK.getTaskAPI().isChoiceActionMenu(pec.getTaskInstance(), "退回重算")) {
+						DBSql.update("UPDATE BO_EU_SH_VEHICLEORDER_ASSIGMIS SET MISSIONSTATUS = '3' WHERE ID = '"+resourceTaskFpId+"'");
+						DBSql.update("UPDATE BO_EU_SH_VEHICLEORDER_MISSION SET MISSIONSTATUS = '3' WHERE BINDID = '"+ bindId +"'");
 					}
+					String delSMSLogSql = "delete from MISSIONSMSLOG where MISSIONID = ' "+ bindId+"'";
+					DBSql.update(delSMSLogSql);
 				}
-				
-				String delSMSLogSql = "delete from MISSIONSMSLOG where MISSIONID = ' "+ bindId+"'";
-				DBSql.update(delSMSLogSql);
-			//}
+			}
+			
+
 		
 		} catch (Exception e) {
 			e.printStackTrace();

@@ -14,7 +14,7 @@ import com.actionsoft.bpms.util.DBSql;
 import com.actionsoft.sdk.local.SDK;
 import com.awspaas.user.apps.shhtaerospaceindustrial.util.CoreUtil;
 
-public class DriverSubmitMissionEvent extends ExecuteListener implements ExecuteListenerInterface {
+public class InnerDriverSubmitMissionEvent extends ExecuteListener implements ExecuteListenerInterface {
 	public void execute(ProcessExecutionContext pec) throws Exception {
 		try {
 			String bindId = pec.getProcessInstance().getId();//流程实例ID
@@ -102,7 +102,7 @@ public class DriverSubmitMissionEvent extends ExecuteListener implements Execute
 							totalFee=(int)hongQiaoFee;
 						}
 					}
-					String missionUpdateSql="UPDATE BO_EU_SH_VEHICLEORDER_MISSION SET QRLC= "+useCarDistance+",DAYPRICE= "+(int)dayFee+",DAYOVERKILOMETERSPRICE= "+totalOverKmFee+",DAYOVERTIMEPRICE= "+totaloverTimeFee+",USECARTIME="+useCarTime+",TOTALMONEY="+totalFee+
+					String missionUpdateSql="UPDATE BO_EU_SH_VEHICLEORDER_MISSION SET  MISSIONSTATUS = '3', QRLC= "+useCarDistance+",DAYPRICE= "+(int)dayFee+",DAYOVERKILOMETERSPRICE= "+totalOverKmFee+",DAYOVERTIMEPRICE= "+totaloverTimeFee+",USECARTIME="+useCarTime+",TOTALMONEY="+totalFee+
 							",OVERTIMENUM="+totalOverTime+",OVERERDISTANCENUM="+totalOverKm+",OTTIMEPRICE="+(int)overTimePrice+",OTLEAVERICE="+(int)overKmPrice+",CCGYF="+(int)outFee;
 					System.out.println("QRLC"+useCarDistance);
 					System.out.println("OVERTIMENUM"+totalOverTime);
@@ -114,7 +114,7 @@ public class DriverSubmitMissionEvent extends ExecuteListener implements Execute
 
 					DBSql.update(missionUpdateSql);
 					
-					DBSql.update("UPDATE BO_EU_SH_VEHICLEORDER_ASSIGMIS SET MISSIONSTATUS = '4' WHERE ID = '"+resourceTaskFpId+"'");					
+					DBSql.update("UPDATE BO_EU_SH_VEHICLEORDER_ASSIGMIS SET MISSIONSTATUS = '3' WHERE ID = '"+resourceTaskFpId+"'");					
 				}
 				
 			}

@@ -11,11 +11,11 @@ import com.actionsoft.bpms.commons.database.ColumnMapRowMapper;
 import com.actionsoft.bpms.util.DBSql;
 import com.awspaas.user.apps.shhtaerospaceindustrial.util.CoreUtil;
 
-public class DriverSaveMissionEvent extends ExecuteListener  {
+public class InnerDriverSaveMissionEvent extends ExecuteListener  {
 	
 
 	    public String getDescription() {
-	        return "司机保存";
+	        return "驾驶员填写行程任务单，保存";
 	    }
 
 	    public String getProvider() {
