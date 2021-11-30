@@ -103,10 +103,10 @@ public class InnerCarBillSubmmitEvent extends ExecuteListener implements Execute
 						} else if (billType.equals("1") || billType.equals("0")) {
 							if (billType.equals("1")) {
 								dayFee = (int) (puDongFee);
-								totalFee = puDongFee;
-							} else if (billType.equals("0")) {
-								dayFee = (int) hongQiaoFee;
-								totalFee = (int) hongQiaoFee;
+								totalFee=puDongFee+roadBridgeFee+hotelCost+parkingFee+otherFee;
+							}else if(billType.equals("0")) {
+								dayFee=(int)hongQiaoFee;
+								totalFee=(int)hongQiaoFee+roadBridgeFee+hotelCost+parkingFee+otherFee;
 							}
 						}
 						String missionUpdateSql = "UPDATE BO_EU_SH_VEHICLEORDER_MISSION SET MISSIONSTATUS = '4', QRLC= "
