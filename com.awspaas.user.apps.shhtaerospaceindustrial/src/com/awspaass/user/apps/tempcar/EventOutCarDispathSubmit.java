@@ -14,9 +14,9 @@ import com.actionsoft.sdk.local.SDK;
 import com.awspaas.user.apps.shhtaerospaceindustrial.sms.SmsUtil;
 import com.awspaas.user.apps.shhtaerospaceindustrial.util.CoreUtil;
 
-public class InnerCarBillSubmmitEvent extends ExecuteListener implements ExecuteListenerInterface{
+public class EventOutCarDispathSubmit extends ExecuteListener implements ExecuteListenerInterface {
 	public String getDescription() {
-		return "结算员审核结算单,更新表单状态，通知用户结算确认！";
+		return "外租车调度审核结算单,更新表单状态，通知用户结算确认！";
 	}
 
 	public void execute(ProcessExecutionContext pec) throws Exception {
@@ -103,10 +103,10 @@ public class InnerCarBillSubmmitEvent extends ExecuteListener implements Execute
 						} else if (billType.equals("1") || billType.equals("0")) {
 							if (billType.equals("1")) {
 								dayFee = (int) (puDongFee);
-								totalFee=puDongFee+roadBridgeFee+hotelCost+parkingFee+otherFee;
-							}else if(billType.equals("0")) {
-								dayFee=(int)hongQiaoFee;
-								totalFee=(int)hongQiaoFee+roadBridgeFee+hotelCost+parkingFee+otherFee;
+								totalFee = puDongFee + roadBridgeFee + hotelCost + parkingFee + otherFee;
+							} else if (billType.equals("0")) {
+								dayFee = (int) hongQiaoFee;
+								totalFee = (int) hongQiaoFee + roadBridgeFee + hotelCost + parkingFee + otherFee;
 							}
 						}
 						String missionUpdateSql = "UPDATE BO_EU_SH_VEHICLEORDER_MISSION SET MISSIONSTATUS = '4', QRLC= "
@@ -114,7 +114,7 @@ public class InnerCarBillSubmmitEvent extends ExecuteListener implements Execute
 								+ totalOverKmFee + ",DAYOVERTIMEPRICE= " + totaloverTimeFee + ",USECARTIME="
 								+ useCarTime + ",TOTALMONEY=" + totalFee + ",OVERTIMENUM=" + totalOverTime
 								+ ",OVERERDISTANCENUM=" + totalOverKm + ",OTTIMEPRICE=" + (int) overTimePrice
-								+ ",OTLEAVERICE=" + (int) overKmPrice + ",CCGYF=" + (int) outFee + "WHERE BINDID ='"
+								+ ",OTLEAVERICE=" + (int) overKmPrice + ",CCGYF=" + (int) outFee + " WHERE BINDID ='"
 								+ bindId + "'";
 						System.out.println("QRLC" + useCarDistance);
 						System.out.println("OVERTIMENUM" + totalOverTime);
@@ -153,23 +153,9 @@ public class InnerCarBillSubmmitEvent extends ExecuteListener implements Execute
 
 				DBSql.update(insertMissionSMSLog, paraMap);
 
-			} else if (SDK.getTaskAPI().isChoiceActionMenu(pec.getTaskInstance(), "退回")) {
-				if (missionList != null && !missionList.isEmpty()) {
-					for (int i = 0; i < missionList.size(); i++) {
-						Map<String, Object> MissonInfo = missionList.get(i);
-						String resourceTaskFpId = CoreUtil.objToStr(MissonInfo.get("RESOURCETASKFPID"));// 来源任务分配单ID
-						DBSql.update("UPDATE BO_EU_SH_VEHICLEORDER_MISSION SET MISSIONSTATUS = '2' WHERE BINDID ='"
-								+ bindId + "'");
-						DBSql.update("UPDATE BO_EU_SH_VEHICLEORDER_ASSIGMIS SET MISSIONSTATUS = '2' WHERE ID = '"
-								+ resourceTaskFpId + "'");
-
-					}
-				}
 			}
-
 		} catch (Exception e) {
 			e.printStackTrace();
 		}
 	}
-
 }

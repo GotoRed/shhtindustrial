@@ -16,7 +16,7 @@ import com.awspaas.user.apps.shhtaerospaceindustrial.sms.SmsUtil;
 import com.awspaas.user.apps.shhtaerospaceindustrial.util.CoreUtil;
 
 @Controller
-public class AppUserCmd {
+public class AppCmdUser {
 	/***
 	 * Descript:用户查询行车任务单cmd,操作页签调用
 	 * 
@@ -33,8 +33,7 @@ public class AppUserCmd {
 	public String userGetMission(UserContext uc, int roleType, String bDate, String eDate, int page, int pageCount,
 			int taskType) {
 		JSONObject returnData = new JSONObject();
-		if(taskType==0) {
-			
+		if (taskType == 0) {
 
 			try {
 				String userId = uc.getUID();
@@ -70,8 +69,8 @@ public class AppUserCmd {
 				JSONArray jsonXcqr = new JSONArray();
 
 				if (!queryXcqrTaskInfo.equals("")) {
-					List<Map<String, Object>> xcqrTaskInfoList = DBSql.query(queryXcqrTaskInfo, new ColumnMapRowMapper(),
-							new Object[] {});
+					List<Map<String, Object>> xcqrTaskInfoList = DBSql.query(queryXcqrTaskInfo,
+							new ColumnMapRowMapper(), new Object[] {});
 					if (xcqrTaskInfoList == null || xcqrTaskInfoList.isEmpty()) {
 						returnData.put("status", "0");
 						returnData.put("jsonXcqr", jsonXcqr);
@@ -110,8 +109,8 @@ public class AppUserCmd {
 							jsonXcqrObj.put("fhsj", fhsj);
 							jsonXcqrObj.put("sjjd", sjjd);
 							jsonXcqrObj.put("fyzj", fyzj);
-							cx = SDK.getDictAPI().getValue("com.awspaas.user.apps.shhtaerospaceindustrial", "shcartype", cx,
-									"CNNAME");
+							cx = SDK.getDictAPI().getValue("com.awspaas.user.apps.shhtaerospaceindustrial", "shcartype",
+									cx, "CNNAME");
 							jsonXcqrObj.put("cx", cx);
 							jsonXcqrObj.put("zt", zt);
 							jsonXcqrObj.put("rwzt", rwzt);
@@ -131,9 +130,8 @@ public class AppUserCmd {
 				returnData.put("status", "1");
 				returnData.put("message", e.getMessage());
 			}
-			
-		}else if (taskType==1) {
-			
+
+		} else if (taskType == 1) {
 
 			try {
 				String userId = uc.getUID();
@@ -151,8 +149,8 @@ public class AppUserCmd {
 				List<Map<String, Object>> clydTaskInfoList = null;
 				String clyd = "";// 车辆预定是否查全部
 				if (!bDate.equals("") && !eDate.equals("")) {
-					clyd = "AND B.ORDERDATE >= TO_DATE('" + bDate + "','yyyy-MM-dd') AND B.ORDERDATE <= TO_DATE('" + eDate
-							+ "','yyyy-MM-dd')";
+					clyd = "AND B.ORDERDATE >= TO_DATE('" + bDate + "','yyyy-MM-dd') AND B.ORDERDATE <= TO_DATE('"
+							+ eDate + "','yyyy-MM-dd')";
 				}
 
 				queryClydTaskInfo = "SELECT * FROM (SELECT TT.*, ROWNUM AS rowno FROM (SELECT * FROM (SELECT B.APPLYUSERNAME,B.ORDERID,B.VEHICLETYPE,B.ORDERDATE,B.BDATE,B.EDATE,B.VEHICLENUM,B.ORDERSTATUS,B.BINDID,A.ID,A.BEGINTIME,'1' RWZT"
@@ -196,8 +194,9 @@ public class AppUserCmd {
 						String processInstId = CoreUtil.objToStr(clydMap.get("BINDID"));// 流程实例ID
 						String taskInstId = CoreUtil.objToStr(clydMap.get("ID"));// 任务实例Id
 						String rwzt = CoreUtil.objToStr(clydMap.get("RWZT"));// 1：待办|2：已办
-						String url = portalUrl + "/r/w?sid=" + sid + "&cmd=CLIENT_BPM_FORM_MAIN_PAGE_OPEN&processInstId="
-								+ processInstId + "&openState=1&taskInstId=" + taskInstId + "&displayToolbar=true";
+						String url = portalUrl + "/r/w?sid=" + sid
+								+ "&cmd=CLIENT_BPM_FORM_MAIN_PAGE_OPEN&processInstId=" + processInstId
+								+ "&openState=1&taskInstId=" + taskInstId + "&displayToolbar=true";
 						cx = SDK.getDictAPI().getValue("com.awspaas.user.apps.shhtaerospaceindustrial", "shcartype", cx,
 								"CNNAME");
 						jsonClydObj.put("cx", cx);
@@ -207,8 +206,8 @@ public class AppUserCmd {
 						jsonClydObj.put("ycsl", ycsl);
 						jsonClydObj.put("orderid", orderid);
 						jsonClydObj.put("applyuser", applyuser);
-						zt = SDK.getDictAPI().getValue("com.awspaas.user.apps.shhtaerospaceindustrial", "shorderstatus", zt,
-								"CNNAME");
+						zt = SDK.getDictAPI().getValue("com.awspaas.user.apps.shhtaerospaceindustrial", "shorderstatus",
+								zt, "CNNAME");
 						jsonClydObj.put("zt", zt);
 						jsonClydObj.put("processInstId", processInstId);
 						jsonClydObj.put("url", url);
@@ -220,16 +219,17 @@ public class AppUserCmd {
 
 				returnData.put("jsonClyd", jsonClyd);
 				returnData.put("jsonXcqr", "");
-				
+
 			} catch (Exception e) {
 				e.printStackTrace();
 				returnData.put("status", "1");
 				returnData.put("message", e.getMessage());
 			}
-			
+
 		}
 		return returnData.toString();
 	}
+
 	/***
 	 * Descript:用户查询订单cmd,操作页签调用
 	 * 
@@ -332,7 +332,7 @@ public class AppUserCmd {
 
 			returnData.put("jsonClyd", jsonClyd);
 			returnData.put("jsonXcqr", "");
-			
+
 		} catch (Exception e) {
 			e.printStackTrace();
 			returnData.put("status", "1");
@@ -340,119 +340,118 @@ public class AppUserCmd {
 		}
 		return returnData.toString();
 	}
-/*
-	@Mapping("com.awspaas.user.apps.shhtaerospaceindustrial_userGetMission")
-	 public String userGetMission(String ids,String processInstId,String id,UserContext uc) {
-		JSONObject returnData = new JSONObject();
-		String bindId = processInstId;//流程实例ID
-		String queryMissionSql = "SELECT a.*, b.HONGQIAO,b.PUDONG,b.DAYPRICE,b.DAYOVERKILOMETERSPRICE,b.DAYOVERTIMEPRICE FROM BO_EU_SH_VEHICLEORDER_MISSION a ,BO_EU_SH_VEHICLETYPE b WHERE a.vehicletype=b.vehicletype AND a.vehiclelabelname=b.vehiclelabelname AND a.BINDID = '"+bindId+"'";
-		List<Map<String, Object>> missionList = DBSql.query(queryMissionSql, new ColumnMapRowMapper(), new Object[] {});
-		if(missionList != null && !missionList.isEmpty()) {
-			for (int i = 0; i < missionList.size(); i++) {
-				Map<String, Object> MissonInfo = missionList.get(i);
-				
-				double totalFee=0;
-				double totaloverTimeFee=0;
-				double totalOverKmFee=0;
-				double totalOverKm=0;
-				double totalOverTime=0;
-				double outFee=0;
-				int dayFee = 0;
-				double basicFee=(double)CoreUtil.objToInt(MissonInfo.get("DAYPRICE"));
-				double hongQiaoFee=(double)CoreUtil.objToInt(MissonInfo.get("HONGQIAO"));
-				double puDongFee=(double)CoreUtil.objToInt(MissonInfo.get("PUDONG"));
-				double overTimePrice = (double)CoreUtil.objToInt(MissonInfo.get("DAYOVERTIMEPRICE"));//超小时费(元/小时)
-				double overKmPrice = (double)CoreUtil.objToInt(MissonInfo.get("DAYOVERKILOMETERSPRICE"));//超公里费(元/公里)
-				
-				
-				String resourceTaskFpId = CoreUtil.objToStr(MissonInfo.get("RESOURCETASKFPID"));//来源任务分配单ID
-				String startTime = CoreUtil.objToStr(MissonInfo.get("CFSJ"));//出车时间
-				String getOnTime = CoreUtil.objToStr(MissonInfo.get("SKDATETIME"));//上客时间
-				String dropOffTime = CoreUtil.objToStr(MissonInfo.get("XKDATIME"));//下客时间
-				String retrunTime = CoreUtil.objToStr(MissonInfo.get("FHSJ"));//回场时间
-				String isOutShanghai = CoreUtil.objToStr(MissonInfo.get("ISOUTSHANGHAI"));
-				
 
-				double roadBridgeFee = (double) CoreUtil.objToInt(MissonInfo.get("GLF"));
-				double hotelCost = (double) CoreUtil.objToInt(MissonInfo.get("STAYMONEY"));
-				double parkingFee = (double) CoreUtil.objToInt(MissonInfo.get("TCF"));
-				double otherFee = (double) CoreUtil.objToInt(MissonInfo.get("QTMONEY"));				
-				
-				int getOnDistance = CoreUtil.objToInt(MissonInfo.get("RESOURCETASKFPID"));//上客路码
-				int dropOffDistance = CoreUtil.objToInt(MissonInfo.get("RESOURCETASKFPID"));//下客路码
-				int returnDistance = CoreUtil.objToInt(MissonInfo.get("RESOURCETASKFPID"));//返场路码
-				
-				String carType = CoreUtil.objToStr(MissonInfo.get("RESOURCETASKFPID"));//车辆类型
-				String carLogo = CoreUtil.objToStr(MissonInfo.get("RESOURCETASKFPID"));//车辆品牌
-				
-				String billType =  CoreUtil.objToStr(MissonInfo.get("BILLLIST"));
-				long useCarTimeUtc =( new Date(retrunTime).getTime()- new Date(getOnTime).getTime());
-				int useCarTimeInt = (int)useCarTimeUtc/1000/3600;
-				double userCarTimeFloat =(double)useCarTimeUtc/1000/3600;
-				double useCarTime = (useCarTimeInt+0.5*Math.ceil(userCarTimeFloat-useCarTimeInt)+0.5*Math.ceil(userCarTimeFloat-useCarTimeInt-0.5));
-				int useCarDistance = returnDistance-getOnDistance;
+	/*
+	 * @Mapping("com.awspaas.user.apps.shhtaerospaceindustrial_userGetMission")
+	 * public String userGetMission(String ids,String processInstId,String
+	 * id,UserContext uc) { JSONObject returnData = new JSONObject(); String bindId
+	 * = processInstId;//流程实例ID String queryMissionSql =
+	 * "SELECT a.*, b.HONGQIAO,b.PUDONG,b.DAYPRICE,b.DAYOVERKILOMETERSPRICE,b.DAYOVERTIMEPRICE FROM BO_EU_SH_VEHICLEORDER_MISSION a ,BO_EU_SH_VEHICLETYPE b WHERE a.vehicletype=b.vehicletype AND a.vehiclelabelname=b.vehiclelabelname AND a.BINDID = '"
+	 * +bindId+"'"; List<Map<String, Object>> missionList =
+	 * DBSql.query(queryMissionSql, new ColumnMapRowMapper(), new Object[] {});
+	 * if(missionList != null && !missionList.isEmpty()) { for (int i = 0; i <
+	 * missionList.size(); i++) { Map<String, Object> MissonInfo =
+	 * missionList.get(i);
+	 * 
+	 * double totalFee=0; double totaloverTimeFee=0; double totalOverKmFee=0; double
+	 * totalOverKm=0; double totalOverTime=0; double outFee=0; int dayFee = 0;
+	 * double basicFee=(double)CoreUtil.objToInt(MissonInfo.get("DAYPRICE")); double
+	 * hongQiaoFee=(double)CoreUtil.objToInt(MissonInfo.get("HONGQIAO")); double
+	 * puDongFee=(double)CoreUtil.objToInt(MissonInfo.get("PUDONG")); double
+	 * overTimePrice =
+	 * (double)CoreUtil.objToInt(MissonInfo.get("DAYOVERTIMEPRICE"));//超小时费(元/小时)
+	 * double overKmPrice =
+	 * (double)CoreUtil.objToInt(MissonInfo.get("DAYOVERKILOMETERSPRICE"));//超公里费(元/
+	 * 公里)
+	 * 
+	 * 
+	 * String resourceTaskFpId =
+	 * CoreUtil.objToStr(MissonInfo.get("RESOURCETASKFPID"));//来源任务分配单ID String
+	 * startTime = CoreUtil.objToStr(MissonInfo.get("CFSJ"));//出车时间 String getOnTime
+	 * = CoreUtil.objToStr(MissonInfo.get("SKDATETIME"));//上客时间 String dropOffTime =
+	 * CoreUtil.objToStr(MissonInfo.get("XKDATIME"));//下客时间 String retrunTime =
+	 * CoreUtil.objToStr(MissonInfo.get("FHSJ"));//回场时间 String isOutShanghai =
+	 * CoreUtil.objToStr(MissonInfo.get("ISOUTSHANGHAI"));
+	 * 
+	 * 
+	 * double roadBridgeFee = (double) CoreUtil.objToInt(MissonInfo.get("GLF"));
+	 * double hotelCost = (double) CoreUtil.objToInt(MissonInfo.get("STAYMONEY"));
+	 * double parkingFee = (double) CoreUtil.objToInt(MissonInfo.get("TCF")); double
+	 * otherFee = (double) CoreUtil.objToInt(MissonInfo.get("QTMONEY"));
+	 * 
+	 * int getOnDistance =
+	 * CoreUtil.objToInt(MissonInfo.get("RESOURCETASKFPID"));//上客路码 int
+	 * dropOffDistance =
+	 * CoreUtil.objToInt(MissonInfo.get("RESOURCETASKFPID"));//下客路码 int
+	 * returnDistance = CoreUtil.objToInt(MissonInfo.get("RESOURCETASKFPID"));//返场路码
+	 * 
+	 * String carType = CoreUtil.objToStr(MissonInfo.get("RESOURCETASKFPID"));//车辆类型
+	 * String carLogo = CoreUtil.objToStr(MissonInfo.get("RESOURCETASKFPID"));//车辆品牌
+	 * 
+	 * String billType = CoreUtil.objToStr(MissonInfo.get("BILLLIST")); long
+	 * useCarTimeUtc =( new Date(retrunTime).getTime()- new
+	 * Date(getOnTime).getTime()); int useCarTimeInt = (int)useCarTimeUtc/1000/3600;
+	 * double userCarTimeFloat =(double)useCarTimeUtc/1000/3600; double useCarTime =
+	 * (useCarTimeInt+0.5*Math.ceil(userCarTimeFloat-useCarTimeInt)+0.5*Math.ceil(
+	 * userCarTimeFloat-useCarTimeInt-0.5)); int useCarDistance =
+	 * returnDistance-getOnDistance; } } return returnData.toString(); }
+	 */
+	@Mapping("com.awspaas.user.apps.shhtaerospaceindustrial_userCancelMission")
+	public String userCancelMission(String ids, String processInstId, String id, UserContext uc) {
+		JSONObject returnData = new JSONObject();
+		String userid = uc.getUID();
+
+		String queryInfoSql = "select a.RESOURCETASKFPID,a.UDATE, a.CPH,a.SJXM, a.SJLXFS,a.bindid,a.SJZH,a.APPLYUSERNAME,a.APPLYUID,a.APPLYUSERCELLPHONE,a.UDATE,a.CPH,a.VEHICLETYPE,a.CONTACTPERSON,a.CONTACTPHONE from BO_EU_SH_VEHICLEORDER_MISSION a WHERE BINDID = "
+				+ "'" + processInstId + "'";
+		String BINDID = CoreUtil.objToStr(DBSql.getString(queryInfoSql, "BINDID"));
+		String APPLYUSERNAME = CoreUtil.objToStr(DBSql.getString(queryInfoSql, "APPLYUSERNAME"));// 预定人姓名
+		String APPLYUSERCELLPHONE = CoreUtil.objToStr(DBSql.getString(queryInfoSql, "APPLYUSERCELLPHONE"));
+		String SJXM = CoreUtil.objToStr(DBSql.getString(queryInfoSql, "SJXM"));
+		String SJLXFS = CoreUtil.objToStr(DBSql.getString(queryInfoSql, "SJLXFS"));
+		String CONTACTPERSON = CoreUtil.objToStr(DBSql.getString(queryInfoSql, "CONTACTPERSON"));
+		String CONTACTPHONE = CoreUtil.objToStr(DBSql.getString(queryInfoSql, "CONTACTPHONE"));
+		String UDATE = CoreUtil.objToStr(DBSql.getString(queryInfoSql, "UDATE"));
+		String CPH = CoreUtil.objToStr(DBSql.getString(queryInfoSql, "CPH"));
+		String RESOURCETASKFPID = CoreUtil.objToStr(DBSql.getString(queryInfoSql, "RESOURCETASKFPID"));
+		String message_user = "{'applyUserName':'" + APPLYUSERNAME + "','udate':'" + UDATE + "','cph':'" + CPH + "'}";
+		String message_driver = "{'applyUserName':'" + SJXM + "','udate':'" + UDATE + "','cph':'" + CPH + "'}";
+		SmsUtil sms = new SmsUtil();
+
+		String updateAssignSql = "update BO_EU_SH_VEHICLEORDER_ASSIGMIS set ZT='2',MISSIONSTATUS='6' where id ='"
+				+ RESOURCETASKFPID + "'";
+		String updateMissionSql = "update BO_EU_SH_VEHICLEORDER_MISSION set MISSIONSTATUS='6' where bindid='" + BINDID
+				+ "'";
+		System.out.println(updateAssignSql);
+		DBSql.update(updateAssignSql);// 修改上航_车辆任务分配状态
+		DBSql.update(updateMissionSql);
+		try {
+			System.out.println("准备终止流程！流程号:" + BINDID + "用户ID:" + userid);
+			SDK.getProcessAPI().terminateById(BINDID, userid);
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
+		try {
+			sms.sendSms(APPLYUSERCELLPHONE, "SMS_228016523", message_user);
+			sms.sendSms(SJLXFS, "SMS_228116397", message_driver);
+			sms.sendSms("13918947832", "SMS_228116397", message_driver);
+
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
+
+		if (!CONTACTPERSON.equals("")) {
+			message_user = "{'applyUserName':'" + CONTACTPERSON + "','udate':'" + UDATE + "','cph':'" + CPH + "'}";
+
+			try {
+				sms.sendSms(CONTACTPHONE, "SMS_228016523", message_user);
+			} catch (Exception e) {
+				e.printStackTrace();
 			}
 		}
-		return returnData.toString();
-	}
-	*/
-	  @Mapping("com.awspaas.user.apps.shhtaerospaceindustrial_userCancelMission") 
-	  public String userCancelMission(String ids,String processInstId,String id,UserContext uc) {
-		  JSONObject returnData = new JSONObject();
-		  String userid = uc.getUID();
-		  
-		  String queryInfoSql = "select a.RESOURCETASKFPID,a.UDATE, a.CPH,a.SJXM, a.SJLXFS,a.bindid,a.SJZH,a.APPLYUSERNAME,a.APPLYUID,a.APPLYUSERCELLPHONE,a.UDATE,a.CPH,a.VEHICLETYPE,a.CONTACTPERSON,a.CONTACTPHONE from BO_EU_SH_VEHICLEORDER_MISSION a WHERE BINDID = "
-		  		+ "'"+processInstId+"'";
-		  String BINDID = CoreUtil.objToStr(DBSql.getString(queryInfoSql, "BINDID"));
-		  String APPLYUSERNAME = CoreUtil.objToStr(DBSql.getString(queryInfoSql, "APPLYUSERNAME"));//预定人姓名
-		  String APPLYUSERCELLPHONE = CoreUtil.objToStr(DBSql.getString(queryInfoSql, "APPLYUSERCELLPHONE"));
-		  String SJXM = CoreUtil.objToStr(DBSql.getString(queryInfoSql, "SJXM"));
-		  String SJLXFS = CoreUtil.objToStr(DBSql.getString(queryInfoSql, "SJLXFS"));
-		  String CONTACTPERSON = CoreUtil.objToStr(DBSql.getString(queryInfoSql, "CONTACTPERSON"));
-		  String CONTACTPHONE = CoreUtil.objToStr(DBSql.getString(queryInfoSql, "CONTACTPHONE"));
-		  String UDATE = CoreUtil.objToStr(DBSql.getString(queryInfoSql, "UDATE"));
-		  String CPH = CoreUtil.objToStr(DBSql.getString(queryInfoSql, "CPH"));
-		  String RESOURCETASKFPID = CoreUtil.objToStr(DBSql.getString(queryInfoSql, "RESOURCETASKFPID"));
-		  String message_user = "{'applyUserName':'"+APPLYUSERNAME+"','udate':'"+UDATE+"','cph':'"+CPH+"'}";
-		  String message_driver ="{'applyUserName':'"+SJXM+"','udate':'"+UDATE+"','cph':'"+CPH+"'}";
-		  SmsUtil sms = new SmsUtil();
-		  
-		  String updateAssignSql = "update BO_EU_SH_VEHICLEORDER_ASSIGMIS set ZT='2',MISSIONSTATUS='6' where id ='"+RESOURCETASKFPID+"'";
-		  String updateMissionSql = "update BO_EU_SH_VEHICLEORDER_MISSION set MISSIONSTATUS='6' where bindid='"+BINDID+"'";
-		  System.out.println(updateAssignSql);
-		  DBSql.update(updateAssignSql);//修改上航_车辆任务分配状态
-		  DBSql.update(updateMissionSql);
-		  try {
-				System.out.println("准备终止流程！流程号:"+BINDID+"用户ID:"+userid);
-				SDK.getProcessAPI().terminateById(BINDID, userid);
-			} catch (Exception e) {
-				e.printStackTrace();
-			}
-		  try {
-			  	sms.sendSms(APPLYUSERCELLPHONE,"SMS_228016523",message_user);
-				sms.sendSms(SJLXFS, "SMS_228116397", message_driver);
-				sms.sendSms("13918947832", "SMS_228116397", message_driver);
-				
-			} catch (Exception e) {
-				e.printStackTrace();
-			}
-		  
-		  if(!CONTACTPERSON.equals("")) {
-			  message_user  = "{'applyUserName':'"+CONTACTPERSON+"','udate':'"+UDATE+"','cph':'"+CPH+"'}";
-			  
-			  try {
-				  sms.sendSms(CONTACTPHONE,"SMS_228016523",message_user);
-				} catch (Exception e) {
-					e.printStackTrace();
-				}
-		  }
 
-		 
-		  returnData.put("status", "0");
+		returnData.put("status", "0");
 		returnData.put("message", "取消成功！");
 		return returnData.toString();
-	  }
-	  
+	}
 
-	  
 }
