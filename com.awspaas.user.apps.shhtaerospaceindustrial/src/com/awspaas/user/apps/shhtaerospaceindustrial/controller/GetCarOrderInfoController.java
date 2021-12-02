@@ -462,10 +462,11 @@ public class GetCarOrderInfoController {
 					boRecordData.set("TARGETPLACE", mdd);//目的地
 					boRecordData.set("ISOUTSHANGHAI", sfcs);//是否出省
 					SDK.getBOAPI().create(CoreUtil.MISSION, boRecordData, createProcessInstance, UserContext.fromUID(userId));
+					
 					//3、启动创建的流程
 					SDK.getProcessAPI().start(createProcessInstance);
-					DBSql.update("UPDATE BO_EU_SH_VEHICLEORDER_ASSIGMIS SET ZT = '1' WHERE ID = '"+idNew+"'");
-					DBSql.update("UPDATE BO_EU_SH_VEHICLEORDER_ASSIGMIS SET MISSIONSTATUS = '1' WHERE ID = '"+idNew+"'");
+					DBSql.update("UPDATE BO_EU_SH_VEHICLEORDER_ASSIGMIS SET ZT = '1', MISSIONSTATUS = '1',MISSIONBINDID='"+boRecordData.getId()+"' WHERE ID = '"+idNew+"'");
+					//DBSql.update("UPDATE BO_EU_SH_VEHICLEORDER_ASSIGMIS SET MISSIONSTATUS = '1' WHERE ID = '"+idNew+"'");
 					String message = "";//发送给司机
 					
 					String param_to_user="";

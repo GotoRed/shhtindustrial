@@ -3,6 +3,8 @@ package com.awspaass.user.apps.tempcar;
 import java.util.List;
 import java.util.Map;
 
+import com.actionsoft.bpms.bo.engine.BO;
+import com.actionsoft.bpms.bpmn.engine.model.run.delegate.ProcessInstance;
 import com.actionsoft.bpms.commons.database.ColumnMapRowMapper;
 import com.actionsoft.bpms.server.UserContext;
 import com.actionsoft.bpms.server.bind.annotation.Controller;
@@ -163,51 +165,194 @@ public class AppCmdDispatch {
 	@Mapping("com.awspaass.user.apps.tempcar_dispatchModifyMission")
 	public String dispatchModifyMission(String ids, String processInstId, String id, UserContext uc) {
 		JSONObject returnData = new JSONObject();
-		String userid = uc.getUID();
-
-		String queryInfoSql = "select a.UDATE, a.CPH,a.SJXM, a.SJLXFS,a.bindid,a.SJZH,a.APPLYUSERNAME,a.APPLYUID,a.APPLYUSERCELLPHONE,a.UDATE,a.CPH,a.VEHICLETYPE,a.CONTACTPERSON,a.CONTACTPHONE from BO_EU_SH_VEHICLEORDER_MISSION a WHERE BINDID = "
-				+ "'" + processInstId + "'";
-		String BINDID = CoreUtil.objToStr(DBSql.getString(queryInfoSql, "BINDID"));
-		String APPLYUSERNAME = CoreUtil.objToStr(DBSql.getString(queryInfoSql, "APPLYUSERNAME"));// 预定人姓名
-		String APPLYUSERCELLPHONE = CoreUtil.objToStr(DBSql.getString(queryInfoSql, "APPLYUSERCELLPHONE"));
-		String SJXM = CoreUtil.objToStr(DBSql.getString(queryInfoSql, "SJXM"));
-		String SJLXFS = CoreUtil.objToStr(DBSql.getString(queryInfoSql, "SJLXFS"));
-		String CONTACTPERSON = CoreUtil.objToStr(DBSql.getString(queryInfoSql, "CONTACTPERSON"));
-		String CONTACTPHONE = CoreUtil.objToStr(DBSql.getString(queryInfoSql, "CONTACTPHONE"));
-		String UDATE = CoreUtil.objToStr(DBSql.getString(queryInfoSql, "UDATE"));
-		String CPH = CoreUtil.objToStr(DBSql.getString(queryInfoSql, "CPH"));
-		String message_user = "{'applyUserName':'" + APPLYUSERNAME + "','udate':'" + UDATE + "','cph':'" + CPH + "'}";
-		String message_driver = "{'applyUserName':'" + SJXM + "','udate':'" + UDATE + "','cph':'" + CPH + "'}";
-
-		SmsUtil sms = new SmsUtil();
+		System.out.println("front args:" + ids);
 		try {
-			System.out.println("准备终止流程！流程号:" + BINDID + "用户ID:" + userid);
-			SDK.getProcessAPI().terminateById(BINDID, userid);
-		} catch (Exception e) {
-			e.printStackTrace();
-		}
-		try {
-			// sms.sendSms(APPLYUSERCELLPHONE,"SMS_228016523",message_user);
-			sms.sendSms(SJLXFS, "SMS_228116397", message_driver);
-			// sms.sendSms("13918947832", "SMS_228116397", message_driver);
+			String missionQuerySql = "select A.* from BO_EU_SH_VEHICLEORDER_MISSION A right JOIN "
+					+ "(select id from BO_EU_SH_VEHICLEORDER_ASSIGMIS  where zt = '1' and id in (" + id
+					+ ")) B ON A.RESOURCETASKFPID = B.ID";
+			ProcessInstance createProcessInstance;
+			String userId = uc.getUID();
+			SmsUtil sms = new SmsUtil();
+			
+			String newDriverName = "";
+			String newDriverAccount = "";
+			String newDriverPhone = "";
+			String newVehicleLabelName = "";
+			String newCarNo="";
+			
+			String proid = "";
+			String oldDriverAccount = "";
+			String applyUserName = "";
+			String applyUid = "";
+			String applyUserCellPhone = "";
+			String udate = "";
+			String vehicleType = "";
+			String driverphone = "";
+			String drivername = "";
+			String oldCarNo = "";
+			String oldVehicleType = "";
+			String useType = "";
+			String contactPerson = "";
+			String contactPhone = "";
+			String orderId="";
+			String applyUnit="";
+			String applyUnitId="";
+			String contactPersonAccount="";
+			
+			String resourceTaskId ="";
+			String resourceTaskFpId="";
+			String IsInnerCar = "";
+			String applyDepName="";
+			String applyDepId="";
+			String getOnPlace="";
+			String targetPlace="";
+			String isOutShangHai="";
+			
 
-		} catch (Exception e) {
-			e.printStackTrace();
-		}
+			List<Map<String, Object>> idList = DBSql.query(missionQuerySql, new ColumnMapRowMapper(), new Object[] {});
+			if (idList != null && !idList.isEmpty()) {
+				Map<String, Object> missionInfo = idList.get(0);
+				proid = CoreUtil.objToStr(missionInfo.get("bindid"));
+				oldDriverAccount = CoreUtil.objToStr(missionInfo.get("SJZH"));
+				applyUserName = CoreUtil.objToStr(missionInfo.get("APPLYUSERNAME"));
+				applyUid = CoreUtil.objToStr(missionInfo.get("APPLYUID"));
+				applyUserCellPhone = CoreUtil.objToStr(missionInfo.get("APPLYUSERCELLPHONE"));
+				udate = CoreUtil.objToStr(missionInfo.get("UDATE"));
+				driverphone = CoreUtil.objToStr(missionInfo.get("SJLXFS"));
+				drivername = CoreUtil.objToStr(missionInfo.get("SJXM"));
 
-		if (!CONTACTPERSON.equals("")) {
-			message_user = "{'applyUserName':'" + CONTACTPERSON + "','udate':'" + UDATE + "','cph':'" + CPH + "'}";
-
-			try {
-				sms.sendSms(CONTACTPHONE, "SMS_228016523", message_user);
-			} catch (Exception e) {
-				e.printStackTrace();
+				vehicleType = CoreUtil.objToStr(missionInfo.get("VEHICLETYPE"));
+				useType = CoreUtil.objToStr(missionInfo.get("USECARTYPE"));
+				orderId=CoreUtil.objToStr(missionInfo.get("ORDERID"));
+				applyUnit=CoreUtil.objToStr(missionInfo.get("APPLYUNIT"));
+				applyUnitId=CoreUtil.objToStr(missionInfo.get("APPLYUNITID"));
+				contactPersonAccount=CoreUtil.objToStr(missionInfo.get("CONTACTPERSONZH"));
+				
+				resourceTaskId=CoreUtil.objToStr(missionInfo.get("RESOURCETASKID"));
+				resourceTaskFpId=CoreUtil.objToStr(missionInfo.get("RESOURCETASKFPID"));
+				IsInnerCar=CoreUtil.objToStr(missionInfo.get("ISINTERNALVEHICLE"));
+				applyDepName=CoreUtil.objToStr(missionInfo.get("APPLYDEPTNAME"));
+				applyDepId=CoreUtil.objToStr(missionInfo.get("APPLYDEPTID"));
+				getOnPlace=CoreUtil.objToStr(missionInfo.get("BOARDINGPLACE"));
+				targetPlace=CoreUtil.objToStr(missionInfo.get("TARGETPLACE"));
+				isOutShangHai=CoreUtil.objToStr(missionInfo.get("ISOUTSHANGHAI"));
+				
+				
+				oldCarNo = CoreUtil.objToStr(missionInfo.get("CPH"));
+				oldVehicleType = CoreUtil.objToStr(missionInfo.get("VEHICLETYPE"));
+				contactPerson = CoreUtil.objToStr(missionInfo.get("CONTACTPERSON"));// 用车联系人
+				contactPhone = CoreUtil.objToStr(missionInfo.get("CONTACTPHONE"));// 用车联系人手机
 			}
-		}
 
-		returnData.put("status", "0");
-		returnData.put("message", "取消成功！");
+			if (!ids.equals("")) {
+				String[] idsArr = ids.split(",");
+
+				String idsStr = idsArr[0];
+				String[] idsStrI = idsStr.split(":");
+				int length = idsStrI.length;
+				if (length >= 1) {
+					newDriverName = idsStrI[0];
+				}
+				if (length >= 2) {
+					newDriverAccount = idsStrI[1];
+				}
+				if (length >= 3) {
+					newDriverPhone = idsStrI[2];
+				}
+				if (length >= 4) {
+					newVehicleLabelName = idsStrI[3];
+				}
+				if (length >= 5) {
+					newCarNo = idsStrI[4];
+				}
+
+			}
+			if (useType.equals("0")) {
+				try {
+					System.out.println("准备终止流程！流程号:" + proid + "用户ID:" + userId);
+					SDK.getProcessAPI().terminateById(proid, userId);
+				} catch (Exception e) {
+					e.printStackTrace();
+				}
+				String message_driver = "{'applyUserName':'" + drivername + "','udate':'" + udate
+						+ "','cph':'" + oldCarNo + "'}";
+				sms.sendSms(driverphone, MnmsConstant.SHSY_CACELMISSION_NOTIFYTODRIVER, message_driver);
+				
+				String updateMissionSql = "update BO_EU_SH_VEHICLEORDER_MISSION set MISSIONSTATUS='6' where bindid='"
+						+ proid + "'";
+				String updateAssignSql = "update BO_EU_SH_VEHICLEORDER_ASSIGMIS set ZT='2',MISSIONSTATUS='6' where id in ("
+						+ id + ")";
+
+				DBSql.update(updateAssignSql);// 修改上航_车辆任务分配状态
+				DBSql.update(updateMissionSql);
+				
+				createProcessInstance = SDK.getProcessAPI().createProcessInstance("obj_d951639b5cf447d592ea82551b884081", newDriverAccount, "内租-"+udate+"-"+contactPerson);
+				
+				BO boRecordData = new BO();
+				boRecordData.set("ORDERID", orderId+SDK.getRuleAPI().executeAtScript("@replace(@date,-)")+SDK.getRuleAPI().executeAtScript("@sequence('"+orderId+"AA@year@month',4,0)"));//订单号
+				boRecordData.set("APPLYUSERNAME", applyUserName);//预定人
+				boRecordData.set("APPLYUID", applyUid);//预定人账号
+				boRecordData.set("APPLYUSERCELLPHONE", applyUserCellPhone);//预定人手机
+				boRecordData.set("APPLYUNIT", applyUnit);//用车单位
+				boRecordData.set("APPLYUNITID", applyUnitId);//用车单位ID
+				boRecordData.set("CONTACTPERSON", contactPerson);//用车联系人
+				boRecordData.set("CONTACTPERSONZH", contactPersonAccount);//用车联系人账号
+				boRecordData.set("CONTACTPHONE", contactPhone);//用车联系人手机
+				boRecordData.set("UDATE", udate);//使用日期
+				boRecordData.set("VEHICLETYPE", vehicleType);//车辆类型
+				
+				
+				boRecordData.set("WZUNITPSN", "");//外租公司调度
+				boRecordData.set("WZUNITPSNID", "");//外租公司调度ID
+				boRecordData.set("WZUNITPSNPHONE", "");//外租公司联系方式
+				boRecordData.set("RESOURCETASKID", resourceTaskId);//来源预订单ID
+				boRecordData.set("RESOURCETASKFPID", resourceTaskFpId);//来源任务分配单ID
+				boRecordData.set("ISINTERNALVEHICLE", IsInnerCar);//车辆属性
+				boRecordData.set("APPLYDEPTNAME", applyDepName);//用车部门
+				boRecordData.set("APPLYDEPTID", applyDepId);//用车部门ID
+				
+				boRecordData.set("BOARDINGPLACE", getOnPlace);//上车地点
+				boRecordData.set("TARGETPLACE", targetPlace);//目的地
+				boRecordData.set("ISOUTSHANGHAI", isOutShangHai);//是否出省
+				
+				boRecordData.set("SJXM", newDriverName);//司机姓名
+				boRecordData.set("SJZH", newDriverAccount);//司机账号
+				boRecordData.set("SJLXFS", newDriverPhone);//司机联系方式
+				boRecordData.set("CPH", newCarNo);//车牌号
+				boRecordData.set("VEHICLELABELNAME", newVehicleLabelName);//车辆品牌
+				SDK.getBOAPI().create(CoreUtil.MISSION, boRecordData, createProcessInstance, UserContext.fromUID(userId));
+				SDK.getProcessAPI().start(createProcessInstance);
+				
+				DBSql.update("UPDATE BO_EU_SH_VEHICLEORDER_ASSIGMIS SET ZT = '1', MISSIONSTATUS = '1',MISSIONBINDID='"+boRecordData.getId()+"' WHERE ID = '"+id+"'");
+				
+				String msg_to_driver = "{'SJXM':'"+newDriverName+"','APPLYUSERNAME':'"+applyUserName+"','APPLYUSERCELLPHONE':'"+applyUserCellPhone+"','UDATE':'"+udate
+						+"','CPH':'"+newCarNo+"','BOARDINGPLACE':'"+getOnPlace+"','TARGETPLACE':'"+targetPlace+"'}";
+				String msg_to_user = "{'APPLYUSERNAME':'"+applyUserName+"','UDATE':'"+udate+"','OLDSJXM':'"+drivername+"','NEWSJXM':'"+newDriverName
+						+"','SJLXFS':'"+newDriverPhone+"','OLDCPH':'"+oldCarNo+"','NEWCPH':'"+newCarNo+"'}";
+				
+				sms.sendSms(newDriverPhone, MnmsConstant.SHSY_MISSION_NOTIFYTODRIVER, msg_to_driver);
+				sms.sendSms(applyUserCellPhone, MnmsConstant.SHSY_MODIFYMISSION_NOTIFYTOUSER, msg_to_user);
+				
+				if(!contactPhone.equals("")) {
+					sms.sendSms(contactPhone, MnmsConstant.SHSY_MODIFYMISSION_NOTIFYTOUSER, msg_to_user);
+				}
+				
+				returnData.put("status", "0");
+				returnData.put("message", "成功变更");
+			} else if (useType.equals("1")) {
+				returnData.put("status", "1");
+				returnData.put("message", "外租车辆变更需取消后，再派单！");
+				return returnData.toString();
+			}
+		} catch (Exception e) {
+			
+			e.printStackTrace();
+			returnData.put("status", "1");
+			returnData.put("message", e.getMessage());
+		}
 		return returnData.toString();
 	}
+
+
 
 }

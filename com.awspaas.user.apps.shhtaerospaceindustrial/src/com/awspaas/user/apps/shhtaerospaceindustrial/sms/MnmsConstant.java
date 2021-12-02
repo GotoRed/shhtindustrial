@@ -322,7 +322,12 @@ public class MnmsConstant {
 	public final static String SHSY_MODIFYMISSION_NOTIFYTOUSER = "SMS_228850142";
 	
 	/**
-	 *  
+	 *  临时用车成功派发通知司机
 	 */
+	public final static String SHSY_MISSION_NOTIFYTODRIVER= "SMS_200194554";
+	/**
+	 *  临时用车成功派发通知用户
+	 */
+	public final static String SHSY_MISSION_NOTIFYTOUSER= "SMS_200194579";
 
 }
