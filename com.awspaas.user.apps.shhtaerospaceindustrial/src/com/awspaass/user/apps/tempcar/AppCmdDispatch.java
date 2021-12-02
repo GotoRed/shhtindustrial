@@ -166,10 +166,10 @@ public class AppCmdDispatch {
 	public String dispatchModifyMission(String ids, String processInstId, String id, UserContext uc) {
 		JSONObject returnData = new JSONObject();
 		System.out.println("front args:" + ids);
+		System.out.println(id);
 		try {
-			String missionQuerySql = "select A.* from BO_EU_SH_VEHICLEORDER_MISSION A right JOIN "
-					+ "(select id from BO_EU_SH_VEHICLEORDER_ASSIGMIS  where zt = '1' and id in (" + id
-					+ ")) B ON A.RESOURCETASKFPID = B.ID";
+			String missionQuerySql = "select a.*,b.USECARTYPE from BO_EU_SH_VEHICLEORDER_MISSION a,BO_EU_SH_VEHICLEORDER_ASSIGMIS b WHERE a.RESOURCETASKFPID = b.ID AND b.ID='"+id+"'";
+			System.out.println(missionQuerySql);
 			ProcessInstance createProcessInstance;
 			String userId = uc.getUID();
 			SmsUtil sms = new SmsUtil();
@@ -209,7 +209,8 @@ public class AppCmdDispatch {
 			String isOutShangHai="";
 			
 
-			List<Map<String, Object>> idList = DBSql.query(missionQuerySql, new ColumnMapRowMapper(), new Object[] {});
+			List<Map<String, Object>>idList= DBSql.query(missionQuerySql, new ColumnMapRowMapper(), new Object[] {});
+			System.out.print(idList.size());
 			if (idList != null && !idList.isEmpty()) {
 				Map<String, Object> missionInfo = idList.get(0);
 				proid = CoreUtil.objToStr(missionInfo.get("bindid"));
@@ -280,8 +281,7 @@ public class AppCmdDispatch {
 				
 				String updateMissionSql = "update BO_EU_SH_VEHICLEORDER_MISSION set MISSIONSTATUS='6' where bindid='"
 						+ proid + "'";
-				String updateAssignSql = "update BO_EU_SH_VEHICLEORDER_ASSIGMIS set ZT='2',MISSIONSTATUS='6' where id in ("
-						+ id + ")";
+				String updateAssignSql = "update BO_EU_SH_VEHICLEORDER_ASSIGMIS set ZT='2',MISSIONSTATUS='6' where id ='"+id+"'";
 
 				DBSql.update(updateAssignSql);// 修改上航_车辆任务分配状态
 				DBSql.update(updateMissionSql);
