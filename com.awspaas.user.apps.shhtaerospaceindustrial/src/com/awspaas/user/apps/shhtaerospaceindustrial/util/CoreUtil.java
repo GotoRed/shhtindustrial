@@ -39,6 +39,7 @@ public class CoreUtil {
 	public static String ASSIGMIS = "BO_EU_SH_VEHICLEORDER_ASSIGMIS";//上航_车辆任务分配
 	public static String MISSION = "BO_EU_SH_VEHICLEORDER_MISSION";//上航_车辆_行车任务单
 	public static String BO_EU_YBOFFICEUSECAR_DS = "BO_EU_YBOFFICEUSECAR_DS";//保障用车任务分配单
+	public static String BZYC_MISSION = "BO_EU_YBBZUSECAR_MISSION";
 	/** 审批状态 **/
 	public static String SPZT_WSP = "0";//未审批
 	public static String SPZT_TG = "1";//通过

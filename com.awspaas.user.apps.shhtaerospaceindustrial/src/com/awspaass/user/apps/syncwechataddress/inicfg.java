@@ -15,6 +15,7 @@ public class inicfg {
 	    private String department;
 	    private String companywechatid;
 	    private String companywechatseret;
+	    private String companyuserrole;
 	    public void setName(String name) {
 	         this.name = name;
 	     }
@@ -71,5 +72,11 @@ public class inicfg {
 			e.printStackTrace();
 			return null;
 		}
+	}
+	public String getCompanyuserrole() {
+		return companyuserrole;
+	}
+	public void setCompanyuserrole(String companyuserrole) {
+		this.companyuserrole = companyuserrole;
 	}
 }

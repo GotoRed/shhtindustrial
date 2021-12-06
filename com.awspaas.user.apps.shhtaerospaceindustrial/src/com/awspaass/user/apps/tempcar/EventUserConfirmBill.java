@@ -42,7 +42,8 @@ public class EventUserConfirmBill extends ExecuteListener implements ExecuteList
 						DBSql.update("UPDATE BO_EU_SH_VEHICLEORDER_MISSION SET MISSIONSTATUS = '3' WHERE BINDID = '"
 								+ bindId + "'");
 					}
-					String delSMSLogSql = "delete from MISSIONSMSLOG where MISSIONID = ' " + bindId + "'";
+					DBSql.update("update MISSIONSMSLOG t set t.SMSCOUNT=3 where MISSIONID = '"+ bindId + "'");
+					String delSMSLogSql = "delete from MISSIONSMSLOG where MISSIONID = '" + bindId + "'";
 					DBSql.update(delSMSLogSql);
 				}
 			}

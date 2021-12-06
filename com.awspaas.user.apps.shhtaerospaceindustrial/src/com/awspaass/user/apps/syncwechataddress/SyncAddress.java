@@ -406,6 +406,7 @@ public class SyncAddress implements IJob  {
 			 String c_wechatid = (String)company.get("companywechatid");
 			 String c_secret = (String)company.get("companywechatseret");
 			 String c_awsid = (String)company.get("awsid");
+			 String role = (String)company.get("companyuserrole");
 			 WeChatUtil wechat = new WeChatUtil();
 			 System.out.println((String)company.get("name"));
 			 
@@ -434,7 +435,7 @@ public class SyncAddress implements IJob  {
 					 if(account.length()>36)
 						 account=account.substring(0,35);
 					 //System.out.println(depId);
-					 int c_re = SDK.getORGAPI().createUser(depId, account, e_wechat.getName(), "a2466571-b615-42bb-86b4-b9c9c15d6730", null, null, false, null, e_wechat.getMobile(), null, null, null, null, null, null, null, null, null, null, e_wechat.getUserId(), null);
+					 int c_re = SDK.getORGAPI().createUser(depId, account, e_wechat.getName(), role, null, null, false, null, e_wechat.getMobile(), null, null, null, null, null, null, null, null, null, null, e_wechat.getUserId(), null);
 					
 				 }
 				 

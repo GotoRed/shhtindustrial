@@ -13,7 +13,7 @@ import com.awspaas.user.apps.shhtaerospaceindustrial.util.CommUtil;
 import com.awspaas.user.apps.shhtaerospaceindustrial.util.CoreUtil;
 
 
-public class createAssignEvent extends ExecuteListener implements ExecuteListenerInterface {
+public class EventInstitueSubmmit extends ExecuteListener implements ExecuteListenerInterface {
 	public String getDescription() {
         return "创建保障用车派遣表！";
     }
