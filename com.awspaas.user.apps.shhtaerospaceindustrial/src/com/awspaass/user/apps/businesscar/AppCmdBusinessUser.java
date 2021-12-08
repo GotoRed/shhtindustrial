@@ -255,7 +255,7 @@ public class AppCmdBusinessUser {
                     boRecordData.set("TARGETPLACE", mdd);//目的地
                     boRecordData.set("ISOUTSHANGHAI", sfcs);//是否出省
                     boRecordData.set("MISSIONSTATUS", 1);//任务状态已经派单
-                    int MissisonID = SDK.getBOAPI().create(CoreUtil.BZYC_MISSION, boRecordData, createProcessInstance, UserContext.fromUID(userId));
+                    int MissisonID = SDK.getBOAPI().create(CoreUtil.BO_EU_YBBZUSECAR_MISSION, boRecordData, createProcessInstance, UserContext.fromUID(userId));
                     //3、启动创建的流程
                     ProcessExecuteQuery pquery = SDK.getProcessAPI().start(createProcessInstance);
 

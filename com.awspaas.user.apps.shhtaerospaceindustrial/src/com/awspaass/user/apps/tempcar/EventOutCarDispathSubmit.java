@@ -146,10 +146,11 @@ public class EventOutCarDispathSubmit extends ExecuteListener implements Execute
 						+ "','CPH':'" + CPH + "'}";
 				sms.sendSms(APPLYUSERCELLPHONE, "SMS_228138821", message);
 
-				String insertMissionSMSLog = "INSERT INTO MISSIONSMSLOG  (MISSIONID,SMSCOUNT)VALUES(:MISSIONID,:SMSCOUNT)";
+				String insertMissionSMSLog = "INSERT INTO MISSIONSMSLOG  (MISSIONID,SMSCOUNT,TYPE)VALUES(:MISSIONID,:SMSCOUNT,:TYPE)";
 				Map<String, Object> paraMap = new HashMap<>();
 				paraMap.put("MISSIONID", bindId);
 				paraMap.put("SMSCOUNT", 1);
+				paraMap.put("TYPE", "4");
 
 				DBSql.update(insertMissionSMSLog, paraMap);
 

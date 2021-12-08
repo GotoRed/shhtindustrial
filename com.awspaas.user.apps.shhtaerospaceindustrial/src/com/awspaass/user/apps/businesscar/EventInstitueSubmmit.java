@@ -19,6 +19,7 @@ public class EventInstitueSubmmit extends ExecuteListener implements ExecuteList
     }
 	public void execute(ProcessExecutionContext pec) throws Exception {
 		if(SDK.getTaskAPI().isChoiceActionMenu(pec.getTaskInstance(), "同意")) {
+			System.out.println("Enter Create BO_EU_YBOFFICEUSECAR_DS!");
 			String bindId = pec.getProcessInstance().getId();
 			String orderInfoQuery = "SELECT APPLYUID,BDATE,EDATE,VEHICLETYPE FROM BO_EU_YBOFFICEUSECAR WHERE BINDID = '"+bindId+"'";
 			String bdate = CoreUtil.objToStr(DBSql.getString(orderInfoQuery, "BDATE"));//预订开始日期
@@ -26,6 +27,8 @@ public class EventInstitueSubmmit extends ExecuteListener implements ExecuteList
 			String vehicleType = CoreUtil.objToStr(DBSql.getString(orderInfoQuery, "VEHICLETYPE"));//车辆类型
 			String ApplyUserId = CoreUtil.objToStr(DBSql.getString(orderInfoQuery, "APPLYUID"));//流程创建人
 			
+			System.out.println(bdate);
+			System.out.println(edate);
 
 			if(!bdate.equals("") && !edate.equals("")) {
 				bdate = bdate.substring(0, 10);
@@ -33,14 +36,15 @@ public class EventInstitueSubmmit extends ExecuteListener implements ExecuteList
 				List<String> days = CommUtil.getDays(bdate, edate);
 				for (int i = 0; i < days.size(); i++) {
 					String date = days.get(i);
-					String missionNumQuery = "SELECT COUNT(1) SL FROM BO_EU_YBOFFICEUSECAR_DS WHERE BINDID = '"+bindId+"' AND UDATE ="
+					String missionNumQuery = "SELECT COUNT(1) SL FROM BO_EU_YBOFFICEUSECAR_DS WHERE BINDID = '"+bindId+"' AND USEDATE ="
 										+ " TO_DATE('"+date+"','yyyy-MM-dd')";
 					int sl = CoreUtil.objToInt(DBSql.getInt(missionNumQuery, "SL"));
+					System.out.println(sl);
 					if(sl == 0) {
 						BO boRecordData = new BO();
 						boRecordData.set("BINDID", bindId);//子表BINDID
 						boRecordData.set("VEHICLETYPE", vehicleType);//车辆类型
-						boRecordData.set("UDATE", date);//使用日期
+						boRecordData.set("USEDATE", date);//使用日期
 						SDK.getBOAPI().create(CoreUtil.BO_EU_YBOFFICEUSECAR_DS, boRecordData, bindId, ApplyUserId);
 						
 					}

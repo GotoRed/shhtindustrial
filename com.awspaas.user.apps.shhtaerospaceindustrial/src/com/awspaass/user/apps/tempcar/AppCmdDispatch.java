@@ -168,7 +168,7 @@ public class AppCmdDispatch {
 		System.out.println("front args:" + ids);
 		System.out.println(id);
 		try {
-			String missionQuerySql = "select a.*,b.USECARTYPE from BO_EU_SH_VEHICLEORDER_MISSION a,BO_EU_SH_VEHICLEORDER_ASSIGMIS b WHERE a.RESOURCETASKFPID = b.ID AND b.ID='"+id+"'";
+			String missionQuerySql = "select a.* from BO_EU_SH_VEHICLEORDER_MISSION a,BO_EU_SH_VEHICLEORDER_ASSIGMIS b WHERE a.RESOURCETASKFPID = b.ID AND b.ID='"+id+"'";
 			System.out.println(missionQuerySql);
 			ProcessInstance createProcessInstance;
 			String userId = uc.getUID();
@@ -320,6 +320,8 @@ public class AppCmdDispatch {
 				boRecordData.set("SJLXFS", newDriverPhone);//司机联系方式
 				boRecordData.set("CPH", newCarNo);//车牌号
 				boRecordData.set("VEHICLELABELNAME", newVehicleLabelName);//车辆品牌
+				boRecordData.set("MISSIONSTATUS","1");
+				
 				SDK.getBOAPI().create(CoreUtil.MISSION, boRecordData, createProcessInstance, UserContext.fromUID(userId));
 				SDK.getProcessAPI().start(createProcessInstance);
 				

@@ -59,10 +59,12 @@ public class GetXmbUseCarAppInfoController {
 				querySql1 = querySql1+"and (to_date(substr(t.BDATE,0,10), 'YYYY/MM/DD') between to_date('"+bDate+"','YYYY/MM/DD') and to_date('"+eDate+"','YYYY/MM/DD'))";
 				querySql2 = querySql2+"and (to_date(substr(t.BDATE,0,10), 'YYYY/MM/DD') between to_date('"+bDate+"','YYYY/MM/DD') and to_date('"+eDate+"','YYYY/MM/DD'))";
 			}
-			if((roleType.equals("0")||roleType.equals("1")||roleType.equals("6")||roleType.equals("3"))&&taskType.equals("0")) {//普通用户，工程部调度，客服，维修人员查看0代办
-				querySql0.append(querySql1);
-			}else if((roleType.equals("0")||roleType.equals("1")||roleType.equals("6")||roleType.equals("3"))&&taskType.equals("1")) {//普通用户，工程部调度，客服，维修人员查看1全部
-				querySql0.append("(").append(querySql2).append(") union (").append(querySql1).append(")");
+			//if((roleType.equals("0")||roleType.equals("1")||roleType.equals("6")||roleType.equals("3"))&&taskType.equals("0")) {//普通用户，工程部调度，客服，维修人员查看0代办
+			if(taskType.equals("0")) {
+			querySql0.append(querySql1);
+			//}else if((roleType.equals("0")||roleType.equals("1")||roleType.equals("6")||roleType.equals("3"))&&taskType.equals("1")) {//普通用户，工程部调度，客服，维修人员查看1全部
+			}else if(taskType.equals("1")) {
+			querySql0.append("(").append(querySql2).append(") union (").append(querySql1).append(")");
 			}else {
 				returnData.put("status", "1");
 				returnData.put("message", "输入参数不合法！");
