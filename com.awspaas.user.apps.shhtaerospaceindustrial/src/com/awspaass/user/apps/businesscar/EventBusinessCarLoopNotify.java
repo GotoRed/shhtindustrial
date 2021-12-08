@@ -7,11 +7,12 @@ import org.quartz.JobExecutionContext;
 import org.quartz.JobExecutionException;
 
 import com.actionsoft.bpms.commons.database.ColumnMapRowMapper;
+import com.actionsoft.bpms.schedule.IJob;
 import com.actionsoft.bpms.util.DBSql;
 import com.awspaas.user.apps.shhtaerospaceindustrial.sms.SmsUtil;
 import com.awspaas.user.apps.shhtaerospaceindustrial.util.CoreUtil;
 
-public class EventBusinessCarLoopNotify {
+public class EventBusinessCarLoopNotify implements IJob {
 	public void execute(JobExecutionContext jobExecutionContext) throws JobExecutionException {
 		String missionSMSLogListSql = "select a.SMSCOUNT, b.BINDID,b.APPLYUSERNAME,b.APPLYUSERMOBILE,b.USEDATE,b.SJXM,b.CPH ,b.BINDID from MISSIONSMSLOG a ,BO_EU_SH_VEHICLEORDER_MISSION b where a.MISSIONID=b.BINDID and b.MISSIONSTATUS=4 and a.SMSCOUNT<3 AND a.TYPE='2'";
 		List<Map<String, Object>> missionSMSLogList = DBSql.query(missionSMSLogListSql, new ColumnMapRowMapper(),

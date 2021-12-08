@@ -4,12 +4,14 @@ import java.util.List;
 import java.util.Map;
 
 import com.actionsoft.bpms.bpmn.engine.core.delegate.ProcessExecutionContext;
+import com.actionsoft.bpms.bpmn.engine.listener.ExecuteListener;
+import com.actionsoft.bpms.bpmn.engine.listener.ExecuteListenerInterface;
 import com.actionsoft.bpms.commons.database.ColumnMapRowMapper;
 import com.actionsoft.bpms.util.DBSql;
 import com.actionsoft.sdk.local.SDK;
 import com.awspaas.user.apps.shhtaerospaceindustrial.util.CoreUtil;
 
-public class EventBusineesCarUserConfirmBill {
+public class EventBusineesCarUserConfirmBill extends ExecuteListener implements ExecuteListenerInterface {
 
 	public String getDescription() {
 		return "保障用车用户确认订单更新表状态，更新账单发送短信日志";

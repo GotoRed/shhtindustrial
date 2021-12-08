@@ -5,12 +5,14 @@ import java.util.List;
 import java.util.Map;
 
 import com.actionsoft.bpms.bpmn.engine.core.delegate.ProcessExecutionContext;
+import com.actionsoft.bpms.bpmn.engine.listener.ExecuteListener;
+import com.actionsoft.bpms.bpmn.engine.listener.ExecuteListenerInterface;
 import com.actionsoft.bpms.commons.database.ColumnMapRowMapper;
 import com.actionsoft.bpms.util.DBSql;
 import com.awspaas.user.apps.shhtaerospaceindustrial.sms.SmsUtil;
 import com.awspaas.user.apps.shhtaerospaceindustrial.util.CoreUtil;
 
-public class EventBusinessCarDriverSubmitMission {
+public class EventBusinessCarDriverSubmitMission extends ExecuteListener implements ExecuteListenerInterface {
 
 	public String getDescription() {
 		return "保障用车司机提交行程任务单事件";
