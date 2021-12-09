@@ -20,7 +20,7 @@ public class EventBusinessCarDriverSubmitMission extends ExecuteListener impleme
 	public void execute(ProcessExecutionContext pec) throws Exception {
 		try {
 			String bindId = pec.getProcessInstance().getId();// 流程实例ID
-			String queryMissionSql = "SELECT a.RESOURCETASKFPID FROM BO_EU_YBBZUSECAR_MISSION WHERE BINID='"+bindId+"'";
+			String queryMissionSql = "SELECT a.RESOURCETASKFPID FROM BO_EU_YBBZUSECAR_MISSION a WHERE a.BINDID='"+bindId+"'";
 			List<Map<String, Object>> missionList = DBSql.query(queryMissionSql, new ColumnMapRowMapper(),
 					new Object[] {});
 			if (missionList != null && !missionList.isEmpty()) {
