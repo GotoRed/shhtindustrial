@@ -306,6 +306,8 @@ public class MnmsConstant {
 	 */
 	public final static String OCR_ROW_TYPE_EXPERT = "OCR_ROW_TYPE_EXPERT";
 	
+	
+	
 	/**
 	 * 车辆预订取消通知乘客V1
 	 */
@@ -314,7 +316,7 @@ public class MnmsConstant {
 	/**
 	 * 车辆预订取消通知-司机V1
 	 */
-	public final static String SHSY_CACELMISSION_NOTIFYTODRIVER = "SMS_228116397";
+	public final static String OLD_SHSY_CACELMISSION_NOTIFYTODRIVER = "SMS_228116397";
 	
 	/**
 	 * 临时用车任务变更通知用户
@@ -329,5 +331,9 @@ public class MnmsConstant {
 	 *  临时用车成功派发通知用户
 	 */
 	public final static String SHSY_MISSION_NOTIFYTOUSER= "SMS_200194579";
+	/**
+	 * 临时用车任务单取消（司机）
+	 */
+	public final static String SHSY_CACELMISSION_NOTIFYTODRIVER = "SMS_229641290";
 
 }
